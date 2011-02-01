@@ -10,9 +10,9 @@
 	};
 	1D3623250D0F684500981E51 /* GawkAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1965, 1612}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1742}}";
 			sepNavSelRange = "{2045, 8}";
-			sepNavVisRange = "{1741, 1557}";
+			sepNavVisRange = "{0, 1228}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Gawk */ = {
@@ -30,9 +30,9 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* GawkViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1273, 1300}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 1287}}";
 			sepNavSelRange = "{1650, 0}";
-			sepNavVisRange = "{1432, 1525}";
+			sepNavVisRange = "{1432, 1469}";
 			sepNavWindowFrame = "{{857, 154}, {905, 784}}";
 		};
 	};
@@ -350,7 +350,7 @@
 		fRef = E24C9FC512AC7BDA00C71ECD /* README */;
 		name = "README: 22";
 		rLen = 0;
-		rLoc = 550;
+		rLoc = 737;
 		rType = 0;
 		vrLen = 846;
 		vrLoc = 0;
@@ -361,10 +361,16 @@
 		};
 	};
 	E24C9FC512AC7BDA00C71ECD /* README */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text;
+		name = README;
+		path = "/Users/Tom/Dropbox/Objective-C Progs/Gawk/README";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1273, 1092}}";
-			sepNavSelRange = "{550, 0}";
-			sepNavVisRange = "{0, 846}";
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 521}}";
+			sepNavSelRange = "{738, 0}";
+			sepNavVisRange = "{0, 738}";
 			sepNavWindowFrame = "{{751, 171}, {905, 784}}";
 		};
 	};
@@ -459,6 +465,13 @@
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 603;
+	};
+	E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 1092}}";
+			sepNavSelRange = "{1738, 0}";
+			sepNavVisRange = "{0, 796}";
+		};
 	};
 	E26C8F3412EF6737003A91C2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -685,7 +698,7 @@
 		fRef = E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */;
 		name = "CameraViewController.m: 175";
 		rLen = 163;
-		rLoc = 5441;
+		rLoc = 5294;
 		rType = 0;
 		vrLen = 1280;
 		vrLoc = 4334;
@@ -784,9 +797,9 @@
 	};
 	E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 2418}}";
-			sepNavSelRange = "{5605, 0}";
-			sepNavVisRange = "{5120, 494}";
+			sepNavIntBoundsRect = "{{0, 0}, {1363, 2340}}";
+			sepNavSelRange = "{5292, 0}";
+			sepNavVisRange = "{4244, 1223}";
 			sepNavWindowFrame = "{{84, 206}, {905, 784}}";
 		};
 	};
@@ -800,9 +813,9 @@
 	};
 	E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 4030}}";
-			sepNavSelRange = "{1150, 0}";
-			sepNavVisRange = "{496, 1520}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 4056}}";
+			sepNavSelRange = "{5293, 0}";
+			sepNavVisRange = "{8594, 1395}";
 			sepNavWindowFrame = "{{37, 248}, {905, 784}}";
 		};
 	};
@@ -1181,7 +1194,7 @@
 		fRef = E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */;
 		name = "CameraViewController.m: 175";
 		rLen = 163;
-		rLoc = 5441;
+		rLoc = 5294;
 		rType = 0;
 		vrLen = 1542;
 		vrLoc = 3439;
@@ -1231,7 +1244,7 @@
 		fRef = E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */;
 		name = "CameraViewController.m: 175";
 		rLen = 163;
-		rLoc = 5441;
+		rLoc = 5294;
 		rType = 0;
 		vrLen = 1542;
 		vrLoc = 3439;
@@ -1725,9 +1738,9 @@
 	};
 	E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1273, 650}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 689}}";
 			sepNavSelRange = "{760, 0}";
-			sepNavVisRange = "{30, 1075}";
+			sepNavVisRange = "{0, 1015}";
 		};
 	};
 	E2D9EBE812ADD72E00D317C7 /* PBXTextBookmark */ = {

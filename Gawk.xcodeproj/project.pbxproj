@@ -16,7 +16,8 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* GawkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */; };
 		E227429412A88A280075E726 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E227429312A88A280075E726 /* icon.png */; };
-		E24C9FC612AC7BDA00C71ECD /* README in Resources */ = {isa = PBXBuildFile; fileRef = E24C9FC512AC7BDA00C71ECD /* README */; };
+		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
+		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
 		E2A9F98C12AEC5D4002C9D47 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */; };
 		E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */; };
 		E2A9FA4E12AECB7E002C9D47 /* VideoCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */; };
@@ -59,7 +60,8 @@
 		8D1107310486CEB800E47090 /* Gawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gawk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E227429312A88A280075E726 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		E24C9FC512AC7BDA00C71ECD /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
+		E26BE88812F8AE2E002B50C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Classes/CameraViewController.xib; sourceTree = "<group>"; };
@@ -175,14 +177,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E26BE88812F8AE2E002B50C2 /* README.md */,
 				E24C9F8212AC74CD00C71ECD /* Entitlements.plist */,
 				E227429312A88A280075E726 /* icon.png */,
 				E2D9E92F12AD85D800D317C7 /* Default.png */,
 				E2D9E93312AD872200D317C7 /* Default@2x.png */,
 				8D1107310486CEB800E47090 /* Gawk-Info.plist */,
-				E24C9FC512AC7BDA00C71ECD /* README */,
 				E2B2FDD112A87A0C00588D09 /* LICENSE */,
 				E2D9E96E12AD936600D317C7 /* Settings.bundle */,
+				E26BE88612F8ACEB002B50C2 /* CHANGELOG */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -331,12 +334,13 @@
 				2899E5220DE3E06400AC0155 /* GawkViewController.xib in Resources */,
 				E2B2FDD212A87A0C00588D09 /* LICENSE in Resources */,
 				E227429412A88A280075E726 /* icon.png in Resources */,
-				E24C9FC612AC7BDA00C71ECD /* README in Resources */,
 				E2D9E93012AD85D800D317C7 /* Default.png in Resources */,
 				E2D9E93412AD872200D317C7 /* Default@2x.png in Resources */,
 				E2D9E96F12AD936600D317C7 /* Settings.bundle in Resources */,
 				E2D9EB9E12ADD17800D317C7 /* SearchViewController.xib in Resources */,
 				E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */,
+				E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */,
+				E26BE88912F8AE2E002B50C2 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
