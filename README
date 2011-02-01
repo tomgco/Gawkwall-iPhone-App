@@ -1,0 +1,84 @@
+##################
+#
+#
+#		Gawk iPhone App for iPhone 3GS and higher
+#		Below are the Release notes
+#
+
+Gawk 0.2.1
+Bug fixing:
+					fix crash on second use of camera
+					removed memory leaks
+
+Gawk 0.2
+
+A Lot has changed, it is now using a brand new framework to handle video recording however this means that
+a lot of features have been missed out.
+Missing:
+					Front facing recording is currently not avalible.
+					The Preview is also missing
+					Retake is not present
+
+Features:
+					File size has been reduced by 50%
+					Sound is no longer included with file
+					full customisation in framework
+					Massive speed Improvements
+					
+---
+
+Gawk 0.1.4
+
+Features: Orientation Support
+					Custom Camera interface
+					
+
+
+---
+
+Gawk 0.1.3
+
+Features: Implemented gawk://wall/gaw1 application url
+					Various Performance Improvements
+					Added Preferences within Settings
+
+Fixed:		Exception Handling is much better
+
+
+---
+
+Gawk 0.1.2
+
+Release for Ben Gourley due to invalid 0.1.1 Build
+
+Gawk 0.1.1 Beta 2
+
+Features: On iPhone4 Default to front facing camera.
+					UI Improvements
+					Switched to Tab view
+					Black Status Bar
+					Unimplemented method of launching app using gawk://w/main
+					
+Fixed:		Images only recording 2 seconds instead of three
+					Handle devices that do not support video recording
+					
+---
+
+Gawk 0.1 Beta 2
+
+
+Features: Added Default.png for simulator instant load.
+					Added Wall id selection. 
+					Added Keyboard interaction and go button.
+---
+
+Gawk 0.1 Beta 2
+
+Notes: Minor Improvements, GUI Updated.
+Fixed: Bad Memory access to UIImagePickerController on thrid call.
+
+---
+
+Gawk 0.1 Beta 1
+
+Notes: First Release of The Gawk App. Currently it only posts to the Main Wall http://testing.gawkwall.com/w/main

@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* GawkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* GawkAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* GawkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* GawkViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* GawkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */; };
+		E227429412A88A280075E726 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E227429312A88A280075E726 /* icon.png */; };
+		E24C9FC612AC7BDA00C71ECD /* README in Resources */ = {isa = PBXBuildFile; fileRef = E24C9FC512AC7BDA00C71ECD /* README */; };
+		E2A9F98C12AEC5D4002C9D47 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */; };
+		E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */; };
+		E2A9FA4E12AECB7E002C9D47 /* VideoCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */; };
+		E2A9FACF12AEE4DD002C9D47 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A9FACE12AEE4DD002C9D47 /* AVFoundation.framework */; };
+		E2A9FAD512AEE4F0002C9D47 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A9FAD412AEE4F0002C9D47 /* AssetsLibrary.framework */; };
+		E2B2FAED12A7201300588D09 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B2FAEC12A7201300588D09 /* MobileCoreServices.framework */; };
+		E2B2FC9C12A851D700588D09 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC8B12A851D700588D09 /* ASIDataCompressor.m */; };
+		E2B2FC9D12A851D700588D09 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC8D12A851D700588D09 /* ASIDataDecompressor.m */; };
+		E2B2FC9E12A851D700588D09 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC8F12A851D700588D09 /* ASIDownloadCache.m */; };
+		E2B2FC9F12A851D700588D09 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC9112A851D700588D09 /* ASIFormDataRequest.m */; };
+		E2B2FCA012A851D700588D09 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC9312A851D700588D09 /* ASIHTTPRequest.m */; };
+		E2B2FCA112A851D700588D09 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC9712A851D700588D09 /* ASIInputStream.m */; };
+		E2B2FCA212A851D700588D09 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC9912A851D700588D09 /* ASINetworkQueue.m */; };
+		E2B2FCA612A851EE00588D09 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B2FCA512A851EE00588D09 /* CFNetwork.framework */; };
+		E2B2FCA812A851F400588D09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B2FCA712A851F400588D09 /* SystemConfiguration.framework */; };
+		E2B2FCAA12A8521900588D09 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B2FCA912A8521900588D09 /* libz.1.2.3.dylib */; };
+		E2B2FCEA12A854C200588D09 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FCE912A854C200588D09 /* Reachability.m */; };
+		E2B2FD5112A8647500588D09 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FD5012A8647500588D09 /* ASIAuthenticationDialog.m */; };
+		E2B2FDD212A87A0C00588D09 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E2B2FDD112A87A0C00588D09 /* LICENSE */; };
+		E2D9E93012AD85D800D317C7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9E92F12AD85D800D317C7 /* Default.png */; };
+		E2D9E93412AD872200D317C7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9E93312AD872200D317C7 /* Default@2x.png */; };
+		E2D9E96F12AD936600D317C7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E2D9E96E12AD936600D317C7 /* Settings.bundle */; };
+		E2D9EB9D12ADD17800D317C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */; };
+		E2D9EB9E12ADD17800D317C7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* GawkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GawkAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* GawkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GawkAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Gawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* GawkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GawkViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* GawkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GawkViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* GawkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GawkViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Gawk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gawk_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Gawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gawk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E227429312A88A280075E726 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		E24C9FC512AC7BDA00C71ECD /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Classes/CameraViewController.xib; sourceTree = "<group>"; };
+		E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCaptureManager.h; sourceTree = "<group>"; };
+		E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCaptureManager.m; sourceTree = "<group>"; };
+		E2A9FACE12AEE4DD002C9D47 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E2A9FAD412AEE4F0002C9D47 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		E2A9FCB212AF1AD8002C9D47 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E2B2FAEC12A7201300588D09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E2B2FC8912A851D700588D09 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		E2B2FC8A12A851D700588D09 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		E2B2FC8B12A851D700588D09 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		E2B2FC8C12A851D700588D09 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		E2B2FC8D12A851D700588D09 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		E2B2FC8E12A851D700588D09 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		E2B2FC8F12A851D700588D09 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		E2B2FC9012A851D700588D09 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		E2B2FC9112A851D700588D09 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		E2B2FC9212A851D700588D09 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		E2B2FC9312A851D700588D09 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		E2B2FC9412A851D700588D09 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		E2B2FC9512A851D700588D09 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		E2B2FC9612A851D700588D09 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		E2B2FC9712A851D700588D09 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		E2B2FC9812A851D700588D09 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		E2B2FC9912A851D700588D09 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		E2B2FC9A12A851D700588D09 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		E2B2FCA512A851EE00588D09 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E2B2FCA712A851F400588D09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E2B2FCA912A8521900588D09 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		E2B2FCE812A854C200588D09 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E2B2FCE912A854C200588D09 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E2B2FD4F12A8647500588D09 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		E2B2FD5012A8647500588D09 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		E2B2FDD112A87A0C00588D09 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E2D9E92F12AD85D800D317C7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E2D9E93312AD872200D317C7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E2D9E96E12AD936600D317C7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Classes/SearchViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				E2B2FAED12A7201300588D09 /* MobileCoreServices.framework in Frameworks */,
+				E2B2FCA612A851EE00588D09 /* CFNetwork.framework in Frameworks */,
+				E2B2FCA812A851F400588D09 /* SystemConfiguration.framework in Frameworks */,
+				E2B2FCAA12A8521900588D09 /* libz.1.2.3.dylib in Frameworks */,
+				E2A9FACF12AEE4DD002C9D47 /* AVFoundation.framework in Frameworks */,
+				E2A9FAD512AEE4F0002C9D47 /* AssetsLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E2B2FDBB12A8778E00588D09 /* Externals */,
+				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
+				1D3623250D0F684500981E51 /* GawkAppDelegate.m */,
+				E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */,
+				E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */,
+				E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */,
+				E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */,
+				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* GawkViewController.m */,
+				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
+				E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Gawk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				E2B2FAEC12A7201300588D09 /* MobileCoreServices.framework */,
+				E2B2FCA512A851EE00588D09 /* CFNetwork.framework */,
+				E2B2FCA712A851F400588D09 /* SystemConfiguration.framework */,
+				E2B2FCA912A8521900588D09 /* libz.1.2.3.dylib */,
+				E2A9FACE12AEE4DD002C9D47 /* AVFoundation.framework */,
+				E2A9FAD412AEE4F0002C9D47 /* AssetsLibrary.framework */,
+				E2A9FCB212AF1AD8002C9D47 /* QuartzCore.framework */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Gawk_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */,
+				E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */,
+				E24C9F8212AC74CD00C71ECD /* Entitlements.plist */,
+				E227429312A88A280075E726 /* icon.png */,
+				2899E5210DE3E06400AC0155 /* GawkViewController.xib */,
+				E2D9E92F12AD85D800D317C7 /* Default.png */,
+				E2D9E93312AD872200D317C7 /* Default@2x.png */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Gawk-Info.plist */,
+				E24C9FC512AC7BDA00C71ECD /* README */,
+				E2B2FDD112A87A0C00588D09 /* LICENSE */,
+				E2D9E96E12AD936600D317C7 /* Settings.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2B2FDBB12A8778E00588D09 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				E2B2FC8912A851D700588D09 /* ASICacheDelegate.h */,
+				E2B2FC8A12A851D700588D09 /* ASIDataCompressor.h */,
+				E2B2FC8B12A851D700588D09 /* ASIDataCompressor.m */,
+				E2B2FC8C12A851D700588D09 /* ASIDataDecompressor.h */,
+				E2B2FC8D12A851D700588D09 /* ASIDataDecompressor.m */,
+				E2B2FC8E12A851D700588D09 /* ASIDownloadCache.h */,
+				E2B2FC8F12A851D700588D09 /* ASIDownloadCache.m */,
+				E2B2FC9012A851D700588D09 /* ASIFormDataRequest.h */,
+				E2B2FC9112A851D700588D09 /* ASIFormDataRequest.m */,
+				E2B2FC9212A851D700588D09 /* ASIHTTPRequest.h */,
+				E2B2FD4F12A8647500588D09 /* ASIAuthenticationDialog.h */,
+				E2B2FD5012A8647500588D09 /* ASIAuthenticationDialog.m */,
+				E2B2FCE812A854C200588D09 /* Reachability.h */,
+				E2B2FCE912A854C200588D09 /* Reachability.m */,
+				E2B2FC9312A851D700588D09 /* ASIHTTPRequest.m */,
+				E2B2FC9412A851D700588D09 /* ASIHTTPRequestConfig.h */,
+				E2B2FC9512A851D700588D09 /* ASIHTTPRequestDelegate.h */,
+				E2B2FC9612A851D700588D09 /* ASIInputStream.h */,
+				E2B2FC9712A851D700588D09 /* ASIInputStream.m */,
+				E2B2FC9812A851D700588D09 /* ASINetworkQueue.h */,
+				E2B2FC9912A851D700588D09 /* ASINetworkQueue.m */,
+				E2B2FC9A12A851D700588D09 /* ASIProgressDelegate.h */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Gawk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Gawk" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gawk;
+			productName = Gawk;
+			productReference = 1D6058910D05DD3D006BFB54 /* Gawk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Clock Ltd.";
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Gawk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Gawk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* GawkViewController.xib in Resources */,
+				E2B2FDD212A87A0C00588D09 /* LICENSE in Resources */,
+				E227429412A88A280075E726 /* icon.png in Resources */,
+				E24C9FC612AC7BDA00C71ECD /* README in Resources */,
+				E2D9E93012AD85D800D317C7 /* Default.png in Resources */,
+				E2D9E93412AD872200D317C7 /* Default@2x.png in Resources */,
+				E2D9E96F12AD936600D317C7 /* Settings.bundle in Resources */,
+				E2D9EB9E12ADD17800D317C7 /* SearchViewController.xib in Resources */,
+				E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* GawkAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* GawkViewController.m in Sources */,
+				E2B2FC9C12A851D700588D09 /* ASIDataCompressor.m in Sources */,
+				E2B2FC9D12A851D700588D09 /* ASIDataDecompressor.m in Sources */,
+				E2B2FC9E12A851D700588D09 /* ASIDownloadCache.m in Sources */,
+				E2B2FC9F12A851D700588D09 /* ASIFormDataRequest.m in Sources */,
+				E2B2FCA012A851D700588D09 /* ASIHTTPRequest.m in Sources */,
+				E2B2FCA112A851D700588D09 /* ASIInputStream.m in Sources */,
+				E2B2FCA212A851D700588D09 /* ASINetworkQueue.m in Sources */,
+				E2B2FCEA12A854C200588D09 /* Reachability.m in Sources */,
+				E2B2FD5112A8647500588D09 /* ASIAuthenticationDialog.m in Sources */,
+				E2D9EB9D12ADD17800D317C7 /* SearchViewController.m in Sources */,
+				E2A9F98C12AEC5D4002C9D47 /* CameraViewController.m in Sources */,
+				E2A9FA4E12AECB7E002C9D47 /* VideoCaptureManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Objective-C Progs/Gawk/Entitlements.plist";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Gawk_Prefix.pch;
+				INFOPLIST_FILE = "Gawk-Info.plist";
+				PRODUCT_NAME = Gawk;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Objective-C Progs/Gawk/Entitlements.plist";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Gawk_Prefix.pch;
+				INFOPLIST_FILE = "Gawk-Info.plist";
+				PRODUCT_NAME = Gawk;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Serby (544PETJ5GE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Serby (544PETJ5GE)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "4A1DD489-CF24-459E-85DF-AEDE1EB88909";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A1DD489-CF24-459E-85DF-AEDE1EB88909";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		E24C9F7612AC721600C71ECD /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Paul Serby";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paul Serby";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "8B8CC7A5-BA44-4F9C-ADE7-ACE4F7013D9B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B8CC7A5-BA44-4F9C-ADE7-ACE4F7013D9B";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv6 armv7";
+			};
+			name = Distribution;
+		};
+		E24C9F7712AC721600C71ECD /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Gawk_Prefix.pch;
+				INFOPLIST_FILE = "Gawk-Info.plist";
+				PRODUCT_NAME = Gawk;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Gawk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				E24C9F7712AC721600C71ECD /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Gawk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				E24C9F7612AC721600C71ECD /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
