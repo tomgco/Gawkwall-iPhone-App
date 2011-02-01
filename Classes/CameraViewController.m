@@ -1,3 +1,4 @@
+//	This is the Gawk in progress view. 
 //
 //  CameraViewController.m
 //  Gawk
@@ -29,8 +30,6 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
 }
 
 - (void)viewDidUnload {
@@ -39,8 +38,6 @@
 	[_captureVideoPreviewLayer release];
 	[_recordButton release];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 -(void)viewDidLoad {
@@ -171,7 +168,6 @@
 
 - (void)recordingFinished:(NSURL *)outputFileURL {
 	id delegate = [self delegate];
-	//[self dismissModalView];
 	if ([delegate respondsToSelector:@selector(cameraViewControllerFinishedRecording:)]) {
 		[delegate cameraViewControllerFinishedRecording: [outputFileURL path]];
 	}
