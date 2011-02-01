@@ -31,8 +31,8 @@
 	28D7ACF70DDB3853001CB0EB /* GawkViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1273, 1300}}";
-			sepNavSelRange = "{1768, 0}";
-			sepNavVisRange = "{1510, 1453}";
+			sepNavSelRange = "{1650, 0}";
+			sepNavVisRange = "{1432, 1525}";
 			sepNavWindowFrame = "{{857, 154}, {905, 784}}";
 		};
 	};
@@ -149,6 +149,10 @@
 			E26BE87B12F8AA72002B50C2 /* PBXTextBookmark */ = E26BE87B12F8AA72002B50C2 /* PBXTextBookmark */;
 			E26BE87C12F8AA72002B50C2 /* PBXTextBookmark */ = E26BE87C12F8AA72002B50C2 /* PBXTextBookmark */;
 			E26BE87D12F8AA72002B50C2 /* PBXTextBookmark */ = E26BE87D12F8AA72002B50C2 /* PBXTextBookmark */;
+			E26BE88012F8AB81002B50C2 /* PBXTextBookmark */ = E26BE88012F8AB81002B50C2 /* PBXTextBookmark */;
+			E26BE88112F8AB81002B50C2 /* PlistBookmark */ = E26BE88112F8AB81002B50C2 /* PlistBookmark */;
+			E26BE88212F8AB81002B50C2 /* PBXTextBookmark */ = E26BE88212F8AB81002B50C2 /* PBXTextBookmark */;
+			E26BE88312F8AB81002B50C2 /* PBXTextBookmark */ = E26BE88312F8AB81002B50C2 /* PBXTextBookmark */;
 			E26C8F3412EF6737003A91C2 = E26C8F3412EF6737003A91C2 /* PBXTextBookmark */;
 			E26C8F3512EF6737003A91C2 = E26C8F3512EF6737003A91C2 /* PBXTextBookmark */;
 			E26C8F3612EF6737003A91C2 = E26C8F3612EF6737003A91C2 /* PBXTextBookmark */;
@@ -413,6 +417,48 @@
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 30;
+	};
+	E26BE88012F8AB81002B50C2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */;
+		name = "SearchViewController.m: 30";
+		rLen = 0;
+		rLoc = 760;
+		rType = 0;
+		vrLen = 1075;
+		vrLoc = 30;
+	};
+	E26BE88112F8AB81002B50C2 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Gawk-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleVersion,
+		);
+		name = "/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	E26BE88212F8AB81002B50C2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
+		name = "GawkViewController.m: 65";
+		rLen = 0;
+		rLoc = 1650;
+		rType = 0;
+		vrLen = 1525;
+		vrLoc = 1432;
+	};
+	E26BE88312F8AB81002B50C2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */;
+		name = "VideoCaptureManager.h: 25";
+		rLen = 0;
+		rLoc = 681;
+		rType = 0;
+		vrLen = 1511;
+		vrLoc = 603;
 	};
 	E26C8F3412EF6737003A91C2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1070,7 +1116,7 @@
 		rLen = 0;
 		rLoc = 1420;
 		rType = 0;
-		vrLen = 1557;
+		vrLen = 1510;
 		vrLoc = 1453;
 	};
 	E2CFAD8D12F74A8500DF2F1E /* PBXTextBookmark */ = {
@@ -1147,7 +1193,7 @@
 		rLen = 0;
 		rLoc = 1420;
 		rType = 0;
-		vrLen = 1431;
+		vrLen = 1384;
 		vrLoc = 1579;
 	};
 	E2CFAE3312F763E200DF2F1E /* PBXTextBookmark */ = {
@@ -1197,7 +1243,7 @@
 		rLen = 0;
 		rLoc = 2179;
 		rType = 0;
-		vrLen = 1431;
+		vrLen = 1384;
 		vrLoc = 1579;
 	};
 	E2CFAE4412F765F300DF2F1E /* PBXTextBookmark */ = {
@@ -1297,7 +1343,7 @@
 		rLen = 0;
 		rLoc = 681;
 		rType = 0;
-		vrLen = 1630;
+		vrLen = 1591;
 		vrLoc = 523;
 	};
 	E2CFAE9912F7763200DF2F1E /* PBXTextBookmark */ = {
@@ -1377,7 +1423,7 @@
 		rLen = 0;
 		rLoc = 1768;
 		rType = 0;
-		vrLen = 1431;
+		vrLen = 1384;
 		vrLoc = 1579;
 	};
 	E2CFAEC412F77A4A00DF2F1E /* PBXTextBookmark */ = {
@@ -1421,7 +1467,7 @@
 		rLen = 0;
 		rLoc = 1768;
 		rType = 0;
-		vrLen = 1431;
+		vrLen = 1384;
 		vrLoc = 1579;
 	};
 	E2CFAEE612F77D0100DF2F1E /* PBXTextBookmark */ = {

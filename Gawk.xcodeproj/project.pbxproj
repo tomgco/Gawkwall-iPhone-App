@@ -126,6 +126,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E26BE87F12F8AB6E002B50C2 /* Headers */,
 				E26BE87812F8AA43002B50C2 /* Controllers */,
 				E26BE87712F8AA28002B50C2 /* AppDelegate */,
 				E26BE87612F8AA1B002B50C2 /* VideoControl */,
@@ -199,9 +200,7 @@
 		E26BE87612F8AA1B002B50C2 /* VideoControl */ = {
 			isa = PBXGroup;
 			children = (
-				E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */,
 				E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */,
-				E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */,
 				E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */,
 			);
 			name = VideoControl;
@@ -210,7 +209,6 @@
 		E26BE87712F8AA28002B50C2 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
 				1D3623250D0F684500981E51 /* GawkAppDelegate.m */,
 			);
 			name = AppDelegate;
@@ -219,9 +217,7 @@
 		E26BE87812F8AA43002B50C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* GawkViewController.m */,
-				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
 				E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */,
 			);
 			name = Controllers;
@@ -236,6 +232,18 @@
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E26BE87F12F8AB6E002B50C2 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
+				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
+				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
+				E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */,
+				E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 		E2B2FDBB12A8778E00588D09 /* ASIHTTPRequest */ = {
