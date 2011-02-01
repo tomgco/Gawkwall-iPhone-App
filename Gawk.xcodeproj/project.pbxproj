@@ -126,7 +126,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E2B2FDBB12A8778E00588D09 /* Externals */,
+				E2B2FDBB12A8778E00588D09 /* ASIHTTPRequest */,
 				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
 				1D3623250D0F684500981E51 /* GawkAppDelegate.m */,
 				E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */,
@@ -206,7 +206,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E2B2FDBB12A8778E00588D09 /* Externals */ = {
+		E2B2FDBB12A8778E00588D09 /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
 				E2B2FC8912A851D700588D09 /* ASICacheDelegate.h */,
@@ -232,7 +232,7 @@
 				E2B2FC9912A851D700588D09 /* ASINetworkQueue.m */,
 				E2B2FC9A12A851D700588D09 /* ASIProgressDelegate.h */,
 			);
-			name = Externals;
+			name = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
