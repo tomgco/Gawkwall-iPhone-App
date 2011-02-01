@@ -38,7 +38,6 @@
 @implementation VideoCaptureManager
 
 @synthesize session = _session;
-@synthesize orientation = _orientation;
 @dynamic sessionPreset;
 @synthesize videoInput = _videoInput;
 @synthesize movieFileOutput = _movieFileOutput;

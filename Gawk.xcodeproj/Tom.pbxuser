@@ -792,17 +792,17 @@
 	};
 	E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1273, 832}}";
-			sepNavSelRange = "{681, 0}";
-			sepNavVisRange = "{603, 1511}";
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 741}}";
+			sepNavSelRange = "{652, 0}";
+			sepNavVisRange = "{0, 1168}";
 			sepNavWindowFrame = "{{15, 269}, {905, 784}}";
 		};
 	};
 	E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1273, 4121}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1215}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 4030}}";
+			sepNavSelRange = "{1150, 0}";
+			sepNavVisRange = "{496, 1520}";
 			sepNavWindowFrame = "{{37, 248}, {905, 784}}";
 		};
 	};
@@ -1123,7 +1123,7 @@
 		isa = PBXTextBookmark;
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		rLen = 1;
-		rLoc = 235;
+		rLoc = 234;
 		rType = 1;
 	};
 	E2CFAD8E12F74A8500DF2F1E /* PBXTextBookmark */ = {
@@ -1131,7 +1131,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 291";
 		rLen = 0;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 1637;
@@ -1141,7 +1141,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 310";
 		rLen = 0;
-		rLoc = 9855;
+		rLoc = 9815;
 		rType = 0;
 		vrLen = 1181;
 		vrLoc = 8848;
@@ -1151,7 +1151,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 310";
 		rLen = 0;
-		rLoc = 9855;
+		rLoc = 9815;
 		rType = 0;
 		vrLen = 1150;
 		vrLoc = 8879;
@@ -1161,7 +1161,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 305";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1150;
 		vrLoc = 8879;
@@ -1171,7 +1171,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 303";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1393;
 		vrLoc = 8636;
@@ -1201,7 +1201,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 303";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 8742;
@@ -1211,7 +1211,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 283";
 		rLen = 0;
-		rLoc = 9004;
+		rLoc = 8964;
 		rType = 0;
 		vrLen = 1541;
 		vrLoc = 8454;
@@ -1221,7 +1221,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 311";
 		rLen = 0;
-		rLoc = 10020;
+		rLoc = 9980;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 8634;
@@ -1251,7 +1251,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 289";
 		rLen = 0;
-		rLoc = 9420;
+		rLoc = 9380;
 		rType = 0;
 		vrLen = 1526;
 		vrLoc = 8451;
@@ -1261,7 +1261,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 284";
 		rLen = 0;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1526;
 		vrLoc = 8451;
@@ -1271,7 +1271,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 284";
 		rLen = 20;
-		rLoc = 9088;
+		rLoc = 9048;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 8448;
@@ -1311,7 +1311,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 281";
 		rLen = 0;
-		rLoc = 8943;
+		rLoc = 8903;
 		rType = 0;
 		vrLen = 1559;
 		vrLoc = 8453;
@@ -1321,7 +1321,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 281";
 		rLen = 0;
-		rLoc = 8943;
+		rLoc = 8903;
 		rType = 0;
 		vrLen = 1561;
 		vrLoc = 8451;
@@ -1331,7 +1331,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 308";
 		rLen = 0;
-		rLoc = 10020;
+		rLoc = 9980;
 		rType = 0;
 		vrLen = 1541;
 		vrLoc = 8454;
@@ -1351,7 +1351,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 284";
 		rLen = 20;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1572;
 		vrLoc = 8453;
@@ -1361,7 +1361,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 284";
 		rLen = 20;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1574;
 		vrLoc = 8451;
@@ -1371,7 +1371,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 284";
 		rLen = 0;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1549;
 		vrLoc = 8454;
@@ -1381,7 +1381,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 109";
 		rLen = 0;
-		rLoc = 3694;
+		rLoc = 3654;
 		rType = 0;
 		vrLen = 1580;
 		vrLoc = 2556;
@@ -1391,7 +1391,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 108";
 		rLen = 0;
-		rLoc = 3694;
+		rLoc = 3654;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 2848;
@@ -1401,7 +1401,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 283";
 		rLen = 20;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1369;
 		vrLoc = 8632;
@@ -1411,7 +1411,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 283";
 		rLen = 20;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1369;
 		vrLoc = 8632;
@@ -1441,7 +1441,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 283";
 		rLen = 20;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1549;
 		vrLoc = 8452;
@@ -1451,7 +1451,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 283";
 		rLen = 20;
-		rLoc = 9063;
+		rLoc = 9023;
 		rType = 0;
 		vrLen = 1369;
 		vrLoc = 8632;
@@ -1475,7 +1475,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 303";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1520;
 		vrLoc = 8451;
@@ -1485,7 +1485,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 302";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1491;
 		vrLoc = 8446;
@@ -1495,7 +1495,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 302";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1850;
 		vrLoc = 8087;
@@ -1515,7 +1515,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 283";
 		rLen = 0;
-		rLoc = 8904;
+		rLoc = 8864;
 		rType = 0;
 		vrLen = 1388;
 		vrLoc = 8634;
@@ -1604,7 +1604,7 @@
 		isa = PBXTextBookmark;
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		rLen = 0;
-		rLoc = 304;
+		rLoc = 303;
 		rType = 1;
 	};
 	E2CFAF2D12F7981400DF2F1E /* PBXTextBookmark */ = {
@@ -1612,7 +1612,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 306";
 		rLen = 0;
-		rLoc = 9855;
+		rLoc = 9815;
 		rType = 0;
 		vrLen = 1941;
 		vrLoc = 8088;
@@ -1632,7 +1632,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 305";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1873;
 		vrLoc = 8156;
@@ -1661,7 +1661,7 @@
 		isa = PBXTextBookmark;
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		rLen = 31;
-		rLoc = 230;
+		rLoc = 229;
 		rType = 1;
 	};
 	E2CFAF4112F79A5B00DF2F1E /* PBXTextBookmark */ = {
@@ -1669,7 +1669,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 258";
 		rLen = 0;
-		rLoc = 8084;
+		rLoc = 8044;
 		rType = 0;
 		vrLen = 1339;
 		vrLoc = 7080;
@@ -1679,7 +1679,7 @@
 		fRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */;
 		name = "VideoCaptureManager.m: 304";
 		rLen = 0;
-		rLoc = 9850;
+		rLoc = 9810;
 		rType = 0;
 		vrLen = 1935;
 		vrLoc = 8094;

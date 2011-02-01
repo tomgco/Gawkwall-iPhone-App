@@ -23,26 +23,21 @@
 
 @interface VideoCaptureManager : NSObject {
 	AVCaptureSession *_session;
-	AVCaptureVideoOrientation _orientation;
-		//AVCamMirroringMode _mirroringMode;
-	
 	AVCaptureDeviceInput	*_videoInput;
 	AVCaptureMovieFileOutput *_movieFileOutput;
 	
-		//Crazy notification stuff which i do not know that much of.
-	
+	//Crazy notification stuff which i do not know that much. yet.
 	id _deviceConnectedObserver;
 	id _deviceDisconnectedObserver;
 	
-		//Background completion
+	//Background completion
 	UIBackgroundTaskIdentifier _backgroundRecordingID;
 	
-		// Capture Manager delegate
+	//Capture Manager delegate
 	id <VideoCaptureManagerDelegate> _delegate;
 }
 
 @property (nonatomic,readonly,retain) AVCaptureSession *session;
-@property (nonatomic,assign) AVCaptureVideoOrientation orientation;
 @property (nonatomic,assign) NSString *sessionPreset;
 @property (nonatomic,readonly,retain) AVCaptureDeviceInput *videoInput;
 @property (nonatomic,readonly,retain) AVCaptureMovieFileOutput *movieFileOutput;
@@ -50,14 +45,12 @@
 @property (nonatomic,readonly,getter=isRecording) BOOL recording;
 
 - (BOOL) setupSessionWithPreset:(NSString *)sessionPreset error:(NSError **)error;
+
 - (void) startRecording;
 - (void) stopRecording;
-	//- (BOOL) cameraToggle;
 - (NSUInteger) cameraCount;
-	//- (void) focusAtPoint:(CGPoint)point;
-	//- (void) exposureAtPoint:(CGPoint)point;
+
 - (void) setConnectionWithMediaType:(NSString *)mediaType enabled:(BOOL)enabled;
-	//- (BOOL) supportsMirroring;
 + (AVCaptureConnection *)connectionWithMediaType:(NSString *)mediaType fromConnections:(NSArray *)connections;
 
 @end
