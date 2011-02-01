@@ -126,17 +126,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E26BE87812F8AA43002B50C2 /* Controllers */,
+				E26BE87712F8AA28002B50C2 /* AppDelegate */,
+				E26BE87612F8AA1B002B50C2 /* VideoControl */,
 				E2B2FDBB12A8778E00588D09 /* ASIHTTPRequest */,
-				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
-				1D3623250D0F684500981E51 /* GawkAppDelegate.m */,
-				E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */,
-				E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */,
-				E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */,
-				E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */,
-				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* GawkViewController.m */,
-				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
-				E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -152,6 +145,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E26BE87912F8AA5B002B50C2 /* Views */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -180,14 +174,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */,
-				E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */,
 				E24C9F8212AC74CD00C71ECD /* Entitlements.plist */,
 				E227429312A88A280075E726 /* icon.png */,
-				2899E5210DE3E06400AC0155 /* GawkViewController.xib */,
 				E2D9E92F12AD85D800D317C7 /* Default.png */,
 				E2D9E93312AD872200D317C7 /* Default@2x.png */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Gawk-Info.plist */,
 				E24C9FC512AC7BDA00C71ECD /* README */,
 				E2B2FDD112A87A0C00588D09 /* LICENSE */,
@@ -204,6 +194,48 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E26BE87612F8AA1B002B50C2 /* VideoControl */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */,
+				E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */,
+				E2A9FA4C12AECB7E002C9D47 /* VideoCaptureManager.h */,
+				E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */,
+			);
+			name = VideoControl;
+			sourceTree = "<group>";
+		};
+		E26BE87712F8AA28002B50C2 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
+				1D3623250D0F684500981E51 /* GawkAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E26BE87812F8AA43002B50C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* GawkViewController.m */,
+				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
+				E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E26BE87912F8AA5B002B50C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */,
+				E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */,
+				2899E5210DE3E06400AC0155 /* GawkViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E2B2FDBB12A8778E00588D09 /* ASIHTTPRequest */ = {
