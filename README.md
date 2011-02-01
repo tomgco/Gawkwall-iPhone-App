@@ -1,10 +1,8 @@
-##################
-#
-#
-#		Gawk iPhone App for iOS4 and higher.
-#
-#		Gawk - Inspired by a digital art exhibit, Decode at the Victoria & Albert, it is a grid of short looping silent 
-#		videos captured by various video capture devices.
+Gawk iPhone App for iOS4 and higher.
+===
+
+Gawk - Inspired by a digital art exhibit, Decode at the Victoria & Albert, it is a grid of short looping silent 
+videos captured by various video capture devices.
 
 With the recent rise in bundled video camera ready devices including PCs, laptops, and phones it was now possible to 
 make a web app involving video as the primary input device. The Gawk Wall is a grid of short video clips uploaded by 
