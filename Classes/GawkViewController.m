@@ -13,6 +13,7 @@
 @interface GawkViewController ()
 - (void)uploadFailed:(ASIHTTPRequest *)request;
 - (void)uploadFinished:(ASIHTTPRequest *)request;
+- (void)uploadStarted;
 @end
 
 @implementation GawkViewController
@@ -21,8 +22,8 @@
 @synthesize videoMaximumDuration;
 @synthesize videoQuality;
 @synthesize responseArea;
-@synthesize wallId, linkedUrl, httpRequest, gawkOutput, failedUploadView, failedUploadMessage, resubmitButton;
-@synthesize submittingIndicator;
+@synthesize wallId, linkedUrl, httpRequest, gawkOutput;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton;
 
 - (IBAction)getVideo {
 	CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
@@ -81,6 +82,7 @@
 #pragma mark Video Upload
 
 - (void)uploadGawkVideo:(NSString *)fileLocation {
+	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://staging.gawkwall.com/api/?Action=MobileUpload"]];
 	[httpRequest setPostValue:wallId.text forKey:@"WallId"];
@@ -96,7 +98,17 @@
 	//[httpRequest setDidFinishSelector:@selector(uploadFinished:)];
 	//Testing Failed upload.
 	[httpRequest setDidFinishSelector:@selector(uploadFailed:)];
+	[httpRequest setDidStartSelector:@selector(uploadStarted)];
 	[httpRequest startAsynchronous];
+}
+
+	//When the upload has started
+- (void)uploadStarted {
+	activityView.hidden = NO;
+	[self toggleActivity];
+	activityTitle.text = @"Sending Data.";
+	activityMessage.text = @"";
+	[self doSlideAnimation:activityView duration:0.5 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
 }
 
 	//After File has been sent to server
@@ -115,12 +127,13 @@
 }
 
 - (void)showFailedUpload:(NSString *)errorMessage {
-	failedUploadView.hidden = NO;
 	if (errorMessage == nil)
 			errorMessage = @"Unknown Error Occured";
 	
-	failedUploadMessage.text = errorMessage;
-	[self doSlideAnimation:failedUploadView duration:0.5 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
+	activityTitle.text = @"Ooops! Cannot Gawk at the moment.";
+	activityMessage.text = errorMessage;
+	[self toggleActivity];
+	//[self doSlideAnimation:activityView duration:0.5 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
 }
 
 #pragma mark Default
@@ -133,23 +146,25 @@
 	}
 	[linkedUrl release];
 	//Set Failed Upload view behind UINavigation
-	CGPoint cord = [failedUploadView center];
+	CGPoint cord = [activityView center];
 	cord.y = 0.0f;
-	[failedUploadView setCenter:cord];
-	failedUploadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"texture.png"]];
+	[activityView setCenter:cord];
+	activityView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"texture.png"]];
 }
 
 - (void)dealloc {
-	[failedUploadView release];
+	[activityView release];
+	[activityTitle release];
+	[activityMessage release];
 	[submittingIndicator release];
 	[resubmitButton release];
+	
 	gawkOutput = nil;
 	[gawkOutput release];
 	[httpRequest setDelegate:nil];
 	[httpRequest setUploadProgressDelegate:nil];
 	[httpRequest cancel];
 	[httpRequest release];
-	[failedUploadMessage release];
 	[responseArea release];
 	[super dealloc];
 }

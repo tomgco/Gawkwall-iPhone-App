@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="63"/>
+			<integer value="50"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -153,7 +153,7 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 								</object>
-								<object class="NSColor" key="IBUINormalTitleShadowColor" id="567109789">
+								<object class="NSColor" key="IBUINormalTitleShadowColor" id="812957782">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMAA</bytes>
 								</object>
@@ -165,7 +165,7 @@
 							<object class="IBUILabel" id="476860791">
 								<reference key="NSNextResponder" ref="1039342391"/>
 								<int key="NSvFlags">1316</int>
-								<string key="NSFrame">{{53, 6}, {246, 18}}</string>
+								<string key="NSFrame">{{53, 6}, {246, 19}}</string>
 								<reference key="NSSuperview" ref="1039342391"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -173,7 +173,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<float key="IBUIScaleFactor">2</float>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Ooops! Cannot Gawk at the moment.</string>
+								<string key="IBUIText">&lt;&lt;Activity Title&gt;&gt;</string>
 								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">14</double>
@@ -184,7 +184,7 @@
 									<bytes key="NSRGB">MC45MjE1Njg2OTE3IDAuOTI1NDkwMjYwMSAwLjkyNTQ5MDI2MDEAA</bytes>
 								</object>
 								<reference key="IBUIHighlightedColor" ref="133694958"/>
-								<reference key="IBUIShadowColor" ref="567109789"/>
+								<reference key="IBUIShadowColor" ref="812957782"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
@@ -211,7 +211,7 @@
 									<bytes key="NSRGB">MC45MjE1Njg2OTE3IDAuOTI1NDkwMjYwMSAwLjkyNTQ5MDI2MDEAA</bytes>
 								</object>
 								<reference key="IBUIHighlightedColor" ref="133694958"/>
-								<reference key="IBUIShadowColor" ref="567109789"/>
+								<reference key="IBUIShadowColor" ref="812957782"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
@@ -319,22 +319,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">failedUploadView</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1039342391"/>
-					</object>
-					<int key="connectionID">55</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">failedUploadMessage</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="79488436"/>
-					</object>
-					<int key="connectionID">59</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">resubmitButton</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="830068462"/>
@@ -357,6 +341,30 @@
 						<reference key="destination" ref="1042130414"/>
 					</object>
 					<int key="connectionID">68</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">activityTitle</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="476860791"/>
+					</object>
+					<int key="connectionID">69</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">activityView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1039342391"/>
+					</object>
+					<int key="connectionID">70</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">activityMessage</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="79488436"/>
+					</object>
+					<int key="connectionID">71</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -421,9 +429,9 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="830068462"/>
-							<reference ref="476860791"/>
 							<reference ref="79488436"/>
 							<reference ref="1042130414"/>
+							<reference ref="476860791"/>
 						</object>
 						<reference key="parent" ref="774585933"/>
 					</object>
@@ -575,7 +583,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">68</int>
+			<int key="maxID">71</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -619,8 +627,9 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>failedUploadMessage</string>
-							<string>failedUploadView</string>
+							<string>activityMessage</string>
+							<string>activityTitle</string>
+							<string>activityView</string>
 							<string>progressIndicator</string>
 							<string>responseArea</string>
 							<string>resubmitButton</string>
@@ -629,6 +638,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UIView</string>
 							<string>UIProgressView</string>
@@ -642,8 +652,9 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>failedUploadMessage</string>
-							<string>failedUploadView</string>
+							<string>activityMessage</string>
+							<string>activityTitle</string>
+							<string>activityView</string>
 							<string>progressIndicator</string>
 							<string>responseArea</string>
 							<string>resubmitButton</string>
@@ -653,11 +664,15 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">failedUploadMessage</string>
+								<string key="name">activityMessage</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">failedUploadView</string>
+								<string key="name">activityTitle</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">activityView</string>
 								<string key="candidateClassName">UIView</string>
 							</object>
 							<object class="IBToOneOutletInfo">

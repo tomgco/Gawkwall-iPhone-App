@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E20073BF12FA1D21006CAFBA</string>
+						<string>E20073E012FA231B006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92B12F8CF0F002B50C2</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E20073C012FA1D21006CAFBA</string>
+						<string>E20073E112FA231B006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92C12F8CF0F002B50C2</string>
@@ -415,7 +415,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E20073BE12FA1D21006CAFBA</string>
+										<string>E20073DF12FA231B006CAFBA</string>
 										<key>history</key>
 										<array>
 											<string>E2BA17E712A6F3E700E78BD1</string>
@@ -465,8 +465,9 @@
 											<string>E200738412FA1726006CAFBA</string>
 											<string>E200738512FA1726006CAFBA</string>
 											<string>E200738612FA1726006CAFBA</string>
-											<string>E20073BC12FA1D21006CAFBA</string>
-											<string>E20073BD12FA1D21006CAFBA</string>
+											<string>E20073C712FA1FBB006CAFBA</string>
+											<string>E20073DD12FA231B006CAFBA</string>
+											<string>E20073DE12FA231B006CAFBA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -664,16 +665,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E20073C112FA1D21006CAFBA</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E200722E12F8DA52006CAFBA</string>
 		<string>E200720812F8D8A7006CAFBA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E26BE8B812F8BB93002B50C2</string>
 		<string>E26BE8B512F8BB93002B50C2</string>
 		<string>E2BA178512A6E8AC00E78BD1</string>
-		<string>/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk.xcodeproj</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>59 111 1680 947 0 0 1920 1058 </string>
@@ -912,12 +912,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CameraViewController.m</string>
+										<string>GawkViewController.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -926,7 +928,7 @@
 										<key>Frame</key>
 										<string>{{0, 0}, {983, 400}}</string>
 										<key>RubberWindowFrame</key>
-										<string>1994 207 983 658 1920 102 1680 1050 </string>
+										<string>1981 219 983 658 1920 102 1680 1050 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXNavigatorGroup</string>
@@ -938,8 +940,6 @@
 							<string>400pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -952,7 +952,7 @@
 								<key>Frame</key>
 								<string>{{0, 405}, {983, 212}}</string>
 								<key>RubberWindowFrame</key>
-								<string>1994 207 983 658 1920 102 1680 1050 </string>
+								<string>1981 219 983 658 1920 102 1680 1050 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXProjectFindModule</string>
@@ -981,11 +981,11 @@
 				<string>1CD0528E0623707200166675</string>
 			</array>
 			<key>WindowString</key>
-			<string>1994 207 983 658 1920 102 1680 1050 </string>
+			<string>1981 219 983 658 1920 102 1680 1050 </string>
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
@@ -1018,7 +1018,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {828, 587}}</string>
 								<key>RubberWindowFrame</key>
-								<string>973 230 828 628 0 0 1920 1058 </string>
+								<string>2628 402 828 628 1920 102 1680 1050 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1047,7 +1047,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>973 230 828 628 0 0 1920 1058 </string>
+			<string>2628 402 828 628 1920 102 1680 1050 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

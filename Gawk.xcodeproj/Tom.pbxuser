@@ -24,16 +24,16 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* GawkViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1273, 715}}";
-			sepNavSelRange = "{969, 0}";
-			sepNavVisRange = "{197, 1604}";
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 845}}";
+			sepNavSelRange = "{1972, 0}";
+			sepNavVisRange = "{0, 977}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* GawkViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {846, 2210}}";
-			sepNavSelRange = "{4812, 0}";
-			sepNavVisRange = "{515, 1505}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 2444}}";
+			sepNavSelRange = "{5299, 0}";
+			sepNavVisRange = "{366, 1366}";
 			sepNavWindowFrame = "{{857, 154}, {905, 784}}";
 		};
 	};
@@ -370,6 +370,17 @@
 			E20073BE12FA1D21006CAFBA /* PBXTextBookmark */ = E20073BE12FA1D21006CAFBA /* PBXTextBookmark */;
 			E20073BF12FA1D21006CAFBA /* PBXTextBookmark */ = E20073BF12FA1D21006CAFBA /* PBXTextBookmark */;
 			E20073C012FA1D21006CAFBA /* PBXTextBookmark */ = E20073C012FA1D21006CAFBA /* PBXTextBookmark */;
+			E20073C712FA1FBB006CAFBA /* PBXTextBookmark */ = E20073C712FA1FBB006CAFBA /* PBXTextBookmark */;
+			E20073C812FA1FBB006CAFBA /* PBXTextBookmark */ = E20073C812FA1FBB006CAFBA /* PBXTextBookmark */;
+			E20073C912FA1FBB006CAFBA /* PBXTextBookmark */ = E20073C912FA1FBB006CAFBA /* PBXTextBookmark */;
+			E20073CA12FA1FBB006CAFBA /* PBXTextBookmark */ = E20073CA12FA1FBB006CAFBA /* PBXTextBookmark */;
+			E20073CB12FA1FBB006CAFBA /* PBXTextBookmark */ = E20073CB12FA1FBB006CAFBA /* PBXTextBookmark */;
+			E20073CC12FA1FBB006CAFBA /* PBXTextBookmark */ = E20073CC12FA1FBB006CAFBA /* PBXTextBookmark */;
+			E20073DD12FA231B006CAFBA /* PBXTextBookmark */ = E20073DD12FA231B006CAFBA /* PBXTextBookmark */;
+			E20073DE12FA231B006CAFBA /* PBXTextBookmark */ = E20073DE12FA231B006CAFBA /* PBXTextBookmark */;
+			E20073DF12FA231B006CAFBA /* PBXTextBookmark */ = E20073DF12FA231B006CAFBA /* PBXTextBookmark */;
+			E20073E012FA231B006CAFBA /* PBXTextBookmark */ = E20073E012FA231B006CAFBA /* PBXTextBookmark */;
+			E20073E112FA231B006CAFBA /* PBXTextBookmark */ = E20073E112FA231B006CAFBA /* PBXTextBookmark */;
 			E236298212BAE116008B8573 = E236298212BAE116008B8573 /* PBXBookmark */;
 			E236298312BAE116008B8573 = E236298312BAE116008B8573 /* PBXBookmark */;
 			E236298512BAE116008B8573 = E236298512BAE116008B8573 /* PBXBookmark */;
@@ -445,7 +456,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 99";
 		rLen = 0;
-		rLoc = 3977;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 2767;
@@ -455,7 +466,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 133";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1591;
 		vrLoc = 2086;
@@ -499,7 +510,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 33";
 		rLen = 0;
-		rLoc = 1099;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 37;
@@ -586,7 +597,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 133";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1591;
 		vrLoc = 2086;
@@ -665,7 +676,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 133";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1588;
 		vrLoc = 2086;
@@ -784,7 +795,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 70";
 		rLen = 0;
-		rLoc = 2955;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1610;
 		vrLoc = 1301;
@@ -804,7 +815,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 134";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1586;
 		vrLoc = 2086;
@@ -888,7 +899,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 35";
 		rLen = 0;
-		rLoc = 1214;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 84;
@@ -938,7 +949,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 56";
 		rLen = 0;
-		rLoc = 1815;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1561;
 		vrLoc = 1830;
@@ -947,8 +958,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 56";
-		rLen = 8;
-		rLoc = 1805;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1358;
 		vrLoc = 997;
@@ -978,7 +989,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 137";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 2032;
 		vrLoc = 1416;
@@ -997,8 +1008,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 56";
-		rLen = 104;
-		rLoc = 1709;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1366;
 		vrLoc = 997;
@@ -1008,7 +1019,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 34";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 40;
@@ -1038,7 +1049,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 137";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 2040;
 		vrLoc = 1416;
@@ -1058,7 +1069,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 43";
 		rLen = 0;
-		rLoc = 1671;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 163;
@@ -1068,7 +1079,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 108";
 		rLen = 0;
-		rLoc = 3926;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1406;
 		vrLoc = 2331;
@@ -1078,7 +1089,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 24";
 		rLen = 0;
-		rLoc = 624;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1374;
 		vrLoc = 2495;
@@ -1108,7 +1119,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 139";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1128,7 +1139,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 35";
 		rLen = 0;
-		rLoc = 1098;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 139;
@@ -1138,7 +1149,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 106";
 		rLen = 0;
-		rLoc = 3701;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1196;
 		vrLoc = 2871;
@@ -1148,7 +1159,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 102";
 		rLen = 0;
-		rLoc = 3594;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1198;
 		vrLoc = 2871;
@@ -1178,7 +1189,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 140";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1209,7 +1220,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 156;
+		rLoc = 171;
 		rType = 1;
 	};
 	E200728812F9EE04006CAFBA /* PBXTextBookmark */ = {
@@ -1217,7 +1228,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 143";
 		rLen = 0;
-		rLoc = 4808;
+		rLoc = 5295;
 		rType = 0;
 		vrLen = 564;
 		vrLoc = 3360;
@@ -1254,7 +1265,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 143";
 		rLen = 0;
-		rLoc = 4808;
+		rLoc = 5295;
 		rType = 0;
 		vrLen = 564;
 		vrLoc = 3360;
@@ -1274,7 +1285,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 109";
 		rLen = 0;
-		rLoc = 3826;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 3089;
@@ -1316,7 +1327,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 143";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1349,7 +1360,7 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 1";
-		rLen = 4815;
+		rLen = 5302;
 		rLoc = 0;
 		rType = 0;
 		vrLen = 981;
@@ -1380,7 +1391,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 143";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1400,7 +1411,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 110";
 		rLen = 0;
-		rLoc = 3830;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 3417;
@@ -1430,7 +1441,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 143";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1450,7 +1461,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 110";
 		rLen = 0;
-		rLoc = 3830;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 3417;
@@ -1480,7 +1491,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 143";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1914;
 		vrLoc = 1175;
@@ -1522,7 +1533,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 110";
 		rLen = 0;
-		rLoc = 3830;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3417;
@@ -1532,7 +1543,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 128";
 		rLen = 0;
-		rLoc = 4445;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1129;
 		vrLoc = 3360;
@@ -1562,7 +1573,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1582,7 +1593,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 128";
 		rLen = 0;
-		rLoc = 4382;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 3360;
@@ -1612,7 +1623,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1632,7 +1643,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 128";
 		rLen = 0;
-		rLoc = 4382;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 3360;
@@ -1662,7 +1673,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1682,7 +1693,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4808;
+		rLoc = 5295;
 		rType = 0;
 		vrLen = 520;
 		vrLoc = 3360;
@@ -1702,7 +1713,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 128";
 		rLen = 0;
-		rLoc = 4382;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 3360;
@@ -1732,7 +1743,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1751,8 +1762,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 18;
-		rLoc = 4313;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 3360;
@@ -1782,7 +1793,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1914;
 		vrLoc = 1175;
@@ -1801,8 +1812,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 18;
-		rLoc = 4313;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 3360;
@@ -1832,7 +1843,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1851,8 +1862,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 35;
-		rLoc = 4313;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 3360;
@@ -1882,7 +1893,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -1901,8 +1912,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 35;
-		rLoc = 4313;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 3360;
@@ -1932,7 +1943,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1914;
 		vrLoc = 1175;
@@ -1951,8 +1962,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 35;
-		rLoc = 4313;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 3418;
@@ -1982,7 +1993,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -2001,8 +2012,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 35;
-		rLoc = 4313;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 3418;
@@ -2032,7 +2043,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -2055,8 +2066,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 35;
-		rLoc = 4313;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 3417;
@@ -2065,8 +2076,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 93;
-		rLoc = 4255;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 3417;
@@ -2096,7 +2107,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -2115,8 +2126,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 93;
-		rLoc = 4255;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 3417;
@@ -2146,7 +2157,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -2165,8 +2176,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 125";
-		rLen = 93;
-		rLoc = 4255;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 3417;
@@ -2196,7 +2207,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -2216,7 +2227,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 127";
 		rLen = 0;
-		rLoc = 4348;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 3417;
@@ -2246,7 +2257,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 1175;
@@ -2266,7 +2277,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 144";
 		rLen = 0;
-		rLoc = 4808;
+		rLoc = 5295;
 		rType = 0;
 		vrLen = 520;
 		vrLoc = 3360;
@@ -2336,7 +2347,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 45";
 		rLen = 0;
-		rLoc = 1801;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1634;
 		vrLoc = 139;
@@ -2346,7 +2357,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 103";
 		rLen = 0;
-		rLoc = 3672;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 0;
@@ -2356,7 +2367,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 134";
 		rLen = 0;
-		rLoc = 4562;
+		rLoc = 5081;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 3548;
@@ -2366,7 +2377,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 146";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1798;
 		vrLoc = 1112;
@@ -2386,7 +2397,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 34";
 		rLen = 0;
-		rLoc = 1033;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 366;
@@ -2396,7 +2407,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 16";
 		rLen = 0;
-		rLoc = 506;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 1601;
 		vrLoc = 163;
@@ -2406,7 +2417,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 16";
 		rLen = 0;
-		rLoc = 506;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 1601;
 		vrLoc = 163;
@@ -2416,7 +2427,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 146";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1798;
 		vrLoc = 1112;
@@ -2436,7 +2447,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 46";
 		rLen = 0;
-		rLoc = 1799;
+		rLoc = 1578;
 		rType = 0;
 		vrLen = 1660;
 		vrLoc = 139;
@@ -2446,7 +2457,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 34";
 		rLen = 0;
-		rLoc = 993;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 0;
@@ -2456,7 +2467,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 137";
 		rLen = 0;
-		rLoc = 4562;
+		rLoc = 5081;
 		rType = 0;
 		vrLen = 1107;
 		vrLoc = 3459;
@@ -2466,7 +2477,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 149";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1479;
 		vrLoc = 515;
@@ -2486,7 +2497,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 35";
 		rLen = 0;
-		rLoc = 993;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1252;
 		vrLoc = 489;
@@ -2496,7 +2507,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 150";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 515;
@@ -2516,7 +2527,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 35";
 		rLen = 0;
-		rLoc = 993;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1252;
 		vrLoc = 489;
@@ -2526,7 +2537,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 17";
 		rLen = 0;
-		rLoc = 506;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 1632;
 		vrLoc = 197;
@@ -2536,7 +2547,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 150";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 515;
@@ -2556,7 +2567,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 45";
 		rLen = 0;
-		rLoc = 1582;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1661;
 		vrLoc = 197;
@@ -2566,7 +2577,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 150";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 515;
@@ -2586,7 +2597,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 45";
 		rLen = 0;
-		rLoc = 1603;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1674;
 		vrLoc = 197;
@@ -2596,7 +2607,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 139";
 		rLen = 0;
-		rLoc = 4535;
+		rLoc = 5052;
 		rType = 0;
 		vrLen = 1030;
 		vrLoc = 3655;
@@ -2606,7 +2617,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 152";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 515;
@@ -2625,8 +2636,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 36";
-		rLen = 22;
-		rLoc = 971;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1236;
 		vrLoc = 489;
@@ -2636,7 +2647,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 153";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 515;
@@ -2656,7 +2667,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 36";
 		rLen = 0;
-		rLoc = 969;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1604;
 		vrLoc = 197;
@@ -2665,8 +2676,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 36";
-		rLen = 22;
-		rLoc = 971;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 170;
@@ -2676,7 +2687,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 36";
 		rLen = 0;
-		rLoc = 993;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1174;
 		vrLoc = 408;
@@ -2686,12 +2697,129 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 157";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 515;
 	};
 	E20073C012FA1D21006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */;
+		name = "CameraViewController.h: 16";
+		rLen = 0;
+		rLoc = 367;
+		rType = 0;
+		vrLen = 1220;
+		vrLoc = 0;
+	};
+	E20073C212FA1DD0006CAFBA /* TODO */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 515}}";
+			sepNavSelRange = "{111, 0}";
+			sepNavVisRange = "{0, 111}";
+		};
+	};
+	E20073C712FA1FBB006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E20073C212FA1DD0006CAFBA /* TODO */;
+		name = "TODO: 5";
+		rLen = 0;
+		rLoc = 111;
+		rType = 0;
+		vrLen = 111;
+		vrLoc = 0;
+	};
+	E20073C812FA1FBB006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
+		name = "GawkViewController.h: 59";
+		rLen = 0;
+		rLoc = 1972;
+		rType = 0;
+		vrLen = 1446;
+		vrLoc = 659;
+	};
+	E20073C912FA1FBB006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
+		name = "GawkViewController.m: 24";
+		rLen = 0;
+		rLoc = 592;
+		rType = 0;
+		vrLen = 1755;
+		vrLoc = 2203;
+	};
+	E20073CA12FA1FBB006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
+		name = "GawkViewController.m: 121";
+		rLen = 0;
+		rLoc = 4291;
+		rType = 0;
+		vrLen = 1320;
+		vrLoc = 3117;
+	};
+	E20073CB12FA1FBB006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
+		name = "GawkViewController.m: 159";
+		rLen = 0;
+		rLoc = 5299;
+		rType = 0;
+		vrLen = 1512;
+		vrLoc = 515;
+	};
+	E20073CC12FA1FBB006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */;
+		name = "CameraViewController.h: 16";
+		rLen = 0;
+		rLoc = 367;
+		rType = 0;
+		vrLen = 1220;
+		vrLoc = 0;
+	};
+	E20073DD12FA231B006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
+		name = "GawkViewController.h: 59";
+		rLen = 0;
+		rLoc = 1972;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 0;
+	};
+	E20073DE12FA231B006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
+		name = "GawkViewController.m: 99";
+		rLen = 12;
+		rLoc = 3185;
+		rType = 0;
+		vrLen = 1208;
+		vrLoc = 3235;
+	};
+	E20073DF12FA231B006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
+		name = "GawkViewController.m: 85";
+		rLen = 0;
+		rLoc = 2353;
+		rType = 0;
+		vrLen = 1675;
+		vrLoc = 2182;
+	};
+	E20073E012FA231B006CAFBA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
+		name = "GawkViewController.m: 172";
+		rLen = 0;
+		rLoc = 5299;
+		rType = 0;
+		vrLen = 1366;
+		vrLoc = 366;
+	};
+	E20073E112FA231B006CAFBA /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */;
 		name = "CameraViewController.h: 16";
@@ -2762,7 +2890,7 @@
 		comments = "Cannot find interface declaration for 'failedUploadViewController'";
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		rLen = 0;
-		rLoc = 156;
+		rLoc = 171;
 		rType = 1;
 	};
 	E26BE8A812F8BB93002B50C2 /* PBXTextBookmark */ = {
@@ -2880,7 +3008,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* GawkViewController.h */;
 		name = "GawkViewController.h: 33";
 		rLen = 0;
-		rLoc = 1099;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 84;
@@ -2889,8 +3017,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 91";
-		rLen = 24;
-		rLoc = 3676;
+		rLen = 0;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 2426;
@@ -2900,7 +3028,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 99";
 		rLen = 0;
-		rLoc = 3977;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 2821;
@@ -2910,7 +3038,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */;
 		name = "GawkViewController.m: 133";
 		rLen = 0;
-		rLoc = 4812;
+		rLoc = 5299;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 2146;
@@ -3091,7 +3219,7 @@
 	};
 	E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {846, 633}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 656}}";
 			sepNavSelRange = "{367, 0}";
 			sepNavVisRange = "{0, 1220}";
 			sepNavWindowFrame = "{{61, 227}, {905, 784}}";

@@ -13,13 +13,18 @@
 @class ASIFormDataRequest;
 
 @interface GawkViewController : UIViewController <UINavigationControllerDelegate, CameraViewControllerDelegate> {
-	IBOutlet UIButton *resubmitButton;
-	IBOutlet UIActivityIndicatorView *submittingIndicator;
+	
 	IBOutlet UITextView *responseArea;
 	IBOutlet UITextField *wallId;
-	IBOutlet UILabel *failedUploadMessage;
 	IBOutlet UIProgressView *progressIndicator;
-	IBOutlet UIView *failedUploadView;
+	
+#pragma mark activityView
+	IBOutlet UILabel *activityTitle;
+	IBOutlet UILabel *activityMessage;
+	IBOutlet UIView *activityView;
+	IBOutlet UIButton *resubmitButton;
+	IBOutlet UIActivityIndicatorView *submittingIndicator;
+	
 	
 	UIImagePickerController *gawkNow;
 	NSTimeInterval videoMaximumDuration;
@@ -44,12 +49,16 @@
 @property(nonatomic) UIImagePickerControllerQualityType videoQuality;
 @property(nonatomic, retain) UITextView *responseArea;
 @property(nonatomic, retain) IBOutlet UITextField *wallId;
-@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *submittingIndicator;
-@property(nonatomic, retain) IBOutlet UILabel *failedUploadMessage;
-@property(nonatomic, retain) IBOutlet UIView *failedUploadView;
-@property(nonatomic, retain) IBOutlet UIButton *resubmitButton;
 @property(nonatomic, retain) NSURL *linkedUrl;
 @property(nonatomic, retain) NSURL *gawkOutput;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
+
+#pragma mark activityView
+@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *submittingIndicator;
+@property(nonatomic, retain) IBOutlet UILabel *activityMessage;
+@property(nonatomic, retain) IBOutlet UILabel *activityTitle;
+@property(nonatomic, retain) IBOutlet UIView *activityView;
+@property(nonatomic, retain) IBOutlet UIButton *resubmitButton;
+
 @end
 
