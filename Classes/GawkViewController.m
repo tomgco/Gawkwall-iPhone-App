@@ -21,13 +21,19 @@
 @synthesize videoMaximumDuration;
 @synthesize videoQuality;
 @synthesize responseArea;
-@synthesize wallId, linkedUrl, httpRequest, gawkOutput, failedUploadView, failedUploadMessage;
+@synthesize wallId, linkedUrl, httpRequest, gawkOutput, failedUploadView, failedUploadMessage, resubmitButton;
+@synthesize submittingIndicator;
 
 - (IBAction)getVideo {
 	CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
 	[camera setDelegate:self];
 	[wallId resignFirstResponder];
 	[self presentModalViewController: camera animated:YES];
+}
+
+- (IBAction)resubmitGawk {
+	NSLog(@"Resubmitting");
+	[self toggleActivity];
 }
 
 - (void)handleOpenURL:(NSURL *)url {
@@ -45,7 +51,12 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
--(void)cameraViewControllerDidCancel {
+- (void)toggleActivity {
+	resubmitButton.hidden = !resubmitButton.hidden;
+	submittingIndicator.hidden = !submittingIndicator.hidden;
+}
+
+- (void)cameraViewControllerDidCancel {
 	
 }
 
@@ -70,7 +81,7 @@
 #pragma mark Video Upload
 
 - (void)uploadGawkVideo:(NSString *)fileLocation {
-	gawkOutput =  [NSURL URLWithString:fileLocation];
+	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://staging.gawkwall.com/api/?Action=MobileUpload"]];
 	[httpRequest setPostValue:wallId.text forKey:@"WallId"];
 	[httpRequest setPostValue:@"iphone" forKey:@"SourceDevice"];
@@ -92,15 +103,15 @@
 - (void)uploadFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	[responseArea setText:responseData];
-	
+	[gawkOutput release];
 }
 
 	//if connection failed
-	//Possibly store video and wait for device to get a connection
+	//TODO: Store video and wait for device to get a connection
 - (void)uploadFailed:(ASIHTTPRequest *)request {
 	NSError *error = [request error];
-	//[responseArea setText:[error localizedDescription]];
 	[self showFailedUpload:[error localizedDescription]];
+	[gawkOutput release];
 }
 
 - (void)showFailedUpload:(NSString *)errorMessage {
@@ -130,6 +141,8 @@
 
 - (void)dealloc {
 	[failedUploadView release];
+	[submittingIndicator release];
+	[resubmitButton release];
 	gawkOutput = nil;
 	[gawkOutput release];
 	[httpRequest setDelegate:nil];

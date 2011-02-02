@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="6"/>
+			<integer value="63"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -153,7 +153,7 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 								</object>
-								<object class="NSColor" key="IBUINormalTitleShadowColor" id="766458835">
+								<object class="NSColor" key="IBUINormalTitleShadowColor" id="567109789">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMAA</bytes>
 								</object>
@@ -184,7 +184,7 @@
 									<bytes key="NSRGB">MC45MjE1Njg2OTE3IDAuOTI1NDkwMjYwMSAwLjkyNTQ5MDI2MDEAA</bytes>
 								</object>
 								<reference key="IBUIHighlightedColor" ref="133694958"/>
-								<reference key="IBUIShadowColor" ref="766458835"/>
+								<reference key="IBUIShadowColor" ref="567109789"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
@@ -211,7 +211,7 @@
 									<bytes key="NSRGB">MC45MjE1Njg2OTE3IDAuOTI1NDkwMjYwMSAwLjkyNTQ5MDI2MDEAA</bytes>
 								</object>
 								<reference key="IBUIHighlightedColor" ref="133694958"/>
-								<reference key="IBUIShadowColor" ref="766458835"/>
+								<reference key="IBUIShadowColor" ref="567109789"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
@@ -332,6 +332,31 @@
 						<reference key="destination" ref="79488436"/>
 					</object>
 					<int key="connectionID">59</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">resubmitButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="830068462"/>
+					</object>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">resubmitGawk</string>
+						<reference key="source" ref="830068462"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">67</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">submittingIndicator</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1042130414"/>
+					</object>
+					<int key="connectionID">68</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -550,7 +575,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">63</int>
+			<int key="maxID">68</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -559,34 +584,57 @@
 					<string key="className">GawkViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">getVideo</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>getVideo</string>
+							<string>resubmitGawk</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">getVideo</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">getVideo</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>getVideo</string>
+							<string>resubmitGawk</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">getVideo</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">resubmitGawk</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>button</string>
 							<string>failedUploadMessage</string>
 							<string>failedUploadView</string>
 							<string>progressIndicator</string>
 							<string>responseArea</string>
+							<string>resubmitButton</string>
+							<string>submittingIndicator</string>
 							<string>wallId</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UIView</string>
 							<string>UIProgressView</string>
 							<string>UITextView</string>
+							<string>UIButton</string>
+							<string>UIActivityIndicatorView</string>
 							<string>UITextField</string>
 						</object>
 					</object>
@@ -594,19 +642,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>button</string>
 							<string>failedUploadMessage</string>
 							<string>failedUploadView</string>
 							<string>progressIndicator</string>
 							<string>responseArea</string>
+							<string>resubmitButton</string>
+							<string>submittingIndicator</string>
 							<string>wallId</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">button</string>
-								<string key="candidateClassName">UIButton</string>
-							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">failedUploadMessage</string>
 								<string key="candidateClassName">UILabel</string>
@@ -622,6 +667,14 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">responseArea</string>
 								<string key="candidateClassName">UITextView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">resubmitButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">submittingIndicator</string>
+								<string key="candidateClassName">UIActivityIndicatorView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">wallId</string>

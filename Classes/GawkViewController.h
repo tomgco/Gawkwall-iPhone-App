@@ -13,7 +13,8 @@
 @class ASIFormDataRequest;
 
 @interface GawkViewController : UIViewController <UINavigationControllerDelegate, CameraViewControllerDelegate> {
-	IBOutlet UIButton *button;
+	IBOutlet UIButton *resubmitButton;
+	IBOutlet UIActivityIndicatorView *submittingIndicator;
 	IBOutlet UITextView *responseArea;
 	IBOutlet UITextField *wallId;
 	IBOutlet UILabel *failedUploadMessage;
@@ -30,6 +31,9 @@
 }
 
 - (IBAction)getVideo;
+- (IBAction)resubmitGawk;
+
+- (void)toggleActivity;
 - (void)handleOpenURL:(NSURL *)url;
 - (void)uploadGawkVideo:(NSString *)fileLocation;
 - (void)showFailedUpload:(NSString *)error;
@@ -40,8 +44,10 @@
 @property(nonatomic) UIImagePickerControllerQualityType videoQuality;
 @property(nonatomic, retain) UITextView *responseArea;
 @property(nonatomic, retain) IBOutlet UITextField *wallId;
+@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *submittingIndicator;
 @property(nonatomic, retain) IBOutlet UILabel *failedUploadMessage;
 @property(nonatomic, retain) IBOutlet UIView *failedUploadView;
+@property(nonatomic, retain) IBOutlet UIButton *resubmitButton;
 @property(nonatomic, retain) NSURL *linkedUrl;
 @property(nonatomic, retain) NSURL *gawkOutput;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;

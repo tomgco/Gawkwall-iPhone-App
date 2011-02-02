@@ -202,86 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>E200725012F9E87D006CAFBA</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>VideoCaptureManager.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E200725112F9E87D006CAFBA</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>VideoCaptureManager.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E200737212FA11F0006CAFBA</string>
-						<key>history</key>
-						<array>
-							<string>E200723312F8DA99006CAFBA</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {905, 687}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 325 905 728 0 0 1920 1058 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E20071EB12F8D7D6006CAFBA</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>VideoCaptureManager.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E20071EC12F8D7D6006CAFBA</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>VideoCaptureManager.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E200737312FA11F0006CAFBA</string>
-						<key>history</key>
-						<array>
-							<string>E20071ED12F8D7D6006CAFBA</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {905, 687}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>37 304 905 728 0 0 1920 1058 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>E26BE8B512F8BB93002B50C2</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>GawkViewController.m</string>
@@ -296,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200737412FA11F0006CAFBA</string>
+						<string>E20073BF12FA1D21006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92B12F8CF0F002B50C2</string>
@@ -336,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200737512FA11F0006CAFBA</string>
+						<string>E20073C012FA1D21006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92C12F8CF0F002B50C2</string>
@@ -431,8 +351,6 @@
 								<string>E26BE87712F8AA28002B50C2</string>
 								<string>E26BE87612F8AA1B002B50C2</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>E200728F12F9F1FA006CAFBA</string>
-								<string>E200729012F9F20B006CAFBA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -497,7 +415,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E200737112FA11F0006CAFBA</string>
+										<string>E20073BE12FA1D21006CAFBA</string>
 										<key>history</key>
 										<array>
 											<string>E2BA17E712A6F3E700E78BD1</string>
@@ -531,24 +449,24 @@
 											<string>E2CFAF2912F7981400DF2F1E</string>
 											<string>E2CFAF2A12F7981400DF2F1E</string>
 											<string>E2CFAF3E12F79A5B00DF2F1E</string>
-											<string>E26BE87B12F8AA72002B50C2</string>
-											<string>E26BE8A812F8BB93002B50C2</string>
 											<string>E26BE8A912F8BB93002B50C2</string>
 											<string>E26BE8AA12F8BB93002B50C2</string>
 											<string>E26BE8AB12F8BB93002B50C2</string>
-											<string>E200724612F9E87D006CAFBA</string>
-											<string>E200724712F9E87D006CAFBA</string>
 											<string>E200724812F9E87D006CAFBA</string>
 											<string>E200724B12F9E87D006CAFBA</string>
 											<string>E200724C12F9E87D006CAFBA</string>
-											<string>E200724D12F9E87D006CAFBA</string>
-											<string>E200727A12F9EACE006CAFBA</string>
 											<string>E20072A312F9F513006CAFBA</string>
 											<string>E20072A412F9F513006CAFBA</string>
 											<string>E20072C812F9FE5B006CAFBA</string>
 											<string>E20072C912F9FE5B006CAFBA</string>
 											<string>E200735812FA1026006CAFBA</string>
-											<string>E200735912FA1026006CAFBA</string>
+											<string>E200738212FA1726006CAFBA</string>
+											<string>E200738312FA1726006CAFBA</string>
+											<string>E200738412FA1726006CAFBA</string>
+											<string>E200738512FA1726006CAFBA</string>
+											<string>E200738612FA1726006CAFBA</string>
+											<string>E20073BC12FA1D21006CAFBA</string>
+											<string>E20073BD12FA1D21006CAFBA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -746,17 +664,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E20073C112FA1D21006CAFBA</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E200722E12F8DA52006CAFBA</string>
 		<string>E200720812F8D8A7006CAFBA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E26BE8B812F8BB93002B50C2</string>
 		<string>E26BE8B512F8BB93002B50C2</string>
-		<string>E20071EB12F8D7D6006CAFBA</string>
 		<string>E2BA178512A6E8AC00E78BD1</string>
-		<string>E200725012F9E87D006CAFBA</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>59 111 1680 947 0 0 1920 1058 </string>
