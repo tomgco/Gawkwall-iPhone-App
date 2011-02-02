@@ -122,9 +122,9 @@
 	}
 	[linkedUrl release];
 	//Set Failed Upload view behind UINavigation
-	//CGPoint cord = [failedUploadView center];
-//	cord.y = 0.0f;
-//	[failedUploadView setCenter:cord];
+	CGPoint cord = [failedUploadView center];
+	cord.y = 0.0f;
+	[failedUploadView setCenter:cord];
 	failedUploadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"texture.png"]];
 }
 
