@@ -31,9 +31,9 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* GawkViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {894, 1859}}";
-			sepNavSelRange = "{4385, 0}";
-			sepNavVisRange = "{3360, 564}";
+			sepNavIntBoundsRect = "{{0, 0}, {1273, 1781}}";
+			sepNavSelRange = "{3568, 0}";
+			sepNavVisRange = "{3089, 1171}";
 			sepNavWindowFrame = "{{857, 154}, {905, 784}}";
 		};
 	};

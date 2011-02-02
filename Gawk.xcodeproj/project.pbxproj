@@ -17,6 +17,7 @@
 		28D7ACF80DDB3853001CB0EB /* GawkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */; };
 		E200721712F8D97D006CAFBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E200721512F8D97D006CAFBA /* Default.png */; };
 		E200721812F8D97D006CAFBA /* Default@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E200721612F8D97D006CAFBA /* Default@2.png */; };
+		E200729212F9F219006CAFBA /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E200729112F9F219006CAFBA /* refresh.png */; };
 		E227429412A88A280075E726 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E227429312A88A280075E726 /* icon.png */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
@@ -60,6 +61,7 @@
 		8D1107310486CEB800E47090 /* Gawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gawk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E200721512F8D97D006CAFBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E200721612F8D97D006CAFBA /* Default@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2.png"; sourceTree = "<group>"; };
+		E200729112F9F219006CAFBA /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		E227429312A88A280075E726 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
@@ -177,11 +179,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E200721512F8D97D006CAFBA /* Default.png */,
-				E200721612F8D97D006CAFBA /* Default@2.png */,
+				E200728F12F9F1FA006CAFBA /* Images */,
 				E26BE88812F8AE2E002B50C2 /* README.md */,
 				E24C9F8212AC74CD00C71ECD /* Entitlements.plist */,
-				E227429312A88A280075E726 /* icon.png */,
 				8D1107310486CEB800E47090 /* Gawk-Info.plist */,
 				E2B2FDD112A87A0C00588D09 /* LICENSE */,
 				E2D9E96E12AD936600D317C7 /* Settings.bundle */,
@@ -198,6 +198,25 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E200728F12F9F1FA006CAFBA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E200729012F9F20B006CAFBA /* Controls */,
+				E200721512F8D97D006CAFBA /* Default.png */,
+				E200721612F8D97D006CAFBA /* Default@2.png */,
+				E227429312A88A280075E726 /* icon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E200729012F9F20B006CAFBA /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				E200729112F9F219006CAFBA /* refresh.png */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 		E26BE87612F8AA1B002B50C2 /* VideoControl */ = {
@@ -341,6 +360,7 @@
 				E26BE88912F8AE2E002B50C2 /* README.md in Resources */,
 				E200721712F8D97D006CAFBA /* Default.png in Resources */,
 				E200721812F8D97D006CAFBA /* Default@2.png in Resources */,
+				E200729212F9F219006CAFBA /* refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
