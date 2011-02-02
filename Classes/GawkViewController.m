@@ -21,7 +21,7 @@
 @synthesize videoMaximumDuration;
 @synthesize videoQuality;
 @synthesize responseArea;
-@synthesize wallId, linkedUrl, httpRequest, gawkOutput, failedUploadView;
+@synthesize wallId, linkedUrl, httpRequest, gawkOutput, failedUploadView, failedUploadMessage;
 
 - (IBAction)getVideo {
 	CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
@@ -51,6 +51,20 @@
 
 -(void)cameraViewControllerFinishedRecording:(NSString *)outputFileURL {
 	[self uploadGawkVideo:outputFileURL];
+}
+
+-(void)doSlideAnimation:(UIView *)viewName duration:(NSTimeInterval)duration curve:(int)curve x:(int)x y:(int)y   {
+	[UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:duration];
+  [UIView setAnimationCurve: curve];
+  [UIView setAnimationBeginsFromCurrentState:YES];
+	
+  // The transform matrix
+  CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
+  viewName.transform = transform;
+	
+  // Commit the changes
+  [UIView commitAnimations];
 }
 
 #pragma mark Video Upload
@@ -85,23 +99,17 @@
 	//Possibly store video and wait for device to get a connection
 - (void)uploadFailed:(ASIHTTPRequest *)request {
 	NSError *error = [request error];
-	[responseArea setText:[error localizedDescription]];
-	[self showFailedUpload];
+	//[responseArea setText:[error localizedDescription]];
+	[self showFailedUpload:[error localizedDescription]];
 }
 
-- (void)showFailedUpload {
+- (void)showFailedUpload:(NSString *)errorMessage {
 	failedUploadView.hidden = NO;
-	[UIView beginAnimations:nil context:NULL];
-  [UIView setAnimationDuration:0.5];
-  [UIView setAnimationCurve: UIViewAnimationCurveEaseOut];
-  [UIView setAnimationBeginsFromCurrentState:YES];
-	
-  // The transform matrix
-  CGAffineTransform transform = CGAffineTransformMakeTranslation(0.0f, 70.0f);
-  failedUploadView.transform = transform;
-	
-  // Commit the changes
-  [UIView commitAnimations];
+	if (errorMessage == nil)
+			errorMessage = @"Unknown Error Occured";
+
+	failedUploadMessage.text = errorMessage;
+	[self doSlideAnimation:failedUploadView duration:0.5 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
 }
 
 #pragma mark Default
@@ -127,6 +135,7 @@
 	[httpRequest setUploadProgressDelegate:nil];
 	[httpRequest cancel];
 	[httpRequest release];
+	[failedUploadMessage release];
 	[responseArea release];
 	[super dealloc];
 }

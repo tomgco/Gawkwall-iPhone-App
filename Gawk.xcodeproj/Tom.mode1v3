@@ -202,6 +202,46 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>E200725012F9E87D006CAFBA</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>VideoCaptureManager.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>E200725112F9E87D006CAFBA</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>VideoCaptureManager.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>E200727D12F9EACE006CAFBA</string>
+						<key>history</key>
+						<array>
+							<string>E200723312F8DA99006CAFBA</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {905, 687}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 325 905 728 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>E20071EB12F8D7D6006CAFBA</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>VideoCaptureManager.m</string>
@@ -216,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200722912F8DA52006CAFBA</string>
+						<string>E200727E12F9EACE006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E20071ED12F8D7D6006CAFBA</string>
@@ -256,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200722A12F8DA52006CAFBA</string>
+						<string>E200727F12F9EACE006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92B12F8CF0F002B50C2</string>
@@ -296,7 +336,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200722B12F8DA52006CAFBA</string>
+						<string>E200728012F9EACE006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92C12F8CF0F002B50C2</string>
@@ -390,7 +430,6 @@
 								<string>E26BE87812F8AA43002B50C2</string>
 								<string>E26BE87712F8AA28002B50C2</string>
 								<string>E26BE87612F8AA1B002B50C2</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -455,7 +494,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E200722812F8DA52006CAFBA</string>
+										<string>E200727C12F9EACE006CAFBA</string>
 										<key>history</key>
 										<array>
 											<string>E2BA17E712A6F3E700E78BD1</string>
@@ -467,7 +506,6 @@
 											<string>E2D7FFAD12B6A11400EA6254</string>
 											<string>E255F20212B6B6C900CBD506</string>
 											<string>E236298212BAE116008B8573</string>
-											<string>E236298512BAE116008B8573</string>
 											<string>E26C8F3712EF6737003A91C2</string>
 											<string>E26C8F3812EF6737003A91C2</string>
 											<string>E26C8F3912EF6737003A91C2</string>
@@ -495,14 +533,17 @@
 											<string>E26BE8A912F8BB93002B50C2</string>
 											<string>E26BE8AA12F8BB93002B50C2</string>
 											<string>E26BE8AB12F8BB93002B50C2</string>
-											<string>E20071E512F8D7D6006CAFBA</string>
-											<string>E20071E812F8D7D6006CAFBA</string>
-											<string>E200722312F8DA52006CAFBA</string>
-											<string>E200722412F8DA52006CAFBA</string>
-											<string>E200722512F8DA52006CAFBA</string>
-											<string>E200722612F8DA52006CAFBA</string>
-											<string>E200722712F8DA52006CAFBA</string>
-											<string>E20071E612F8D7D6006CAFBA</string>
+											<string>E200724412F9E87D006CAFBA</string>
+											<string>E200724512F9E87D006CAFBA</string>
+											<string>E200724612F9E87D006CAFBA</string>
+											<string>E200724712F9E87D006CAFBA</string>
+											<string>E200724812F9E87D006CAFBA</string>
+											<string>E200724A12F9E87D006CAFBA</string>
+											<string>E200724B12F9E87D006CAFBA</string>
+											<string>E200724C12F9E87D006CAFBA</string>
+											<string>E200724D12F9E87D006CAFBA</string>
+											<string>E200727A12F9EACE006CAFBA</string>
+											<string>E200727B12F9EACE006CAFBA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -700,16 +741,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E200722C12F8DA52006CAFBA</string>
-		<string>E200722D12F8DA52006CAFBA</string>
+		<string>E200728112F9EACE006CAFBA</string>
 		<string>E200722E12F8DA52006CAFBA</string>
 		<string>E200720812F8D8A7006CAFBA</string>
-		<string>E20071EF12F8D7D6006CAFBA</string>
-		<string>E2BA178512A6E8AC00E78BD1</string>
 		<string>E26BE8B812F8BB93002B50C2</string>
 		<string>E26BE8B512F8BB93002B50C2</string>
 		<string>E20071EB12F8D7D6006CAFBA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>E200725012F9E87D006CAFBA</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>E2BA178512A6E8AC00E78BD1</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk.xcodeproj</string>
 	</array>
@@ -735,7 +776,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CameraViewController.m</string>
+								<string>GawkViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -806,7 +847,7 @@
 			<key>WindowToolGUID</key>
 			<string>E2BA178512A6E8AC00E78BD1</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -955,7 +996,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>GawkViewController.m</string>
+										<string>CameraViewController.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -1013,8 +1054,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>E292B19412F6484800CDC5CC</string>
-				<string>E292B19512F6484800CDC5CC</string>
+				<string>E200725612F9E87D006CAFBA</string>
+				<string>E200725712F9E87D006CAFBA</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
