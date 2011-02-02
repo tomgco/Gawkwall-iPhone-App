@@ -5,7 +5,7 @@
 //  Created by Tom Gallacher on 07/12/2010.
 //  Copyright 2010 Clock Ltd. All rights reserved.
 //
-
+#if !TARGET_IPHONE_SIMULATOR
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -54,3 +54,4 @@
 + (AVCaptureConnection *)connectionWithMediaType:(NSString *)mediaType fromConnections:(NSArray *)connections;
 
 @end
+#endif

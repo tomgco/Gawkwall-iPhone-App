@@ -5,15 +5,12 @@
 //  Created by Tom Gallacher on 07/12/2010.
 //  Copyright 2010 Clock Ltd. All rights reserved.
 //
-
+#if !TARGET_IPHONE_SIMULATOR
 #import "VideoCaptureManager.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "CameraViewController.h"
 
-
-@interface VideoCaptureManager (AVCaptureFileOutputRecordingDelegate) <AVCaptureFileOutputRecordingDelegate>
-@end
 
 @interface VideoCaptureManager ()
 
@@ -309,3 +306,4 @@
 }
 
 @end
+#endif

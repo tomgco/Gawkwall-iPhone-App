@@ -21,7 +21,7 @@
 @synthesize videoMaximumDuration;
 @synthesize videoQuality;
 @synthesize responseArea;
-@synthesize wallId, linkedUrl, httpRequest;
+@synthesize wallId, linkedUrl, httpRequest, gawkOutput, failedUploadView;
 
 - (IBAction)getVideo {
 	CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
@@ -45,43 +45,35 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void) viewDidLoad {
-	if (linkedUrl == nil) {
-		wallId.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultWallId"];
-	} else {
-		[self handleOpenURL: linkedUrl];
-	}
-	[linkedUrl release];
-}
-
-- (void)dealloc {
-	[self.gawkNow release];
-	[httpRequest setDelegate:nil];
-	[httpRequest setUploadProgressDelegate:nil];
-	[httpRequest cancel];
-	[httpRequest release];
-	[responseArea release];
-    [super dealloc];
-}
-
 -(void)cameraViewControllerDidCancel {
 	
 }
 
 -(void)cameraViewControllerFinishedRecording:(NSString *)outputFileURL {
+	[self uploadGawkVideo:outputFileURL];
+}
+
+#pragma mark Video Upload
+
+- (void)uploadGawkVideo:(NSString *)fileLocation {
+	gawkOutput =  [NSURL URLWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://staging.gawkwall.com/api/?Action=MobileUpload"]];
 	[httpRequest setPostValue:wallId.text forKey:@"WallId"];
 	[httpRequest setPostValue:@"iphone" forKey:@"SourceDevice"];
 	[httpRequest setPostValue:@"true" forKey:@"Debug"];
 	[httpRequest setPostValue:@"true" forKey:@"photo"];
-	[httpRequest setFile:outputFileURL forKey:@"photo"];
+	[httpRequest setFile:fileLocation forKey:@"photo"];
 	[httpRequest setTimeOutSeconds:20];
 	[httpRequest setUploadProgressDelegate:progressIndicator];	
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(uploadFailed:)];
-	[httpRequest setDidFinishSelector:@selector(uploadFinished:)];
+	//TODO: Move to correct selector
+	//[httpRequest setDidFinishSelector:@selector(uploadFinished:)];
+	//Testing Failed upload.
+	[httpRequest setDidFinishSelector:@selector(uploadFailed:)];
 	[httpRequest startAsynchronous];
 }
+
 	//After File has been sent to server
 - (void)uploadFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
@@ -94,6 +86,51 @@
 - (void)uploadFailed:(ASIHTTPRequest *)request {
 	NSError *error = [request error];
 	[responseArea setText:[error localizedDescription]];
+	[self showFailedUpload];
+}
+
+- (void)showFailedUpload {
+	failedUploadView.hidden = NO;
+	[UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.5];
+  [UIView setAnimationCurve: UIViewAnimationCurveEaseOut];
+  [UIView setAnimationBeginsFromCurrentState:YES];
+	
+  // The transform matrix
+  CGAffineTransform transform = CGAffineTransformMakeTranslation(0.0f, 70.0f);
+  failedUploadView.transform = transform;
+	
+  // Commit the changes
+  [UIView commitAnimations];
+}
+
+#pragma mark Default
+
+- (void) viewDidLoad {
+	if (linkedUrl == nil) {
+		wallId.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultWallId"];
+	} else {
+		[self handleOpenURL: linkedUrl];
+	}
+	[linkedUrl release];
+	//Set Failed Upload view behind UINavigation
+	CGPoint cord = [failedUploadView center];
+	cord.y = 0.0f;
+	[failedUploadView setCenter:cord];
+}
+
+- (void)dealloc {
+	[failedUploadView release];
+	gawkOutput = nil;
+	[gawkOutput release];
+	[httpRequest setDelegate:nil];
+	[httpRequest setUploadProgressDelegate:nil];
+	[httpRequest cancel];
+	[httpRequest release];
+	[responseArea release];
+	[super dealloc];
 }
 
 @end
+
+

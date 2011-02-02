@@ -17,23 +17,29 @@
 	IBOutlet UITextView *responseArea;
 	IBOutlet UITextField *wallId;
 	IBOutlet UIProgressView *progressIndicator;
+	IBOutlet UIView *failedUploadView;
 	UIImagePickerController *gawkNow;
 	NSTimeInterval videoMaximumDuration;
 	UIImagePickerControllerQualityType videoQuality;
 	NSURL	*linkedUrl;
+	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
 
 }
 
 - (IBAction)getVideo;
 - (void)handleOpenURL:(NSURL *)url;
+- (void)uploadGawkVideo:(NSString *)fileLocation;
+- (void)showFailedUpload;
 
 @property (nonatomic, retain) UIImagePickerController *gawkNow;
 @property(nonatomic) NSTimeInterval videoMaximumDuration;
 @property(nonatomic) UIImagePickerControllerQualityType videoQuality;
 @property(nonatomic, retain) UITextView *responseArea;
 @property(nonatomic, retain) IBOutlet UITextField *wallId;
+@property(nonatomic, retain) IBOutlet UIView *failedUploadView;
 @property(nonatomic, retain) NSURL *linkedUrl;
+@property(nonatomic, retain) NSURL *gawkOutput;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @end
 

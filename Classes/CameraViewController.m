@@ -11,8 +11,10 @@
 #import "VideoCaptureManager.h"
 #import <AVFoundation/AVFoundation.h>
 
+#if !TARGET_IPHONE_SIMULATOR
 @interface CameraViewController (VideoCaptureManagerDelegate) <VideoCaptureManagerDelegate>
 @end
+#endif
 
 @implementation CameraViewController
 
@@ -41,9 +43,9 @@
 }
 
 -(void)viewDidLoad {
+#if !TARGET_IPHONE_SIMULATOR
 	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 	NSError *error;
-	
 	VideoCaptureManager *captureManager = [[VideoCaptureManager alloc] init];
 	if ([captureManager setupSessionWithPreset:AVCaptureSessionPresetLow error:&error]) {
 		[self setCaptureManager:captureManager];
@@ -89,7 +91,7 @@
 	}
 	
 	[captureManager release];
-	
+#endif
 	[super viewDidLoad];
 }
 
