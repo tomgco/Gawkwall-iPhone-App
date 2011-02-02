@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200732912FA0CFF006CAFBA</string>
+						<string>E200737212FA11F0006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E200723312F8DA99006CAFBA</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200732A12FA0CFF006CAFBA</string>
+						<string>E200737312FA11F0006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E20071ED12F8D7D6006CAFBA</string>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200732B12FA0CFF006CAFBA</string>
+						<string>E200737412FA11F0006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92B12F8CF0F002B50C2</string>
@@ -336,7 +336,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E200732C12FA0CFF006CAFBA</string>
+						<string>E200737512FA11F0006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92C12F8CF0F002B50C2</string>
@@ -478,6 +478,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -495,7 +497,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E200732812FA0CFF006CAFBA</string>
+										<string>E200737112FA11F0006CAFBA</string>
 										<key>history</key>
 										<array>
 											<string>E2BA17E712A6F3E700E78BD1</string>
@@ -545,8 +547,8 @@
 											<string>E20072A412F9F513006CAFBA</string>
 											<string>E20072C812F9FE5B006CAFBA</string>
 											<string>E20072C912F9FE5B006CAFBA</string>
-											<string>E20072CA12F9FE5B006CAFBA</string>
-											<string>E20072CB12F9FE5B006CAFBA</string>
+											<string>E200735812FA1026006CAFBA</string>
+											<string>E200735912FA1026006CAFBA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -568,8 +570,6 @@
 							<string>570pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -755,8 +755,8 @@
 		<string>E20071EB12F8D7D6006CAFBA</string>
 		<string>E2BA178512A6E8AC00E78BD1</string>
 		<string>E200725012F9E87D006CAFBA</string>
-		<string>/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>59 111 1680 947 0 0 1920 1058 </string>
