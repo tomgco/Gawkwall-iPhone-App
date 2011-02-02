@@ -107,7 +107,7 @@
 	failedUploadView.hidden = NO;
 	if (errorMessage == nil)
 			errorMessage = @"Unknown Error Occured";
-
+	
 	failedUploadMessage.text = errorMessage;
 	[self doSlideAnimation:failedUploadView duration:0.5 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
 }

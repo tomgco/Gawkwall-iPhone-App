@@ -47,10 +47,10 @@
 						<int key="NSvFlags">274</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUISearchBar" id="204567018">
+							<object class="IBUISearchBar" id="304127091">
 								<reference key="NSNextResponder" ref="325197676"/>
 								<int key="NSvFlags">290</int>
-								<string key="NSFrameSize">{320, 88}</string>
+								<string key="NSFrameSize">{320, 44}</string>
 								<reference key="NSSuperview" ref="325197676"/>
 								<int key="IBUIContentMode">3</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -62,7 +62,6 @@
 									<string>Gawk Wall's</string>
 									<string>Friends</string>
 								</object>
-								<bool key="IBShowsScopeBar">YES</bool>
 							</object>
 						</object>
 						<string key="NSFrameSize">{320, 411}</string>
@@ -80,7 +79,7 @@
 						<float key="IBUIRowHeight">44</float>
 						<float key="IBUISectionHeaderHeight">22</float>
 						<float key="IBUISectionFooterHeight">22</float>
-						<reference key="IBUITableHeaderView" ref="204567018"/>
+						<reference key="IBUITableHeaderView" ref="304127091"/>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 411}</string>
@@ -111,7 +110,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">searchBar</string>
 						<reference key="source" ref="898129903"/>
-						<reference key="destination" ref="204567018"/>
+						<reference key="destination" ref="304127091"/>
 					</object>
 					<int key="connectionID">36</int>
 				</object>
@@ -158,7 +157,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="204567018"/>
+						<reference key="source" ref="304127091"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">42</int>
@@ -198,13 +197,13 @@
 						<reference key="object" ref="325197676"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="204567018"/>
+							<reference ref="304127091"/>
 						</object>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">34</int>
-						<reference key="object" ref="204567018"/>
+						<reference key="object" ref="304127091"/>
 						<reference key="parent" ref="325197676"/>
 					</object>
 					<object class="IBObjectRecord">
