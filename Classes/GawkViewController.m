@@ -13,7 +13,6 @@
 @interface GawkViewController ()
 - (void)uploadFailed:(ASIHTTPRequest *)request;
 - (void)uploadFinished:(ASIHTTPRequest *)request;
-- (void)uploadStarted;
 @end
 
 @implementation GawkViewController
@@ -82,6 +81,12 @@
 #pragma mark Video Upload
 
 - (void)uploadGawkVideo:(NSString *)fileLocation {
+	activityView.hidden = NO;
+	[self toggleActivity];
+	activityTitle.text = @"Uploading Gawk...";
+	activityMessage.text = @"";
+	[self doSlideAnimation:activityView duration:0.2 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
+	
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://staging.gawkwall.com/api/?Action=MobileUpload"]];
@@ -95,20 +100,10 @@
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(uploadFailed:)];
 	//TODO: Move to correct selector
-	//[httpRequest setDidFinishSelector:@selector(uploadFinished:)];
+	[httpRequest setDidFinishSelector:@selector(uploadFinished:)];
 	//Testing Failed upload.
-	[httpRequest setDidFinishSelector:@selector(uploadFailed:)];
-	[httpRequest setDidStartSelector:@selector(uploadStarted)];
+	//[httpRequest setDidFinishSelector:@selector(uploadFailed:)];
 	[httpRequest startAsynchronous];
-}
-
-	//When the upload has started
-- (void)uploadStarted {
-	activityView.hidden = NO;
-	[self toggleActivity];
-	activityTitle.text = @"Sending Data.";
-	activityMessage.text = @"";
-	[self doSlideAnimation:activityView duration:0.5 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
 }
 
 	//After File has been sent to server
@@ -123,7 +118,6 @@
 - (void)uploadFailed:(ASIHTTPRequest *)request {
 	NSError *error = [request error];
 	[self showFailedUpload:[error localizedDescription]];
-	[gawkOutput release];
 }
 
 - (void)showFailedUpload:(NSString *)errorMessage {
