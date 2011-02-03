@@ -123,9 +123,9 @@
 
 
 - (void)dealloc {
-    [tabBarController release];
+  [tabBarController release];
 	[cameraViewController release];
-    [window release];
+	[window release];
     [super dealloc];
 }
 

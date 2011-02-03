@@ -33,6 +33,7 @@
 	[camera setDelegate:self];
 	[wallId resignFirstResponder];
 	[self presentModalViewController: camera animated:YES];
+	[camera release];
 }
 
 - (IBAction)resubmitGawk {
