@@ -39,6 +39,7 @@
 - (IBAction)resubmitGawk;
 
 - (void)toggleActivity;
+- (void)hideActivityView;
 - (void)handleOpenURL:(NSURL *)url;
 - (void)uploadGawkVideo:(NSString *)fileLocation;
 - (void)showFailedUpload:(NSString *)error;

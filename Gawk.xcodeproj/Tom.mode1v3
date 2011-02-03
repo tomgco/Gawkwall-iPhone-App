@@ -202,6 +202,46 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>E200740712FA2A33006CAFBA</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CameraViewController.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>E200740812FA2A33006CAFBA</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CameraViewController.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>E200740A12FA2A33006CAFBA</string>
+						<key>history</key>
+						<array>
+							<string>E200740912FA2A33006CAFBA</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {905, 687}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>84 262 905 728 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>E26BE8B512F8BB93002B50C2</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>GawkViewController.m</string>
@@ -216,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E20073EC12FA2606006CAFBA</string>
+						<string>E200740B12FA2A33006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92B12F8CF0F002B50C2</string>
@@ -256,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E20073ED12FA2606006CAFBA</string>
+						<string>E200740C12FA2A33006CAFBA</string>
 						<key>history</key>
 						<array>
 							<string>E26BE92C12F8CF0F002B50C2</string>
@@ -415,7 +455,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E20073EB12FA2606006CAFBA</string>
+										<string>E200740612FA2A33006CAFBA</string>
 										<key>history</key>
 										<array>
 											<string>E2BA17E712A6F3E700E78BD1</string>
@@ -665,16 +705,17 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E20073EE12FA2606006CAFBA</string>
+		<string>E200740D12FA2A33006CAFBA</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>E200722E12F8DA52006CAFBA</string>
 		<string>E200720812F8D8A7006CAFBA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E26BE8B812F8BB93002B50C2</string>
 		<string>E26BE8B512F8BB93002B50C2</string>
 		<string>E2BA178512A6E8AC00E78BD1</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>E200740712FA2A33006CAFBA</string>
 		<string>/Users/Tom/Dropbox/Objective-C Progs/Gawk/Gawk.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>59 111 1680 947 0 0 1920 1058 </string>
@@ -986,7 +1027,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
