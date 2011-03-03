@@ -10,12 +10,15 @@
 #import "GawkViewController.h"
 #import "VideoCaptureManager.h"
 #import "CameraViewController.h"
+#import "LoginViewController.h"
+#import "FBConnect.h"
 
 @implementation GawkAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
 @synthesize cameraViewController;
+@synthesize loginView;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -35,8 +38,25 @@
 		// Add the view controller's view to the window and display.
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
-
+	[self showLoginView:YES];
     return YES;
+}
+
+-(void)showLoginView:(BOOL)animated {
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+	if(!loginView) {
+		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+		loginView.view.frame = [UIScreen mainScreen].applicationFrame;
+	}
+	if(animated) {
+		[UIView beginAnimations:nil context:nil];
+		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.window cache:YES];
+		[UIView setAnimationDuration:0.4];
+	}
+	[[self.window subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+	[self.window addSubview:loginView.view];
+	if(animated)
+		[UIView commitAnimations];
 }
 
 
@@ -49,7 +69,6 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url 
 {
-
 	GawkViewController *gawkController = (GawkViewController *) [tabBarController.viewControllers objectAtIndex:0];
 	if (!url) {
 		return NO;
