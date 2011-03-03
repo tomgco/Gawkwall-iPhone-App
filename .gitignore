@@ -3,3 +3,6 @@
 build/
 .svn/
 .project
+Gawk.xcodeproj/project.xcworkspace/
+Gawk.xcodeproj/xcuserdata/
+
