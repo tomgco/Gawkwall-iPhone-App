@@ -9,6 +9,11 @@
 #import "LoginViewController.h"
 #import "Constant.h"
 
+@interface LoginViewController ()
+- (void)uploadFailed:(ASIHTTPRequest *)request;
+- (void)uploadFinished:(ASIHTTPRequest *)request;
+- (void)uploadStarted;
+@end
 
 @implementation LoginViewController
 
@@ -28,6 +33,24 @@
 	[httpRequest startAsynchronous];
 }
 
+//When the upload has started
+- (void)uploadStarted {
+	
+}
+
+//After File has been sent to server
+- (void)uploadFinished:(ASIHTTPRequest *)request {
+	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
+	NSLog(@"%@", responseData);
+}
+
+//if connection failed
+//TODO: Store video and wait for device to get a connection
+- (void)uploadFailed:(ASIHTTPRequest *)request {
+	NSError *error = [request error];
+	NSLog(@"%@", [error localizedDescription]);
+}
+
 -(IBAction)onRegisteredUserLogin {
 	NSLog(@"Login!");
 }
@@ -35,6 +58,7 @@
 -(void)viewWillAppear:(BOOL)animated {
 	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk-user"];
 }
+
 -(IBAction)registerButtonPressed:(id)sender {
 	registerUserName.text = @"";
 	registerUserName.text = @"";
@@ -62,7 +86,6 @@
 		registerEmail.enabled = NO;
 		registerUserName.enabled = NO;
 		registerUserPassword.enabled = NO;
-		[self performSelector:@selector(_registerUser) withObject:nil afterDelay:0.1];
 	} else {
 		//throw missing items error
 	}	
@@ -79,7 +102,7 @@
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 		emailAddress.enabled = NO;
 		password.enabled = NO;
-		[self performSelector:@selector(_authenticateUser) withObject:nil afterDelay:0.1];
+		[self loginRegisteredUser:emailAddress :password];
 	} else {
 		//Throw Error message
 	}

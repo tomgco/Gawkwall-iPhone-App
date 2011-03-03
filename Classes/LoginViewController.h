@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "ASIFormDataRequest.h"
-
+#import <Foundation/Foundation.h>
 
 @class ASIFormDataRequest;
+
 @interface LoginViewController : UIViewController<UITextFieldDelegate> {
 	ASIFormDataRequest *httpRequest;
 	IBOutlet UITextField *emailAddress;
 	IBOutlet UITextField *password;
-	
 	IBOutlet UITextField *registerUserName;
 	IBOutlet UITextField *registerUserPassword;
 	IBOutlet UITextField *registerEmail;
