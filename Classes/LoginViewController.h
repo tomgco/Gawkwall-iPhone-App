@@ -11,7 +11,7 @@
 
 
 @class ASIFormDataRequest;
-@interface LoginViewController : UIViewController {
+@interface LoginViewController : UIViewController<UITextFieldDelegate> {
 	ASIFormDataRequest *httpRequest;
 	IBOutlet UITextField *emailAddress;
 	IBOutlet UITextField *password;
@@ -33,4 +33,9 @@
 
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 
+@end
+
+@interface LoginViewBackground : UIImageView {
+	IBOutlet LoginViewController *delegate;
+}
 @end
