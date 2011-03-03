@@ -46,14 +46,13 @@
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
 	if(!loginView) {
 		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-		loginView.view.frame = [UIScreen mainScreen].applicationFrame;
+		//loginView.view.frame = [UIScreen mainScreen].applicationFrame;
 	}
 	if(animated) {
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.window cache:YES];
 		[UIView setAnimationDuration:0.4];
 	}
-	[[self.window subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 	[self.window addSubview:loginView.view];
 	if(animated)
 		[UIView commitAnimations];

@@ -25,6 +25,7 @@
 	[httpRequest setPostValue:email forKey:@"EmailAddress"];
 	[httpRequest setPostValue:gawkPassword forKey:@"Password"];
 	[httpRequest setPostValue:@"Member.Login" forKey:@"Action"];
+	
 	[httpRequest setTimeOutSeconds:20];	
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(uploadFailed:)];
@@ -42,6 +43,8 @@
 - (void)uploadFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	NSLog(@"%@", responseData);
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	[self.view removeFromSuperview];
 }
 
 //if connection failed
@@ -164,8 +167,11 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
+	[httpRequest setDelegate:nil];
+	[httpRequest setUploadProgressDelegate:nil];
+	[httpRequest cancel];
+	[httpRequest release];
     [super dealloc];
 }
 
