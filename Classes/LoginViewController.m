@@ -24,7 +24,7 @@
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 	[httpRequest setPostValue:email forKey:@"EmailAddress"];
 	[httpRequest setPostValue:gawkPassword forKey:@"Password"];
-	[httpRequest setPostValue:@"Action" forKey:@"Member.Login"];
+	[httpRequest setPostValue:@"Member.Login" forKey:@"Action"];
 	[httpRequest setTimeOutSeconds:20];	
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(uploadFailed:)];
