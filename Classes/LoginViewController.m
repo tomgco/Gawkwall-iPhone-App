@@ -148,3 +148,10 @@
 
 
 @end
+
+@implementation LoginViewBackground
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	[delegate dismissKeyboard];
+}
+
+@end
