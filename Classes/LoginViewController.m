@@ -102,7 +102,7 @@
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 		emailAddress.enabled = NO;
 		password.enabled = NO;
-		[self loginRegisteredUser:emailAddress :password];
+		[self loginRegisteredUser:emailAddress.text :password.text];
 	} else {
 		//Throw Error message
 	}
