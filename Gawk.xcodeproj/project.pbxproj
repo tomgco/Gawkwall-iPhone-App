@@ -21,8 +21,6 @@
 		E200734712FA0DA1006CAFBA /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E200734612FA0DA1006CAFBA /* texture.png */; };
 		E20073C312FA1DD0006CAFBA /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = E20073C212FA1DD0006CAFBA /* TODO */; };
 		E227429412A88A280075E726 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E227429312A88A280075E726 /* icon.png */; };
-		E22C4A921320489900C2B7BB /* fbicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E22C4A911320489900C2B7BB /* fbicon.png */; };
-		E22C4A9A13204C3C00C2B7BB /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E22C4A9913204C3C00C2B7BB /* FBConnect.bundle */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
 		E27157321316F1E1002BD0A2 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271571A1316F1E1002BD0A2 /* FBDialog.bundle */; };
@@ -43,6 +41,7 @@
 		E27157DA1317068B002BD0A2 /* rounded_table_cell_top.png in Resources */ = {isa = PBXBuildFile; fileRef = E27157D51317068B002BD0A2 /* rounded_table_cell_top.png */; };
 		E27157DB1317068B002BD0A2 /* rounded_table_cell_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27157D61317068B002BD0A2 /* rounded_table_cell_top@2x.png */; };
 		E27157DC1317068B002BD0A2 /* rounded_table_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = E27157D71317068B002BD0A2 /* rounded_table_cell.png */; };
+		E290AABC1320543D00F58A27 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E290AABB1320543D00F58A27 /* FBConnect.bundle */; };
 		E2A9F98C12AEC5D4002C9D47 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */; };
 		E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */; };
 		E2A9FA4E12AECB7E002C9D47 /* VideoCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */; };
@@ -87,8 +86,6 @@
 		E200734612FA0DA1006CAFBA /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		E20073C212FA1DD0006CAFBA /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		E227429312A88A280075E726 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		E22C4A911320489900C2B7BB /* fbicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbicon.png; path = Classes/FBDialog.bundle/images/fbicon.png; sourceTree = "<group>"; };
-		E22C4A9913204C3C00C2B7BB /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBConnect.bundle; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		E26BE88812F8AE2E002B50C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -123,6 +120,7 @@
 		E27157D51317068B002BD0A2 /* rounded_table_cell_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rounded_table_cell_top.png; sourceTree = "<group>"; };
 		E27157D61317068B002BD0A2 /* rounded_table_cell_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rounded_table_cell_top@2x.png"; sourceTree = "<group>"; };
 		E27157D71317068B002BD0A2 /* rounded_table_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rounded_table_cell.png; sourceTree = "<group>"; };
+		E290AABB1320543D00F58A27 /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBConnect.bundle; sourceTree = "<group>"; };
 		E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		E2A9F98A12AEC5D4002C9D47 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Classes/CameraViewController.xib; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 		E200728F12F9F1FA006CAFBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E22C4A911320489900C2B7BB /* fbicon.png */,
 				E27157D31317068B002BD0A2 /* rounded_table_cell_bottom.png */,
 				E27157D41317068B002BD0A2 /* rounded_table_cell_bottom@2x.png */,
 				E27157D51317068B002BD0A2 /* rounded_table_cell_top.png */,
@@ -342,7 +339,7 @@
 		E27157191316F1E1002BD0A2 /* FBConnect */ = {
 			isa = PBXGroup;
 			children = (
-				E22C4A9913204C3C00C2B7BB /* FBConnect.bundle */,
+				E290AABB1320543D00F58A27 /* FBConnect.bundle */,
 				E271571A1316F1E1002BD0A2 /* FBDialog.bundle */,
 				E271571B1316F1E1002BD0A2 /* JSON */,
 				E27157291316F1E1002BD0A2 /* FBConnect.h */,
@@ -480,8 +477,7 @@
 				E27157DA1317068B002BD0A2 /* rounded_table_cell_top.png in Resources */,
 				E27157DB1317068B002BD0A2 /* rounded_table_cell_top@2x.png in Resources */,
 				E27157DC1317068B002BD0A2 /* rounded_table_cell.png in Resources */,
-				E22C4A921320489900C2B7BB /* fbicon.png in Resources */,
-				E22C4A9A13204C3C00C2B7BB /* FBConnect.bundle in Resources */,
+				E290AABC1320543D00F58A27 /* FBConnect.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
