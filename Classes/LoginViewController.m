@@ -17,7 +17,7 @@
 
 @implementation LoginViewController
 
-@synthesize httpRequest;
+@synthesize httpRequest, facebook;
 
 - (void)loginRegisteredUser:(NSString *)email: (NSString *)gawkPassword {
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
@@ -100,6 +100,7 @@
 	[registrationView removeFromSuperview];
 	[UIView commitAnimations];
 }
+
 -(IBAction)loginButtonPressed:(id)sender {
 	if([emailAddress.text length] && [password.text length]) {
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -110,6 +111,48 @@
 		//Throw Error message
 	}
 }
+
+-(IBAction)fbLoginButtonPressed:(id)sender {
+	// on login, use the stored access token and see if it still works
+	facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
+	facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
+	
+	// only authorize if the access token isn't valid
+	// if it *is* valid, no need to authenticate. just move on
+	if (![facebook isSessionValid]) {
+		NSArray* permissions =  [[NSArray arrayWithObjects:
+															@"email", @"offline_access", nil] retain];
+		[facebook authorize:permissions delegate:self];
+		[permissions release];
+	} else {
+		NSLog(@"Restored Session");
+	}
+}
+
+/**
+ * Called when the user has logged in successfully.
+ */
+- (void)fbDidLogin {
+	// store the access token and expiration date to the user defaults
+	[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:FB_ACCESS_TOKEN_KEY];
+	[[NSUserDefaults standardUserDefaults] setObject:facebook.expirationDate forKey:FB_EXPIRATION_DATE_KEY];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+/**
+ * Called when the user canceled the authorization dialog.
+ */
+-(void)fbDidNotLogin:(BOOL)cancelled {
+  NSLog(@"did not login");
+}
+
+/**
+ * Called when the request logout has succeeded.
+ */
+- (void)fbDidLogout {
+  NSLog(@"Dis log out");
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	if(textField == emailAddress && [password.text length] > 0)
 		[password becomeFirstResponder];
@@ -139,12 +182,12 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_ID];
     [super viewDidLoad];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -172,6 +215,7 @@
 	[httpRequest setUploadProgressDelegate:nil];
 	[httpRequest cancel];
 	[httpRequest release];
+	[facebook release];
     [super dealloc];
 }
 

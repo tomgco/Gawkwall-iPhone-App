@@ -12,6 +12,7 @@
 #import "CameraViewController.h"
 #import "LoginViewController.h"
 #import "FBConnect.h"
+#import "Constant.h"
 
 @implementation GawkAppDelegate
 
@@ -68,17 +69,24 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url 
 {
-	GawkViewController *gawkController = (GawkViewController *) [tabBarController.viewControllers objectAtIndex:0];
 	if (!url) {
 		return NO;
 	}
 	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Gawk!" message:@"Launched from Url" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease];
-	[alert show];
+	if ([[url scheme] isEqualToString:GAWK_FACEBOOK_FB_URL]) {
+		NSLog(@"Loggin");
+		
+		return [[loginView facebook] handleOpenURL:url];
+	} else {
+		GawkViewController *gawkController = (GawkViewController *) [tabBarController.viewControllers objectAtIndex:0];
+		
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Gawk!" message:@"Launched from Url" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease];
+		[alert show];
+		
+		[gawkController handleOpenURL:url];
 	
-	[gawkController handleOpenURL:url];
-	
-	return YES;
+		return YES;
+	}
 }
 
 
