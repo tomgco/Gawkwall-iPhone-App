@@ -11,9 +11,6 @@
 #import <Foundation/Foundation.h>
 #import "FBConnect.h"
 
-#define FB_ACCESS_TOKEN_KEY @"fb_access_token"
-#define FB_EXPIRATION_DATE_KEY @"fb_expiration_date"
-
 @class ASIFormDataRequest;
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate, FBRequestDelegate,
@@ -37,6 +34,8 @@ FBDialogDelegate, FBSessionDelegate> {
 -(IBAction)cancelButtonPressed:(id)sender;
 -(BOOL)textFieldShouldReturn:(UITextField *)textField;
 -(void)dismissKeyboard;
+-(NSString*)generateSignature;
+-(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString*)facebookId;
 
 - (void)loginRegisteredUser:(NSString *)userName: (NSString *)password;
 

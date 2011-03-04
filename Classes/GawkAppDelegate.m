@@ -47,8 +47,8 @@
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
 	if(!loginView) {
 		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-		//loginView.view.frame = [UIScreen mainScreen].applicationFrame;
 	}
+	
 	if(animated) {
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.window cache:YES];
@@ -150,6 +150,7 @@
 
 - (void)dealloc {
   [tabBarController release];
+	[loginView release];
 	[cameraViewController release];
 	[window release];
     [super dealloc];
