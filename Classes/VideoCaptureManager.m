@@ -204,6 +204,10 @@
 	return nil;
 }
 
+-(void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error {
+	
+}
+
 @end
 
 @implementation VideoCaptureManager (Internal)

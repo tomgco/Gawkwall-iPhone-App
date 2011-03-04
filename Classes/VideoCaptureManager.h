@@ -21,7 +21,7 @@
 - (void) deviceCountChanged;
 @end
 
-@interface VideoCaptureManager : NSObject {
+@interface VideoCaptureManager : NSObject <AVCaptureFileOutputRecordingDelegate> {
 	AVCaptureSession *_session;
 	AVCaptureDeviceInput	*_videoInput;
 	AVCaptureMovieFileOutput *_movieFileOutput;
