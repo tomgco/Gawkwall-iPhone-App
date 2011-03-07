@@ -20,6 +20,7 @@
 		E200729212F9F219006CAFBA /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E200729112F9F219006CAFBA /* refresh.png */; };
 		E200734712FA0DA1006CAFBA /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E200734612FA0DA1006CAFBA /* texture.png */; };
 		E20073C312FA1DD0006CAFBA /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = E20073C212FA1DD0006CAFBA /* TODO */; };
+		E201F9A31325636200114104 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E201F9A21325636200114104 /* LoginModel.m */; };
 		E227429412A88A280075E726 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E227429312A88A280075E726 /* icon.png */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
@@ -85,6 +86,8 @@
 		E200729112F9F219006CAFBA /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		E200734612FA0DA1006CAFBA /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		E20073C212FA1DD0006CAFBA /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		E201F9A11325636200114104 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		E201F9A21325636200114104 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		E227429312A88A280075E726 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E201F9A01325633E00114104 /* Models */,
 				E27157191316F1E1002BD0A2 /* FBConnect */,
 				E26BE87F12F8AB6E002B50C2 /* Headers */,
 				E26BE87812F8AA43002B50C2 /* Controllers */,
@@ -282,6 +286,15 @@
 				E200729112F9F219006CAFBA /* refresh.png */,
 			);
 			name = Controls;
+			sourceTree = "<group>";
+		};
+		E201F9A01325633E00114104 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E201F9A11325636200114104 /* LoginModel.h */,
+				E201F9A21325636200114104 /* LoginModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		E26BE87612F8AA1B002B50C2 /* VideoControl */ = {
@@ -514,6 +527,7 @@
 				E271573B1316F1E1002BD0A2 /* FBLoginDialog.m in Sources */,
 				E271573C1316F1E1002BD0A2 /* FBDialog.m in Sources */,
 				E271576F1316FE39002BD0A2 /* LoginViewController.m in Sources */,
+				E201F9A31325636200114104 /* LoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
