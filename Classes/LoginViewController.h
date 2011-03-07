@@ -7,23 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASIFormDataRequest.h"
 #import <Foundation/Foundation.h>
-#import "FBConnect.h"
+#import "LoginModel.h"
 
 @class ASIFormDataRequest;
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate, FBRequestDelegate,
-FBDialogDelegate, FBSessionDelegate> {
-	ASIFormDataRequest *httpRequest;
-	Facebook *facebook;
-	
+@interface LoginViewController : UIViewController<UITextFieldDelegate> {	
 	IBOutlet UITextField *emailAddress;
 	IBOutlet UITextField *password;
 	IBOutlet UITextField *registerUserName;
 	IBOutlet UITextField *registerUserPassword;
 	IBOutlet UITextField *registerEmail;
 	IBOutlet UIView *registrationView;
+	
+	LoginModel *loginModel;
 
 }
 
@@ -34,13 +31,8 @@ FBDialogDelegate, FBSessionDelegate> {
 -(IBAction)cancelButtonPressed:(id)sender;
 -(BOOL)textFieldShouldReturn:(UITextField *)textField;
 -(void)dismissKeyboard;
--(NSString*)generateSignature;
--(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString*)facebookId;
 
-- (void)loginRegisteredUser:(NSString *)userName: (NSString *)password;
-
-@property (retain, nonatomic) ASIFormDataRequest *httpRequest;
-@property (nonatomic, retain) Facebook *facebook;
+@property (nonatomic, retain) LoginModel *loginModel;
 
 @end
 

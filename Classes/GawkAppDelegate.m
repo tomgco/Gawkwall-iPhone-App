@@ -19,7 +19,7 @@
 @synthesize window;
 @synthesize tabBarController;
 @synthesize cameraViewController;
-@synthesize loginView;
+@synthesize loginView, loginModel;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -49,6 +49,10 @@
 		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 	}
 	
+	if(!loginModel) {
+		loginModel = [[LoginModel alloc] init];
+	}
+	
 	if(animated) {
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.window cache:YES];
@@ -76,7 +80,7 @@
 	if ([[url scheme] isEqualToString:GAWK_FACEBOOK_FB_URL]) {
 		NSLog(@"Loggin");
 		
-		return [[loginView facebook] handleOpenURL:url];
+		return [[loginModel facebook] handleOpenURL:url];
 	} else {
 		GawkViewController *gawkController = (GawkViewController *) [tabBarController.viewControllers objectAtIndex:0];
 		
@@ -151,6 +155,7 @@
 - (void)dealloc {
   [tabBarController release];
 	[loginView release];
+	[loginModel release];
 	[cameraViewController release];
 	[window release];
     [super dealloc];
