@@ -9,6 +9,7 @@
 #import "GawkViewController.h"
 #import "CameraViewController.h"
 #import "ASIFormDataRequest.h"
+#import "Constant.h"
 
 @interface GawkViewController ()
 - (void)uploadFailed:(ASIHTTPRequest *)request;
@@ -94,7 +95,8 @@
 - (void)uploadGawkVideo:(NSString *)fileLocation {
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
-	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://staging.gawkwall.com/api/?Action=MobileUpload"]];
+	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
+	[httpRequest setPostValue:@"MobileUpload" forKey:@"Action"];
 	[httpRequest setPostValue:wallId.text forKey:@"WallId"];
 	[httpRequest setPostValue:@"iphone" forKey:@"SourceDevice"];
 	[httpRequest setPostValue:@"true" forKey:@"Debug"];

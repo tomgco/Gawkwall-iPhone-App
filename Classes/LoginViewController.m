@@ -43,7 +43,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk-user"];
+	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk_username"];
 }
 
 -(IBAction)registerButtonPressed:(id)sender {
@@ -98,6 +98,10 @@
 
 -(IBAction)fbLoginButtonPressed:(id)sender {	
 	// Is gawk authorised
+}
+
+- (IBAction) dismissModalView {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)dealloc {

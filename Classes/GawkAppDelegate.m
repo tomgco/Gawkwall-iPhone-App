@@ -39,12 +39,12 @@
 		// Add the view controller's view to the window and display.
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
-	[self showLoginView:YES];
+		[self showLoginView:NO];
     return YES;
 }
 
 -(void)showLoginView:(BOOL)animated {
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+	//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
 	if(!loginView) {
 		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 	}
@@ -53,14 +53,7 @@
 		loginModel = [[LoginModel alloc] init];
 	}
 	
-	if(animated) {
-		[UIView beginAnimations:nil context:nil];
-		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.window cache:YES];
-		[UIView setAnimationDuration:0.4];
-	}
-	[self.window addSubview:loginView.view];
-	if(animated)
-		[UIView commitAnimations];
+	[tabBarController presentModalViewController:loginView animated:animated];
 }
 
 
@@ -149,6 +142,10 @@
     /*
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
+}
+
+- (void)logout {
+	[self showLoginView:YES];
 }
 
 
