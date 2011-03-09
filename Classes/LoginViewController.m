@@ -21,6 +21,10 @@
 	return self;
 }
 
+-(void)viewDidLoad {
+	[loginModel setDelegate:self];
+}
+
 #pragma View controls
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -52,7 +56,7 @@
 	registerEmail.text = @"";
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.75];
-	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
+	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
 	[self.view addSubview:registrationView];
 	[UIView commitAnimations];
 }
@@ -74,10 +78,11 @@
 		//throw missing items error
 	}	
 }
+
 -(IBAction)cancelButtonPressed:(id)sender {
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.75];
-	[UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.view cache:YES];
+	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
 	[registrationView removeFromSuperview];
 	[UIView commitAnimations];
 }
@@ -97,15 +102,20 @@
 #pragma Facebook Login
 
 -(IBAction)fbLoginButtonPressed:(id)sender {	
-	// Is gawk authorised
+	[loginModel gawkFBLogin];
 }
 
-- (IBAction) dismissModalView {
+-(void)onGawkLogout {
+	
+}
+
+-(void)onGawkLogin {
+	NSLog(@"onGawkLogin");
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)dealloc {
-	[loginModel dealloc];
+	[loginModel release];
 	[super dealloc];
 }
 

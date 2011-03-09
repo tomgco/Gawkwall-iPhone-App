@@ -7,6 +7,7 @@
 //
 
 #import "LoginModel.h"
+#import "LoginViewController.h"
 #import "Constant.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "JSON.h"
@@ -20,15 +21,14 @@
 @implementation LoginModel
 
 @synthesize httpRequest, facebook;
+@synthesize delegate = _delegate;
 
 -(id)init {
-	facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_APP_ID];
-	facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
-	facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
-	
 	self = [super init];
 	if (self) {
-		// Custom initialization.
+		facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_APP_ID];
+		facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
+		facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
 	}
 	return self;
 }
@@ -75,6 +75,7 @@
 		NSLog(@"%@", responseData);
 		[self loginFailed:request];
 	}
+	[parser release];
 	//	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	//	[self.view removeFromSuperview];
 }
@@ -93,19 +94,22 @@
 	[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:FB_ACCESS_TOKEN_KEY];
 	[[NSUserDefaults standardUserDefaults] setObject:facebook.expirationDate forKey:FB_EXPIRATION_DATE_KEY];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"nom");
+	[self onSuccessfulLogin];
 }
 
 /**
  * Called when the user canceled the authorization dialog.
  */
 -(void)fbDidNotLogin:(BOOL)cancelled {
-  
+  NSLog(@"not nom");
 }
 
 /**
  * Called when the request logout has succeeded.
  */
 - (void)fbDidLogout {
+	NSLog(@"not nom");
 }
 
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString *)facebookId {
@@ -127,16 +131,30 @@
 	return YES;
 }
 
--(BOOL)isValidSession {
+-(void)gawkFBLogin {
 	if (![facebook isSessionValid]) {
 		NSArray* permissions =  [[NSArray arrayWithObjects:
 															@"email", @"offline_access", nil] retain];
 		[facebook authorize:permissions delegate:self];
 		[permissions release];
-	} else {
-		//TODO: Check if gawk session is still working if so then continue otherwise relogin. 
 	}
-	return FALSE;
+	NSLog(@"gawkFBLogin");
+	[self onSuccessfulLogin];
+}
+
+-(void)logout {
+	id delegate = [self delegate];
+	if ([delegate respondsToSelector:@selector(onGawkLogout)]) {
+		[delegate onGawkLogout];
+	}
+}
+
+-(void)onSuccessfulLogin {
+	NSLog(@"gawkonSuccess");
+	id delegate = [self delegate];
+	if ([delegate respondsToSelector:@selector(onGawkLogin)]) {
+		[delegate onGawkLogin];
+	}
 }
 
 -(void)dealloc {
@@ -147,6 +165,5 @@
 	[facebook release];
 	[super dealloc];
 }
-
 
 @end

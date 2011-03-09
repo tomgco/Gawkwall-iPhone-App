@@ -10,18 +10,28 @@
 #import <Foundation/Foundation.h>
 #import "FBConnect.h"
 
+@protocol LoginDelegate
+@required
+-(void)onGawkLogout;
+-(void)onGawkLogin;
+@end
 
 @interface LoginModel : NSObject <UITextFieldDelegate, FBRequestDelegate,
 FBDialogDelegate, FBSessionDelegate> {
 	ASIFormDataRequest *httpRequest;
 	Facebook *facebook;
+	id <LoginDelegate> _delegate;
 }
 
 -(NSString*)generateSignature;
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString*)facebookId;
 -(void)loginRegisteredUser:(NSString *)userName: (NSString *)password;
+-(void)gawkFBLogin;
+-(void)logout;
+-(void)onSuccessfulLogin;
 
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
-@property (nonatomic, retain) Facebook *facebook;
+@property (readonly) Facebook *facebook;
+@property (nonatomic,assign) id <LoginDelegate> delegate;
 
 @end

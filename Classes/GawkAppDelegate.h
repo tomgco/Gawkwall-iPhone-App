@@ -23,7 +23,6 @@
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) IBOutlet CameraViewController *cameraViewController;
 @property (readonly) LoginViewController *loginView;
-@property (readonly) LoginModel *loginModel;
 
 -(void)showLoginView:(BOOL)animated;
 

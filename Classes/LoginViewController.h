@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "LoginModel.h"
+#import "FBConnect.h"
 
 @class ASIFormDataRequest;
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate> {	
+@interface LoginViewController : UIViewController<UITextFieldDelegate, LoginDelegate> {	
 	IBOutlet UITextField *emailAddress;
 	IBOutlet UITextField *password;
 	IBOutlet UITextField *registerUserName;
