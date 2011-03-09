@@ -78,7 +78,6 @@
 						<string key="NSFrame">{{9, 375}, {302, 46}}</string>
 						<reference key="NSSuperview" ref="582693879"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<int key="IBUIContentMode">9</int>
@@ -415,7 +414,6 @@
 						<string key="NSFrame">{{107, 174}, {193, 31}}</string>
 						<reference key="NSSuperview" ref="392033866"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -539,6 +537,14 @@
 						<reference key="destination" ref="392033866"/>
 					</object>
 					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">cancelButtonPressed:</string>
+						<reference key="source" ref="516335168"/>
+						<reference key="destination" ref="975951072"/>
+					</object>
+					<int key="connectionID">67</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -768,7 +774,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">66</int>
+			<int key="maxID">67</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
