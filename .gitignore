@@ -3,6 +3,9 @@
 build/
 .svn/
 .project
-Gawk.xcodeproj/project.xcworkspace/
-Gawk.xcodeproj/xcuserdata/
-
+*xcodeproj/*mode*
+*xcodeproj/*pbxuser
+*xcodeproj/*per*
+*xcodeproj/project.xcworkspace
+*xcodeproj/xcuserdata
+.DS_Store
