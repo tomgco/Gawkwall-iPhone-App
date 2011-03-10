@@ -18,3 +18,5 @@
 
 #define FB_ACCESS_TOKEN_KEY @"fb_access_token"
 #define FB_EXPIRATION_DATE_KEY @"fb_expiration_date"
+
+#define GAWK_FACEBOOK_USER_ID @"fb_user_id"

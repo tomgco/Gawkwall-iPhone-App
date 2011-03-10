@@ -103,6 +103,7 @@
 
 -(IBAction)fbLoginButtonPressed:(id)sender {	
 	[loginModel gawkFBLogin];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 -(void)onGawkLogout {

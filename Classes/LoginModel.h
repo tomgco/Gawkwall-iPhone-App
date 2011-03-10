@@ -23,12 +23,13 @@ FBDialogDelegate, FBSessionDelegate> {
 	id <LoginDelegate> _delegate;
 }
 
--(NSString*)generateSignature;
+-(NSString*)generateSignature:(NSString *)fbUserId;
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString*)facebookId;
 -(void)loginRegisteredUser:(NSString *)userName: (NSString *)password;
 -(void)gawkFBLogin;
 -(void)logout;
 -(void)onSuccessfulLogin;
+-(void)onSuccessfulFacebookLogin;
 
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (readonly) Facebook *facebook;

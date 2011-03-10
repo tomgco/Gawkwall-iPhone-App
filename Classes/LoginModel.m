@@ -34,11 +34,24 @@
 }
 
 //TODO: Make this function work by combining facebookid with hash below and sha256 it
--(NSString*)generateSignature {
-	char input[] = "d20533231c09074a07de1cc9f593c1765bdcf146f7efee55abe61e66a2cda80b";
-	unsigned char result[64];
-	CC_MD5(input, strlen(input), result);
-	return [NSString stringWithUTF8String:(const char *)result];
+-(NSString*)generateSignature:(NSString *)fbUserId {
+	
+	typedef struct
+	{
+    char value[CC_SHA256_DIGEST_LENGTH];
+	} HashValueShaHash;
+		
+	NSString *sig=[[NSString alloc] initWithFormat:@"%@d20533231c09074a07de1cc9f593c1765bdcf146f7efee55abe61e66a2cda80b", fbUserId];
+	unsigned char result[20];
+	CC_SHA256([sig UTF8String], [sig lengthOfBytesUsingEncoding:NSASCIIStringEncoding],result);
+	NSInteger byteLength = sizeof(HashValueShaHash);
+	NSMutableString *stringValue =
+	[NSMutableString stringWithCapacity:byteLength * 2];
+	NSInteger i;
+	for (i = 0; i < byteLength; i++) {
+		[stringValue appendFormat:@"%02x", result[i]];
+	}
+	return stringValue;
 }
 
 - (void)loginRegisteredUser:(NSString *)email: (NSString *)gawkPassword {
@@ -63,21 +76,19 @@
 //After File has been sent to server
 - (void)loginFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
-	
+	NSLog(@"%@", responseData);
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
 		NSDictionary *jsonResponse = [responseData JSONValue];
 		NSLog(@"Dictionary value for \"foo\" is \"%@\"", [jsonResponse objectForKey:@"success"]);
-		[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
+		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
+		//[[NSUserDefaults standardUserDefaults] synchronize];
 	} else {
 		NSLog(@"%@", responseData);
 		[self loginFailed:request];
 	}
 	[parser release];
-	//	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	//	[self.view removeFromSuperview];
 }
 
 //if connection failed
@@ -95,7 +106,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject:facebook.expirationDate forKey:FB_EXPIRATION_DATE_KEY];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"nom");
-	[self onSuccessfulLogin];
+	[self onSuccessfulFacebookLogin];
 }
 
 /**
@@ -113,12 +124,12 @@
 }
 
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString *)facebookId {
-	
+	NSLog(@"%@", [self generateSignature:facebookId]);
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
-	[httpRequest setPostValue:GAWK_FACEBOOK_APP_ID forKey:@"FacebookId"];
+	[httpRequest setPostValue:facebookId forKey:@"FacebookId"];
 	[httpRequest setPostValue:GAWK_API_PUBKEY forKey:@"PublicKey"];
-	[httpRequest setPostValue:[self generateSignature] forKey:@"Signature"];
+	[httpRequest setPostValue:[self generateSignature:facebookId] forKey:@"Signature"];
 	[httpRequest setPostValue:@"Member.Login" forKey:@"Action"];
 	
 	[httpRequest setTimeOutSeconds:20];	
@@ -137,9 +148,10 @@
 															@"email", @"offline_access", nil] retain];
 		[facebook authorize:permissions delegate:self];
 		[permissions release];
+	} else {
+		[self onSuccessfulFacebookLogin];
 	}
 	NSLog(@"gawkFBLogin");
-	[self onSuccessfulLogin];
 }
 
 -(void)logout {
@@ -149,12 +161,26 @@
 	}
 }
 
+-(void)onSuccessfulFacebookLogin {
+	[facebook requestWithGraphPath:@"me" andDelegate:self];
+}
+
 -(void)onSuccessfulLogin {
 	NSLog(@"gawkonSuccess");
 	id delegate = [self delegate];
 	if ([delegate respondsToSelector:@selector(onGawkLogin)]) {
 		[delegate onGawkLogin];
 	}
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result {
+	if ([result isKindOfClass:[NSArray class]]) {
+    result = [result objectAtIndex:0];
+  }
+	[[NSUserDefaults standardUserDefaults] setObject:[result objectForKey:@"email"] forKey:@"gawk_username"];
+	[[NSUserDefaults standardUserDefaults] setObject:[result objectForKey:@"id"] forKey:GAWK_FACEBOOK_USER_ID];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	[self gawkLoginWithAuthenticatedFBUser:[result objectForKey:@"id"]];
 }
 
 -(void)dealloc {
