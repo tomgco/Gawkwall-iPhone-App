@@ -25,6 +25,7 @@
 @property (readonly) LoginViewController *loginView;
 
 -(void)showLoginView:(BOOL)animated;
+-(IBAction)logout;
 
 @end
 

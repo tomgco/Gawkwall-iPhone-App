@@ -37,6 +37,7 @@
 
 - (IBAction)getVideo;
 - (IBAction)resubmitGawk;
+- (IBAction)logoutOfFacebookAndGawk;
 
 - (void)toggleActivity;
 - (void)hideActivityView;

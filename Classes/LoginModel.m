@@ -29,6 +29,7 @@
 		facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_APP_ID];
 		facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
 		facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
+		NSLog(@"%@",facebook.accessToken);
 	}
 	return self;
 }
@@ -89,6 +90,7 @@
 		[self loginFailed:request];
 	}
 	[parser release];
+	[self onSuccessfulLogin];
 }
 
 //if connection failed
@@ -144,6 +146,7 @@
 
 -(void)gawkFBLogin {
 	if (![facebook isSessionValid]) {
+		NSLog(@"Session Not Valid");
 		NSArray* permissions =  [[NSArray arrayWithObjects:
 															@"email", @"offline_access", nil] retain];
 		[facebook authorize:permissions delegate:self];
@@ -152,13 +155,6 @@
 		[self onSuccessfulFacebookLogin];
 	}
 	NSLog(@"gawkFBLogin");
-}
-
--(void)logout {
-	id delegate = [self delegate];
-	if ([delegate respondsToSelector:@selector(onGawkLogout)]) {
-		[delegate onGawkLogout];
-	}
 }
 
 -(void)onSuccessfulFacebookLogin {
@@ -184,10 +180,6 @@
 }
 
 -(void)dealloc {
-	[httpRequest setDelegate:nil];
-	[httpRequest setUploadProgressDelegate:nil];
-	[httpRequest cancel];
-	[httpRequest release];
 	[facebook release];
 	[super dealloc];
 }

@@ -51,7 +51,7 @@
 	
 	[tabBarController presentModalViewController:loginView animated:animated];
 	
-	[loginView release];
+	//[loginView release];
 }
 
 
@@ -141,7 +141,15 @@
      */
 }
 
-- (void)logout {
+-(IBAction)logout{
+	NSLog(@"Logout");
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gawk_username"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:GAWK_FACEBOOK_USER_ID];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_ACCESS_TOKEN_KEY];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_EXPIRATION_DATE_KEY];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	[loginView loginModel].facebook.accessToken = nil;
+	[loginView loginModel].facebook.expirationDate = nil;
 	[self showLoginView:YES];
 }
 

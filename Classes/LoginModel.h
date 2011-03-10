@@ -27,7 +27,6 @@ FBDialogDelegate, FBSessionDelegate> {
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString*)facebookId;
 -(void)loginRegisteredUser:(NSString *)userName: (NSString *)password;
 -(void)gawkFBLogin;
--(void)logout;
 -(void)onSuccessfulLogin;
 -(void)onSuccessfulFacebookLogin;
 

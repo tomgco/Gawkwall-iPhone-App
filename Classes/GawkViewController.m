@@ -10,6 +10,7 @@
 #import "CameraViewController.h"
 #import "ASIFormDataRequest.h"
 #import "Constant.h"
+#import "GawkAppDelegate.h"
 
 @interface GawkViewController ()
 - (void)uploadFailed:(ASIHTTPRequest *)request;
@@ -35,6 +36,10 @@
 	[wallId resignFirstResponder];
 	[self presentModalViewController: camera animated:YES];
 	[camera release];
+}
+
+-(IBAction)logoutOfFacebookAndGawk {
+	[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) logout];
 }
 
 - (IBAction)resubmitGawk {
