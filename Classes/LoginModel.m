@@ -127,7 +127,7 @@
 
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString *)facebookId {
 	NSLog(@"%@", [self generateSignature:facebookId]);
-	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
+	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 	[httpRequest setPostValue:facebookId forKey:@"FacebookId"];
 	[httpRequest setPostValue:GAWK_API_PUBKEY forKey:@"PublicKey"];
