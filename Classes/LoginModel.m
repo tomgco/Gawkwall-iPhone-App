@@ -66,7 +66,7 @@
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 	
-	[httpRequest setPostValue:[member JSONRepresentation] forKey:@"MemberData"];
+	[httpRequest setPostValue:[memberToRegister JSONRepresentation] forKey:@"MemberData"];
 	[httpRequest setPostValue:@"Member.RegisterMember" forKey:@"Action"];
 	
 	[httpRequest setTimeOutSeconds:20];	
@@ -87,6 +87,9 @@
 			//[self registerUser:member];
 		} else {
 			[self onSuccessfulLogin];
+			NSDictionary *memberData = [jsonResponse objectForKey:@"member"];
+			[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"token"] forKey:@"gawk_token"];
+			[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"secureId"] forKey:@"gawk_secure_id"];
 		}
 	}
 	[parser release];
