@@ -20,10 +20,12 @@
 FBDialogDelegate, FBSessionDelegate> {
 	ASIFormDataRequest *httpRequest;
 	Facebook *facebook;
+	NSMutableDictionary *member;
 	id <LoginDelegate> _delegate;
 }
 
 -(NSString*)generateSignature:(NSString *)fbUserId;
+-(void)registerUser:(NSDictionary *)member;
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString*)facebookId;
 -(void)loginRegisteredUser:(NSString *)userName: (NSString *)password;
 -(void)gawkFBLogin;
@@ -32,6 +34,7 @@ FBDialogDelegate, FBSessionDelegate> {
 
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (readonly) Facebook *facebook;
+@property (retain, nonatomic) NSMutableDictionary *member;
 @property (nonatomic,assign) id <LoginDelegate> delegate;
 
 @end

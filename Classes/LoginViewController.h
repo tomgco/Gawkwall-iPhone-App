@@ -36,8 +36,3 @@
 @property (nonatomic, retain) LoginModel *loginModel;
 
 @end
-
-@interface LoginViewBackground : UIImageView {
-	IBOutlet LoginViewController *delegate;
-}
-@end

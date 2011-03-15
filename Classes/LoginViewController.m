@@ -24,6 +24,7 @@
 
 -(void)viewDidLoad {
 	[loginModel setDelegate:self];
+	[emailAddress becomeFirstResponder];
 }
 
 #pragma View controls
@@ -53,13 +54,14 @@
 
 -(IBAction)registerButtonPressed:(id)sender {
 	registerUserName.text = @"";
-	registerUserName.text = @"";
+	registerUserPassword.text = @"";
 	registerEmail.text = @"";
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.75];
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
 	[self.view addSubview:registrationView];
 	[UIView commitAnimations];
+	[registerUserName becomeFirstResponder];
 }
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -71,10 +73,12 @@
 
 -(IBAction)createButtonPressed:(id)sender {
 	if([registerUserName.text length] && [registerUserPassword.text length] && [registerEmail.text length] && [self validateEmail:registerEmail.text]) {
-		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 		registerEmail.enabled = NO;
 		registerUserName.enabled = NO;
 		registerUserPassword.enabled = NO;
+		NSDictionary *regMember = [[NSDictionary alloc] initWithObjectsAndKeys:registerEmail.text, @"emailAddress",registerUserPassword.text, @"password", registerUserName.text, @"alias",nil];
+		[loginModel registerUser:regMember];
+		[regMember release];
 	} else {
 		//throw missing items error
 	}	
@@ -118,13 +122,6 @@
 - (void)dealloc {
 	[loginModel release];
 	[super dealloc];
-}
-
-@end
-
-@implementation LoginViewBackground
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	[delegate dismissKeyboard];
 }
 
 @end

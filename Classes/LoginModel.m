@@ -16,20 +16,26 @@
 - (void)loginFailed:(ASIHTTPRequest *)request;
 - (void)loginFinished:(ASIHTTPRequest *)request;
 - (void)loginStarted;
+- (void)registerFailed:(ASIHTTPRequest *)request;
+- (void)registerFinished:(ASIHTTPRequest *)request;
 @end
 
 @implementation LoginModel
 
-@synthesize httpRequest, facebook;
+@synthesize httpRequest, facebook, member;
 @synthesize delegate = _delegate;
 
 -(id)init {
 	self = [super init];
 	if (self) {
+		member = [[NSMutableDictionary alloc] init];
 		facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_APP_ID];
 		facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
 		facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
 		NSLog(@"%@",facebook.accessToken);
+		if ([facebook isSessionValid]) {
+			[self gawkFBLogin];
+		}
 	}
 	return self;
 }
@@ -53,6 +59,43 @@
 		[stringValue appendFormat:@"%02x", result[i]];
 	}
 	return stringValue;
+}
+
+-(void)registerUser:(NSDictionary *)memberToRegister {
+	NSLog(@"%@", [memberToRegister JSONRepresentation]);
+	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
+	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
+	
+	[httpRequest setPostValue:[member JSONRepresentation] forKey:@"MemberData"];
+	[httpRequest setPostValue:@"Member.RegisterMember" forKey:@"Action"];
+	
+	[httpRequest setTimeOutSeconds:20];	
+	[httpRequest setDelegate:self];
+	[httpRequest setDidFailSelector:@selector(registerFailed:)];
+	[httpRequest setDidFinishSelector:@selector(registerFinished:)];
+	[httpRequest startAsynchronous];
+}
+
+- (void)registerFinished:(ASIHTTPRequest *)request {
+	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
+	NSLog(@"%@", responseData);
+	SBJsonParser *parser = [SBJsonParser new];
+  id object = [parser objectWithString:responseData];
+  if (object) {
+		NSDictionary *jsonResponse = [responseData JSONValue];
+		if (![[jsonResponse objectForKey:@"success"] boolValue]) {
+			//[self registerUser:member];
+		} else {
+			[self onSuccessfulLogin];
+		}
+	}
+	[parser release];
+}
+
+//if connection failed
+- (void)registerFailed:(ASIHTTPRequest *)request {
+	NSError *error = [request error];
+	NSLog(@"%@", [error localizedDescription]);
 }
 
 - (void)loginRegisteredUser:(NSString *)email: (NSString *)gawkPassword {
@@ -82,15 +125,15 @@
   id object = [parser objectWithString:responseData];
   if (object) {
 		NSDictionary *jsonResponse = [responseData JSONValue];
-		NSLog(@"Dictionary value for \"foo\" is \"%@\"", [jsonResponse objectForKey:@"success"]);
+		if (![[jsonResponse objectForKey:@"success"] boolValue]) {
+			[self registerUser:member];
+		} else {
+			[self onSuccessfulLogin];
+		}
 		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
 		//[[NSUserDefaults standardUserDefaults] synchronize];
-	} else {
-		NSLog(@"%@", responseData);
-		[self loginFailed:request];
 	}
 	[parser release];
-	[self onSuccessfulLogin];
 }
 
 //if connection failed
@@ -173,13 +216,20 @@
 	if ([result isKindOfClass:[NSArray class]]) {
     result = [result objectAtIndex:0];
   }
+	[member setValue:[result objectForKey:@"email"] forKey:@"emailAddress"];
+	[member setValue:[result objectForKey:@"id"] forKey:@"facebookId"];
+	[member setValue:[result objectForKey:@"first_name"] forKey:@"firstName"];
+	[member setValue:[result objectForKey:@"last_name"] forKey:@"lastName"];
+	[member setValue:[result objectForKey:@"name"] forKey:@"alias"];
 	[[NSUserDefaults standardUserDefaults] setObject:[result objectForKey:@"email"] forKey:@"gawk_username"];
 	[[NSUserDefaults standardUserDefaults] setObject:[result objectForKey:@"id"] forKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"%@", result);
 	[self gawkLoginWithAuthenticatedFBUser:[result objectForKey:@"id"]];
 }
 
 -(void)dealloc {
+	[member release];
 	[facebook release];
 	[super dealloc];
 }
