@@ -111,10 +111,7 @@
 	[httpRequest setUploadProgressDelegate:progressIndicator];	
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(uploadFailed:)];
-	//TODO: Move to correct selector
 	[httpRequest setDidFinishSelector:@selector(uploadFinished:)];
-	//Testing Failed upload.
-	//[httpRequest setDidFinishSelector:@selector(uploadFailed:)];
 	[httpRequest setDidStartSelector:@selector(uploadStarted)];
 	[httpRequest startAsynchronous];
 }
