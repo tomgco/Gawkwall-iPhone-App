@@ -24,6 +24,7 @@ FBDialogDelegate, FBSessionDelegate> {
 	id <LoginDelegate> _delegate;
 }
 
+-(void)saveMemberData:(NSDictionary *)jsonResponse;
 -(NSString*)generateSignature:(NSString *)fbUserId;
 -(void)registerUser:(NSDictionary *)member;
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString*)facebookId;

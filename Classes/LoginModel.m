@@ -86,13 +86,28 @@
 		if (![[jsonResponse objectForKey:@"success"] boolValue]) {
 			//[self registerUser:member];
 		} else {
+			[self saveMemberData:jsonResponse];
 			[self onSuccessfulLogin];
-			NSDictionary *memberData = [jsonResponse objectForKey:@"member"];
-			[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"token"] forKey:@"gawk_token"];
-			[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"secureId"] forKey:@"gawk_secure_id"];
 		}
 	}
 	[parser release];
+}
+
+-(void)saveMemberData:(NSDictionary *)jsonResponse {
+	NSDictionary *memberData = [jsonResponse objectForKey:@"member"];
+	[member setValue:[memberData objectForKey:@"token"] forKey:@"token"];
+	[member setValue:[memberData objectForKey:@"secureId"] forKey:@"secureId"];
+	[member setValue:[memberData objectForKey:@"emailAddress"] forKey:@"emailAddress"];
+	[member setValue:[memberData objectForKey:@"facebookId"] forKey:@"facebookId"];
+	[member setValue:[memberData objectForKey:@"firstName"] forKey:@"firstName"];
+	[member setValue:[memberData objectForKey:@"lastName"] forKey:@"lastName"];
+	[member setValue:[memberData objectForKey:@"alias"] forKey:@"alias"];
+	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"emailAddress"] forKey:@"gawk_username"];
+	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"facebookId"] forKey:GAWK_FACEBOOK_USER_ID];
+	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"token"] forKey:@"gawk_token"];
+	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"secureId"] forKey:@"gawk_secure_id"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"%@", member);
 }
 
 //if connection failed
@@ -120,7 +135,7 @@
 - (void)loginStarted {
 }
 
-//After File has been sent to server
+
 - (void)loginFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	NSLog(@"%@", responseData);
@@ -129,8 +144,9 @@
   if (object) {
 		NSDictionary *jsonResponse = [responseData JSONValue];
 		if (![[jsonResponse objectForKey:@"success"] boolValue]) {
-			[self registerUser:member];
+			//[self registerUser:member];
 		} else {
+			[self saveMemberData:jsonResponse];
 			[self onSuccessfulLogin];
 		}
 		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
