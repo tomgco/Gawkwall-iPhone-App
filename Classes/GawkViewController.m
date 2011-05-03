@@ -101,12 +101,10 @@
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
-	[httpRequest setPostValue:@"MobileUpload" forKey:@"Action"];
-	[httpRequest setPostValue:wallId.text forKey:@"WallId"];
-	[httpRequest setPostValue:@"iphone" forKey:@"SourceDevice"];
-	[httpRequest setPostValue:@"true" forKey:@"Debug"];
-	[httpRequest setPostValue:@"true" forKey:@"photo"];
-	[httpRequest setFile:fileLocation forKey:@"photo"];
+	[httpRequest setPostValue:@"Video.Save" forKey:@"Action"];
+	[httpRequest setPostValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_token"] forKey:@"Token"];
+	[httpRequest setPostValue:@"{memberSecureId = \"u-sdf5sd56s4d56465\",wallSecureId = \"sdfsdf22ewf\", uploadSource = \"iphone\", approved = false, rating = 0 }" forKey:@"Video"];
+	[httpRequest setFile:fileLocation forKey:@"VideoFile"];
 	[httpRequest setTimeOutSeconds:20];
 	[httpRequest setUploadProgressDelegate:progressIndicator];	
 	[httpRequest setDelegate:self];

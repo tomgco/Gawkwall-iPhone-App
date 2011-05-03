@@ -39,7 +39,6 @@
 		// Add the view controller's view to the window and display.
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
-		[self showLoginView:NO];
     return YES;
 }
 
@@ -150,7 +149,7 @@
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	[loginView loginModel].facebook.accessToken = nil;
 	[loginView loginModel].facebook.expirationDate = nil;
-	[self showLoginView:YES];
+	//[self showLoginView:YES];
 }
 
 
