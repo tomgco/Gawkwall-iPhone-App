@@ -95,15 +95,34 @@
   [UIView commitAnimations];
 }
 
+- (NSString *)sha1File:(NSString *)fileLocation {
+	NSData *data = [NSData dataWithContentsOfFile:fileLocation];
+	
+	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+	
+	CC_SHA1(data.bytes, data.length, digest);
+	
+	NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+	
+	for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
+		[output appendFormat:@"%02x", digest[i]];
+	}
+	
+	return output;
+}
+
 #pragma mark Video Upload
 
 - (void)uploadGawkVideo:(NSString *)fileLocation {
+	NSString *output = [self sha1File:fileLocation];
+	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"u-fowd\",\"wallSecureId\" : \"gawk\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", output];
+
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 	[httpRequest setPostValue:@"Video.Save" forKey:@"Action"];
-	[httpRequest setPostValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_token"] forKey:@"Token"];
-	[httpRequest setPostValue:@"{memberSecureId = \"u-sdf5sd56s4d56465\",wallSecureId = \"sdfsdf22ewf\", uploadSource = \"iphone\", approved = false, rating = 0 }" forKey:@"Video"];
+	[httpRequest setPostValue:@"fowd2011f68556d9594bc210df552c0b85f08d219e93363" forKey:@"Token"];
+	[httpRequest setPostValue:videoJSON forKey:@"Video"];
 	[httpRequest setFile:fileLocation forKey:@"VideoFile"];
 	[httpRequest setTimeOutSeconds:20];
 	[httpRequest setUploadProgressDelegate:progressIndicator];	

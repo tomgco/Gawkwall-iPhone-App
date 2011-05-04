@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
+#import <CommonCrypto/CommonDigest.h>
 #import "CameraViewController.h"
 @class ASIFormDataRequest;
 
@@ -45,6 +46,7 @@
 - (void)uploadGawkVideo:(NSString *)fileLocation;
 - (void)showFailedUpload:(NSString *)error;
 - (void)doSlideAnimation:(UIView *)viewName duration:(NSTimeInterval)duration curve:(int)curve x:(int)x y:(int)y;
+- (NSString*)sha1File:(NSString *)fileLocation;
 
 @property (nonatomic, retain) UIImagePickerController *gawkNow;
 @property(nonatomic) NSTimeInterval videoMaximumDuration;
