@@ -24,7 +24,7 @@
 @synthesize videoMaximumDuration;
 @synthesize videoQuality;
 @synthesize responseArea;
-@synthesize wallId, linkedUrl, httpRequest, gawkOutput;
+@synthesize wallId, linkedUrl, httpRequest, gawkOutput, email;
 @synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton;
 
 - (IBAction)getVideo {
@@ -33,7 +33,7 @@
 	
 	CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
 	[camera setDelegate:self];
-	[wallId resignFirstResponder];
+	[email resignFirstResponder];
 	[self presentModalViewController: camera animated:YES];
 	[camera release];
 }

@@ -17,6 +17,7 @@
 	
 	IBOutlet UITextView *responseArea;
 	IBOutlet UITextField *wallId;
+	IBOutlet UITextField *email;
 	IBOutlet UIProgressView *progressIndicator;
 	
 #pragma mark activityView
@@ -53,6 +54,7 @@
 @property(nonatomic) UIImagePickerControllerQualityType videoQuality;
 @property(nonatomic, retain) UITextView *responseArea;
 @property(nonatomic, retain) IBOutlet UITextField *wallId;
+@property(nonatomic, retain) IBOutlet UITextField *email;
 @property(nonatomic, retain) NSURL *linkedUrl;
 @property(nonatomic, retain) NSURL *gawkOutput;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
