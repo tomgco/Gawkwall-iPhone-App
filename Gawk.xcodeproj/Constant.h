@@ -11,7 +11,7 @@
 //#define GAWK_API_LOCAITON @"http://10.13.37.8/api/"
 #define GAWK_API_PUBKEY @"787a4aa2778d73f6f2da1598e13668753b5a8010"
 #define GAWK_API_PRIVKEY @"d20533231c09074a07de1cc9f593c1765bdcf146f7efee55abe61e66a2cda80b"
-
+#define CLOCK_GAMING_API_LOCATION @"http://clockgaming.com/save.php"
 //Facebook Constants
 #define GAWK_FACEBOOK_APP_ID @"148522008529839"
 #define GAWK_FACEBOOK_FB_URL @"fb148522008529839"

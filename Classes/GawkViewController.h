@@ -45,9 +45,12 @@
 - (void)hideActivityView;
 - (void)handleOpenURL:(NSURL *)url;
 - (void)uploadGawkVideo:(NSString *)fileLocation;
+- (void)subscribeEmail: (NSString *)emailAddress;
 - (void)showFailedUpload:(NSString *)error;
 - (void)doSlideAnimation:(UIView *)viewName duration:(NSTimeInterval)duration curve:(int)curve x:(int)x y:(int)y;
 - (NSString*)sha1File:(NSString *)fileLocation;
+- (BOOL)validateEmail: (NSString *)canidate;
+- (void)showValidationError: (NSString *)msg;
 
 @property (nonatomic, retain) UIImagePickerController *gawkNow;
 @property(nonatomic) NSTimeInterval videoMaximumDuration;

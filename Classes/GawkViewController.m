@@ -16,6 +16,7 @@
 - (void)uploadFailed:(ASIHTTPRequest *)request;
 - (void)uploadFinished:(ASIHTTPRequest *)request;
 - (void)uploadStarted;
+- (void)subscribeFailed:(ASIHTTPRequest *)request;
 @end
 
 @implementation GawkViewController
@@ -27,15 +28,46 @@
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email;
 @synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton;
 
-- (IBAction)getVideo {
-	activityView.hidden = TRUE;
-	[self hideActivityView];
+- (BOOL)validateEmail: (NSString *) candidate {
+	NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+	NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
 	
-	CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
-	[camera setDelegate:self];
-	[email resignFirstResponder];
-	[self presentModalViewController: camera animated:YES];
-	[camera release];
+	return [emailTest evaluateWithObject:candidate];
+}
+
+- (void)subscribeEmail:(NSString *)emailAddress {
+	
+	NSString *emailXml= [NSString stringWithFormat:@"<save><game>FutureOfWebDesign2011GawkBooth</game><data>%@</data></save>", emailAddress]; 
+	
+	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
+	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:CLOCK_GAMING_API_LOCATION]];
+	[httpRequest setPostBody:[NSMutableData dataWithData:[emailXml dataUsingEncoding:NSUTF8StringEncoding]]];
+	[httpRequest setTimeOutSeconds:20];
+	[httpRequest setUploadProgressDelegate:progressIndicator];	
+	[httpRequest setDelegate:self];
+	[httpRequest setDidFailSelector:@selector(subscribeFailed:)];
+	[httpRequest startAsynchronous];
+}
+
+- (void)subscribeFailed:(ASIHTTPRequest *)request {
+	NSError *error = [request error];
+	[responseArea setText:[error localizedDescription]];
+	[self showFailedUpload:[error localizedDescription]];
+}
+
+- (IBAction)getVideo {
+	if ([self validateEmail:email.text]) {
+		activityView.hidden = TRUE;
+		[self hideActivityView];
+		
+		CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
+		[camera setDelegate:self];
+		[email resignFirstResponder];
+		[self presentModalViewController: camera animated:YES];
+		[camera release];
+	} else {
+		[self showValidationError:@"Email not valid"];
+	}
 }
 
 -(IBAction)logoutOfFacebookAndGawk {
@@ -147,6 +179,7 @@
 	[self hideActivityView];
 	[responseArea setText:responseData];
 	[gawkOutput release];
+	[self subscribeEmail:email.text];
 }
 
 	//if connection failed
@@ -197,6 +230,16 @@
 	[httpRequest release];
 	[responseArea release];
 	[super dealloc];
+}
+
+- (void)showValidationError:(NSString *)msg {
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Validation Error"
+																											message:msg
+																										 delegate:nil
+																						cancelButtonTitle:@"Okay"
+																						otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];  
 }
 
 @end

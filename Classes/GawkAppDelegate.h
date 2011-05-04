@@ -20,8 +20,8 @@
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) IBOutlet CameraViewController *cameraViewController;
 
--(void)showLoginView:(BOOL)animated;
--(IBAction)logout;
+- (void)showLoginView:(BOOL)animated;
+- (IBAction)logout;
 
 @end
 
