@@ -11,7 +11,7 @@
 #import "FBConnect.h"
 
 @protocol LoginDelegate
-@required
+@optional
 -(void)onGawkLogout;
 -(void)onGawkLogin;
 @end
