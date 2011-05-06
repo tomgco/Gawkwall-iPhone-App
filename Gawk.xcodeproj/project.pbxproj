@@ -22,6 +22,12 @@
 		E20073C312FA1DD0006CAFBA /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = E20073C212FA1DD0006CAFBA /* TODO */; };
 		E201F9A31325636200114104 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E201F9A21325636200114104 /* LoginModel.m */; };
 		E227429412A88A280075E726 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E227429312A88A280075E726 /* icon.png */; };
+		E229B5EA13731FBC00060046 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E229B5E913731FBC00060046 /* MediaPlayer.framework */; };
+		E229B5EC13735F2100060046 /* camera@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E229B5EB13735F2100060046 /* camera@2.png */; };
+		E229B5EE13735FBE00060046 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E229B5ED13735FBE00060046 /* camera.png */; };
+		E229B5F11373606100060046 /* camerar.png in Resources */ = {isa = PBXBuildFile; fileRef = E229B5EF1373606100060046 /* camerar.png */; };
+		E229B5F21373606100060046 /* camerar@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E229B5F01373606100060046 /* camerar@2.png */; };
+		E229B5F41373763100060046 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E229B5F31373763100060046 /* CoreMedia.framework */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
 		E27157321316F1E1002BD0A2 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271571A1316F1E1002BD0A2 /* FBDialog.bundle */; };
@@ -90,6 +96,12 @@
 		E201F9A11325636200114104 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		E201F9A21325636200114104 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		E227429312A88A280075E726 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E229B5E913731FBC00060046 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E229B5EB13735F2100060046 /* camera@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera@2.png"; path = "../../../Desktop/camera@2.png"; sourceTree = "<group>"; };
+		E229B5ED13735FBE00060046 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = ../../../Desktop/camera.png; sourceTree = "<group>"; };
+		E229B5EF1373606100060046 /* camerar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camerar.png; path = ../../../Desktop/camerar.png; sourceTree = "<group>"; };
+		E229B5F01373606100060046 /* camerar@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camerar@2.png"; path = "../../../Desktop/camerar@2.png"; sourceTree = "<group>"; };
+		E229B5F31373763100060046 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		E26BE88812F8AE2E002B50C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -173,6 +185,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E229B5F41373763100060046 /* CoreMedia.framework in Frameworks */,
+				E229B5EA13731FBC00060046 /* MediaPlayer.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -213,6 +227,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E229B5F31373763100060046 /* CoreMedia.framework */,
+				E229B5E913731FBC00060046 /* MediaPlayer.framework */,
 				E2CE928F131F095500D92F70 /* Constant.h */,
 				E26BE87912F8AA5B002B50C2 /* Views */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -268,6 +284,10 @@
 		E200728F12F9F1FA006CAFBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E229B5EF1373606100060046 /* camerar.png */,
+				E229B5F01373606100060046 /* camerar@2.png */,
+				E229B5ED13735FBE00060046 /* camera.png */,
+				E229B5EB13735F2100060046 /* camera@2.png */,
 				E274738B1372120C0049253E /* logo.png */,
 				E27157D31317068B002BD0A2 /* rounded_table_cell_bottom.png */,
 				E27157D41317068B002BD0A2 /* rounded_table_cell_bottom@2x.png */,
@@ -495,6 +515,10 @@
 				E27157DC1317068B002BD0A2 /* rounded_table_cell.png in Resources */,
 				E290AABC1320543D00F58A27 /* FBConnect.bundle in Resources */,
 				E274738C1372120C0049253E /* logo.png in Resources */,
+				E229B5EC13735F2100060046 /* camera@2.png in Resources */,
+				E229B5EE13735FBE00060046 /* camera.png in Resources */,
+				E229B5F11373606100060046 /* camerar.png in Resources */,
+				E229B5F21373606100060046 /* camerar@2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Objective-C Progs/Gawk/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -554,7 +578,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Gawkwall;
 				SDKROOT = iphoneos4.3;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv6";
 			};
 			name = Debug;
 		};
@@ -562,7 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Objective-C Progs/Gawk/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -573,7 +597,7 @@
 				PRODUCT_NAME = Gawkwall;
 				SDKROOT = iphoneos4.3;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv6";
 			};
 			name = Release;
 		};
@@ -596,7 +620,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Serby (544PETJ5GE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Serby (544PETJ5GE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -604,7 +628,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "4A1DD489-CF24-459E-85DF-AEDE1EB88909";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A1DD489-CF24-459E-85DF-AEDE1EB88909";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -613,8 +637,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Paul Serby";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paul Serby";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -622,8 +646,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "8B8CC7A5-BA44-4F9C-ADE7-ACE4F7013D9B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B8CC7A5-BA44-4F9C-ADE7-ACE4F7013D9B";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7";
 			};
@@ -633,7 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -644,7 +668,7 @@
 				PRODUCT_NAME = Gawkwall;
 				SDKROOT = iphoneos4.3;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv6";
 			};
 			name = Distribution;
 		};

@@ -9,7 +9,7 @@
 
 #import "CameraViewController.h"
 #import "VideoCaptureManager.h"
-#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #if !TARGET_IPHONE_SIMULATOR
 @interface CameraViewController (VideoCaptureManagerDelegate) <VideoCaptureManagerDelegate>
@@ -23,6 +23,7 @@
 @synthesize captureManager = _captureManager;
 @synthesize captureVideoPreviewLayer = _captureVideoPreviewLayer;
 @synthesize delegate = _delegate;
+@synthesize outputFileURL = _outputFileURL;
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
@@ -39,6 +40,7 @@
 	[_videoPreviewView release];
 	[_captureVideoPreviewLayer release];
 	[_recordButton release];
+	[_outputFileURL release];
     [super viewDidUnload];
 }
 
@@ -51,16 +53,16 @@
 		[self setCaptureManager:captureManager];
 		
 		AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:[captureManager session]];
-		UIView *view = [self view];
-		CALayer *viewLayer = [view layer];
+		
+		CALayer *viewLayer = [cameraView layer];
 		[viewLayer setMasksToBounds:YES];
 		
-		CGRect bounds = [view bounds];
+		CGRect bounds = [cameraView bounds];
 		
 		[captureVideoPreviewLayer setFrame:bounds];
 		
 		if ([captureVideoPreviewLayer isOrientationSupported]) {
-			//[captureVideoPreviewLayer setOrientation:AVCaptureVideoOrientationPortrait];
+			[captureVideoPreviewLayer setOrientation:AVCaptureVideoOrientationPortrait];
 		}
 		
 		[captureVideoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
@@ -107,6 +109,23 @@
 
 - (IBAction) dismissModalView {
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)saveGawk {
+	[self dismissModalView];
+	id delegate = [self delegate];
+	if ([delegate respondsToSelector:@selector(cameraViewControllerFinishedRecording:)]) {
+		[delegate cameraViewControllerFinishedRecording: [_outputFileURL path]];
+	}
+}
+
+- (IBAction)retakeGawk {
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.75];
+	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
+	[self.view addSubview:previewView];
+	[previewView removeFromSuperview];
+	[UIView commitAnimations];	
 }
 
 
@@ -162,17 +181,28 @@
 	[[self recordButton] setEnabled:NO];
 }
 
-- (void) recordingStopped {
-	[self dismissModalView];
-	[[self recordButton] setTitle:@"Record"];
-	[[self recordButton] setEnabled:YES];
+- (void) recordingStopped:(NSURL *)outputFileURL {
+	[[self recordButton] setEnabled:YES];	
 }
 
-- (void)recordingFinished:(NSURL *)outputFileURL {
-	id delegate = [self delegate];
-	if ([delegate respondsToSelector:@selector(cameraViewControllerFinishedRecording:)]) {
-		[delegate cameraViewControllerFinishedRecording: [outputFileURL path]];
-	}
+- (void)recordingFinished:(NSURL *)outputFileURL fullQuality:(NSURL *)outputUrl {
+	
+	//TODO: Dealloc player.
+	_outputFileURL = [[NSURL alloc] initWithString:[outputFileURL path]];
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.75];
+	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
+	[self.view addSubview:previewView];
+	[UIView commitAnimations];
+	
+	MPMoviePlayerController *player =	[[MPMoviePlayerController alloc] initWithContentURL: outputFileURL];
+	player.repeatMode = MPMovieRepeatModeOne;
+	player.controlStyle = MPMovieControlStyleNone;
+	player.movieSourceType = MPMovieSourceTypeFile;
+	player.scalingMode = MPMovieScalingModeAspectFit;
+	[player.view setFrame: video.bounds];  // player's frame must match parent's
+	[video addSubview: player.view];
+	[player play];
 }
 
 @end

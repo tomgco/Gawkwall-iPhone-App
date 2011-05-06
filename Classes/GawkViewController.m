@@ -56,7 +56,7 @@
 }
 
 - (IBAction)getVideo {
-	if ([self validateEmail:email.text]) {
+	if (true) {
 		activityView.hidden = TRUE;
 		[self hideActivityView];
 		

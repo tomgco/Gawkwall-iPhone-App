@@ -16,8 +16,8 @@
 - (void) assetLibraryError:(NSError *)error forURL:(NSURL *)assetURL;
 - (void) someOtherError:(NSError *)error;
 - (void) recordingBegan;
-- (void) recordingStopped;
-- (void) recordingFinished:(NSURL *)outputFileURL;
+- (void) recordingStopped:(NSURL *)outputFileURL;
+- (void) recordingFinished:(NSURL *)outputFileURL fullQuality:(NSURL *)outputUrl;
 - (void) deviceCountChanged;
 @end
 

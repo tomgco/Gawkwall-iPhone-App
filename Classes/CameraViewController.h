@@ -19,14 +19,21 @@
 
 @interface CameraViewController : UIViewController <UIImagePickerControllerDelegate> {
 	IBOutlet UIButton *button;
+	IBOutlet UIButton *saveButton;
+	IBOutlet UIButton *retakeGawk;
+	IBOutlet UIView *previewView;
+	IBOutlet UIView *video;
+	IBOutlet UIView *cameraView;
 	VideoCaptureManager *_captureManager;
 	AVCaptureVideoPreviewLayer *_videoPreviewView;
 	AVCaptureVideoPreviewLayer *_captureVideoPreviewLayer;
 	UIBarButtonItem *_recordButton;
 	id <CameraViewControllerDelegate> _delegate;
+	NSURL *_outputFileURL;
 }
 
 @property (nonatomic,retain) VideoCaptureManager *captureManager;
+@property (nonatomic,retain) NSURL *outputFileURL;
 @property (nonatomic,retain) IBOutlet AVCaptureVideoPreviewLayer *videoPreviewView;
 @property (nonatomic,retain) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *recordButton;
@@ -34,4 +41,6 @@
 
 - (IBAction)record:(id)sender;
 - (IBAction) dismissModalView;
+- (IBAction) saveGawk;
+- (IBAction) retakeGawk;
 @end
