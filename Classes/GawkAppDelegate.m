@@ -39,7 +39,7 @@
 		// Add the view controller's view to the window and display.
 	self.window.rootViewController = self.gawkViewController;
 	[self.window makeKeyAndVisible];
-	
+	[self showLoginView:NO];
     return YES;
 }
 
@@ -65,13 +65,16 @@
 	if (!url) {
 		return NO;
 	}
-		
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Gawk!" message:@"Launched from Url" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease];
-	[alert show];
 	
-	[gawkViewController handleOpenURL:url];
-
-	return YES;
+	if ([[url scheme] isEqualToString:GAWK_FACEBOOK_FB_URL]) {
+		NSLog(@"Loggin");
+		return [[[loginView loginModel] facebook] handleOpenURL:url];
+	} else {
+	
+		[gawkViewController handleOpenURL:url];
+		
+		return YES;
+	}
 }
 
 

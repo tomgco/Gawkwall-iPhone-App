@@ -116,7 +116,7 @@
 
 -(void)onGawkLogin {
 	NSLog(@"onGawkLogin");
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissModalViewControllerAnimated:NO];
 }
 
 - (void)dealloc {
