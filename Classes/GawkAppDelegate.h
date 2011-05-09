@@ -21,7 +21,7 @@
 @property (nonatomic, retain) IBOutlet CameraViewController *cameraViewController;
 @property (nonatomic, retain) IBOutlet GawkViewController *gawkViewController;
 
-- (IBAction)logout;
+-(IBAction)logout;
 
 @end
 

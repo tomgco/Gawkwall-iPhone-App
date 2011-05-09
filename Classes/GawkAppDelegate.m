@@ -40,6 +40,16 @@
     return YES;
 }
 
+//-(void)showLoginView:(BOOL)animated {
+//	//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+//	if(!loginView) {
+//		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+//	}
+//	
+//	[tabBarController presentModalViewController:loginView animated:animated];
+//	
+//	//[loginView release];
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
