@@ -10,6 +10,8 @@
 #import "GawkViewController.h"
 #import "VideoCaptureManager.h"
 #import "CameraViewController.h"
+#import "LoginViewController.h"
+#import "FBConnect.h"
 #import "Constant.h"
 
 @implementation GawkAppDelegate
@@ -17,6 +19,7 @@
 @synthesize window;
 @synthesize cameraViewController;
 @synthesize gawkViewController;
+@synthesize loginView;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -40,16 +43,16 @@
     return YES;
 }
 
-//-(void)showLoginView:(BOOL)animated {
-//	//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
-//	if(!loginView) {
-//		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-//	}
-//	
-//	[tabBarController presentModalViewController:loginView animated:animated];
-//	
-//	//[loginView release];
-//}
+-(void)showLoginView:(BOOL)animated {
+	//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+	if(!loginView) {
+		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+	}
+	
+	[gawkViewController presentModalViewController:loginView animated:animated];
+	
+	//[loginView release];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -121,6 +124,9 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_ACCESS_TOKEN_KEY];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_EXPIRATION_DATE_KEY];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	[loginView loginModel].facebook.accessToken = nil;
+	[loginView loginModel].facebook.expirationDate = nil;
+	[self showLoginView:YES];
 }
 
 

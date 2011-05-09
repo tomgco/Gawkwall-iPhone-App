@@ -28,6 +28,7 @@
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email;
 @synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton;
 
+
 - (BOOL)validateEmail: (NSString *) candidate {
 	NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
 	NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];

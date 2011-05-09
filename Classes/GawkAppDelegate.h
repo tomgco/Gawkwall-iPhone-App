@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginViewController.h"
+#import "LoginModel.h"
 
 @class CameraViewController;
 @class GawkViewController;
@@ -14,14 +16,17 @@
 @interface GawkAppDelegate : NSObject <UIApplicationDelegate> {
   UIWindow	*window;
 	CameraViewController *cameraViewController;
+	LoginViewController *loginView;
 	GawkViewController *gawkViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet CameraViewController *cameraViewController;
 @property (nonatomic, retain) IBOutlet GawkViewController *gawkViewController;
+@property (readonly) LoginViewController *loginView;
 
--(IBAction)logout;
+- (void)showLoginView:(BOOL)animated;
+- (IBAction)logout;
 
 @end
 
