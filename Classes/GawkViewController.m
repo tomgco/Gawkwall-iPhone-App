@@ -176,7 +176,7 @@
 
 - (void)uploadGawkVideo:(NSString *)fileLocation {
 	NSString *output = [self sha1File:fileLocation];
-	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\",\"wallSecureId\" : \"%@\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", [member objectForKey:@"secureId"], @"fowd", output];
+	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\",\"wallSecureId\" : \"%@\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", [member objectForKey:@"secureId"], wallId.text, output];
 
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
@@ -232,7 +232,7 @@
 
 - (void) viewDidLoad {
 	if (linkedUrl == nil) {
-		wallId.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultWallId"];
+		//wallId.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultWallId"];
 	} else {
 		[self handleOpenURL: linkedUrl];
 	}
