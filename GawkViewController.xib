@@ -174,7 +174,7 @@
 							<object class="IBUINavigationItem" id="311506626">
 								<reference key="IBUINavigationBar" ref="964639733"/>
 								<string key="IBUITitle"/>
-								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="469644168">
+								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="382014698">
 									<string key="IBUITitle">Logout</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
@@ -196,7 +196,7 @@
 						<string key="NSFrame">{{88, -12}, {144, 68}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="712305378"/>
+						<reference key="NSNextKeyView" ref="709754663"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">1</int>
@@ -261,25 +261,25 @@
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 					</object>
-					<object class="IBUILabel" id="712305378">
+					<object class="IBUILabel" id="709754663">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 106}, {49, 21}}</string>
+						<string key="NSFrame">{{20, 44}, {49, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="631456439"/>
+						<reference key="NSNextKeyView" ref="799078951"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Hello, </string>
-						<object class="NSFont" key="IBUIFont" id="145068157">
+						<object class="NSFont" key="IBUIFont" id="787843737">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<object class="NSColor" key="IBUITextColor" id="486477732">
+						<object class="NSColor" key="IBUITextColor" id="451248886">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
 						</object>
@@ -287,10 +287,10 @@
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
-					<object class="IBUILabel" id="631456439">
+					<object class="IBUILabel" id="799078951">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{69, 106}, {127, 21}}</string>
+						<string key="NSFrame">{{69, 44}, {127, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="862305558"/>
@@ -300,8 +300,8 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">&lt;&lt;User Name&gt;&gt;</string>
-						<reference key="IBUIFont" ref="145068157"/>
-						<reference key="IBUITextColor" ref="486477732"/>
+						<reference key="IBUIFont" ref="787843737"/>
+						<reference key="IBUITextColor" ref="451248886"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
@@ -657,10 +657,18 @@ dCB1cGRhdGVkIG9uIDd0aCBBcHJpbCwgMjAxMS4KA</string>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">logoutOfFacebookAndGawk</string>
-						<reference key="source" ref="469644168"/>
+						<reference key="source" ref="382014698"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">111</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">user</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="799078951"/>
+					</object>
+					<int key="connectionID">114</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -691,8 +699,8 @@ dCB1cGRhdGVkIG9uIDd0aCBBcHJpbCwgMjAxMS4KA</string>
 							<reference ref="516404725"/>
 							<reference ref="1019813460"/>
 							<reference ref="862305558"/>
-							<reference ref="712305378"/>
-							<reference ref="631456439"/>
+							<reference ref="709754663"/>
+							<reference ref="799078951"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -720,7 +728,7 @@ dCB1cGRhdGVkIG9uIDd0aCBBcHJpbCwgMjAxMS4KA</string>
 						<reference key="object" ref="311506626"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="913293640"/>
-							<reference ref="469644168"/>
+							<reference ref="382014698"/>
 						</array>
 						<reference key="parent" ref="964639733"/>
 					</object>
@@ -808,17 +816,17 @@ dCB1cGRhdGVkIG9uIDd0aCBBcHJpbCwgMjAxMS4KA</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">110</int>
-						<reference key="object" ref="469644168"/>
+						<reference key="object" ref="382014698"/>
 						<reference key="parent" ref="311506626"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">112</int>
-						<reference key="object" ref="712305378"/>
+						<reference key="object" ref="709754663"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">113</int>
-						<reference key="object" ref="631456439"/>
+						<reference key="object" ref="799078951"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
@@ -879,7 +887,7 @@ dCB1cGRhdGVkIG9uIDd0aCBBcHJpbCwgMjAxMS4KA</string>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">113</int>
+			<int key="maxID">114</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -925,6 +933,7 @@ dCB1cGRhdGVkIG9uIDd0aCBBcHJpbCwgMjAxMS4KA</string>
 						<string key="resubmitButton">UIButton</string>
 						<string key="submittingIndicator">UIActivityIndicatorView</string>
 						<string key="termsView">UIView</string>
+						<string key="user">UILabel</string>
 						<string key="wallId">UITextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -963,6 +972,10 @@ dCB1cGRhdGVkIG9uIDd0aCBBcHJpbCwgMjAxMS4KA</string>
 						<object class="IBToOneOutletInfo" key="termsView">
 							<string key="name">termsView</string>
 							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="user">
+							<string key="name">user</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="wallId">
 							<string key="name">wallId</string>

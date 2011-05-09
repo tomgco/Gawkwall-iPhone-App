@@ -25,7 +25,7 @@
 @synthesize videoMaximumDuration;
 @synthesize videoQuality;
 @synthesize responseArea;
-@synthesize wallId, linkedUrl, httpRequest, gawkOutput, email;
+@synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
 @synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton;
 
 
@@ -65,6 +65,7 @@
 }
 
 - (IBAction)showTerms {
+	NSLog(@"%@", [self getMember]);
 	[UIView transitionFromView:self.view toView:termsView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 
@@ -96,6 +97,10 @@
 
 -(IBAction)logoutOfFacebookAndGawk {
 	[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) logout];
+}
+
+- (NSDictionary *)getMember {
+	return [[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member];
 }
 
 - (IBAction)resubmitGawk {
@@ -171,13 +176,13 @@
 
 - (void)uploadGawkVideo:(NSString *)fileLocation {
 	NSString *output = [self sha1File:fileLocation];
-	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"u-fowd\",\"wallSecureId\" : \"gawk\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", output];
+	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\",\"wallSecureId\" : \"%@\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", [member objectForKey:@"secureId"], @"fowd", output];
 
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 	[httpRequest setPostValue:@"Video.Save" forKey:@"Action"];
-	[httpRequest setPostValue:@"fowd2011f68556d9594bc210df552c0b85f08d219e93363" forKey:@"Token"];
+	[httpRequest setPostValue:[member objectForKey:@"token"] forKey:@"Token"];
 	[httpRequest setPostValue:videoJSON forKey:@"Video"];
 	[httpRequest setFile:fileLocation forKey:@"VideoFile"];
 	[httpRequest setTimeOutSeconds:20];
@@ -201,9 +206,9 @@
 - (void)uploadFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	[self hideActivityView];
-	[responseArea setText:responseData];
+	NSLog(@"%@", responseData);
+	//[responseArea setText:responseData];
 	[gawkOutput release];
-	[self subscribeEmail:email.text];
 }
 
 	//if connection failed
@@ -240,6 +245,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+	member = [self getMember];
+	user.text = [member objectForKey:@"alias"];
 	CGRect frame = self.view.frame;
 	frame.origin.y = 20.0;
 	self.view.frame = frame;

@@ -21,6 +21,7 @@
 	IBOutlet UIProgressView *progressIndicator;
 	
 #pragma mark activityView
+	IBOutlet UILabel *user;
 	IBOutlet UILabel *activityTitle;
 	IBOutlet UILabel *activityMessage;
 	IBOutlet UIView *activityView;
@@ -28,6 +29,7 @@
 	IBOutlet UIButton *resubmitButton;
 	IBOutlet UIActivityIndicatorView *submittingIndicator;
 	
+	NSDictionary *member;
 	NSURL	*linkedUrl;
 	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
@@ -41,6 +43,7 @@
 - (IBAction)logoutOfFacebookAndGawk;
 
 - (void)toggleActivity;
+- (NSDictionary*)getMember;
 - (void)hideActivityView;
 - (void)handleOpenURL:(NSURL *)url;
 - (void)uploadGawkVideo:(NSString *)fileLocation;
@@ -52,6 +55,7 @@
 - (void)showValidationError: (NSString *)msg;
 
 @property (nonatomic, retain) UIImagePickerController *gawkNow;
+@property (nonatomic, retain) NSDictionary *member;
 @property(nonatomic) NSTimeInterval videoMaximumDuration;
 @property(nonatomic) UIImagePickerControllerQualityType videoQuality;
 @property(nonatomic, retain) UITextView *responseArea;
