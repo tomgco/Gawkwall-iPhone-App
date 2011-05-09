@@ -24,6 +24,11 @@
 	IBOutlet UIView *previewView;
 	IBOutlet UIView *video;
 	IBOutlet UIView *cameraView;
+	IBOutlet UIImageView *shutterUp;
+	IBOutlet UIImageView *shutterDown;
+	IBOutlet UIActivityIndicatorView *processingIndicator;
+	IBOutlet UILabel *processingLabel;
+	
 	VideoCaptureManager *_captureManager;
 	AVCaptureVideoPreviewLayer *_videoPreviewView;
 	AVCaptureVideoPreviewLayer *_captureVideoPreviewLayer;
@@ -43,4 +48,6 @@
 - (IBAction) dismissModalView;
 - (IBAction) saveGawk;
 - (IBAction) retakeGawk;
+- (void) closeShutters;
+- (void) openShutters;
 @end

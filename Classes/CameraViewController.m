@@ -35,11 +35,6 @@
 }
 
 - (void)viewDidUnload {
-	[_captureManager release];
-	[_videoPreviewView release];
-	[_captureVideoPreviewLayer release];
-	[_recordButton release];
-	[_outputFileURL release];
     [super viewDidUnload];
 }
 
@@ -96,8 +91,17 @@
 	[super viewDidLoad];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+	[self openShutters];
+}
+
 
 - (void)dealloc {
+	[_captureManager release];
+	[_videoPreviewView release];
+	[_captureVideoPreviewLayer release];
+	[_recordButton release];
+	[_outputFileURL release];
     [super dealloc];
 }
 
@@ -107,6 +111,7 @@
 }
 
 - (IBAction) dismissModalView {
+	[[self recordButton] setEnabled:YES];
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -125,6 +130,40 @@
 	[self.view addSubview:previewView];
 	[previewView removeFromSuperview];
 	[UIView commitAnimations];	
+	[[self recordButton] setEnabled:YES];
+	[self openShutters];
+}
+
+- (void) openShutters {
+	[UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.15];
+  [UIView setAnimationCurve: UIViewAnimationCurveEaseIn];
+  [UIView setAnimationBeginsFromCurrentState:YES];
+	
+  // The transform matrix
+  CGAffineTransform transformUp = CGAffineTransformMakeTranslation(0.0f, -110.0f);
+	CGAffineTransform transformDown = CGAffineTransformMakeTranslation(0.0f, 110.0f);
+  shutterUp.transform = transformUp;
+	shutterDown.transform = transformDown;
+	
+  // Commit the changes
+  [UIView commitAnimations];
+}
+
+- (void) closeShutters {
+	[UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.15];
+  [UIView setAnimationCurve: UIViewAnimationCurveEaseIn];
+  [UIView setAnimationBeginsFromCurrentState:YES];
+	
+  // The transform matrix
+  CGAffineTransform transformUp = CGAffineTransformMakeTranslation(0.0f, 0.0f);
+	CGAffineTransform transformDown = CGAffineTransformMakeTranslation(0.0f, 0.0f);
+  shutterUp.transform = transformUp;
+	shutterDown.transform = transformDown;
+	
+  // Commit the changes
+  [UIView commitAnimations];
 }
 
 
@@ -181,10 +220,15 @@
 }
 
 - (void) recordingStopped:(NSURL *)outputFileURL {
-	[[self recordButton] setEnabled:YES];	
+	[[self recordButton] setEnabled:NO];
+	[self closeShutters];
+	processingLabel.hidden = NO;
+	processingIndicator.hidden = NO;
 }
 
 - (void)recordingFinished:(NSURL *)outputFileURL fullQuality:(NSURL *)outputUrl {
+	processingLabel.hidden = YES;
+	processingIndicator.hidden = YES;
 	
 	//TODO: Dealloc player.
 	_outputFileURL = [[NSURL alloc] initWithString:[outputFileURL path]];
@@ -195,6 +239,7 @@
 	[UIView commitAnimations];
 	
 	MPMoviePlayerController *player =	[[MPMoviePlayerController alloc] initWithContentURL: outputUrl];
+	NSLog(@"%@", [outputUrl path]);
 	player.repeatMode = MPMovieRepeatModeOne;
 	player.controlStyle = MPMovieControlStyleNone;
 	player.movieSourceType = MPMovieSourceTypeFile;
