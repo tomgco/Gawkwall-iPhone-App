@@ -35,19 +35,42 @@
 	return [emailTest evaluateWithObject:candidate];
 }
 
-- (void)subscribeEmail:(NSString *)emailAddress {
-	
-	NSString *emailXml= [NSString stringWithFormat:@"<save><game>FutureOfWebDesign2011GawkBooth</game><data>%@</data></save>", emailAddress]; 
-	
-	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
-	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:CLOCK_GAMING_API_LOCATION]];
-	[httpRequest setPostBody:[NSMutableData dataWithData:[emailXml dataUsingEncoding:NSUTF8StringEncoding]]];
-	[httpRequest setTimeOutSeconds:20];
-	[httpRequest setUploadProgressDelegate:progressIndicator];	
-	[httpRequest setDelegate:self];
-	[httpRequest setDidFailSelector:@selector(subscribeFailed:)];
-	[httpRequest startAsynchronous];
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+		NSString *emailXml= [NSString stringWithFormat:@"<save><game>FutureOfWebDesign2011GawkBooth</game><data>%@</data></save>", email.text]; 
+		
+		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
+		httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:CLOCK_GAMING_API_LOCATION]];
+		[httpRequest setPostBody:[NSMutableData dataWithData:[emailXml dataUsingEncoding:NSUTF8StringEncoding]]];
+		[httpRequest setTimeOutSeconds:20];
+		[httpRequest setUploadProgressDelegate:progressIndicator];	
+		[httpRequest setDelegate:self];
+		[httpRequest setDidFailSelector:@selector(subscribeFailed:)];
+		[httpRequest startAsynchronous];
+		email.text = @"";
+	}
 }
+
+- (void)subscribeEmail:(NSString *)emailAddress {
+	if (![emailAddress isEqualToString:@""]) {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Competition Entry"
+																												message:@"By continuing you are entering and accepting the Gawkwall competition terms and conditions."
+																											 delegate:self
+																							cancelButtonTitle:@"Agree"
+																							otherButtonTitles:@"Cancel", nil];
+		[alertView show];
+		[alertView release];
+	}
+}
+
+- (IBAction)showTerms {
+	[UIView transitionFromView:self.view toView:termsView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+}
+
+-(IBAction)hideTerms{
+	[UIView transitionFromView:termsView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+}
+
 
 - (void)subscribeFailed:(ASIHTTPRequest *)request {
 	NSError *error = [request error];
@@ -215,6 +238,13 @@
 	activityView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"texture.png"]];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	CGRect frame = self.view.frame;
+	frame.origin.y = 20.0;
+	self.view.frame = frame;
+	termsView.frame = frame;
+}
+
 - (void)dealloc {
 	[activityView release];
 	[activityTitle release];
@@ -243,5 +273,3 @@
 }
 
 @end
-
-

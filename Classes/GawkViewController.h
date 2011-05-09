@@ -13,7 +13,7 @@
 #import "CameraViewController.h"
 @class ASIFormDataRequest;
 
-@interface GawkViewController : UIViewController <UINavigationControllerDelegate, CameraViewControllerDelegate> {
+@interface GawkViewController : UIViewController <CameraViewControllerDelegate> {
 	
 	IBOutlet UITextView *responseArea;
 	IBOutlet UITextField *wallId;
@@ -24,13 +24,10 @@
 	IBOutlet UILabel *activityTitle;
 	IBOutlet UILabel *activityMessage;
 	IBOutlet UIView *activityView;
+	IBOutlet UIView *termsView;
 	IBOutlet UIButton *resubmitButton;
 	IBOutlet UIActivityIndicatorView *submittingIndicator;
 	
-	
-	UIImagePickerController *gawkNow;
-	NSTimeInterval videoMaximumDuration;
-	UIImagePickerControllerQualityType videoQuality;
 	NSURL	*linkedUrl;
 	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
@@ -38,6 +35,8 @@
 }
 
 - (IBAction)getVideo;
+- (IBAction)showTerms;
+- (IBAction)hideTerms;
 - (IBAction)resubmitGawk;
 - (IBAction)logoutOfFacebookAndGawk;
 

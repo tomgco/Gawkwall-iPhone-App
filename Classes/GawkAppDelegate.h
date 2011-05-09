@@ -11,19 +11,16 @@
 @class CameraViewController;
 @class GawkViewController;
 
-@interface GawkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface GawkAppDelegate : NSObject <UIApplicationDelegate> {
   UIWindow	*window;
-  UITabBarController	*tabBarController;
 	CameraViewController *cameraViewController;
 	GawkViewController *gawkViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) IBOutlet CameraViewController *cameraViewController;
 @property (nonatomic, retain) IBOutlet GawkViewController *gawkViewController;
 
-- (void)showLoginView:(BOOL)animated;
 - (IBAction)logout;
 
 @end

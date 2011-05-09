@@ -15,7 +15,6 @@
 @implementation GawkAppDelegate
 
 @synthesize window;
-@synthesize tabBarController;
 @synthesize cameraViewController;
 @synthesize gawkViewController;
 
@@ -41,17 +40,6 @@
     return YES;
 }
 
--(void)showLoginView:(BOOL)animated {
-	//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
-	//if(!loginView) {
-	//	loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-	//}
-	
-	//[tabBarController presentModalViewController:loginView animated:animated];
-	
-	//[loginView release];
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -64,20 +52,13 @@
 	if (!url) {
 		return NO;
 	}
-	
-	//if ([[url scheme] isEqualToString:GAWK_FACEBOOK_FB_URL]) {
-	//	NSLog(@"Loggin");
-	//	return [[[loginView loginModel] facebook] handleOpenURL:url];
-	//} else {
-		GawkViewController *gawkController = (GawkViewController *) [tabBarController.viewControllers objectAtIndex:0];
 		
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Gawk!" message:@"Launched from Url" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease];
-		[alert show];
-		
-		[gawkController handleOpenURL:url];
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Gawk!" message:@"Launched from Url" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] autorelease];
+	[alert show];
 	
-		return YES;
-	//}
+	[gawkViewController handleOpenURL:url];
+
+	return YES;
 }
 
 
@@ -113,21 +94,6 @@
      */
 }
 
-#pragma mark -
-#pragma mark UITabBarControllerDelegate methods
-
-/*
- // Optional UITabBarControllerDelegate method.
- - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
- }
- */
-
-/*
- // Optional UITabBarControllerDelegate method.
- - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
- }
- */
-
 
 #pragma mark -
 #pragma mark Memory management
@@ -145,15 +111,11 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_ACCESS_TOKEN_KEY];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_EXPIRATION_DATE_KEY];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	//[loginView loginModel].facebook.accessToken = nil;
-	//[loginView loginModel].facebook.expirationDate = nil;
-	//[self showLoginView:YES];
 }
 
 
 - (void)dealloc {
-  [tabBarController release];
-	//[loginView release];
+  [gawkViewController release];
 	[cameraViewController release];
 	[window release];
     [super dealloc];

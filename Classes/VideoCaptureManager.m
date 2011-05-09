@@ -294,7 +294,7 @@
 	[compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [gawkVideoAsset duration])  ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
 	
 	AVMutableVideoComposition* gawkVideoComposition = [[AVMutableVideoComposition videoComposition]retain];
-	gawkVideoComposition.renderSize = CGSizeMake(320, 240);
+	gawkVideoComposition.renderSize = CGSizeMake(320, 220);
 	gawkVideoComposition.frameDuration = CMTimeMake(1, 30);
 	
 	AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
@@ -303,9 +303,9 @@
 	AVMutableVideoCompositionLayerInstruction* rotator = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:clipVideoTrack];
 	CGSize screenSize = [[UIScreen mainScreen] bounds].size;
 	CGAffineTransform translateToCenter = CGAffineTransformMakeTranslation(0,-screenSize.width);   
-	CGAffineTransform moveDown = CGAffineTransformMakeTranslation(0, -screenSize.height * 0.2);
+	CGAffineTransform moveDown = CGAffineTransformMakeTranslation(-3, -screenSize.height * 0.2);
 	CGAffineTransform rotateBy90Degrees = CGAffineTransformMakeRotation(M_PI_2);
-	CGAffineTransform shrinkWidth = CGAffineTransformMakeScale(0.66, 0.66);
+	CGAffineTransform shrinkWidth = CGAffineTransformMakeScale(0.68, 0.68);
 	CGAffineTransform finalTransform = CGAffineTransformConcat(shrinkWidth, CGAffineTransformConcat(translateToCenter, CGAffineTransformConcat(rotateBy90Degrees, moveDown)));
 	[rotator setTransform:finalTransform atTime:kCMTimeZero];
 

@@ -27,7 +27,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	[[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +45,7 @@
 
 -(void)viewDidLoad {
 #if !TARGET_IPHONE_SIMULATOR
-	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+	//[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 	NSError *error;
 	VideoCaptureManager *captureManager = [[VideoCaptureManager alloc] init];
 	if ([captureManager setupSessionWithPreset:AVCaptureSessionPresetLow error:&error]) {
@@ -195,11 +194,11 @@
 	[self.view addSubview:previewView];
 	[UIView commitAnimations];
 	
-	MPMoviePlayerController *player =	[[MPMoviePlayerController alloc] initWithContentURL: outputFileURL];
+	MPMoviePlayerController *player =	[[MPMoviePlayerController alloc] initWithContentURL: outputUrl];
 	player.repeatMode = MPMovieRepeatModeOne;
 	player.controlStyle = MPMovieControlStyleNone;
 	player.movieSourceType = MPMovieSourceTypeFile;
-	player.scalingMode = MPMovieScalingModeAspectFit;
+	player.scalingMode = MPMovieScalingModeAspectFill;
 	[player.view setFrame: video.bounds];  // player's frame must match parent's
 	[video addSubview: player.view];
 	[player play];
