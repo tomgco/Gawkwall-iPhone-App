@@ -11,6 +11,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <CommonCrypto/CommonDigest.h>
 #import "CameraViewController.h"
+#import "AlbumViewController.h"
 @class ASIFormDataRequest;
 
 @interface GawkViewController : UIViewController <CameraViewControllerDelegate> {
@@ -25,7 +26,8 @@
 	IBOutlet UILabel *activityTitle;
 	IBOutlet UILabel *activityMessage;
 	IBOutlet UIView *activityView;
-	IBOutlet UIView *termsView;
+	IBOutlet UIView *albumView;
+	IBOutlet UIView *albumdata;
 	IBOutlet UIButton *resubmitButton;
 	IBOutlet UIActivityIndicatorView *submittingIndicator;
 	
@@ -33,12 +35,16 @@
 	NSURL	*linkedUrl;
 	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
+	AlbumViewController *album;
+	
+	//Storage
+	NSArray *tableDataSource;
 
 }
 
 - (IBAction)getVideo;
-- (IBAction)showTerms;
-- (IBAction)hideTerms;
+- (IBAction)showAlbums;
+- (IBAction)hideAlbums;
 - (IBAction)resubmitGawk;
 - (IBAction)logoutOfFacebookAndGawk;
 
@@ -64,6 +70,8 @@
 @property(nonatomic, retain) NSURL *linkedUrl;
 @property(nonatomic, retain) NSURL *gawkOutput;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
+@property (retain, nonatomic) AlbumViewController *album;
+@property (nonatomic, retain) NSArray *tableDataSource;
 
 #pragma mark activityView
 @property(nonatomic, retain) IBOutlet UIActivityIndicatorView *submittingIndicator;

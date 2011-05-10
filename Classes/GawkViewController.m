@@ -11,6 +11,7 @@
 #import "ASIFormDataRequest.h"
 #import "Constant.h"
 #import "GawkAppDelegate.h"
+#import "AlbumViewController.h"
 
 @interface GawkViewController ()
 - (void)uploadFailed:(ASIHTTPRequest *)request;
@@ -26,7 +27,7 @@
 @synthesize videoQuality;
 @synthesize responseArea;
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
-@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, tableDataSource, album;
 
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -64,13 +65,16 @@
 	}
 }
 
-- (IBAction)showTerms {
-	NSLog(@"%@", [self getMember]);
-	[UIView transitionFromView:self.view toView:termsView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+- (IBAction)showAlbums {
+	album = [[AlbumViewController alloc] initWithNibName:@"AlbumViewController" bundle:nil];
+	[albumdata addSubview:album.view];
+	[UIView transitionFromView:self.view toView:albumView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 
--(IBAction)hideTerms{
-	[UIView transitionFromView:termsView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+-(IBAction)hideAlbums {
+	[UIView transitionFromView:albumView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
+		[album release];
+	}];	
 }
 
 
@@ -84,7 +88,6 @@
 	if (true) {
 		activityView.hidden = TRUE;
 		[self hideActivityView];
-		
 		CameraViewController *camera = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
 		[camera setDelegate:self];
 		[email resignFirstResponder];
@@ -231,6 +234,11 @@
 #pragma mark Default
 
 - (void) viewDidLoad {
+	NSArray *tempArray = [[NSArray alloc] init];
+	self.tableDataSource = tempArray;
+	[tempArray release];
+	
+	self.tableDataSource = [[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) data] objectForKey:@"Rows"];
 	if (linkedUrl == nil) {
 		//wallId.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultWallId"];
 	} else {
@@ -250,7 +258,7 @@
 	CGRect frame = self.view.frame;
 	frame.origin.y = 20.0;
 	self.view.frame = frame;
-	termsView.frame = frame;
+	albumView.frame = frame;
 }
 
 - (void)dealloc {

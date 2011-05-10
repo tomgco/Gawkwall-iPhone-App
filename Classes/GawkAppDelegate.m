@@ -19,13 +19,19 @@
 @synthesize window;
 @synthesize cameraViewController;
 @synthesize gawkViewController;
-@synthesize loginView;
+@synthesize loginView, data;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
+	NSString *Path = [[NSBundle mainBundle] bundlePath];
+	NSString *DataPath = [Path stringByAppendingPathComponent:@"Data.plist"];
+	NSDictionary *tempDict = [[NSDictionary alloc] initWithContentsOfFile:DataPath];
+	self.data = tempDict;
+	[tempDict release];
+	NSLog(@"%@", self.data);
+	
 	NSString *version = @"version";
 	NSString *currentVersion = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:version];
 	if (currentVersion == nil)     // App first run: set up user defaults.
@@ -134,6 +140,7 @@
 
 
 - (void)dealloc {
+	[data release];
   [gawkViewController release];
 	[cameraViewController release];
 	[window release];
