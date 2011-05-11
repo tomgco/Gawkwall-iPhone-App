@@ -36,9 +36,6 @@
 	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
 	AlbumViewController *album;
-	
-	//Storage
-	NSArray *tableDataSource;
 
 }
 
@@ -71,7 +68,6 @@
 @property(nonatomic, retain) NSURL *gawkOutput;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (retain, nonatomic) AlbumViewController *album;
-@property (nonatomic, retain) NSArray *tableDataSource;
 
 #pragma mark activityView
 @property(nonatomic, retain) IBOutlet UIActivityIndicatorView *submittingIndicator;

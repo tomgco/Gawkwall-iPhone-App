@@ -27,7 +27,7 @@
 @synthesize videoQuality;
 @synthesize responseArea;
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
-@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, tableDataSource, album;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album;
 
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -234,11 +234,6 @@
 #pragma mark Default
 
 - (void) viewDidLoad {
-	NSArray *tempArray = [[NSArray alloc] init];
-	self.tableDataSource = tempArray;
-	[tempArray release];
-	
-	self.tableDataSource = [[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) data] objectForKey:@"Rows"];
 	if (linkedUrl == nil) {
 		//wallId.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"defaultWallId"];
 	} else {
