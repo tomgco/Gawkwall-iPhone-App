@@ -15,8 +15,6 @@
 		2899E5220DE3E06400AC0155 /* GawkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* GawkViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* GawkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */; };
-		E200721712F8D97D006CAFBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E200721512F8D97D006CAFBA /* Default.png */; };
-		E200721812F8D97D006CAFBA /* Default@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E200721612F8D97D006CAFBA /* Default@2.png */; };
 		E200729212F9F219006CAFBA /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E200729112F9F219006CAFBA /* refresh.png */; };
 		E200734712FA0DA1006CAFBA /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E200734612FA0DA1006CAFBA /* texture.png */; };
 		E20073C312FA1DD0006CAFBA /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = E20073C212FA1DD0006CAFBA /* TODO */; };
@@ -88,8 +86,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Gawk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gawk_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Gawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gawk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		E200721512F8D97D006CAFBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		E200721612F8D97D006CAFBA /* Default@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2.png"; sourceTree = "<group>"; };
 		E200729112F9F219006CAFBA /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		E200734612FA0DA1006CAFBA /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		E20073C212FA1DD0006CAFBA /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
@@ -296,8 +292,6 @@
 				E27157D71317068B002BD0A2 /* rounded_table_cell.png */,
 				E200734612FA0DA1006CAFBA /* texture.png */,
 				E200729012F9F20B006CAFBA /* Controls */,
-				E200721512F8D97D006CAFBA /* Default.png */,
-				E200721612F8D97D006CAFBA /* Default@2.png */,
 				E227429312A88A280075E726 /* icon.png */,
 			);
 			name = Images;
@@ -501,8 +495,6 @@
 				E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */,
 				E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */,
 				E26BE88912F8AE2E002B50C2 /* README.md in Resources */,
-				E200721712F8D97D006CAFBA /* Default.png in Resources */,
-				E200721812F8D97D006CAFBA /* Default@2.png in Resources */,
 				E200729212F9F219006CAFBA /* refresh.png in Resources */,
 				E200734712FA0DA1006CAFBA /* texture.png in Resources */,
 				E20073C312FA1DD0006CAFBA /* TODO in Resources */,
@@ -578,7 +570,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Gawkwall;
 				SDKROOT = iphoneos4.3;
-				VALID_ARCHS = "armv7 armv6";
+				VALID_ARCHS = "armv7 armv6 i386";
 			};
 			name = Debug;
 		};
@@ -597,7 +589,7 @@
 				PRODUCT_NAME = Gawkwall;
 				SDKROOT = iphoneos4.3;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv6";
+				VALID_ARCHS = "armv7 armv6 i386";
 			};
 			name = Release;
 		};
@@ -668,7 +660,7 @@
 				PRODUCT_NAME = Gawkwall;
 				SDKROOT = iphoneos4.3;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv6";
+				VALID_ARCHS = "armv7 armv6 i386";
 			};
 			name = Distribution;
 		};
