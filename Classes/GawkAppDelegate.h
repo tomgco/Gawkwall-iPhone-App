@@ -18,17 +18,18 @@
 	CameraViewController *cameraViewController;
 	LoginViewController *loginView;
 	GawkViewController *gawkViewController;
-	NSDictionary *data;
+	NSMutableDictionary *data;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet CameraViewController *cameraViewController;
 @property (nonatomic, retain) IBOutlet GawkViewController *gawkViewController;
 @property (readonly) LoginViewController *loginView;
-@property (nonatomic, retain) NSDictionary *data;
+@property (nonatomic, retain) NSMutableDictionary *data;
 
 - (void)showLoginView:(BOOL)animated;
 - (IBAction)logout;
+-(void) resetData:(NSMutableDictionary*)replaceData;
 
 @end
 

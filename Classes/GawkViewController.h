@@ -56,6 +56,7 @@
 - (NSString*)sha1File:(NSString *)fileLocation;
 - (BOOL)validateEmail: (NSString *)canidate;
 - (void)showValidationError: (NSString *)msg;
+- (void)startGawkRequest:(NSString*)fileLocation;
 
 @property (nonatomic, retain) UIImagePickerController *gawkNow;
 @property (nonatomic, retain) NSDictionary *member;

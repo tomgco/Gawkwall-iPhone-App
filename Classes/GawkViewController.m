@@ -107,7 +107,7 @@
 }
 
 - (IBAction)resubmitGawk {
-	[self uploadGawkVideo:lastGawk];
+	[self startGawkRequest:lastGawk];
 	[self toggleActivity];
 }
 
@@ -185,18 +185,27 @@
 	NSString *destPath = [folderPath stringByAppendingPathComponent:insPath];
 	
 	NSFileManager *fileManager = [[NSFileManager alloc] init];
-	[fileManager createDirectoryAtPath:folderPath withIntermediateDirectories:NO attributes:nil error:nil];
 	[fileManager moveItemAtPath:fileLocation toPath:destPath error:nil];
-	if ([fileManager fileExistsAtPath:destPath]) {
-		NSLog(@"File created in Documents");
-	}
 	lastGawk = destPath;
 	[fileManager release];
+	
+	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", nil];
+	
+	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
+	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], @"123.jpeg", nil] forKeys:keys]];
+	NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+	[data setObject:dataItems forKey:@"Rows"];
+	if ([data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES])
+		NSLog(@"Nom om");
+	NSLog(@"%@",data);
+	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
+	[self startGawkRequest:destPath];
+}
 
-
+-(void)startGawkRequest:(NSString*)fileLocation {
 	NSString *output = [self sha1File:fileLocation];
 	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\",\"wallSecureId\" : \"%@\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", [member objectForKey:@"secureId"], wallId.text, output];
-
+	
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];

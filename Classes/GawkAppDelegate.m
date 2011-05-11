@@ -24,10 +24,21 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:@"Gawks"];
+	NSFileManager *fileManager = [[NSFileManager alloc] init];
 	NSString *Path = [[NSBundle mainBundle] bundlePath];
-	NSString *DataPath = [Path stringByAppendingPathComponent:@"Data.plist"];
-	NSDictionary *tempDict = [[NSDictionary alloc] initWithContentsOfFile:DataPath];
+	//if (![fileManager fileExistsAtPath:folderPath isDirectory:YES]) {
+	[fileManager createDirectoryAtPath:folderPath withIntermediateDirectories:NO attributes:nil error:nil];
+	//}
+	if (![fileManager fileExistsAtPath:[folderPath stringByAppendingPathComponent:@"Data.plist"]]) {
+		[fileManager copyItemAtPath:[Path stringByAppendingPathComponent:@"Data.plist"] toPath:[folderPath stringByAppendingPathComponent:@"Data.plist"] error:nil];
+	}
+	[fileManager release];
+	NSString *DataPath = [folderPath stringByAppendingPathComponent:@"Data.plist"];
+	NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] initWithContentsOfFile:DataPath];
 	self.data = tempDict;
 	[tempDict release];
 	NSLog(@"%@", self.data);
@@ -58,6 +69,10 @@
 	[gawkViewController presentModalViewController:loginView animated:animated];
 	
 	//[loginView release];
+}
+
+-(void) resetData:(NSMutableDictionary*)replaceData {
+	self.data = [[NSMutableDictionary alloc] initWithDictionary:replaceData];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

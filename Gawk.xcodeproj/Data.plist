@@ -3,15 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>Rows</key>
-	<array>
-		<dict>
-			<key>DateAdded</key>
-			<string></string>
-			<key>Thumbnail</key>
-			<string></string>
-			<key>GawkUrl</key>
-			<string>No Gawks Added</string>
-		</dict>
-	</array>
+	<array/>
 </dict>
 </plist>
