@@ -303,7 +303,7 @@
 	AVMutableVideoCompositionLayerInstruction* rotator = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:clipVideoTrack];
 	CGSize screenSize = [[UIScreen mainScreen] bounds].size;
 	CGAffineTransform translateToCenter = CGAffineTransformMakeTranslation(0,-screenSize.width);   
-	CGAffineTransform moveDown = CGAffineTransformMakeTranslation(-3, -screenSize.height * 0.2);
+	CGAffineTransform moveDown = CGAffineTransformMakeTranslation(-3, 92); //Need to compare ratio with export size
 	CGAffineTransform rotateBy90Degrees = CGAffineTransformMakeRotation(M_PI_2);
 	CGAffineTransform shrinkWidth = CGAffineTransformMakeScale(0.68, 0.68);
 	CGAffineTransform finalTransform = CGAffineTransformConcat(shrinkWidth, CGAffineTransformConcat(translateToCenter, CGAffineTransformConcat(rotateBy90Degrees, moveDown)));
