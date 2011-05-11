@@ -27,7 +27,7 @@
 @synthesize videoQuality;
 @synthesize responseArea;
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
-@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk;
 
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -107,7 +107,7 @@
 }
 
 - (IBAction)resubmitGawk {
-	[self uploadGawkVideo:[gawkOutput path]];
+	[self uploadGawkVideo:lastGawk];
 	[self toggleActivity];
 }
 
@@ -178,6 +178,22 @@
 #pragma mark Video Upload
 
 - (void)uploadGawkVideo:(NSString *)fileLocation {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:@"Gawks"];
+	NSString *insPath = [NSString stringWithFormat:@"gawk-video-%u.mov", [[NSDate date] timeIntervalSince1970]];
+	NSString *destPath = [folderPath stringByAppendingPathComponent:insPath];
+	
+	NSFileManager *fileManager = [[NSFileManager alloc] init];
+	[fileManager createDirectoryAtPath:folderPath withIntermediateDirectories:NO attributes:nil error:nil];
+	[fileManager moveItemAtPath:fileLocation toPath:destPath error:nil];
+	if ([fileManager fileExistsAtPath:destPath]) {
+		NSLog(@"File created in Documents");
+	}
+	lastGawk = destPath;
+	[fileManager release];
+
+
 	NSString *output = [self sha1File:fileLocation];
 	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\",\"wallSecureId\" : \"%@\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", [member objectForKey:@"secureId"], wallId.text, output];
 

@@ -36,7 +36,7 @@
 	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
 	AlbumViewController *album;
-
+	NSString *lastGawk;
 }
 
 - (IBAction)getVideo;
@@ -66,6 +66,7 @@
 @property(nonatomic, retain) IBOutlet UITextField *email;
 @property(nonatomic, retain) NSURL *linkedUrl;
 @property(nonatomic, retain) NSURL *gawkOutput;
+@property(nonatomic, retain) NSString *lastGawk;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (retain, nonatomic) AlbumViewController *album;
 
