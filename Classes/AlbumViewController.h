@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ApplicationCell.h"
 
 @interface AlbumViewController : UITableViewController {
     NSArray *tableDataSource;
+	ApplicationCell *tmpCell;
 }
 
 @property (nonatomic, retain) NSArray *tableDataSource;
+@property (nonatomic, assign) IBOutlet ApplicationCell *tmpCell;
 
 @end

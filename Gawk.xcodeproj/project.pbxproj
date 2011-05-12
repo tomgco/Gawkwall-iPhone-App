@@ -15,8 +15,6 @@
 		2899E5220DE3E06400AC0155 /* GawkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* GawkViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* GawkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GawkViewController.m */; };
-		E200721712F8D97D006CAFBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E200721512F8D97D006CAFBA /* Default.png */; };
-		E200721812F8D97D006CAFBA /* Default@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E200721612F8D97D006CAFBA /* Default@2.png */; };
 		E200729212F9F219006CAFBA /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E200729112F9F219006CAFBA /* refresh.png */; };
 		E200734712FA0DA1006CAFBA /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E200734612FA0DA1006CAFBA /* texture.png */; };
 		E20073C312FA1DD0006CAFBA /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = E20073C212FA1DD0006CAFBA /* TODO */; };
@@ -58,6 +56,13 @@
 		E2A9FA4E12AECB7E002C9D47 /* VideoCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9FA4D12AECB7E002C9D47 /* VideoCaptureManager.m */; };
 		E2A9FACF12AEE4DD002C9D47 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A9FACE12AEE4DD002C9D47 /* AVFoundation.framework */; };
 		E2A9FAD512AEE4F0002C9D47 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A9FAD412AEE4F0002C9D47 /* AssetsLibrary.framework */; };
+		E2AD4922137B5C1C008416F0 /* AlbumViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2AD4921137B5C1C008416F0 /* AlbumViewCell.xib */; };
+		E2AD4925137B5DF4008416F0 /* AlbumCellSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD4924137B5DF4008416F0 /* AlbumCellSubview.m */; };
+		E2AD4929137B5E61008416F0 /* ApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD4928137B5E61008416F0 /* ApplicationCell.m */; };
+		E2AD492C137B66C5008416F0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AD492A137B66C5008416F0 /* Default.png */; };
+		E2AD492D137B66C5008416F0 /* Default@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AD492B137B66C5008416F0 /* Default@2.png */; };
+		E2AD4931137B6933008416F0 /* DarkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AD492F137B6933008416F0 /* DarkBackground.png */; };
+		E2AD4932137B6933008416F0 /* LightBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AD4930137B6933008416F0 /* LightBackground.png */; };
 		E2B2FAED12A7201300588D09 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B2FAEC12A7201300588D09 /* MobileCoreServices.framework */; };
 		E2B2FC9C12A851D700588D09 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC8B12A851D700588D09 /* ASIDataCompressor.m */; };
 		E2B2FC9D12A851D700588D09 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FC8D12A851D700588D09 /* ASIDataDecompressor.m */; };
@@ -91,8 +96,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Gawk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gawk_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Gawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gawk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		E200721512F8D97D006CAFBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		E200721612F8D97D006CAFBA /* Default@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2.png"; sourceTree = "<group>"; };
 		E200729112F9F219006CAFBA /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		E200734612FA0DA1006CAFBA /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		E20073C212FA1DD0006CAFBA /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
@@ -153,6 +156,15 @@
 		E2A9FACE12AEE4DD002C9D47 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E2A9FAD412AEE4F0002C9D47 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E2A9FCB212AF1AD8002C9D47 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E2AD4921137B5C1C008416F0 /* AlbumViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumViewCell.xib; sourceTree = "<group>"; };
+		E2AD4923137B5DE8008416F0 /* AlbumCellSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCellSubview.h; sourceTree = "<group>"; };
+		E2AD4924137B5DF4008416F0 /* AlbumCellSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCellSubview.m; sourceTree = "<group>"; };
+		E2AD4927137B5E61008416F0 /* ApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationCell.h; sourceTree = "<group>"; };
+		E2AD4928137B5E61008416F0 /* ApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationCell.m; sourceTree = "<group>"; };
+		E2AD492A137B66C5008416F0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E2AD492B137B66C5008416F0 /* Default@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2.png"; sourceTree = "<group>"; };
+		E2AD492F137B6933008416F0 /* DarkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkBackground.png; sourceTree = "<group>"; };
+		E2AD4930137B6933008416F0 /* LightBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBackground.png; sourceTree = "<group>"; };
 		E2B2FAEC12A7201300588D09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E2B2FC8912A851D700588D09 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
 		E2B2FC8A12A851D700588D09 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
@@ -212,6 +224,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E2AD4926137B5E0B008416F0 /* Cells */,
 				E201F9A01325633E00114104 /* Models */,
 				E27157191316F1E1002BD0A2 /* FBConnect */,
 				E26BE87F12F8AB6E002B50C2 /* Headers */,
@@ -292,6 +305,10 @@
 		E200728F12F9F1FA006CAFBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E2AD492F137B6933008416F0 /* DarkBackground.png */,
+				E2AD4930137B6933008416F0 /* LightBackground.png */,
+				E2AD492A137B66C5008416F0 /* Default.png */,
+				E2AD492B137B66C5008416F0 /* Default@2.png */,
 				E229B5EF1373606100060046 /* camerar.png */,
 				E229B5F01373606100060046 /* camerar@2.png */,
 				E229B5ED13735FBE00060046 /* camera.png */,
@@ -304,8 +321,6 @@
 				E27157D71317068B002BD0A2 /* rounded_table_cell.png */,
 				E200734612FA0DA1006CAFBA /* texture.png */,
 				E200729012F9F20B006CAFBA /* Controls */,
-				E200721512F8D97D006CAFBA /* Default.png */,
-				E200721612F8D97D006CAFBA /* Default@2.png */,
 				E227429312A88A280075E726 /* icon.png */,
 			);
 			name = Images;
@@ -365,6 +380,7 @@
 				2899E5210DE3E06400AC0155 /* GawkViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				E21B30D01379DB0300602CF1 /* AlbumViewController.xib */,
+				E2AD4921137B5C1C008416F0 /* AlbumViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -420,6 +436,17 @@
 				E27157281316F1E1002BD0A2 /* SBJsonWriter.m */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		E2AD4926137B5E0B008416F0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E2AD4927137B5E61008416F0 /* ApplicationCell.h */,
+				E2AD4928137B5E61008416F0 /* ApplicationCell.m */,
+				E2AD4924137B5DF4008416F0 /* AlbumCellSubview.m */,
+				E2AD4923137B5DE8008416F0 /* AlbumCellSubview.h */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		E2B2FDBB12A8778E00588D09 /* ASIHTTPRequest */ = {
@@ -512,8 +539,6 @@
 				E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */,
 				E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */,
 				E26BE88912F8AE2E002B50C2 /* README.md in Resources */,
-				E200721712F8D97D006CAFBA /* Default.png in Resources */,
-				E200721812F8D97D006CAFBA /* Default@2.png in Resources */,
 				E200729212F9F219006CAFBA /* refresh.png in Resources */,
 				E200734712FA0DA1006CAFBA /* texture.png in Resources */,
 				E20073C312FA1DD0006CAFBA /* TODO in Resources */,
@@ -532,6 +557,11 @@
 				E229B5F21373606100060046 /* camerar@2.png in Resources */,
 				E21B30BD1379D65B00602CF1 /* Data.plist in Resources */,
 				E21B30D21379DB0300602CF1 /* AlbumViewController.xib in Resources */,
+				E2AD4922137B5C1C008416F0 /* AlbumViewCell.xib in Resources */,
+				E2AD492C137B66C5008416F0 /* Default.png in Resources */,
+				E2AD492D137B66C5008416F0 /* Default@2.png in Resources */,
+				E2AD4931137B6933008416F0 /* DarkBackground.png in Resources */,
+				E2AD4932137B6933008416F0 /* LightBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +600,8 @@
 				E271576F1316FE39002BD0A2 /* LoginViewController.m in Sources */,
 				E201F9A31325636200114104 /* LoginModel.m in Sources */,
 				E21B30D11379DB0300602CF1 /* AlbumViewController.m in Sources */,
+				E2AD4925137B5DF4008416F0 /* AlbumCellSubview.m in Sources */,
+				E2AD4929137B5E61008416F0 /* ApplicationCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
