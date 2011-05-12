@@ -17,7 +17,7 @@
 - (void) someOtherError:(NSError *)error;
 - (void) recordingBegan;
 - (void) recordingStopped:(NSURL *)outputFileURL;
-- (void) recordingFinished:(NSURL *)outputFileURL fullQuality:(NSURL *)outputUrl;
+- (void) recordingFinished:(NSURL *)outputFileURL fullQuality:(NSURL *)outputUrl thumbnail:(CGImageRef)tempImageRef;
 - (void) deviceCountChanged;
 @end
 

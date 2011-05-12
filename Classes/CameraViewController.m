@@ -24,6 +24,7 @@
 @synthesize captureVideoPreviewLayer = _captureVideoPreviewLayer;
 @synthesize delegate = _delegate;
 @synthesize outputFileURL = _outputFileURL;
+@synthesize tempImageRef = _tmpImageRef;
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
@@ -118,8 +119,8 @@
 - (IBAction)saveGawk {
 	[self dismissModalView];
 	id delegate = [self delegate];
-	if ([delegate respondsToSelector:@selector(cameraViewControllerFinishedRecording:)]) {
-		[delegate cameraViewControllerFinishedRecording: [_outputFileURL path]];
+	if ([delegate respondsToSelector:@selector(cameraViewControllerFinishedRecording: withThumbnail:)]) {
+		[delegate cameraViewControllerFinishedRecording: [_outputFileURL path] withThumbnail:_tmpImageRef];
 	}
 }
 
@@ -226,12 +227,13 @@
 	processingIndicator.hidden = NO;
 }
 
-- (void)recordingFinished:(NSURL *)outputFileURL fullQuality:(NSURL *)outputUrl {
+- (void)recordingFinished:(NSURL *)outputFileURL fullQuality:(NSURL *)outputUrl thumbnail:(CGImageRef)tempImageRef {
 	processingLabel.hidden = YES;
 	processingIndicator.hidden = YES;
 	
 	//TODO: Dealloc player.
 	_outputFileURL = [[NSURL alloc] initWithString:[outputFileURL path]];
+	_tmpImageRef = tempImageRef;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.75];
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];

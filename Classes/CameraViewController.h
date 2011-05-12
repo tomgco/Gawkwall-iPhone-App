@@ -13,7 +13,7 @@
 
 @protocol CameraViewControllerDelegate <NSObject>
 @required
-- (void) cameraViewControllerFinishedRecording:(NSString *)outputURL;
+- (void) cameraViewControllerFinishedRecording:(NSString *)outputURL withThumbnail:(CGImageRef)tmpImageRef;
 - (void) cameraViewControllerDidCancel;
 @end
 
@@ -28,6 +28,7 @@
 	IBOutlet UIImageView *shutterDown;
 	IBOutlet UIActivityIndicatorView *processingIndicator;
 	IBOutlet UILabel *processingLabel;
+	CGImageRef _tmpImageRef;
 	
 	VideoCaptureManager *_captureManager;
 	AVCaptureVideoPreviewLayer *_videoPreviewView;
@@ -37,6 +38,7 @@
 	NSURL *_outputFileURL;
 }
 
+@property (nonatomic) CGImageRef tempImageRef;
 @property (nonatomic,retain) VideoCaptureManager *captureManager;
 @property (nonatomic,retain) NSURL *outputFileURL;
 @property (nonatomic,retain) IBOutlet AVCaptureVideoPreviewLayer *videoPreviewView;

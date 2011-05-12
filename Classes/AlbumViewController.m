@@ -123,6 +123,8 @@
 	NSDictionary *dictionary = [self.tableDataSource objectAtIndex:indexPath.row];
 	cell.wall = [dictionary objectForKey:@"GawkUrl"];
 	cell.date = @"Date 10/01/2001";
+	cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
+	NSLog(@"%@", [dictionary objectForKey:@"Thumbnail"]);
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }

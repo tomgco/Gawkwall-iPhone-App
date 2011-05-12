@@ -49,7 +49,7 @@
 - (NSDictionary*)getMember;
 - (void)hideActivityView;
 - (void)handleOpenURL:(NSURL *)url;
-- (void)uploadGawkVideo:(NSString *)fileLocation;
+- (void)uploadGawkVideo:(NSString *)fileLocation withThumbnail:(CGImageRef)tmpImageRef;
 - (void)subscribeEmail: (NSString *)emailAddress;
 - (void)showFailedUpload:(NSString *)error;
 - (void)doSlideAnimation:(UIView *)viewName duration:(NSTimeInterval)duration curve:(int)curve x:(int)x y:(int)y;

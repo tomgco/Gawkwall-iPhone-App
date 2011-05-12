@@ -200,6 +200,7 @@
 	[httpRequest setDidFinishSelector:@selector(loginFinished:)];
 	[httpRequest setDidStartSelector:@selector(loginStarted)];
 	[httpRequest startAsynchronous];
+	NSLog(@"%@", [httpRequest postBody]);
 	
 	return YES;
 }

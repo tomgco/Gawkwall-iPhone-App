@@ -140,8 +140,8 @@
 	
 }
 
--(void)cameraViewControllerFinishedRecording:(NSString *)outputFileURL {
-	[self uploadGawkVideo:outputFileURL];
+-(void)cameraViewControllerFinishedRecording:(NSString *)outputFileURL withThumbnail:(CGImageRef)tmpImageRef {
+	[self uploadGawkVideo:outputFileURL withThumbnail:tmpImageRef];
 }
 
 -(void)doSlideAnimation:(UIView *)viewName duration:(NSTimeInterval)duration curve:(int)curve x:(int)x y:(int)y   {
@@ -176,24 +176,33 @@
 
 #pragma mark Video Upload
 
-- (void)uploadGawkVideo:(NSString *)fileLocation {
+- (void)uploadGawkVideo:(NSString *)fileLocation withThumbnail:(CGImageRef)tmpImageRef{
+	activityView.hidden = NO;
+	activityTitle.text = @"Sending Data...";
+	activityMessage.text = @"";
+	[self doSlideAnimation:activityView duration:0.2 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
+	
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:@"Gawks"];
 	NSString *insPath = [NSString stringWithFormat:@"gawk-video-%u.mov", [[NSDate date] timeIntervalSince1970]];
 	NSString *destPath = [folderPath stringByAppendingPathComponent:insPath];
-	
 	NSFileManager *fileManager = [[NSFileManager alloc] init];
 	[fileManager moveItemAtPath:fileLocation toPath:destPath error:nil];
 	lastGawk = destPath;
+	UIImage *tempImage = [UIImage imageWithCGImage:tmpImageRef];
+	NSString *jpgPath = [NSString stringWithFormat:@"gawk-image-%u.jpg", [[NSDate date] timeIntervalSince1970]];
+	NSString *imageDest = [folderPath stringByAppendingPathComponent:jpgPath];
+	[UIImageJPEGRepresentation(tempImage, 90) writeToFile:imageDest atomically:YES];
 	[fileManager release];
 	
 	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", nil];
 	
 	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
-	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], @"123.jpeg", nil] forKeys:keys]];
+	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], [NSString stringWithString:imageDest], nil] forKeys:keys]];
 	NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 	[data setObject:dataItems forKey:@"Rows"];
+	NSLog(@"%@", data);
 	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
 	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
 	[dataItems release];
@@ -223,17 +232,13 @@
 
 	//When the upload has started
 - (void)uploadStarted {
-	activityView.hidden = NO;
-	activityTitle.text = @"Sending Data...";
-	activityMessage.text = @"";
-	[self doSlideAnimation:activityView duration:0.2 curve:UIViewAnimationCurveEaseOut x:0.0f y:70.0f];
+	
 }
 
 	//After File has been sent to server
 - (void)uploadFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	[self hideActivityView];
-	NSLog(@"%@", responseData);
 	//[responseArea setText:responseData];
 	[gawkOutput release];
 }

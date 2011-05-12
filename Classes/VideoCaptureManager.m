@@ -285,6 +285,9 @@
 	
 	AVURLAsset* gawkVideoAsset = [AVURLAsset URLAssetWithURL:outputFileURL options:nil];
 	
+	AVAssetImageGenerator *imagePreview = [AVAssetImageGenerator assetImageGeneratorWithAsset:gawkVideoAsset]; 
+	CGImageRef tempImageRef = [imagePreview copyCGImageAtTime:CMTimeMakeWithSeconds(2, 60) actualTime:nil error:nil];
+	
 	AVMutableComposition *videoComposition = [AVMutableComposition composition];
 	
 	AVMutableCompositionTrack *compositionVideoTrack = [videoComposition  addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
@@ -327,8 +330,12 @@
 				NSLog(@"Export failed: %@", [[exportedVideoSession error] localizedDescription]);
 				break;
 			case AVAssetExportSessionStatusCompleted:
-				if ([delegate respondsToSelector:@selector(recordingFinished: fullQuality:)]) {
-					[delegate recordingFinished: convertedURL fullQuality:outputFileURL];
+				if ([delegate respondsToSelector:@selector(recordingFinished: fullQuality: thumbnail:)]) {
+					AVURLAsset* temp = [AVURLAsset URLAssetWithURL:convertedURL options:nil];
+					AVAssetImageGenerator *imagePreview = [AVAssetImageGenerator assetImageGeneratorWithAsset:temp];
+					
+					CGImageRef tempImageRef = [imagePreview copyCGImageAtTime:CMTimeMakeWithSeconds(2, 60) actualTime:nil error:nil];
+					[delegate recordingFinished: convertedURL fullQuality:outputFileURL thumbnail:tempImageRef];
 				}
 				break;
 			default:
