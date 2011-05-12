@@ -9,7 +9,6 @@
 #import "GawkViewController.h"
 #import "CameraViewController.h"
 #import "ASIFormDataRequest.h"
-#import "Constant.h"
 #import "GawkAppDelegate.h"
 #import "AlbumViewController.h"
 
@@ -195,10 +194,10 @@
 	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], @"123.jpeg", nil] forKeys:keys]];
 	NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 	[data setObject:dataItems forKey:@"Rows"];
-	if ([data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES])
-		NSLog(@"Nom om");
-	NSLog(@"%@",data);
+	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
 	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
+	[dataItems release];
+	[data release];
 	[self startGawkRequest:destPath];
 }
 

@@ -12,8 +12,6 @@
 #import "CameraViewController.h"
 #import "LoginViewController.h"
 #import "FBConnect.h"
-#import "Constant.h"
-
 @implementation GawkAppDelegate
 
 @synthesize window;

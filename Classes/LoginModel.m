@@ -8,7 +8,6 @@
 
 #import "LoginModel.h"
 #import "LoginViewController.h"
-#import "Constant.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "JSON.h"
 
@@ -52,12 +51,12 @@
 	unsigned char result[20];
 	CC_SHA256([sig UTF8String], [sig lengthOfBytesUsingEncoding:NSASCIIStringEncoding],result);
 	NSInteger byteLength = sizeof(HashValueShaHash);
-	NSMutableString *stringValue =
-	[NSMutableString stringWithCapacity:byteLength * 2];
+	NSMutableString *stringValue =	[NSMutableString stringWithCapacity:byteLength * 2];
 	NSInteger i;
 	for (i = 0; i < byteLength; i++) {
 		[stringValue appendFormat:@"%02x", result[i]];
 	}
+	[sig release];
 	return stringValue;
 }
 

@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "Constant.h"
 
 @implementation LoginViewController
 
