@@ -26,6 +26,8 @@
 		E229B5F11373606100060046 /* camerar.png in Resources */ = {isa = PBXBuildFile; fileRef = E229B5EF1373606100060046 /* camerar.png */; };
 		E229B5F21373606100060046 /* camerar@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E229B5F01373606100060046 /* camerar@2.png */; };
 		E229B5F41373763100060046 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E229B5F31373763100060046 /* CoreMedia.framework */; };
+		E247CACF137B70CF0077CD7F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E247CACD137B70CF0077CD7F /* Default.png */; };
+		E247CAD0137B70CF0077CD7F /* Default@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E247CACE137B70CF0077CD7F /* Default@2.png */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
 		E27157321316F1E1002BD0A2 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271571A1316F1E1002BD0A2 /* FBDialog.bundle */; };
@@ -98,6 +100,8 @@
 		E229B5EF1373606100060046 /* camerar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camerar.png; path = ../../../Desktop/camerar.png; sourceTree = "<group>"; };
 		E229B5F01373606100060046 /* camerar@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camerar@2.png"; path = "../../../Desktop/camerar@2.png"; sourceTree = "<group>"; };
 		E229B5F31373763100060046 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E247CACD137B70CF0077CD7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E247CACE137B70CF0077CD7F /* Default@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2.png"; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		E26BE88812F8AE2E002B50C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 		E200728F12F9F1FA006CAFBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E247CACD137B70CF0077CD7F /* Default.png */,
+				E247CACE137B70CF0077CD7F /* Default@2.png */,
 				E229B5EF1373606100060046 /* camerar.png */,
 				E229B5F01373606100060046 /* camerar@2.png */,
 				E229B5ED13735FBE00060046 /* camera.png */,
@@ -511,6 +517,8 @@
 				E229B5EE13735FBE00060046 /* camera.png in Resources */,
 				E229B5F11373606100060046 /* camerar.png in Resources */,
 				E229B5F21373606100060046 /* camerar@2.png in Resources */,
+				E247CACF137B70CF0077CD7F /* Default.png in Resources */,
+				E247CAD0137B70CF0077CD7F /* Default@2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
