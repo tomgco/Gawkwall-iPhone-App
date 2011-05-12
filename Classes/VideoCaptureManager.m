@@ -294,7 +294,7 @@
 	[compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [gawkVideoAsset duration])  ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
 	
 	AVMutableVideoComposition* gawkVideoComposition = [[AVMutableVideoComposition videoComposition]retain];
-	gawkVideoComposition.renderSize = CGSizeMake(320, 220);
+	gawkVideoComposition.renderSize = CGSizeMake(320, 230);
 	gawkVideoComposition.frameDuration = CMTimeMake(1, 30);
 	
 	AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
@@ -303,7 +303,7 @@
 	AVMutableVideoCompositionLayerInstruction* rotator = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:clipVideoTrack];
 	CGSize screenSize = [[UIScreen mainScreen] bounds].size;
 	CGAffineTransform translateToCenter = CGAffineTransformMakeTranslation(0,-screenSize.width);   
-	CGAffineTransform moveDown = CGAffineTransformMakeTranslation(-3, -96);
+	CGAffineTransform moveDown = CGAffineTransformMakeTranslation(0, -96);
 	CGAffineTransform rotateBy90Degrees = CGAffineTransformMakeRotation(M_PI_2);
 	CGAffineTransform shrinkWidth = CGAffineTransformMakeScale(0.68, 0.68);
 	CGAffineTransform finalTransform = CGAffineTransformConcat(shrinkWidth, CGAffineTransformConcat(translateToCenter, CGAffineTransformConcat(rotateBy90Degrees, moveDown)));
@@ -314,7 +314,7 @@
 	gawkVideoComposition.instructions = [NSArray arrayWithObject: instruction];
 
 	
-	__block AVAssetExportSession* exportedVideoSession = [[AVAssetExportSession alloc] initWithAsset:videoComposition presetName:AVAssetExportPresetLowQuality];
+	__block AVAssetExportSession* exportedVideoSession = [[AVAssetExportSession alloc] initWithAsset:videoComposition presetName:AVAssetExportPresetMediumQuality];
 	NSURL *convertedURL = [self tempFileURL:YES];
 	exportedVideoSession.outputURL = convertedURL;
 	exportedVideoSession.videoComposition = gawkVideoComposition;

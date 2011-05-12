@@ -43,7 +43,7 @@
 	//[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 	NSError *error;
 	VideoCaptureManager *captureManager = [[VideoCaptureManager alloc] init];
-	if ([captureManager setupSessionWithPreset:AVCaptureSessionPresetLow error:&error]) {
+	if ([captureManager setupSessionWithPreset:AVCaptureSessionPresetHigh error:&error]) {
 		[self setCaptureManager:captureManager];
 		
 		AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:[captureManager session]];
