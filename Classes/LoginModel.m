@@ -56,7 +56,6 @@
 	for (i = 0; i < byteLength; i++) {
 		[stringValue appendFormat:@"%02x", result[i]];
 	}
-	[sig release];
 	return stringValue;
 }
 
