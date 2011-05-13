@@ -64,6 +64,8 @@
 }
 
 - (IBAction)showTerms {
+	NSString *terms = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:GAWK_TERMS_LOCAITON] encoding:NSUTF8StringEncoding error:nil];
+	termsText.text = terms;
 	[UIView transitionFromView:self.view toView:termsView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 

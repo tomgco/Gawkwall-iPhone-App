@@ -28,7 +28,7 @@
 	IBOutlet UIButton *resubmitButton;
 	IBOutlet UIActivityIndicatorView *submittingIndicator;
 	IBOutlet UIButton *hideKeyboard;
-	
+	IBOutlet UITextView *termsText;
 	NSURL	*linkedUrl;
 	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
