@@ -272,4 +272,8 @@
 	[alertView release];  
 }
 
+- (IBAction) hideKeyboard {
+	[email resignFirstResponder];
+}
+
 @end

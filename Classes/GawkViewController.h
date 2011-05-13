@@ -27,6 +27,7 @@
 	IBOutlet UIView *termsView;
 	IBOutlet UIButton *resubmitButton;
 	IBOutlet UIActivityIndicatorView *submittingIndicator;
+	IBOutlet UIButton *hideKeyboard;
 	
 	NSURL	*linkedUrl;
 	NSURL *gawkOutput;
@@ -39,6 +40,7 @@
 - (IBAction)hideTerms;
 - (IBAction)resubmitGawk;
 - (IBAction)logoutOfFacebookAndGawk;
+- (IBAction)hideKeyboard;
 
 - (void)toggleActivity;
 - (void)hideActivityView;
