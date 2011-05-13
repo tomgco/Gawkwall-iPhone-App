@@ -12,6 +12,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "CameraViewController.h"
 #import "AlbumViewController.h"
+#import "WallCreateViewController.h"
 @class ASIFormDataRequest;
 
 @interface GawkViewController : UIViewController <CameraViewControllerDelegate> {
@@ -27,6 +28,8 @@
 	IBOutlet UILabel *activityMessage;
 	IBOutlet UIView *activityView;
 	IBOutlet UIView *albumView;
+		IBOutlet UIView *createWallView;
+	IBOutlet UIView *createWallData;
 	IBOutlet UIView *albumdata;
 	IBOutlet UIButton *resubmitButton;
 	IBOutlet UIActivityIndicatorView *submittingIndicator;
@@ -36,12 +39,15 @@
 	NSURL *gawkOutput;
 	ASIFormDataRequest *httpRequest;
 	AlbumViewController *album;
+	WallCreateViewController *wallCreate;
 	NSString *lastGawk;
 }
 
 - (IBAction)getVideo;
 - (IBAction)showAlbums;
 - (IBAction)hideAlbums;
+- (IBAction)showCreateWall;
+- (IBAction)hideCreateWall;
 - (IBAction)resubmitGawk;
 - (IBAction)logoutOfFacebookAndGawk;
 
@@ -70,6 +76,7 @@
 @property(nonatomic, retain) NSString *lastGawk;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (retain, nonatomic) AlbumViewController *album;
+@property (retain, nonatomic) WallCreateViewController *wallCreate;
 
 #pragma mark activityView
 @property(nonatomic, retain) IBOutlet UIActivityIndicatorView *submittingIndicator;

@@ -17,6 +17,8 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>icon.png</string>
+		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>W332KDUYB9.gawkwall.tomgallacher.info</string>

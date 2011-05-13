@@ -26,7 +26,7 @@
 @synthesize videoQuality;
 @synthesize responseArea;
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
-@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate;
 
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -62,6 +62,18 @@
 		[alertView show];
 		[alertView release];
 	}
+}
+
+- (IBAction)showCreateWall {
+	wallCreate = [[WallCreateViewController alloc] initWithNibName:@"WallCreateViewController" bundle:nil];
+	[createWallData addSubview:wallCreate.view];
+	[UIView transitionFromView:self.view toView:createWallView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+}
+
+-(IBAction)hideCreateWall {
+	[UIView transitionFromView:createWallView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
+		[wallCreate release];
+	}];	
 }
 
 - (IBAction)showAlbums {
@@ -237,7 +249,7 @@
 
 	//After File has been sent to server
 - (void)uploadFinished:(ASIHTTPRequest *)request {
-	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
+	//NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	[self hideActivityView];
 	//[responseArea setText:responseData];
 	[gawkOutput release];
@@ -246,9 +258,9 @@
 	//if connection failed
 	//TODO: Store video and wait for device to get a connection
 - (void)uploadFailed:(ASIHTTPRequest *)request {
-	NSError *error = [request error];
-	[responseArea setText:[error localizedDescription]];
-	[self showFailedUpload:[error localizedDescription]];
+	//NSError *error = [request error];
+	//[responseArea setText:[error localizedDescription]];
+	//[self showFailedUpload:[error localizedDescription]];
 }
 
 - (void)showFailedUpload:(NSString *)errorMessage {
@@ -283,6 +295,7 @@
 	frame.origin.y = 20.0;
 	self.view.frame = frame;
 	albumView.frame = frame;
+	createWallView.frame = frame;
 }
 
 - (void)dealloc {

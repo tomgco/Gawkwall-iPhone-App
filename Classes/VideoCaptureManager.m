@@ -285,9 +285,6 @@
 	
 	AVURLAsset* gawkVideoAsset = [AVURLAsset URLAssetWithURL:outputFileURL options:nil];
 	
-	AVAssetImageGenerator *imagePreview = [AVAssetImageGenerator assetImageGeneratorWithAsset:gawkVideoAsset]; 
-	CGImageRef tempImageRef = [imagePreview copyCGImageAtTime:CMTimeMakeWithSeconds(2, 60) actualTime:nil error:nil];
-	
 	AVMutableComposition *videoComposition = [AVMutableComposition composition];
 	
 	AVMutableCompositionTrack *compositionVideoTrack = [videoComposition  addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
