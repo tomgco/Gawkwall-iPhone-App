@@ -109,11 +109,16 @@
 }
 
 -(void)onGawkLogout {
-	
+	loading.hidden = YES;
+}
+
+-(void)onGawkLoginComplete {
+	[self dismissModalViewControllerAnimated:NO];
+	loading.hidden = YES;
 }
 
 -(void)onGawkLogin {
-	[self dismissModalViewControllerAnimated:NO];
+	loading.hidden = NO;
 }
 
 - (void)dealloc {

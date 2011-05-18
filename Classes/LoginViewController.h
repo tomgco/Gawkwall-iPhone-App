@@ -20,7 +20,7 @@
 	IBOutlet UITextField *registerUserPassword;
 	IBOutlet UITextField *registerEmail;
 	IBOutlet UIView *registrationView;
-	
+	IBOutlet UIView *loading;
 	LoginModel *loginModel;
 
 }

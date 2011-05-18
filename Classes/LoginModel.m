@@ -168,6 +168,10 @@
 	[[NSUserDefaults standardUserDefaults] setObject:facebook.expirationDate forKey:FB_EXPIRATION_DATE_KEY];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"nom");
+	id delegate = [self delegate];
+	if ([delegate respondsToSelector:@selector(onGawkLogin)]) {
+		[delegate onGawkLogin];
+	}
 	[self onSuccessfulFacebookLogin];
 }
 
@@ -225,8 +229,8 @@
 -(void)onSuccessfulLogin {
 	NSLog(@"gawkonSuccess");
 	id delegate = [self delegate];
-	if ([delegate respondsToSelector:@selector(onGawkLogin)]) {
-		[delegate onGawkLogin];
+	if ([delegate respondsToSelector:@selector(onGawkLoginComplete)]) {
+		[delegate onGawkLoginComplete];
 	}
 }
 

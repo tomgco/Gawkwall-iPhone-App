@@ -14,6 +14,7 @@
 @optional
 -(void)onGawkLogout;
 -(void)onGawkLogin;
+-(void)onGawkLoginComplete;
 @end
 
 @interface LoginModel : NSObject <UITextFieldDelegate, FBRequestDelegate,
