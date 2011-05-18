@@ -48,6 +48,10 @@
 
 -(void)viewWillAppear:(BOOL)animated {
 	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk_username"];
+	if ([loginModel validFBSession]) {
+		[loginModel fbDidLogin];
+		[loginModel onSuccessfulFacebookLogin];
+	}
 }
 
 -(IBAction)registerButtonPressed:(id)sender {

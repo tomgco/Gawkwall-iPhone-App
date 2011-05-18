@@ -33,6 +33,7 @@ FBDialogDelegate, FBSessionDelegate> {
 -(void)gawkFBLogin;
 -(void)onSuccessfulLogin;
 -(void)onSuccessfulFacebookLogin;
+-(BOOL)validFBSession;
 
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (readonly) Facebook *facebook;

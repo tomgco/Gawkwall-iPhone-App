@@ -31,12 +31,15 @@
 		facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_APP_ID];
 		facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
 		facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
-		NSLog(@"%@",facebook.accessToken);
-		if ([facebook isSessionValid]) {
-			[self gawkFBLogin];
-		}
 	}
 	return self;
+}
+
+- (BOOL)validFBSession {
+	if ([facebook isSessionValid]) {
+		return YES;
+	}
+	return NO;
 }
 
 //TODO: Make this function work by combining facebookid with hash below and sha256 it
@@ -60,7 +63,6 @@
 }
 
 -(void)registerUser:(NSDictionary *)memberToRegister {
-	NSLog(@"%@", [memberToRegister JSONRepresentation]);
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 	
@@ -76,7 +78,6 @@
 
 - (void)registerFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
-	NSLog(@"%@", responseData);
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
@@ -105,7 +106,6 @@
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"token"] forKey:@"gawk_token"];
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"secureId"] forKey:@"gawk_secure_id"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"%@", member);
 }
 
 //if connection failed
@@ -136,7 +136,6 @@
 
 - (void)loginFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
-	NSLog(@"%@", responseData);
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
@@ -167,7 +166,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:FB_ACCESS_TOKEN_KEY];
 	[[NSUserDefaults standardUserDefaults] setObject:facebook.expirationDate forKey:FB_EXPIRATION_DATE_KEY];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"nom");
+
 	id delegate = [self delegate];
 	if ([delegate respondsToSelector:@selector(onGawkLogin)]) {
 		[delegate onGawkLogin];
@@ -179,14 +178,12 @@
  * Called when the user canceled the authorization dialog.
  */
 -(void)fbDidNotLogin:(BOOL)cancelled {
-  NSLog(@"not nom");
 }
 
 /**
  * Called when the request logout has succeeded.
  */
 - (void)fbDidLogout {
-	NSLog(@"not nom");
 }
 
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString *)facebookId {
@@ -204,14 +201,12 @@
 	[httpRequest setDidFinishSelector:@selector(loginFinished:)];
 	[httpRequest setDidStartSelector:@selector(loginStarted)];
 	[httpRequest startAsynchronous];
-	NSLog(@"%@", [httpRequest postBody]);
 	
 	return YES;
 }
 
 -(void)gawkFBLogin {
 	if (![facebook isSessionValid]) {
-		NSLog(@"Session Not Valid");
 		NSArray* permissions =  [[NSArray arrayWithObjects:
 															@"email", @"offline_access", nil] retain];
 		[facebook authorize:permissions delegate:self];
@@ -219,7 +214,6 @@
 	} else {
 		[self onSuccessfulFacebookLogin];
 	}
-	NSLog(@"gawkFBLogin");
 }
 
 -(void)onSuccessfulFacebookLogin {
@@ -227,7 +221,6 @@
 }
 
 -(void)onSuccessfulLogin {
-	NSLog(@"gawkonSuccess");
 	id delegate = [self delegate];
 	if ([delegate respondsToSelector:@selector(onGawkLoginComplete)]) {
 		[delegate onGawkLoginComplete];

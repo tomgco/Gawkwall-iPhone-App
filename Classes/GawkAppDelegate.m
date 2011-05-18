@@ -39,7 +39,6 @@
 	NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] initWithContentsOfFile:DataPath];
 	self.data = tempDict;
 	[tempDict release];
-	NSLog(@"%@", self.data);
 	
 	NSString *version = @"version";
 	NSString *currentVersion = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:version];
