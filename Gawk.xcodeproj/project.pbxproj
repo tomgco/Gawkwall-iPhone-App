@@ -28,9 +28,9 @@
 		E2314D6E1384837B00730EDD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2314D6A1384837B00730EDD /* camera@2x.png */; };
 		E2314D6F1384837B00730EDD /* camerar.png in Resources */ = {isa = PBXBuildFile; fileRef = E2314D6B1384837B00730EDD /* camerar.png */; };
 		E2314D701384837B00730EDD /* camerar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2314D6C1384837B00730EDD /* camerar@2x.png */; };
+		E2314D721384842400730EDD /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E2314D711384842400730EDD /* iTunesArtwork */; };
 		E23B0A14137C930700A6FC2C /* WallCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E23B0A12137C930600A6FC2C /* WallCreateViewController.m */; };
 		E23B0A15137C930700A6FC2C /* WallCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A13137C930600A6FC2C /* WallCreateViewController.xib */; };
-		E23B0A17137CAB6100A6FC2C /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A16137CAB6100A6FC2C /* iTunesArtwork.png */; };
 		E23B0A19137CAB9A00A6FC2C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A18137CAB9A00A6FC2C /* Icon.png */; };
 		E23B0A1B137CABCE00A6FC2C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
@@ -115,10 +115,10 @@
 		E2314D6A1384837B00730EDD /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		E2314D6B1384837B00730EDD /* camerar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camerar.png; sourceTree = "<group>"; };
 		E2314D6C1384837B00730EDD /* camerar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camerar@2x.png"; sourceTree = "<group>"; };
+		E2314D711384842400730EDD /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		E23B0A11137C930600A6FC2C /* WallCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCreateViewController.h; path = ../Gawk.xcodeproj/WallCreateViewController.h; sourceTree = "<group>"; };
 		E23B0A12137C930600A6FC2C /* WallCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallCreateViewController.m; path = ../Gawk.xcodeproj/WallCreateViewController.m; sourceTree = "<group>"; };
 		E23B0A13137C930600A6FC2C /* WallCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WallCreateViewController.xib; path = Gawk.xcodeproj/WallCreateViewController.xib; sourceTree = "<group>"; };
-		E23B0A16137CAB6100A6FC2C /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		E23B0A18137CAB9A00A6FC2C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
@@ -315,12 +315,12 @@
 			isa = PBXGroup;
 			children = (
 				E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */,
-				E23B0A16137CAB6100A6FC2C /* iTunesArtwork.png */,
 				E2AD492F137B6933008416F0 /* DarkBackground.png */,
 				E2AD4930137B6933008416F0 /* LightBackground.png */,
 				E2AD492A137B66C5008416F0 /* Default.png */,
 				E2314D691384837B00730EDD /* camera.png */,
 				E2314D6A1384837B00730EDD /* camera@2x.png */,
+				E2314D711384842400730EDD /* iTunesArtwork */,
 				E2314D6B1384837B00730EDD /* camerar.png */,
 				E2314D6C1384837B00730EDD /* camerar@2x.png */,
 				E2AD492B137B66C5008416F0 /* Default@2x.png */,
@@ -572,13 +572,13 @@
 				E2AD4931137B6933008416F0 /* DarkBackground.png in Resources */,
 				E2AD4932137B6933008416F0 /* LightBackground.png in Resources */,
 				E23B0A15137C930700A6FC2C /* WallCreateViewController.xib in Resources */,
-				E23B0A17137CAB6100A6FC2C /* iTunesArtwork.png in Resources */,
 				E23B0A19137CAB9A00A6FC2C /* Icon.png in Resources */,
 				E23B0A1B137CABCE00A6FC2C /* Icon@2x.png in Resources */,
 				E2314D6D1384837B00730EDD /* camera.png in Resources */,
 				E2314D6E1384837B00730EDD /* camera@2x.png in Resources */,
 				E2314D6F1384837B00730EDD /* camerar.png in Resources */,
 				E2314D701384837B00730EDD /* camerar@2x.png in Resources */,
+				E2314D721384842400730EDD /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
