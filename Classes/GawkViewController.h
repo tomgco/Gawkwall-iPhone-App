@@ -23,7 +23,7 @@
 	IBOutlet UIProgressView *progressIndicator;
 	
 #pragma mark activityView
-	IBOutlet UILabel *user;
+	IBOutlet UITextView *user;
 	IBOutlet UILabel *activityTitle;
 	IBOutlet UILabel *activityMessage;
 	IBOutlet UIView *activityView;

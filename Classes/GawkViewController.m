@@ -305,7 +305,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	member = [self getMember];
-	user.text = [member objectForKey:@"alias"];
+	if ([(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] isOffline]) {
+		user.text = @"Hello, you are currently in offline mode. Some features are disabled and your gawk's will be saved in the album to send later.";
+	} else {
+		user.text = [NSString stringWithFormat:@"Hello, %@", [member objectForKey:@"alias"]];
+	}
+	
 	CGRect frame = self.view.frame;
 	frame.origin.y = 20.0;
 	self.view.frame = frame;
