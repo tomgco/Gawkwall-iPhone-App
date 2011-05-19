@@ -14,6 +14,7 @@
 @optional
 -(void)onGawkLogout;
 -(void)onGawkLogin;
+-(void)onGawkLoginFailed;
 -(void)onGawkLoginComplete;
 @end
 

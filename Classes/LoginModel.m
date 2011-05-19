@@ -121,7 +121,7 @@
 	[httpRequest setPostValue:gawkPassword forKey:@"Password"];
 	[httpRequest setPostValue:@"Member.Login" forKey:@"Action"];
 	
-	[httpRequest setTimeOutSeconds:20];	
+	[httpRequest setTimeOutSeconds:10];	
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(loginFailed:)];
 	[httpRequest setDidFinishSelector:@selector(loginFinished:)];
@@ -148,6 +148,8 @@
 		}
 		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
 		//[[NSUserDefaults standardUserDefaults] synchronize];
+	} else {
+		[self loginFailed:request];
 	}
 	[parser release];
 }
@@ -156,6 +158,10 @@
 - (void)loginFailed:(ASIHTTPRequest *)request {
 	NSError *error = [request error];
 	NSLog(@"%@", [error localizedDescription]);
+	id delegate = [self delegate];
+	if ([delegate respondsToSelector:@selector(onGawkLoginFailed)]) {
+		[delegate onGawkLoginFailed];
+	}
 }
 
 /**
@@ -187,7 +193,6 @@
 }
 
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString *)facebookId {
-	NSLog(@"%@", [self generateSignature:facebookId]);
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 	[httpRequest setPostValue:facebookId forKey:@"FacebookId"];
@@ -195,7 +200,7 @@
 	[httpRequest setPostValue:[self generateSignature:facebookId] forKey:@"Signature"];
 	[httpRequest setPostValue:@"Member.Login" forKey:@"Action"];
 	
-	[httpRequest setTimeOutSeconds:20];	
+	[httpRequest setTimeOutSeconds:10];	
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(loginFailed:)];
 	[httpRequest setDidFinishSelector:@selector(loginFinished:)];
@@ -239,7 +244,6 @@
 	[[NSUserDefaults standardUserDefaults] setObject:[result objectForKey:@"email"] forKey:@"gawk_username"];
 	[[NSUserDefaults standardUserDefaults] setObject:[result objectForKey:@"id"] forKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"%@", result);
 	[self gawkLoginWithAuthenticatedFBUser:[result objectForKey:@"id"]];
 }
 

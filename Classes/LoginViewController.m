@@ -16,13 +16,9 @@
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
 		loginModel = [[LoginModel alloc] init];
+		[loginModel setDelegate:self];
 	}
 	return self;
-}
-
--(void)viewDidLoad {
-	[loginModel setDelegate:self];
-	[emailAddress becomeFirstResponder];
 }
 
 #pragma View controls
@@ -47,10 +43,10 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+	[emailAddress becomeFirstResponder];
 	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk_username"];
 	if ([loginModel validFBSession]) {
 		[loginModel fbDidLogin];
-		[loginModel onSuccessfulFacebookLogin];
 	}
 }
 
@@ -123,6 +119,10 @@
 
 -(void)onGawkLogin {
 	loading.hidden = NO;
+}
+
+-(void)onGawkLoginFailed {
+	loading.hidden = YES;
 }
 
 - (void)dealloc {
