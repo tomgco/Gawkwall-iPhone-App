@@ -29,6 +29,7 @@
 -(IBAction)fbLoginButtonPressed:(id)sender;
 -(IBAction)registerButtonPressed:(id)sender;
 -(IBAction)createButtonPressed:(id)sender;
+-(IBAction)offlineLogin:(id)sender;
 -(IBAction)cancelButtonPressed:(id)sender;
 -(BOOL)textFieldShouldReturn:(UITextField *)textField;
 -(void)dismissKeyboard;

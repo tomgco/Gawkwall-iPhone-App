@@ -400,7 +400,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIView" id="662707194">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUINavigationBar" id="832896970">
@@ -408,7 +408,6 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="662707194"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1072331384"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -436,7 +435,6 @@
 						<int key="NSvFlags">256</int>
 						<string key="NSFrame">{{88, -12}, {144, 68}}</string>
 						<reference key="NSSuperview" ref="662707194"/>
-						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">1</int>
@@ -449,15 +447,12 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
 						<reference key="NSSuperview" ref="662707194"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="880629167"/>
 						<reference key="IBUIBackgroundColor" ref="388424686"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="832896970"/>
 				<reference key="IBUIBackgroundColor" ref="388424686"/>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -615,6 +610,14 @@
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">165</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">albumdata</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="742311412"/>
+					</object>
+					<int key="connectionID">166</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -889,7 +892,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">165</int>
+			<int key="maxID">166</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

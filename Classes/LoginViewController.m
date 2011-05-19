@@ -106,6 +106,12 @@
 
 -(IBAction)fbLoginButtonPressed:(id)sender {	
 	[loginModel gawkFBLogin];
+	loading.hidden = NO;
+}
+
+- (IBAction) offlineLogin: (id)sender {
+	[self dismissModalViewControllerAnimated:YES];
+	loading.hidden = YES;
 }
 
 -(void)onGawkLogout {
