@@ -28,7 +28,7 @@
 	IBOutlet UILabel *activityMessage;
 	IBOutlet UIView *activityView;
 	IBOutlet UIView *albumView;
-		IBOutlet UIView *createWallView;
+	IBOutlet UIView *createWallView;
 	IBOutlet UIView *createWallData;
 	IBOutlet UIView *albumdata;
 	IBOutlet UIButton *resubmitButton;

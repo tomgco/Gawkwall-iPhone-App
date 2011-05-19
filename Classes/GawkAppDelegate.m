@@ -95,12 +95,22 @@
 	}
 }
 
+- (void) saveUserGawks {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:@"Gawks"];
+	
+	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
+	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
+}
+
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     /*
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] saveUserGawks];
 }
 
 
@@ -126,6 +136,7 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] saveUserGawks];
 }
 
 

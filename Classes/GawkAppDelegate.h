@@ -30,6 +30,6 @@
 - (void)showLoginView:(BOOL)animated;
 - (IBAction)logout;
 -(void) resetData:(NSMutableDictionary*)replaceData;
-
+- (void) saveUserGawks;
 @end
 

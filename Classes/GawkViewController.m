@@ -11,6 +11,7 @@
 #import "ASIFormDataRequest.h"
 #import "GawkAppDelegate.h"
 #import "AlbumViewController.h"
+#import "JSON.h"
 
 @interface GawkViewController ()
 - (void)uploadFailed:(ASIHTTPRequest *)request;
@@ -201,7 +202,7 @@
 	NSString *destPath = [folderPath stringByAppendingPathComponent:insPath];
 	NSFileManager *fileManager = [[NSFileManager alloc] init];
 	[fileManager moveItemAtPath:fileLocation toPath:destPath error:nil];
-	lastGawk = destPath;
+	lastGawk = [[NSString alloc] initWithString:destPath];
 	UIImage *tempImage = [UIImage imageWithCGImage:tmpImageRef];
 	NSString *jpgPath = [NSString stringWithFormat:@"gawk-image-%u.jpg", [[NSDate date] timeIntervalSince1970]];
 	NSString *imageDest = [folderPath stringByAppendingPathComponent:jpgPath];
@@ -233,7 +234,7 @@
 	[httpRequest setPostValue:[member objectForKey:@"token"] forKey:@"Token"];
 	[httpRequest setPostValue:videoJSON forKey:@"Video"];
 	[httpRequest setFile:fileLocation forKey:@"VideoFile"];
-	[httpRequest setTimeOutSeconds:20];
+	[httpRequest setTimeOutSeconds:5];
 	[httpRequest setUploadProgressDelegate:progressIndicator];	
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(uploadFailed:)];
@@ -249,18 +250,27 @@
 
 	//After File has been sent to server
 - (void)uploadFinished:(ASIHTTPRequest *)request {
-	//NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
-	[self hideActivityView];
+	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	//[responseArea setText:responseData];
+	NSLog(@"%@", [responseData description]);
+	SBJsonParser *parser = [SBJsonParser new];
+  id object = [parser objectWithString:responseData];
+  if (object) {
+		[self hideActivityView];
+	} else {
+		[self uploadFailed:request];
+	}
+	[parser release];
 	[gawkOutput release];
 }
 
 	//if connection failed
 	//TODO: Store video and wait for device to get a connection
 - (void)uploadFailed:(ASIHTTPRequest *)request {
-	//NSError *error = [request error];
+	NSError *error = [request error];
 	//[responseArea setText:[error localizedDescription]];
-	//[self showFailedUpload:[error localizedDescription]];
+	NSLog(@"%@", [error description]);
+	[self showFailedUpload:[error localizedDescription]];
 }
 
 - (void)showFailedUpload:(NSString *)errorMessage {
@@ -312,6 +322,7 @@
 	[httpRequest cancel];
 	[httpRequest release];
 	[responseArea release];
+	[lastGawk release];
 	[super dealloc];
 }
 
