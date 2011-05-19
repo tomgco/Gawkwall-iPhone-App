@@ -209,13 +209,18 @@
 	[UIImageJPEGRepresentation(tempImage, 90) writeToFile:imageDest atomically:YES];
 	[fileManager release];
 	
-	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", nil];
+	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", @"DateCreated", nil];
 	
 	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
-	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], [NSString stringWithString:imageDest], nil] forKeys:keys]];
+	
+	NSDate *today = [NSDate date];
+	NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+	[dateFormat setDateFormat:@"dd/MM/yyyy"];
+	
+	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], [NSString stringWithString:imageDest], [dateFormat stringFromDate:today],nil] forKeys:keys]];
 	NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 	[data setObject:dataItems forKey:@"Rows"];
-	NSLog(@"%@", data);
+	[dateFormat release];
 	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
 	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
 	[dataItems release];

@@ -51,7 +51,6 @@
 		[tempArray release];
 	
 	self.tableDataSource = [[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"];
-	NSLog(@"%@", self.tableDataSource);
 
 	self.tableView.rowHeight = 73.0;
 	self.tableView.backgroundColor = DARK_BACKGROUND;
@@ -123,9 +122,8 @@
     
 	NSDictionary *dictionary = [self.tableDataSource objectAtIndex:indexPath.row];
 	cell.wall = [dictionary objectForKey:@"GawkUrl"];
-	cell.date = @"Date 10/01/2001";
+	cell.date = [dictionary objectForKey:@"DateCreated"];
 	cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
-	NSLog(@"%@", [dictionary objectForKey:@"Thumbnail"]);
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
