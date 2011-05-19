@@ -303,19 +303,21 @@
 	activityView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"texture.png"]];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {	
+	CGRect frame = self.view.frame;
+	frame.origin.y = 20.0;
+	self.view.frame = frame;
+	albumView.frame = frame;
+	createWallView.frame = frame;
+}
+
+-(void) viewDidAppear:(BOOL)animated {
 	member = [self getMember];
 	if ([(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] isOffline]) {
 		user.text = @"Hello, you are currently in offline mode. Some features are disabled and your gawk's will be saved in the album to send later.";
 	} else {
 		user.text = [NSString stringWithFormat:@"Hello, %@", [member objectForKey:@"alias"]];
 	}
-	
-	CGRect frame = self.view.frame;
-	frame.origin.y = 20.0;
-	self.view.frame = frame;
-	albumView.frame = frame;
-	createWallView.frame = frame;
 }
 
 - (void)dealloc {
