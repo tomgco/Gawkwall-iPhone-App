@@ -17,7 +17,7 @@
 @synthesize window;
 @synthesize cameraViewController;
 @synthesize gawkViewController;
-@synthesize loginView, data;
+@synthesize loginView, data, isOffline;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -62,7 +62,7 @@
 	if(!loginView) {
 		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 	}
-	
+	isOffline = YES;
 	[gawkViewController presentModalViewController:loginView animated:animated];
 	
 	//[loginView release];
@@ -103,6 +103,7 @@
 	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
 	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
 }
+
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -147,6 +148,9 @@
     /*
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
+}
+-(void)setOnline {
+	isOffline = NO;
 }
 
 -(IBAction)logout{

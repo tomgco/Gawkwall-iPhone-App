@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "GawkAppDelegate.h"
 
 @implementation LoginViewController
 
@@ -121,6 +122,7 @@
 -(void)onGawkLoginComplete {
 	[self dismissModalViewControllerAnimated:NO];
 	loading.hidden = YES;
+	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] setOnline];
 }
 
 -(void)onGawkLogin {
