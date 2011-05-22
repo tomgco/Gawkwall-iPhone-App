@@ -68,6 +68,8 @@
 - (IBAction)showCreateWall {
 	wallCreate = [[WallCreateViewController alloc] initWithNibName:@"WallCreateViewController" bundle:nil];
 	[createWallData addSubview:wallCreate.view];
+	//Move to present modal view to manage view from within createWalldata
+	//[self presentModalViewController: wallCreate animated:YES];
 	[UIView transitionFromView:self.view toView:createWallView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 
@@ -298,6 +300,7 @@
 	[linkedUrl release];
 	//Set Failed Upload view behind UINavigation
 	CGPoint cord = [activityView center];
+	//[UIScreen mainScreen] bounds].size.height;
 	cord.y = 0.0f;
 	[activityView setCenter:cord];
 	activityView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"texture.png"]];

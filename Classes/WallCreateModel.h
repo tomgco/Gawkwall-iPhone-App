@@ -19,6 +19,7 @@
 }
 
 @property(retain) NSString *url;
+@property(retain) NSString *name;
 @property(retain) NSString *description;
 @property(retain) NSNumber *publicView;
 @property(retain) NSNumber *publicGawk;

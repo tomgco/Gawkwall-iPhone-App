@@ -11,7 +11,7 @@
 
 @implementation WallCreateViewController
 
-@synthesize url, wallCreateModel;
+@synthesize url, wallCreateModel, name;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[url becomeFirstResponder];
+	[name becomeFirstResponder];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -60,7 +60,10 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-	if(textField == url) {
+	if (textField == name) {
+		[url becomeFirstResponder];
+	} else if(textField == url) {
+		wallCreateModel.name = name.text;
 		wallCreateModel.url = url.text;
 		wallCreateModel.publicView = [NSNumber numberWithBool:publicToView.on];
 		wallCreateModel.publicGawk = [NSNumber numberWithBool:friendsCanGawk.on];

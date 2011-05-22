@@ -18,7 +18,7 @@
 @end
 
 @implementation WallCreateModel
-@synthesize url, description, publicGawk, publicView;
+@synthesize url, description, publicGawk, publicView, name;
 
 -(void) createWallFailed:(ASIHTTPRequest *)request {
 	
@@ -50,7 +50,7 @@
 -(void) createWall {
 	NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[self getMember]];
 	
-	NSString *createWallJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\", \"url\" : \"%@\", \"description\" : \"\", \"publicView\" : \"%@\", \"publicGawk\": \"%@\" }", [member objectForKey:@"secureId"], url, publicView, publicGawk];
+	NSString *createWallJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\", \"name\" : \"%@\", \"url\" : \"%@\", \"description\" : \"iPhone Test\", \"publicView\" : \"%@\", \"publicGawk\": \"%@\" }", [member objectForKey:@"secureId"], name, url, publicView, publicGawk];
 	
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];

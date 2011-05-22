@@ -13,7 +13,6 @@
 @interface WallCreateViewController : UIViewController <UITextFieldDelegate>{
 	IBOutlet UITextField *url;
 	IBOutlet UITextField *name;
-	IBOutlet UITextView *description;
 	IBOutlet UISwitch *publicToView;
 	IBOutlet UISwitch *friendsCanGawk;
 	
