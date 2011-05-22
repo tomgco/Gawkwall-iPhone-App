@@ -11,6 +11,7 @@
 
 @interface AlbumViewController : UITableViewController {
     NSArray *tableDataSource;
+	IBOutlet UIView *videoPlayer;
 	ApplicationCell *tmpCell;
 }
 
