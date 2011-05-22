@@ -67,16 +67,16 @@
 
 - (IBAction)showCreateWall {
 	wallCreate = [[WallCreateViewController alloc] initWithNibName:@"WallCreateViewController" bundle:nil];
-	[createWallData addSubview:wallCreate.view];
+	//[createWallData addSubview:wallCreate.view];
 	//Move to present modal view to manage view from within createWalldata
-	//[self presentModalViewController: wallCreate animated:YES];
-	[UIView transitionFromView:self.view toView:createWallView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+	[self presentModalViewController: wallCreate animated:YES];
+	//[UIView transitionFromView:self.view toView:createWallView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 
 -(IBAction)hideCreateWall {
-	[UIView transitionFromView:createWallView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
-		[wallCreate release];
-	}];	
+//	[UIView transitionFromView:createWallView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
+//		[wallCreate release];
+//	}];	
 }
 
 - (IBAction)showAlbums {

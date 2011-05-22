@@ -19,6 +19,7 @@
 
 @implementation WallCreateModel
 @synthesize url, description, publicGawk, publicView, name;
+@synthesize delegate = _delegate;
 
 -(void) createWallFailed:(ASIHTTPRequest *)request {
 	
@@ -29,15 +30,24 @@
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
-		NSDictionary *errors = [[NSDictionary alloc] initWithDictionary:[object objectForKey:@"errors"]];
-		if ([errors count] > 0) {
+		@try {
+			NSDictionary *errors = [[NSDictionary alloc] initWithDictionary:[object objectForKey:@"errors"]];
 			NSString *errorMessage = [[[NSString alloc] init] autorelease]; 
 			for (id key in errors) {
 				errorMessage = [errorMessage stringByAppendingFormat:@"%@\n", [errors objectForKey:key]];
 			}
-			[self displayErrorMessage:errorMessage];
+			id delegate = [self delegate];
+			if ([delegate respondsToSelector:@selector(onFail:)]) {
+				[delegate onFail:errorMessage];
+			}
+			[errors release];
 		}
-		[errors release];
+		@catch (NSException *exception) {
+			id delegate = [self delegate];
+			if ([delegate respondsToSelector:@selector(onComplete)]) {
+				[delegate onComplete];
+			}
+		}
 	} else {
 		[self createWallFailed:request];
 	}
@@ -68,16 +78,6 @@
 
 - (NSDictionary *)getMember {
 	return [[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member];
-}
-
-- (void) displayErrorMessage: (NSString *) errorMessage {
-	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Validation Error"
-																											message:errorMessage
-																										 delegate:nil
-																						cancelButtonTitle:@"Okay"
-																						otherButtonTitles:nil];
-	[alertView show];
-	[alertView release];
 }
 
 @end

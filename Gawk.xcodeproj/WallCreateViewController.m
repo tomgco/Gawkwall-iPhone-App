@@ -19,6 +19,7 @@
     if (self) {
         // Custom initialization
 			wallCreateModel = [[WallCreateModel alloc] init];
+			[wallCreateModel setDelegate:self];
     }
     return self;
 }
@@ -63,13 +64,39 @@
 	if (textField == name) {
 		[url becomeFirstResponder];
 	} else if(textField == url) {
-		wallCreateModel.name = name.text;
-		wallCreateModel.url = url.text;
-		wallCreateModel.publicView = [NSNumber numberWithBool:publicToView.on];
-		wallCreateModel.publicGawk = [NSNumber numberWithBool:friendsCanGawk.on];
-		[wallCreateModel createWall];
+		[self saveAndCreateWall];
 	}
 	return NO;
+}
+
+- (IBAction) saveAndCreateWall {
+	wallCreateModel.name = name.text;
+	wallCreateModel.url = url.text;
+	wallCreateModel.publicView = [NSNumber numberWithBool:publicToView.on];
+	wallCreateModel.publicGawk = [NSNumber numberWithBool:friendsCanGawk.on];
+	[wallCreateModel createWall];
+}
+
+- (IBAction) dismissView {
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void) onComplete {
+	[self dismissView];
+}
+
+- (void) onFail:(NSString *)errorMessage {
+	[self displayErrorMessage:errorMessage];
+}
+
+- (void) displayErrorMessage: (NSString *) errorMessage {
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Validation Error"
+																											message:errorMessage
+																										 delegate:nil
+																						cancelButtonTitle:@"Okay"
+																						otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
 }
 
 @end
