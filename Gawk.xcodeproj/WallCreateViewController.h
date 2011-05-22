@@ -7,12 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WallCreateModel.h"
 
 
-@interface WallCreateViewController : UIViewController {
-	IBOutlet UITextField *wall;
+@interface WallCreateViewController : UIViewController <UITextFieldDelegate>{
+	IBOutlet UITextField *url;
+	IBOutlet UITextField *name;
+	IBOutlet UITextView *description;
+	IBOutlet UISwitch *publicToView;
+	IBOutlet UISwitch *friendsCanGawk;
+	
+	WallCreateModel *wallCreateModel;
 }
 
-@property(nonatomic, retain) IBOutlet UITextField *wall;
+@property(nonatomic, retain) IBOutlet UITextField *url;
+@property(nonatomic, retain) IBOutlet UITextField *name;
+@property (nonatomic, retain) WallCreateModel *wallCreateModel;
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField;
 
 @end

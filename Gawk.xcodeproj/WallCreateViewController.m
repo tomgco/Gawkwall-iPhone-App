@@ -11,13 +11,14 @@
 
 @implementation WallCreateViewController
 
-@synthesize wall;
+@synthesize url, wallCreateModel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+			wallCreateModel = [[WallCreateModel alloc] init];
     }
     return self;
 }
@@ -25,6 +26,7 @@
 - (void)dealloc
 {
     [super dealloc];
+	[wallCreateModel release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[wall becomeFirstResponder];
+	[url becomeFirstResponder];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -55,6 +57,16 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+	if(textField == url) {
+		wallCreateModel.url = url.text;
+		wallCreateModel.publicView = [NSNumber numberWithBool:publicToView.on];
+		wallCreateModel.publicGawk = [NSNumber numberWithBool:friendsCanGawk.on];
+		[wallCreateModel createWall];
+	}
+	return NO;
 }
 
 @end

@@ -33,6 +33,7 @@
 		E23B0A15137C930700A6FC2C /* WallCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A13137C930600A6FC2C /* WallCreateViewController.xib */; };
 		E23B0A19137CAB9A00A6FC2C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A18137CAB9A00A6FC2C /* Icon.png */; };
 		E23B0A1B137CABCE00A6FC2C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */; };
+		E261AD301385DC98002031AA /* WallCreateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E261AD2F1385DC98002031AA /* WallCreateModel.m */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
 		E27157321316F1E1002BD0A2 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271571A1316F1E1002BD0A2 /* FBDialog.bundle */; };
@@ -122,6 +123,8 @@
 		E23B0A18137CAB9A00A6FC2C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		E261AD2E1385DC98002031AA /* WallCreateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallCreateModel.h; sourceTree = "<group>"; };
+		E261AD2F1385DC98002031AA /* WallCreateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallCreateModel.m; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		E26BE88812F8AE2E002B50C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E271571A1316F1E1002BD0A2 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 			children = (
 				E201F9A11325636200114104 /* LoginModel.h */,
 				E201F9A21325636200114104 /* LoginModel.m */,
+				E261AD2E1385DC98002031AA /* WallCreateModel.h */,
+				E261AD2F1385DC98002031AA /* WallCreateModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -620,6 +625,7 @@
 				E2AD4925137B5DF4008416F0 /* AlbumCellSubview.m in Sources */,
 				E2AD4929137B5E61008416F0 /* ApplicationCell.m in Sources */,
 				E23B0A14137C930700A6FC2C /* WallCreateViewController.m in Sources */,
+				E261AD301385DC98002031AA /* WallCreateModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

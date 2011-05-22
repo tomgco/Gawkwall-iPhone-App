@@ -184,12 +184,14 @@
  * Called when the user canceled the authorization dialog.
  */
 -(void)fbDidNotLogin:(BOOL)cancelled {
+	[self loginFailed:nil];
 }
 
 /**
  * Called when the request logout has succeeded.
  */
 - (void)fbDidLogout {
+	
 }
 
 -(BOOL)gawkLoginWithAuthenticatedFBUser:(NSString *)facebookId {
