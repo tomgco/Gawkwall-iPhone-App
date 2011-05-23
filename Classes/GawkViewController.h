@@ -13,6 +13,7 @@
 #import "CameraViewController.h"
 #import "AlbumViewController.h"
 #import "WallCreateViewController.h"
+#import "WallViewController.h"
 @class ASIFormDataRequest;
 
 @interface GawkViewController : UIViewController <CameraViewControllerDelegate> {
@@ -30,7 +31,7 @@
 	IBOutlet UIView *albumView;
 	IBOutlet UIView *createWallView;
 	IBOutlet UIView *createWallData;
-	IBOutlet UIView *albumdata;
+	IBOutlet UIView *wallList;
 	IBOutlet UIButton *resubmitButton;
 	IBOutlet UIActivityIndicatorView *submittingIndicator;
 	
@@ -40,6 +41,7 @@
 	ASIFormDataRequest *httpRequest;
 	AlbumViewController *album;
 	WallCreateViewController *wallCreate;
+	WallViewController *wallView;
 	NSString *lastGawk;
 }
 
@@ -77,6 +79,7 @@
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (retain, nonatomic) AlbumViewController *album;
 @property (retain, nonatomic) WallCreateViewController *wallCreate;
+@property (retain, nonatomic) WallViewController *wallView;
 
 #pragma mark activityView
 @property(nonatomic, retain) IBOutlet UIActivityIndicatorView *submittingIndicator;

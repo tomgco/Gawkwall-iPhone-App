@@ -137,14 +137,16 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:indexPath.row];
 	NSURL *gawkPath = [[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]];
-	MPMoviePlayerController *player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
-	player.repeatMode = MPMovieRepeatModeOne;
-	player.movieSourceType = MPMovieSourceTypeFile;
-	player.controlStyle = MPMovieControlStyleNone;
-	[player.view setFrame: videoPlayer.bounds];  // player's frame must match parent's
-	[videoPlayer addSubview: player.view];
-	[UIView transitionFromView:self.view toView:videoPlayer duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
-	[player play];
+	MPMoviePlayerViewController *player =	[[MPMoviePlayerViewController alloc] initWithContentURL: gawkPath];
+	player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
+	[self presentMoviePlayerViewControllerAnimated:player];
+//	player.repeatMode = MPMovieRepeatModeOne;
+//	player.movieSourceType = MPMovieSourceTypeFile;
+//	player.controlStyle = MPMovieControlStyleNone;
+//	[player.view setFrame: videoPlayer.bounds];  // player's frame must match parent's
+//	[videoPlayer addSubview: player.view];
+//	[UIView transitionFromView:self.view toView:videoPlayer duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+//	[player play];
 	[gawkPath release];
 }
 

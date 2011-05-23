@@ -85,6 +85,8 @@
 		E2D9E96F12AD936600D317C7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E2D9E96E12AD936600D317C7 /* Settings.bundle */; };
 		E2D9EB9D12ADD17800D317C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */; };
 		E2D9EB9E12ADD17800D317C7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */; };
+		E2E3604D138AFCC400B2BCC5 /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3604B138AFCC400B2BCC5 /* WallViewController.m */; };
+		E2E3604E138AFCC400B2BCC5 /* WallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +211,9 @@
 		E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Classes/SearchViewController.xib; sourceTree = "<group>"; };
+		E2E3604A138AFCC400B2BCC5 /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallViewController.h; path = ../Gawk.xcodeproj/WallViewController.h; sourceTree = "<group>"; };
+		E2E3604B138AFCC400B2BCC5 /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallViewController.m; path = ../Gawk.xcodeproj/WallViewController.m; sourceTree = "<group>"; };
+		E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WallViewController.xib; path = Gawk.xcodeproj/WallViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				E23B0A12137C930600A6FC2C /* WallCreateViewController.m */,
+				E2E3604B138AFCC400B2BCC5 /* WallViewController.m */,
 				28D7ACF70DDB3853001CB0EB /* GawkViewController.m */,
 				E21B30CF1379DB0300602CF1 /* AlbumViewController.m */,
 				E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */,
@@ -392,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				E23B0A13137C930600A6FC2C /* WallCreateViewController.xib */,
+				E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */,
 				E271576E1316FE39002BD0A2 /* LoginViewController.xib */,
 				E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */,
 				E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */,
@@ -408,6 +415,7 @@
 			children = (
 				E23B0A11137C930600A6FC2C /* WallCreateViewController.h */,
 				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
+				E2E3604A138AFCC400B2BCC5 /* WallViewController.h */,
 				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
 				E271576C1316FE39002BD0A2 /* LoginViewController.h */,
 				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
@@ -584,6 +592,7 @@
 				E2314D6F1384837B00730EDD /* camerar.png in Resources */,
 				E2314D701384837B00730EDD /* camerar@2x.png in Resources */,
 				E2314D721384842400730EDD /* iTunesArtwork in Resources */,
+				E2E3604E138AFCC400B2BCC5 /* WallViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +635,7 @@
 				E2AD4929137B5E61008416F0 /* ApplicationCell.m in Sources */,
 				E23B0A14137C930700A6FC2C /* WallCreateViewController.m in Sources */,
 				E261AD301385DC98002031AA /* WallCreateModel.m in Sources */,
+				E2E3604D138AFCC400B2BCC5 /* WallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +646,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Objective-C Progs/Gawk/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -645,10 +654,8 @@
 				GCC_PREFIX_HEADER = Gawk_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "Gawk-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Gawkwall;
-				SDKROOT = iphoneos4.3;
-				VALID_ARCHS = "armv7 armv6";
 			};
 			name = Debug;
 		};
@@ -656,18 +663,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Objective-C Progs/Gawk/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Gawk_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "Gawk-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Gawkwall;
-				SDKROOT = iphoneos4.3;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv6";
 			};
 			name = Release;
 		};
@@ -677,13 +681,12 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Debug;
 		};
@@ -694,16 +697,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Serby (544PETJ5GE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "4A1DD489-CF24-459E-85DF-AEDE1EB88909";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Release;
 		};
@@ -714,16 +716,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Distribution;
 		};
@@ -731,18 +732,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Gawk_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "Gawk-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Gawkwall;
-				SDKROOT = iphoneos4.3;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv6";
 			};
 			name = Distribution;
 		};

@@ -17,7 +17,7 @@
 @synthesize window;
 @synthesize cameraViewController;
 @synthesize gawkViewController;
-@synthesize loginView, data, isOffline;
+@synthesize loginView, data, isOffline, tabBarController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -51,7 +51,8 @@
 	
 	
 		// Add the view controller's view to the window and display.
-	self.window.rootViewController = self.gawkViewController;
+	//self.window.rootViewController = self.gawkViewController;
+	self.window.rootViewController = self.tabBarController;
 	[self.window makeKeyAndVisible];
 	[self showLoginView:NO];
     return YES;
@@ -170,6 +171,7 @@
 	[data release];
   [gawkViewController release];
 	[cameraViewController release];
+	[tabBarController release];
 	[window release];
     [super dealloc];
 }

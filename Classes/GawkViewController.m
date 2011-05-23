@@ -27,7 +27,7 @@
 @synthesize videoQuality;
 @synthesize responseArea;
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
-@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate, wallView;
 
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -80,15 +80,15 @@
 }
 
 - (IBAction)showAlbums {
-	album = [[AlbumViewController alloc] initWithNibName:@"AlbumViewController" bundle:nil];
-	[albumdata addSubview:album.view];
-	[UIView transitionFromView:self.view toView:albumView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+//	album = [[AlbumViewController alloc] initWithNibName:@"AlbumViewController" bundle:nil];
+//	[albumdata addSubview:album.view];
+//	[UIView transitionFromView:self.view toView:albumView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 
 -(IBAction)hideAlbums {
-	[UIView transitionFromView:albumView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
-		[album release];
-	}];	
+//	[UIView transitionFromView:albumView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
+//		[album release];
+//	}];	
 }
 
 
@@ -312,6 +312,8 @@
 	self.view.frame = frame;
 	albumView.frame = frame;
 	createWallView.frame = frame;
+	wallView = [[WallViewController alloc] initWithNibName:@"WallViewController" bundle:nil];
+	[wallList addSubview:wallView.view];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
