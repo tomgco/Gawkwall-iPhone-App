@@ -35,6 +35,7 @@ FBDialogDelegate, FBSessionDelegate> {
 -(void)onSuccessfulLogin;
 -(void)onSuccessfulFacebookLogin;
 -(BOOL)validFBSession;
+-(void)displayErrorMessage:(NSString*)errorMessage;
 -(void)login;
 
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;

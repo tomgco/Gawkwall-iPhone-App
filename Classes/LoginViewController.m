@@ -88,6 +88,15 @@
 	[UIView setAnimationDuration:0.75];
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
 	[registrationView removeFromSuperview];
+	[loginView removeFromSuperview];
+	[UIView commitAnimations];
+}
+
+- (IBAction)showUserPassScreen:(id)sender {
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.75];
+	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
+	[self.view addSubview:loginView];
 	[UIView commitAnimations];
 }
 

@@ -144,7 +144,20 @@
   if (object) {
 		NSDictionary *jsonResponse = [responseData JSONValue];
 		if (![[jsonResponse objectForKey:@"success"] boolValue]) {
-			//[self registerUser:member];
+			@try {
+				NSDictionary *errors = [[NSDictionary alloc] initWithDictionary:[jsonResponse objectForKey:@"errors"]];
+				if ([errors count] > 0) {
+					NSString *errorMessage = [[[NSString alloc] init] autorelease]; 
+					for (id key in errors) {
+						errorMessage = [errorMessage stringByAppendingFormat:@"%@\n", [errors objectForKey:key]];
+					}
+					[self displayErrorMessage:errorMessage];
+				}
+				[errors release];
+			}
+			@catch (NSException *exception) {
+				
+			}
 		} else {
 			[self saveMemberData:jsonResponse];
 			[self onSuccessfulLogin];
@@ -260,6 +273,17 @@
 	[member release];
 	[facebook release];
 	[super dealloc];
+}
+
+
+- (void) displayErrorMessage: (NSString *) errorMessage {
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Validation Error"
+																											message:errorMessage
+																										 delegate:nil
+																						cancelButtonTitle:@"Okay"
+																						otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
 }
 
 @end

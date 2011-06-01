@@ -20,6 +20,7 @@
 	IBOutlet UITextField *registerUserPassword;
 	IBOutlet UITextField *registerEmail;
 	IBOutlet UIView *registrationView;
+	IBOutlet UIView *loginView;
 	IBOutlet UIView *loading;
 	LoginModel *loginModel;
 
@@ -30,6 +31,7 @@
 -(IBAction)registerButtonPressed:(id)sender;
 -(IBAction)createButtonPressed:(id)sender;
 -(IBAction)offlineLogin:(id)sender;
+-(IBAction)showUserPassScreen:(id)sender;
 -(IBAction)cancelButtonPressed:(id)sender;
 -(BOOL)textFieldShouldReturn:(UITextField *)textField;
 -(void)dismissKeyboard;
