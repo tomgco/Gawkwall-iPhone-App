@@ -16,7 +16,7 @@
 #import "WallViewController.h"
 @class ASIFormDataRequest;
 
-@interface GawkViewController : UIViewController <CameraViewControllerDelegate> {
+@interface GawkViewController : UIViewController <CameraViewControllerDelegate, WallViewDelegate> {
 	
 	IBOutlet UITextView *responseArea;
 	IBOutlet UITextField *wallId;
@@ -43,6 +43,7 @@
 	WallCreateViewController *wallCreate;
 	WallViewController *wallView;
 	NSString *lastGawk;
+	NSString *lastGawkWall;
 }
 
 - (IBAction)getVideo;
@@ -64,7 +65,7 @@
 - (NSString*)sha1File:(NSString *)fileLocation;
 - (BOOL)validateEmail: (NSString *)canidate;
 - (void)showValidationError: (NSString *)msg;
-- (void)startGawkRequest:(NSString*)fileLocation;
+- (void)startGawkRequest:(NSString*)fileLocation :(NSString*)wallSecureId;
 
 @property (nonatomic, retain) UIImagePickerController *gawkNow;
 @property (nonatomic, retain) NSDictionary *member;
@@ -76,6 +77,7 @@
 @property(nonatomic, retain) NSURL *linkedUrl;
 @property(nonatomic, retain) NSURL *gawkOutput;
 @property(nonatomic, retain) NSString *lastGawk;
+@property(nonatomic, retain) NSString *lastGawkWall;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (retain, nonatomic) AlbumViewController *album;
 @property (retain, nonatomic) WallCreateViewController *wallCreate;

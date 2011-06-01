@@ -19,6 +19,9 @@
 		E200734712FA0DA1006CAFBA /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E200734612FA0DA1006CAFBA /* texture.png */; };
 		E20073C312FA1DD0006CAFBA /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = E20073C212FA1DD0006CAFBA /* TODO */; };
 		E201F9A31325636200114104 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E201F9A21325636200114104 /* LoginModel.m */; };
+		E205718913956A2D00016B8B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E205718713956A2D00016B8B /* SettingsViewController.m */; };
+		E205718A13956A2D00016B8B /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E205718813956A2D00016B8B /* SettingsViewController.xib */; };
+		E205718C1395945100016B8B /* stitch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E205718B1395945100016B8B /* stitch.mp4 */; };
 		E21B30BD1379D65B00602CF1 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = E21B30BC1379D65B00602CF1 /* Data.plist */; };
 		E21B30D11379DB0300602CF1 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E21B30CF1379DB0300602CF1 /* AlbumViewController.m */; };
 		E21B30D21379DB0300602CF1 /* AlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21B30D01379DB0300602CF1 /* AlbumViewController.xib */; };
@@ -108,6 +111,10 @@
 		E20073C212FA1DD0006CAFBA /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		E201F9A11325636200114104 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		E201F9A21325636200114104 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		E205718613956A2D00016B8B /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
+		E205718713956A2D00016B8B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
+		E205718813956A2D00016B8B /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		E205718B1395945100016B8B /* stitch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = stitch.mp4; sourceTree = "<group>"; };
 		E21B30BC1379D65B00602CF1 /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Data.plist; path = Gawk.xcodeproj/Data.plist; sourceTree = "<group>"; };
 		E21B30CE1379DB0300602CF1 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		E21B30CF1379DB0300602CF1 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
@@ -296,6 +303,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E205718B1395945100016B8B /* stitch.mp4 */,
 				E21B30BC1379D65B00602CF1 /* Data.plist */,
 				E200728F12F9F1FA006CAFBA /* Images */,
 				E26BE88812F8AE2E002B50C2 /* README.md */,
@@ -385,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				E23B0A12137C930600A6FC2C /* WallCreateViewController.m */,
+				E205718713956A2D00016B8B /* SettingsViewController.m */,
 				E2E3604B138AFCC400B2BCC5 /* WallViewController.m */,
 				28D7ACF70DDB3853001CB0EB /* GawkViewController.m */,
 				E21B30CF1379DB0300602CF1 /* AlbumViewController.m */,
@@ -406,6 +415,7 @@
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				E21B30D01379DB0300602CF1 /* AlbumViewController.xib */,
 				E2AD4921137B5C1C008416F0 /* AlbumViewCell.xib */,
+				E205718813956A2D00016B8B /* SettingsViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -415,6 +425,7 @@
 			children = (
 				E23B0A11137C930600A6FC2C /* WallCreateViewController.h */,
 				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
+				E205718613956A2D00016B8B /* SettingsViewController.h */,
 				E2E3604A138AFCC400B2BCC5 /* WallViewController.h */,
 				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
 				E271576C1316FE39002BD0A2 /* LoginViewController.h */,
@@ -593,6 +604,8 @@
 				E2314D701384837B00730EDD /* camerar@2x.png in Resources */,
 				E2314D721384842400730EDD /* iTunesArtwork in Resources */,
 				E2E3604E138AFCC400B2BCC5 /* WallViewController.xib in Resources */,
+				E205718A13956A2D00016B8B /* SettingsViewController.xib in Resources */,
+				E205718C1395945100016B8B /* stitch.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +649,7 @@
 				E23B0A14137C930700A6FC2C /* WallCreateViewController.m in Sources */,
 				E261AD301385DC98002031AA /* WallCreateModel.m in Sources */,
 				E2E3604D138AFCC400B2BCC5 /* WallViewController.m in Sources */,
+				E205718913956A2D00016B8B /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

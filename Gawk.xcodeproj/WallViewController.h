@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol WallViewDelegate <NSObject>
+@required
+-(void)onCellSelect:(NSString*)wallSecureId;
+@end
 
+@class ASIFormDataRequest;
 @interface WallViewController : UITableViewController {
-    
+	ASIFormDataRequest *httpRequest;
+	NSMutableArray *wallList;
+	id <WallViewDelegate> _delegate;
 }
+
+@property(nonatomic, retain) NSMutableArray *wallList;
+@property (nonatomic,assign) id <WallViewDelegate> delegate;
 
 @end

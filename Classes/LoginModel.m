@@ -31,6 +31,9 @@
 		facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_APP_ID];
 		facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
 		facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
+		if ([facebook isSessionValid]) {
+			[self gawkFBLogin];
+		}
 	}
 	return self;
 }
@@ -247,6 +250,10 @@
 	[[NSUserDefaults standardUserDefaults] setObject:[result objectForKey:@"id"] forKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	[self gawkLoginWithAuthenticatedFBUser:[result objectForKey:@"id"]];
+}
+
+-(void) login {
+	[self gawkLoginWithAuthenticatedFBUser:[member objectForKey:@"facebookId"]];
 }
 
 -(void)dealloc {

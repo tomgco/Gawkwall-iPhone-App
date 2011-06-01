@@ -12,6 +12,8 @@
 #import "GawkAppDelegate.h"
 #import "AlbumViewController.h"
 #import "JSON.h"
+#import "WallViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface GawkViewController ()
 - (void)uploadFailed:(ASIHTTPRequest *)request;
@@ -27,7 +29,7 @@
 @synthesize videoQuality;
 @synthesize responseArea;
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
-@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate, wallView;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate, wallView, lastGawkWall;
 
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -70,6 +72,7 @@
 	//[createWallData addSubview:wallCreate.view];
 	//Move to present modal view to manage view from within createWalldata
 	[self presentModalViewController: wallCreate animated:YES];
+	
 	//[UIView transitionFromView:self.view toView:createWallView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 
@@ -80,6 +83,20 @@
 }
 
 - (IBAction)showAlbums {
+	NSString *Path = [[NSBundle mainBundle] bundlePath];
+	
+	NSURL *gawkPath = [[NSURL alloc] initWithString:[Path stringByAppendingPathComponent:@"stitch.mp4"]];
+	MPMoviePlayerViewController *player =	[[MPMoviePlayerViewController alloc] initWithContentURL: gawkPath];
+	player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
+	[self presentMoviePlayerViewControllerAnimated:player];
+	//	player.repeatMode = MPMovieRepeatModeOne;
+	//	player.movieSourceType = MPMovieSourceTypeFile;
+	//	player.controlStyle = MPMovieControlStyleNone;
+	//	[player.view setFrame: videoPlayer.bounds];  // player's frame must match parent's
+	//	[videoPlayer addSubview: player.view];
+	//	[UIView transitionFromView:self.view toView:videoPlayer duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+	//	[player play];
+	[gawkPath release];
 //	album = [[AlbumViewController alloc] initWithNibName:@"AlbumViewController" bundle:nil];
 //	[albumdata addSubview:album.view];
 //	[UIView transitionFromView:self.view toView:albumView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
@@ -121,7 +138,7 @@
 }
 
 - (IBAction)resubmitGawk {
-	[self startGawkRequest:lastGawk];
+	[self startGawkRequest:lastGawk :lastGawkWall];
 	[self toggleActivity];
 }
 
@@ -227,12 +244,12 @@
 	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
 	[dataItems release];
 	[data release];
-	[self startGawkRequest:destPath];
+	[self startGawkRequest:destPath :lastGawkWall];
 }
 
--(void)startGawkRequest:(NSString*)fileLocation {
+-(void)startGawkRequest:(NSString*)fileLocation: (NSString*)wallSecureId {
 	NSString *output = [self sha1File:fileLocation];
-	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\",\"wallSecureId\" : \"%@\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", [member objectForKey:@"secureId"], wallId.text, output];
+	NSString *videoJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\",\"wallSecureId\" : \"%@\", \"uploadSource\" : \"iphone\", \"approved\" : true, \"rating\" : 0, \"hash\": \"%@\" }", [member objectForKey:@"secureId"], wallSecureId, output];
 	
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 	gawkOutput = [[NSURL alloc] initWithString:fileLocation];
@@ -313,6 +330,7 @@
 	albumView.frame = frame;
 	createWallView.frame = frame;
 	wallView = [[WallViewController alloc] initWithNibName:@"WallViewController" bundle:nil];
+	[wallView setDelegate:self];
 	[wallList addSubview:wallView.view];
 }
 
@@ -340,6 +358,7 @@
 	[httpRequest release];
 	[responseArea release];
 	[lastGawk release];
+	[lastGawkWall release];
 	[super dealloc];
 }
 
@@ -351,6 +370,12 @@
 																						otherButtonTitles:nil];
 	[alertView show];
 	[alertView release];  
+}
+
+- (void) onCellSelect:(NSString *)wallSecureId{
+	NSLog(@"Bang");
+	lastGawkWall = [[NSString alloc] initWithString:wallSecureId];
+	[self getVideo];
 }
 
 @end

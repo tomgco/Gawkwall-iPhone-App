@@ -7,9 +7,18 @@
 //
 
 #import "WallViewController.h"
+#import "ASIFormDataRequest.h"
+#import "GawkAppDelegate.h"
+#import "JSON.h"
 
+@interface WallViewController ()
+- (void)getWallFailed:(ASIHTTPRequest *)request;
+- (void)getWallFinished:(ASIHTTPRequest *)request;
+@end
 
 @implementation WallViewController
+@synthesize wallList;
+@synthesize delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -18,11 +27,33 @@
         // Custom initialization
     }
     return self;
+	wallList = [[NSMutableArray alloc] init];
+}
+
+- (void)getWallFailed:(ASIHTTPRequest *)request {
+	
+}
+
+- (void)getWallFinished:(ASIHTTPRequest *)request {
+	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
+	SBJsonParser *parser = [SBJsonParser new];
+  id object = [parser objectWithString:responseData];
+  if (object) {
+		[wallList release];
+		wallList = [[NSMutableArray alloc] initWithArray:[[object objectForKey:@"recentActivity"] objectForKey:@"wallsCreatedByMember"]];
+	} else {
+	}
+	[self.tableView reloadData];
+	[parser release];
 }
 
 - (void)dealloc
 {
     [super dealloc];
+}
+
+- (NSDictionary *)getMember {
+	return [[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member];
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,11 +64,28 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void) getWall {
+	
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+		NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[self getMember]];
+		NSLog(@"NBOM%@", [member objectForKey:@"token"]);
+		
+		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
+		httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
+		[httpRequest setPostValue:@"MemberWallBookmark.GetRecentWallActivity" forKey:@"Action"];
+		[httpRequest setPostValue:[member objectForKey:@"token"] forKey:@"Token"];
+		[httpRequest setTimeOutSeconds:5];
+		[httpRequest setDelegate:self];
+		[httpRequest setDidFailSelector:@selector(getWallFailed:)];
+		[httpRequest setDidFinishSelector:@selector(getWallFinished:)];
+		[httpRequest startAsynchronous];
+		[member release];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -55,7 +103,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+	
+	[super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -83,16 +132,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+	return 3;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+	if (!wallList) {
+		return 0;
+	} else {
+		//NSLog(@"%@", [wallList ]);
+    return [wallList count];
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,7 +154,9 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+	
+	NSDictionary *dictionary = [self.wallList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [dictionary objectForKey:@"name"];
     // Configure the cell...
     
     return cell;
@@ -160,6 +213,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+	NSDictionary *dictionary = [self.wallList objectAtIndex:indexPath.row];
+	id delegate = [self delegate];
+	if ([delegate respondsToSelector:@selector(onCellSelect:)]) {
+		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]];
+	}
 }
 
 @end

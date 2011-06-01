@@ -64,7 +64,7 @@
 		loginView = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 	}
 	isOffline = YES;
-	[gawkViewController presentModalViewController:loginView animated:animated];
+	[self.tabBarController presentModalViewController:loginView animated:animated];
 	
 	//[loginView release];
 }

@@ -47,7 +47,7 @@
 	[emailAddress becomeFirstResponder];
 	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk_username"];
 	if ([loginModel validFBSession]) {
-		[loginModel fbDidLogin];
+		[loginModel login];
 	}
 }
 
