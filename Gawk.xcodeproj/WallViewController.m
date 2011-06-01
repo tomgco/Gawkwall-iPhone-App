@@ -74,7 +74,6 @@
 {
     [super viewDidLoad];
 		NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[self getMember]];
-		NSLog(@"NBOM%@", [member objectForKey:@"token"]);
 		
 		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 		httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
@@ -141,7 +140,6 @@
 	if (!wallList) {
 		return 0;
 	} else {
-		//NSLog(@"%@", [wallList ]);
     return [wallList count];
 	}
 }

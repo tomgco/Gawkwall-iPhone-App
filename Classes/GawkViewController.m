@@ -275,7 +275,7 @@
 	//After File has been sent to server
 - (void)uploadFinished:(ASIHTTPRequest *)request {
 	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
-	//[responseArea setText:responseData];
+
 	NSLog(@"%@", [responseData description]);
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
@@ -288,8 +288,7 @@
 	[gawkOutput release];
 }
 
-	//if connection failed
-	//TODO: Store video and wait for device to get a connection
+
 - (void)uploadFailed:(ASIHTTPRequest *)request {
 	NSError *error = [request error];
 	//[responseArea setText:[error localizedDescription]];
@@ -373,7 +372,6 @@
 }
 
 - (void) onCellSelect:(NSString *)wallSecureId{
-	NSLog(@"Bang");
 	lastGawkWall = [[NSString alloc] initWithString:wallSecureId];
 	[self getVideo];
 }

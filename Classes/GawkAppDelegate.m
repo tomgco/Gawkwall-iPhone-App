@@ -86,7 +86,6 @@
 	}
 	
 	if ([[url scheme] isEqualToString:GAWK_FACEBOOK_FB_URL]) {
-		NSLog(@"Loggin");
 		return [[[loginView loginModel] facebook] handleOpenURL:url];
 	} else {
 	
@@ -155,7 +154,6 @@
 }
 
 -(IBAction)logout{
-	NSLog(@"Logout");
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gawk_username"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_ACCESS_TOKEN_KEY];
