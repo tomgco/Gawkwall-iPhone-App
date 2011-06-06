@@ -73,7 +73,7 @@
 }
 
 -(IBAction)createButtonPressed:(id)sender {
-	if([registerUserName.text length] && [registerUserPassword.text length] && [registerUserPasswordConfirm.text length] && [registerEmail.text length] && [self validateEmail:registerEmail.text]) {
+	if([registerUserName.text length] && [registerUserPassword.text length] && [registerUserPasswordConfirm.text length] && [registerEmail.text length]) {
 		NSDictionary *regMember = [[NSDictionary alloc] initWithObjectsAndKeys:registerEmail.text, @"emailAddress",registerUserPassword.text, @"password", registerUserPasswordConfirm.text, @"confirmPassword", registerUserName.text, @"alias",nil];
 		[loginModel registerUser:regMember];
 		[regMember release];
