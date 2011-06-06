@@ -60,10 +60,13 @@
 -(void) createWall {
 	NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[self getMember]];
 	
+	NSString *createWallJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\", \"name\" : \"%@\", \"url\" : \"%@\", \"description\" : \"iPhone Test\", \"publicView\" : \"%@\", \"publicGawk\": \"%@\" }", [member objectForKey:@"secureId"], name, url, publicView, publicGawk];
+	
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
-	[httpRequest setPostValue:@"MemberWallBookmark.GetRecentWallActivity" forKey:@"Action"];
-	[httpRequest setPostValue:@"MemberWallBookmark.GetRecentWallActivity" forKey:@"Action"];
+	[httpRequest setPostValue:@"Wall.Save" forKey:@"Action"];
+	[httpRequest setPostValue:[member objectForKey:@"token"] forKey:@"Token"];
+	[httpRequest setPostValue:createWallJSON forKey:@"WallData"];
 	[httpRequest setTimeOutSeconds:5];
 	[httpRequest setDelegate:self];
 	[httpRequest setDidFailSelector:@selector(createWallFailed:)];
