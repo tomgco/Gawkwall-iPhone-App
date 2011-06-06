@@ -30,10 +30,12 @@
 	if(textField == password && [password.text length] > 0)
 		[self loginButtonPressed:textField];
 	if(textField == registerUserName && [registerUserName.text length] > 0)
-		[registerUserPassword becomeFirstResponder];
-	if(textField == registerUserPassword && [registerUserPassword.text length] > 0)
 		[registerEmail becomeFirstResponder];
 	if(textField == registerEmail && [registerEmail.text length] > 0)
+		[registerUserPassword becomeFirstResponder];
+	if(textField == registerUserPassword && [registerUserPassword.text length] > 0)
+		[registerUserPasswordConfirm becomeFirstResponder];
+	if(textField == registerUserPasswordConfirm && [registerUserPasswordConfirm.text length] > 0)
 		[self createButtonPressed:textField];
 	return NO;
 }
@@ -71,11 +73,8 @@
 }
 
 -(IBAction)createButtonPressed:(id)sender {
-	if([registerUserName.text length] && [registerUserPassword.text length] && [registerEmail.text length] && [self validateEmail:registerEmail.text]) {
-		registerEmail.enabled = NO;
-		registerUserName.enabled = NO;
-		registerUserPassword.enabled = NO;
-		NSDictionary *regMember = [[NSDictionary alloc] initWithObjectsAndKeys:registerEmail.text, @"emailAddress",registerUserPassword.text, @"password", registerUserName.text, @"alias",nil];
+	if([registerUserName.text length] && [registerUserPassword.text length] && [registerUserPasswordConfirm.text length] && [registerEmail.text length] && [self validateEmail:registerEmail.text]) {
+		NSDictionary *regMember = [[NSDictionary alloc] initWithObjectsAndKeys:registerEmail.text, @"emailAddress",registerUserPassword.text, @"password", registerUserPasswordConfirm.text, @"confirmPassword", registerUserName.text, @"alias",nil];
 		[loginModel registerUser:regMember];
 		[regMember release];
 	} else {

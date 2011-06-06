@@ -84,13 +84,27 @@
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
-		NSDictionary *jsonResponse = [responseData JSONValue];
-		if (![[jsonResponse objectForKey:@"success"] boolValue]) {
-			//[self registerUser:member];
+		if (![[object objectForKey:@"success"] boolValue]) {
+			@try {
+				if ([[object objectForKey:@"errors"] count] > 0) {
+					NSString *errorMessage = [[[NSString alloc] init] autorelease]; 
+					for (id key in [object objectForKey:@"errors"]) {
+						errorMessage = [errorMessage stringByAppendingFormat:@"%@\n", key];
+					}
+					[self displayErrorMessage:errorMessage];
+				}
+			}
+			@catch (NSException *exception) {
+				
+			}
 		} else {
-			[self saveMemberData:jsonResponse];
+			[self saveMemberData:object];
 			[self onSuccessfulLogin];
 		}
+		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
+		//[[NSUserDefaults standardUserDefaults] synchronize];
+	} else {
+		[self loginFailed:request];
 	}
 	[parser release];
 }

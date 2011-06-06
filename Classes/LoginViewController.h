@@ -18,6 +18,7 @@
 	IBOutlet UITextField *password;
 	IBOutlet UITextField *registerUserName;
 	IBOutlet UITextField *registerUserPassword;
+	IBOutlet UITextField *registerUserPasswordConfirm;
 	IBOutlet UITextField *registerEmail;
 	IBOutlet UIView *registrationView;
 	IBOutlet UIView *loginView;
