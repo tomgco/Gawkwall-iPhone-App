@@ -8,7 +8,7 @@
 
 #import "AlbumViewController.h"
 #import "GawkAppDelegate.h"
-#import <MediaPlayer/MediaPlayer.h>
+#import <QuartzCore/QuartzCore.h>
 
 #define DARK_BACKGROUND  [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0]
 #define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0]
@@ -16,7 +16,7 @@
 
 @implementation AlbumViewController
 
-@synthesize tableDataSource, tmpCell;
+@synthesize tableDataSource, tmpCell, albumVideoView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,6 +30,7 @@
 - (void)dealloc
 {
 	[tableDataSource release];
+	[albumVideoView release];
     [super dealloc];
 }
 
@@ -56,7 +57,7 @@
 	self.tableView.rowHeight = 73.0;
 	self.tableView.backgroundColor = DARK_BACKGROUND;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	
+	albumVideoView = [[AlbumVideoViewController alloc] initWithNibName:@"AlbumVideoViewController" bundle:nil];
 }
 
 - (void)viewDidUnload
@@ -136,18 +137,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:indexPath.row];
-	NSURL *gawkPath = [[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]];
-	MPMoviePlayerViewController *player =	[[MPMoviePlayerViewController alloc] initWithContentURL: gawkPath];
-	player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
-	[self presentMoviePlayerViewControllerAnimated:player];
-//	player.repeatMode = MPMovieRepeatModeOne;
-//	player.movieSourceType = MPMovieSourceTypeFile;
-//	player.controlStyle = MPMovieControlStyleNone;
-//	[player.view setFrame: videoPlayer.bounds];  // player's frame must match parent's
-//	[videoPlayer addSubview: player.view];
-//	[UIView transitionFromView:self.view toView:videoPlayer duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
 //	[player play];
-	[gawkPath release];
+	CATransition *animation = [CATransition animation];
+	[animation setDuration:0.5];
+	[animation setType:kCATransitionPush];
+	[animation setSubtype:kCATransitionFromRight];
+	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+	[self.tableView.superview addSubview:albumVideoView.view];
+	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchToView1"];
+	[albumVideoView showVideo:gawkPath];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

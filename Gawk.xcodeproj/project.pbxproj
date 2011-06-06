@@ -90,6 +90,9 @@
 		E2D9EB9E12ADD17800D317C7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */; };
 		E2E3604D138AFCC400B2BCC5 /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3604B138AFCC400B2BCC5 /* WallViewController.m */; };
 		E2E3604E138AFCC400B2BCC5 /* WallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */; };
+		E2EFCA971397051E009D92E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EFCA961397051E009D92E5 /* QuartzCore.framework */; };
+		E2EFCA9B13970844009D92E5 /* AlbumVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EFCA9913970844009D92E5 /* AlbumVideoViewController.m */; };
+		E2EFCA9C13970844009D92E5 /* AlbumVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EFCA9A13970844009D92E5 /* AlbumVideoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +224,10 @@
 		E2E3604A138AFCC400B2BCC5 /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallViewController.h; path = ../Gawk.xcodeproj/WallViewController.h; sourceTree = "<group>"; };
 		E2E3604B138AFCC400B2BCC5 /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallViewController.m; path = ../Gawk.xcodeproj/WallViewController.m; sourceTree = "<group>"; };
 		E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WallViewController.xib; path = Gawk.xcodeproj/WallViewController.xib; sourceTree = "<group>"; };
+		E2EFCA961397051E009D92E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E2EFCA9813970844009D92E5 /* AlbumVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumVideoViewController.h; path = ../AlbumVideoViewController.h; sourceTree = "<group>"; };
+		E2EFCA9913970844009D92E5 /* AlbumVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumVideoViewController.m; path = ../AlbumVideoViewController.m; sourceTree = "<group>"; };
+		E2EFCA9A13970844009D92E5 /* AlbumVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumVideoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EFCA971397051E009D92E5 /* QuartzCore.framework in Frameworks */,
 				E229B5F41373763100060046 /* CoreMedia.framework in Frameworks */,
 				E229B5EA13731FBC00060046 /* MediaPlayer.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -271,6 +279,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E2EFCA961397051E009D92E5 /* QuartzCore.framework */,
 				E229B5F31373763100060046 /* CoreMedia.framework */,
 				E229B5E913731FBC00060046 /* MediaPlayer.framework */,
 				E2CE928F131F095500D92F70 /* Constant.h */,
@@ -392,6 +401,7 @@
 		E26BE87812F8AA43002B50C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2EFCA9913970844009D92E5 /* AlbumVideoViewController.m */,
 				E23B0A12137C930600A6FC2C /* WallCreateViewController.m */,
 				E205718713956A2D00016B8B /* SettingsViewController.m */,
 				E2E3604B138AFCC400B2BCC5 /* WallViewController.m */,
@@ -416,6 +426,7 @@
 				E21B30D01379DB0300602CF1 /* AlbumViewController.xib */,
 				E2AD4921137B5C1C008416F0 /* AlbumViewCell.xib */,
 				E205718813956A2D00016B8B /* SettingsViewController.xib */,
+				E2EFCA9A13970844009D92E5 /* AlbumVideoViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -423,6 +434,7 @@
 		E26BE87F12F8AB6E002B50C2 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				E2EFCA9813970844009D92E5 /* AlbumVideoViewController.h */,
 				E23B0A11137C930600A6FC2C /* WallCreateViewController.h */,
 				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
 				E205718613956A2D00016B8B /* SettingsViewController.h */,
@@ -606,6 +618,7 @@
 				E2E3604E138AFCC400B2BCC5 /* WallViewController.xib in Resources */,
 				E205718A13956A2D00016B8B /* SettingsViewController.xib in Resources */,
 				E205718C1395945100016B8B /* stitch.mp4 in Resources */,
+				E2EFCA9C13970844009D92E5 /* AlbumVideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +663,7 @@
 				E261AD301385DC98002031AA /* WallCreateModel.m in Sources */,
 				E2E3604D138AFCC400B2BCC5 /* WallViewController.m in Sources */,
 				E205718913956A2D00016B8B /* SettingsViewController.m in Sources */,
+				E2EFCA9B13970844009D92E5 /* AlbumVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
