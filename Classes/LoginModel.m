@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "JSON.h"
+#import "GawkAppDelegate.h"
 
 @interface LoginModel ()
 - (void)loginFailed:(ASIHTTPRequest *)request;
@@ -156,24 +157,23 @@
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
-		NSDictionary *jsonResponse = [responseData JSONValue];
-		if (![[jsonResponse objectForKey:@"success"] boolValue]) {
+		if (![[object objectForKey:@"success"] boolValue]) {
 			@try {
-				NSDictionary *errors = [[NSDictionary alloc] initWithDictionary:[jsonResponse objectForKey:@"errors"]];
-				if ([errors count] > 0) {
-					NSString *errorMessage = [[[NSString alloc] init] autorelease]; 
-					for (id key in errors) {
-						errorMessage = [errorMessage stringByAppendingFormat:@"%@\n", [errors objectForKey:key]];
-					}
-					[self displayErrorMessage:errorMessage];
+				NSArray *errors = [[NSArray alloc] initWithArray:[object objectForKey:@"errors"]];
+				NSString *errorMessage = [[[NSString alloc] init] autorelease]; 
+				for (id item in errors) {
+					errorMessage = [errorMessage stringByAppendingFormat:@"%@\n", item];
 				}
+				[self displayErrorMessage:errorMessage];
+				[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) logout];
+				[self loginFailed:nil];
 				[errors release];
 			}
 			@catch (NSException *exception) {
 				
 			}
 		} else {
-			[self saveMemberData:jsonResponse];
+			[self saveMemberData:object];
 			[self onSuccessfulLogin];
 		}
 		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
@@ -280,7 +280,7 @@
 }
 
 -(void) login {
-	[self gawkLoginWithAuthenticatedFBUser:[member objectForKey:@"facebookId"]];
+	[self gawkFBLogin];
 }
 
 -(void)dealloc {
