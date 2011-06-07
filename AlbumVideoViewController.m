@@ -7,7 +7,6 @@
 //
 
 #import "AlbumVideoViewController.h"
-#import <MediaPlayer/MediaPlayer.h>
 
 
 @implementation AlbumVideoViewController
@@ -56,14 +55,7 @@
 }
 
 - (void)showVideo:(NSURL *)gawkUrl {
-	MPMoviePlayerController *player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkUrl];
-	//player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
-	//[self presentMoviePlayerViewControllerAnimated:player];
-	player.repeatMode = MPMovieRepeatModeOne;
-	player.movieSourceType = MPMovieSourceTypeFile;
-	player.controlStyle = MPMovieControlStyleNone;
-	[player.view setFrame: self.view.bounds];  // player's frame must match parent's
-	[video addSubview: player.view];
+
 }
 
 @end

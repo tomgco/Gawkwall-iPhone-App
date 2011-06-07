@@ -27,7 +27,6 @@
         // Custom initialization
     }
     return self;
-	wallList = [[NSMutableArray alloc] init];
 }
 
 - (void)getWallFailed:(ASIHTTPRequest *)request {
@@ -39,8 +38,11 @@
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
-		[wallList release];
-		wallList = [[NSMutableArray alloc] initWithArray:[[object objectForKey:@"recentActivity"] objectForKey:@"wallsCreatedByMember"]];
+		if (![[object objectForKey:@"success"] boolValue]) {
+			[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) logout];
+		} else {
+			self.wallList = [NSArray arrayWithArray:[[object objectForKey:@"recentActivity"] objectForKey:@"wallsCreatedByMember"]];
+		}
 	} else {
 	}
 	[self.tableView reloadData];
@@ -49,6 +51,7 @@
 
 - (void)dealloc
 {
+	[wallList dealloc];
     [super dealloc];
 }
 
@@ -72,7 +75,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+	[super viewDidLoad];
+	
 		NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[self getMember]];
 		
 		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
@@ -140,7 +144,7 @@
 	if (!wallList) {
 		return 0;
 	} else {
-    return [wallList count];
+    return [self.wallList count];
 	}
 }
 
@@ -211,7 +215,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-	NSDictionary *dictionary = [self.wallList objectAtIndex:indexPath.row];
+	NSDictionary *dictionary = [wallList objectAtIndex:indexPath.row];
 	id delegate = [self delegate];
 	if ([delegate respondsToSelector:@selector(onCellSelect:)]) {
 		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]];

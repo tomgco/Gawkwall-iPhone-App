@@ -8,18 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "ApplicationCell.h"
-#import "AlbumVideoViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface AlbumViewController : UITableViewController {
     NSArray *tableDataSource;
 	IBOutlet UIView *videoPlayer;
 	IBOutlet UIView *videoView;
 	ApplicationCell *tmpCell;
-	AlbumVideoViewController *albumVideoView;
+	MPMoviePlayerController *player;
+	NSUInteger videoId;
 }
 
 @property (nonatomic, retain) NSArray *tableDataSource;
-@property (nonatomic, retain) AlbumVideoViewController *albumVideoView;
 @property (nonatomic, assign) IBOutlet ApplicationCell *tmpCell;
+@property (nonatomic, retain) MPMoviePlayerController *player;
+
+- (IBAction)backToList;
 
 @end

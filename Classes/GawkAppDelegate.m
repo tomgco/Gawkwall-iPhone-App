@@ -158,6 +158,8 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_ACCESS_TOKEN_KEY];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_EXPIRATION_DATE_KEY];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gawk_token"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gawk_secure_id"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	[loginView loginModel].facebook.accessToken = nil;
 	[loginView loginModel].facebook.expirationDate = nil;

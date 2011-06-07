@@ -9,6 +9,7 @@
 #import "AlbumViewController.h"
 #import "GawkAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #define DARK_BACKGROUND  [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0]
 #define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0]
@@ -16,7 +17,7 @@
 
 @implementation AlbumViewController
 
-@synthesize tableDataSource, tmpCell, albumVideoView;
+@synthesize tableDataSource, tmpCell, player;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,9 +30,7 @@
 
 - (void)dealloc
 {
-	[tableDataSource release];
-	[albumVideoView release];
-    [super dealloc];
+	[tableDataSource release];    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +56,64 @@
 	self.tableView.rowHeight = 73.0;
 	self.tableView.backgroundColor = DARK_BACKGROUND;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	albumVideoView = [[AlbumVideoViewController alloc] initWithNibName:@"AlbumVideoViewController" bundle:nil];
+	UISwipeGestureRecognizer *gestures;
+	gestures = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
+	[gestures setDirection:UISwipeGestureRecognizerDirectionRight];
+	[videoPlayer addGestureRecognizer:gestures];
+	[gestures release];
+	
+	gestures = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
+	[gestures setDirection:UISwipeGestureRecognizerDirectionLeft];
+	[videoPlayer addGestureRecognizer:gestures];
+	[gestures release]; 
+}
+
+-(void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
+	NSLog(@"Swipe right received.");
+	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
+	NSLog(@"%d", videoId);
+	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
+	
+	CATransition *animation = [CATransition animation];
+	[animation setDuration:0.4];
+	[animation setType:kCATransitionPush];
+	[animation setSubtype:kCATransitionFromLeft];
+	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+	[videoPlayer addSubview:videoView];
+	[self.tableView.superview addSubview:videoPlayer];
+	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwipeToViewRight"];
+	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
+	
+	player.repeatMode = MPMovieRepeatModeOne;
+	player.movieSourceType = MPMovieSourceTypeFile;
+	player.controlStyle = MPMovieControlStyleNone;
+	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
+	[videoView addSubview: player.view];
+	videoId = videoId == 0 ? [self.tableDataSource count] - 1 : videoId - 1;
+}
+
+-(void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
+	NSLog(@"Swipe left received.");
+	NSLog(@"%d", videoId);
+	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
+	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
+
+	CATransition *animation = [CATransition animation];
+	[animation setDuration:0.4];
+	[animation setType:kCATransitionPush];
+	[animation setSubtype:kCATransitionFromRight];
+	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+	[videoPlayer addSubview:videoView];
+	[self.tableView.superview addSubview:videoPlayer];
+	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwipeToViewLeft"];
+	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
+
+	player.repeatMode = MPMovieRepeatModeOne;
+	player.movieSourceType = MPMovieSourceTypeFile;
+	player.controlStyle = MPMovieControlStyleNone;
+	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
+	[videoView addSubview: player.view];
+	videoId = videoId == ([self.tableDataSource count] - 1) ? 0 : videoId + 1;
 }
 
 - (void)viewDidUnload
@@ -136,6 +192,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	videoId = indexPath.row;
+	
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:indexPath.row];
 	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
 //	[player play];
@@ -144,9 +202,17 @@
 	[animation setType:kCATransitionPush];
 	[animation setSubtype:kCATransitionFromRight];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-	[self.tableView.superview addSubview:albumVideoView.view];
+	[self.tableView.superview addSubview:videoPlayer];
 	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchToView1"];
-	[albumVideoView showVideo:gawkPath];
+	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
+	//player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
+	//[self presentMoviePlayerViewControllerAnimated:player];
+	player.repeatMode = MPMovieRepeatModeOne;
+	player.movieSourceType = MPMovieSourceTypeFile;
+	player.controlStyle = MPMovieControlStyleNone;
+	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
+	[videoPlayer addSubview:videoView];
+	[videoView addSubview: player.view];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -168,4 +234,19 @@
 - (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView reloadData];
 }
+
+- (IBAction) backToList {
+	CATransition *animation = [CATransition animation];
+	[animation setDuration:0.5];
+	[animation setType:kCATransitionPush];
+	[animation setSubtype:kCATransitionFromLeft];
+	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+	[videoView removeFromSuperview];
+	[videoPlayer removeFromSuperview];
+	[self.tableView.superview addSubview:self.tableView];
+	[player.view removeFromSuperview];
+	[player release];
+	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchBackToView0"];
+}
+
 @end

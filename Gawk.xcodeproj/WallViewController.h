@@ -16,11 +16,11 @@
 @class ASIFormDataRequest;
 @interface WallViewController : UITableViewController {
 	ASIFormDataRequest *httpRequest;
-	NSMutableArray *wallList;
+	NSArray *wallList;
 	id <WallViewDelegate> _delegate;
 }
 
-@property(nonatomic, retain) NSMutableArray *wallList;
+@property(nonatomic, retain) NSArray *wallList;
 @property (nonatomic,assign) id <WallViewDelegate> delegate;
 
 @end

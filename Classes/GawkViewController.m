@@ -280,7 +280,22 @@
 	SBJsonParser *parser = [SBJsonParser new];
   id object = [parser objectWithString:responseData];
   if (object) {
-		[self hideActivityView];
+		if (![[object objectForKey:@"success"] boolValue]) {
+			@try {
+				NSArray *errors = [[NSArray alloc] initWithArray:[object objectForKey:@"errors"]];
+				NSString *errorMessage = [[[NSString alloc] init] autorelease]; 
+				for (id item in errors) {
+					errorMessage = [errorMessage stringByAppendingFormat:@"%@\n", item];
+				}
+				[self showFailedUpload:errorMessage];
+				[errors release];
+			}
+			@catch (NSException *exception) {
+				
+			}
+		} else {
+			[self hideActivityView];
+		}
 	} else {
 		[self uploadFailed:request];
 	}
