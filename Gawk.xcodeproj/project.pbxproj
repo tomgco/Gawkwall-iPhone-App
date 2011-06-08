@@ -676,6 +676,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Objective-C Progs/Gawk/Entitlements.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -685,6 +686,7 @@
 				INFOPLIST_FILE = "Gawk-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Gawkwall;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};

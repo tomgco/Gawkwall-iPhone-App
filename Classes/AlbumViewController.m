@@ -69,6 +69,8 @@
 }
 
 -(void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
+	
+	videoId = videoId == 0 ? [self.tableDataSource count] - 1 : videoId - 1;
 	NSLog(@"Swipe right received.");
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
 	NSLog(@"%d", videoId);
@@ -89,11 +91,11 @@
 	player.controlStyle = MPMovieControlStyleNone;
 	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
 	[videoView addSubview: player.view];
-	videoId = videoId == 0 ? [self.tableDataSource count] - 1 : videoId - 1;
 }
 
 -(void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
 	NSLog(@"Swipe left received.");
+	videoId = videoId == ([self.tableDataSource count] - 1) ? 0 : videoId + 1;
 	NSLog(@"%d", videoId);
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
 	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
@@ -113,7 +115,6 @@
 	player.controlStyle = MPMovieControlStyleNone;
 	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
 	[videoView addSubview: player.view];
-	videoId = videoId == ([self.tableDataSource count] - 1) ? 0 : videoId + 1;
 }
 
 - (void)viewDidUnload
@@ -194,9 +195,12 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	videoId = indexPath.row;
 	
-	NSDictionary *cellData = [self.tableDataSource objectAtIndex:indexPath.row];
+	NSLog(@"%d", videoId);
+	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
 	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
 //	[player play];
+	[videoView removeFromSuperview];
+	//[videoPlayer removeFromSuperview];
 	CATransition *animation = [CATransition animation];
 	[animation setDuration:0.5];
 	[animation setType:kCATransitionPush];
@@ -204,6 +208,7 @@
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
 	[self.tableView.superview addSubview:videoPlayer];
 	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchToView1"];
+	[videoPlayer addSubview:videoView];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 	//player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
 	//[self presentMoviePlayerViewControllerAnimated:player];
@@ -211,7 +216,6 @@
 	player.movieSourceType = MPMovieSourceTypeFile;
 	player.controlStyle = MPMovieControlStyleNone;
 	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
-	[videoPlayer addSubview:videoView];
 	[videoView addSubview: player.view];
 }
 
@@ -241,12 +245,9 @@
 	[animation setType:kCATransitionPush];
 	[animation setSubtype:kCATransitionFromLeft];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-	[videoView removeFromSuperview];
-	[videoPlayer removeFromSuperview];
 	[self.tableView.superview addSubview:self.tableView];
-	[player.view removeFromSuperview];
-	[player release];
 	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchBackToView0"];
+	[videoPlayer removeFromSuperview];
 }
 
 @end
