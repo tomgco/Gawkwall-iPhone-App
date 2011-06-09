@@ -11,6 +11,9 @@
 #import "GawkAppDelegate.h"
 #import "JSON.h"
 
+#define DARK_BACKGROUND  [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0]
+#define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0]
+
 @interface WallViewController ()
 - (void)getWallFailed:(ASIHTTPRequest *)request;
 - (void)getWallFinished:(ASIHTTPRequest *)request;
@@ -39,6 +42,7 @@
   id object = [parser objectWithString:responseData];
   if (object) {
 		if (![[object objectForKey:@"success"] boolValue]) {
+			NSLog(@"%@", responseData);
 			[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) logout];
 		} else {
 			self.wallList = [NSArray arrayWithArray:[[object objectForKey:@"recentActivity"] objectForKey:@"wallsCreatedByMember"]];
@@ -77,7 +81,7 @@
 {
 	[super viewDidLoad];
 	
-		NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[self getMember]];
+		NSDictionary *member = [[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member];;
 		
 		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 		httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
@@ -88,13 +92,17 @@
 		[httpRequest setDidFailSelector:@selector(getWallFailed:)];
 		[httpRequest setDidFinishSelector:@selector(getWallFinished:)];
 		[httpRequest startAsynchronous];
-		[member release];
+	
+	NSLog(@"%@", [member objectForKey:@"token"]);
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.tableView.rowHeight = 133.0;
+	self.tableView.backgroundColor = DARK_BACKGROUND;
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewDidUnload
@@ -154,7 +162,7 @@
 	
 	WallCell *cell = (WallCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"AlbumViewCell" owner:self options:nil];
+		[[NSBundle mainBundle] loadNibNamed:@"WallCellSubView" owner:self options:nil];
 		cell = tmpCell;
 		self.tmpCell = nil;
 		
@@ -164,11 +172,17 @@
 	cell.useDarkBackground = (indexPath.row % 2 == 0);
 	
 	NSDictionary *dictionary = [self.wallList objectAtIndex:indexPath.row];
-	cell.wall = @"s";
-	cell.date = @"s";
+	NSLog(@"%@", dictionary);
+	cell.name = [dictionary objectForKey:@"name"];
+	cell.creator = [dictionary objectForKey:@"memberSecureId"];
+	cell.description = [dictionary objectForKey:@"description"];
 	//cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	cell.accessoryType = UITableViewCellAccessoryNone;
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	cell.backgroundColor = ((WallCell *)cell).useDarkBackground ? DARK_BACKGROUND : LIGHT_BACKGROUND;
 }
 
 /*

@@ -12,15 +12,15 @@
 @interface WallCell : UITableViewCell {
 	BOOL useDarkBackground;
 	
-	UIImage *icon;
-	NSString *wall;
-	NSString *date;
+	NSString *name;
+	NSString *creator;
+	NSString *description;
 }
 
 @property BOOL useDarkBackground;
 
-@property(retain) UIImage *icon;
-@property(retain) NSString *wall;
-@property(retain) NSString *date;
+@property(retain) NSString *name;
+@property(retain) NSString *creator;
+@property(retain) NSString *description;
 
 @end

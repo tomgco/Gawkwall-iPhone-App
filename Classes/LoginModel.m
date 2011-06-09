@@ -99,7 +99,7 @@
 				
 			}
 		} else {
-			[self saveMemberData:object];
+			[self saveMemberData:[responseData JSONValue]];
 			[self onSuccessfulLogin];
 		}
 		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];
@@ -123,6 +123,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"facebookId"] forKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"token"] forKey:@"gawk_token"];
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"secureId"] forKey:@"gawk_secure_id"];
+	NSLog(@"%@", jsonResponse);
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -173,7 +174,7 @@
 				
 			}
 		} else {
-			[self saveMemberData:object];
+			[self saveMemberData:[responseData JSONValue]];
 			[self onSuccessfulLogin];
 		}
 		//[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"gawk_username"];

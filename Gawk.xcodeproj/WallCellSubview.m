@@ -14,35 +14,32 @@
 - (void)setBackgroundColor:(UIColor *)backgroundColor
 {
 	[super setBackgroundColor:backgroundColor];
-	
-	iconView.backgroundColor = backgroundColor;
-	dateLabel.backgroundColor = backgroundColor;
-	wallLabel.backgroundColor = backgroundColor;
+	creatorLabel.backgroundColor = backgroundColor;
+	nameLabel.backgroundColor = backgroundColor;
 }
 
-- (void)setIcon:(UIImage *)newIcon
+- (void)setName:(NSString *)newName
 {
-	[super setIcon:newIcon];
-	iconView.image = newIcon;
+	[super setName:newName];
+	nameLabel.text = newName;
 }
 
-- (void)setWall:(NSString *)newWall
+- (void)setCreator:(NSString *)newCreator
 {
-	[super setWall:newWall];
-	wallLabel.text = newWall;
+	[super setCreator:newCreator];
+	creatorLabel.text = newCreator;
 }
 
-- (void)setDate:(NSString *)newDate
+- (void)setDescription:(NSString *)newDescription
 {
-	[super setDate:newDate];
-	dateLabel.text = newDate;
+	[super setDescription:newDescription];
+	descriptionLabel.text = newDescription;
 }
 
 - (void)dealloc
 {
-	[iconView release];
-	[dateLabel release];
-	[wallLabel release];
+	[creatorLabel release];
+	[nameLabel release];
 	
 	[super dealloc];
 }

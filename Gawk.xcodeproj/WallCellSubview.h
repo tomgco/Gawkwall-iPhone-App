@@ -14,9 +14,9 @@
 
 @interface WallCellSubview : WallCell
 {
-	IBOutlet UIImageView *iconView;
-	IBOutlet UILabel *dateLabel;
-	IBOutlet UILabel *wallLabel;
+	IBOutlet UILabel *creatorLabel;
+	IBOutlet UILabel *nameLabel;
+	IBOutlet UILabel *descriptionLabel;
 }
 
 @end

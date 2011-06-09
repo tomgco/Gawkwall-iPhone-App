@@ -39,6 +39,7 @@
 		E2603FC113A1786A00177ECD /* WallCellSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FBF13A1786900177ECD /* WallCellSubview.m */; };
 		E2603FC813A178BA00177ECD /* WallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FC713A178BA00177ECD /* WallCell.m */; };
 		E2603FCA13A17D4100177ECD /* WallCellSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2603FC913A17D4000177ECD /* WallCellSubView.xib */; };
+		E2603FCC13A1928200177ECD /* favourites-icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = E2603FCB13A1928200177ECD /* favourites-icon.gif */; };
 		E261AD301385DC98002031AA /* WallCreateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E261AD2F1385DC98002031AA /* WallCreateModel.m */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
@@ -143,6 +144,7 @@
 		E2603FC613A178BA00177ECD /* WallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCell.h; path = ../Gawk.xcodeproj/WallCell.h; sourceTree = "<group>"; };
 		E2603FC713A178BA00177ECD /* WallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallCell.m; path = ../Gawk.xcodeproj/WallCell.m; sourceTree = "<group>"; };
 		E2603FC913A17D4000177ECD /* WallCellSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WallCellSubView.xib; path = Gawk.xcodeproj/WallCellSubView.xib; sourceTree = "<group>"; };
+		E2603FCB13A1928200177ECD /* favourites-icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "favourites-icon.gif"; sourceTree = "<group>"; };
 		E261AD2E1385DC98002031AA /* WallCreateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallCreateModel.h; sourceTree = "<group>"; };
 		E261AD2F1385DC98002031AA /* WallCreateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallCreateModel.m; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		E200728F12F9F1FA006CAFBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E2603FCB13A1928200177ECD /* favourites-icon.gif */,
 				E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */,
 				E2AD492F137B6933008416F0 /* DarkBackground.png */,
 				E2AD4930137B6933008416F0 /* LightBackground.png */,
@@ -633,6 +636,7 @@
 				E205718C1395945100016B8B /* stitch.mp4 in Resources */,
 				E2EFCA9C13970844009D92E5 /* AlbumVideoViewController.xib in Resources */,
 				E2603FCA13A17D4100177ECD /* WallCellSubView.xib in Resources */,
+				E2603FCC13A1928200177ECD /* favourites-icon.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

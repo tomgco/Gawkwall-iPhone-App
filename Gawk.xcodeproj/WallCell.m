@@ -11,7 +11,7 @@
 
 @implementation WallCell
 
-@synthesize icon,	wall, date, useDarkBackground;
+@synthesize useDarkBackground, name, creator, description;
 
 - (void)setUseDarkBackground:(BOOL)flag {
 	if (flag != useDarkBackground || !self.backgroundView)
@@ -27,9 +27,7 @@
 }
 
 - (void)dealloc
-{
-	[icon release];
-	
+{	
 	[super dealloc];
 }
 
