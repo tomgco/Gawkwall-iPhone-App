@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WallCell.h"
 @protocol WallViewDelegate <NSObject>
 @required
 -(void)onCellSelect:(NSString*)wallSecureId;
@@ -17,10 +17,12 @@
 @interface WallViewController : UITableViewController {
 	ASIFormDataRequest *httpRequest;
 	NSArray *wallList;
+	WallCell *tmpCell;
 	id <WallViewDelegate> _delegate;
 }
 
 @property(nonatomic, retain) NSArray *wallList;
 @property (nonatomic,assign) id <WallViewDelegate> delegate;
+@property (nonatomic, assign) IBOutlet WallCell *tmpCell;
 
 @end

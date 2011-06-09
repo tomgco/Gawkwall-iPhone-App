@@ -17,7 +17,7 @@
 @end
 
 @implementation WallViewController
-@synthesize wallList;
+@synthesize wallList, tmpCell;
 @synthesize delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -150,18 +150,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+	static NSString *CellIdentifier = @"WallCell";
+	
+	WallCell *cell = (WallCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		[[NSBundle mainBundle] loadNibNamed:@"AlbumViewCell" owner:self options:nil];
+		cell = tmpCell;
+		self.tmpCell = nil;
+		
+	}
+	
+	// Display dark and light background in alternate rows -- see tableView:willDisplayCell:forRowAtIndexPath:.
+	cell.useDarkBackground = (indexPath.row % 2 == 0);
 	
 	NSDictionary *dictionary = [self.wallList objectAtIndex:indexPath.row];
-    cell.textLabel.text = [dictionary objectForKey:@"name"];
-    // Configure the cell...
-    
-    return cell;
+	cell.wall = @"s";
+	cell.date = @"s";
+	//cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	return cell;
 }
 
 /*

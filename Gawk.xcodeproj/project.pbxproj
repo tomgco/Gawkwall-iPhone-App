@@ -36,6 +36,9 @@
 		E23B0A15137C930700A6FC2C /* WallCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A13137C930600A6FC2C /* WallCreateViewController.xib */; };
 		E23B0A19137CAB9A00A6FC2C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A18137CAB9A00A6FC2C /* Icon.png */; };
 		E23B0A1B137CABCE00A6FC2C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */; };
+		E2603FC113A1786A00177ECD /* WallCellSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FBF13A1786900177ECD /* WallCellSubview.m */; };
+		E2603FC813A178BA00177ECD /* WallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FC713A178BA00177ECD /* WallCell.m */; };
+		E2603FCA13A17D4100177ECD /* WallCellSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2603FC913A17D4000177ECD /* WallCellSubView.xib */; };
 		E261AD301385DC98002031AA /* WallCreateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E261AD2F1385DC98002031AA /* WallCreateModel.m */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
@@ -135,6 +138,11 @@
 		E23B0A18137CAB9A00A6FC2C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		E2603FBE13A1786900177ECD /* WallCellSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCellSubview.h; path = ../Gawk.xcodeproj/WallCellSubview.h; sourceTree = "<group>"; };
+		E2603FBF13A1786900177ECD /* WallCellSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallCellSubview.m; path = ../Gawk.xcodeproj/WallCellSubview.m; sourceTree = "<group>"; };
+		E2603FC613A178BA00177ECD /* WallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCell.h; path = ../Gawk.xcodeproj/WallCell.h; sourceTree = "<group>"; };
+		E2603FC713A178BA00177ECD /* WallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallCell.m; path = ../Gawk.xcodeproj/WallCell.m; sourceTree = "<group>"; };
+		E2603FC913A17D4000177ECD /* WallCellSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WallCellSubView.xib; path = Gawk.xcodeproj/WallCellSubView.xib; sourceTree = "<group>"; };
 		E261AD2E1385DC98002031AA /* WallCreateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallCreateModel.h; sourceTree = "<group>"; };
 		E261AD2F1385DC98002031AA /* WallCreateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallCreateModel.m; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
@@ -416,6 +424,7 @@
 		E26BE87912F8AA5B002B50C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2603FC913A17D4000177ECD /* WallCellSubView.xib */,
 				E23B0A13137C930600A6FC2C /* WallCreateViewController.xib */,
 				E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */,
 				E271576E1316FE39002BD0A2 /* LoginViewController.xib */,
@@ -491,6 +500,10 @@
 		E2AD4926137B5E0B008416F0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E2603FC613A178BA00177ECD /* WallCell.h */,
+				E2603FC713A178BA00177ECD /* WallCell.m */,
+				E2603FBE13A1786900177ECD /* WallCellSubview.h */,
+				E2603FBF13A1786900177ECD /* WallCellSubview.m */,
 				E2AD4927137B5E61008416F0 /* ApplicationCell.h */,
 				E2AD4928137B5E61008416F0 /* ApplicationCell.m */,
 				E2AD4924137B5DF4008416F0 /* AlbumCellSubview.m */,
@@ -619,6 +632,7 @@
 				E205718A13956A2D00016B8B /* SettingsViewController.xib in Resources */,
 				E205718C1395945100016B8B /* stitch.mp4 in Resources */,
 				E2EFCA9C13970844009D92E5 /* AlbumVideoViewController.xib in Resources */,
+				E2603FCA13A17D4100177ECD /* WallCellSubView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +678,8 @@
 				E2E3604D138AFCC400B2BCC5 /* WallViewController.m in Sources */,
 				E205718913956A2D00016B8B /* SettingsViewController.m in Sources */,
 				E2EFCA9B13970844009D92E5 /* AlbumVideoViewController.m in Sources */,
+				E2603FC113A1786A00177ECD /* WallCellSubview.m in Sources */,
+				E2603FC813A178BA00177ECD /* WallCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
