@@ -81,26 +81,22 @@
 {
 	[super viewDidLoad];
 	
-		NSDictionary *member = [[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member];;
-		
 		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
 		httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
 		[httpRequest setPostValue:@"MemberWallBookmark.GetRecentWallActivity" forKey:@"Action"];
-		[httpRequest setPostValue:[member objectForKey:@"token"] forKey:@"Token"];
+		[httpRequest setPostValue:[[[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member] objectForKey:@"token"] forKey:@"Token"];
 		[httpRequest setTimeOutSeconds:5];
 		[httpRequest setDelegate:self];
 		[httpRequest setDidFailSelector:@selector(getWallFailed:)];
 		[httpRequest setDidFinishSelector:@selector(getWallFinished:)];
 		[httpRequest startAsynchronous];
-	
-	NSLog(@"%@", [member objectForKey:@"token"]);
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	self.tableView.rowHeight = 133.0;
+	self.tableView.rowHeight = 133.0; //Switch to 133.0
 	self.tableView.backgroundColor = DARK_BACKGROUND;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
