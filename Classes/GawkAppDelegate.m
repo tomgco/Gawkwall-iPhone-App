@@ -155,6 +155,7 @@
 
 -(IBAction)logout{
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gawk_username"];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"gawk_password"];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_ACCESS_TOKEN_KEY];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:FB_EXPIRATION_DATE_KEY];

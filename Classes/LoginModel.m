@@ -34,6 +34,8 @@
 		facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
 		if ([facebook isSessionValid]) {
 			[self gawkFBLogin];
+		} else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_username"] length] > 0 && [[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_password"] length] > 0) {
+			[self loginRegisteredUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_username"] :[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_password"]];
 		}
 	}
 	return self;

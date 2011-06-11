@@ -102,6 +102,8 @@
 	if([emailAddress.text length] && [password.text length]) {
 		emailAddress.enabled = NO;
 		password.enabled = NO;
+		[[NSUserDefaults standardUserDefaults] setObject:password.text forKey:@"gawk_password"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
 		[loginModel loginRegisteredUser:emailAddress.text :password.text];
 	} else {
 		//Throw Error message
