@@ -7,6 +7,7 @@
 //
 
 //Api Constants 
+#define GAWK_URL @"http://www.gawkwall.com/"
 #define GAWK_API_LOCAITON @"http://salt.gawkwall.com/api/"
 //#define GAWK_API_LOCAITON @"http://10.13.37.8/api/"
 #define GAWK_API_PUBKEY @"787a4aa2778d73f6f2da1598e13668753b5a8010"

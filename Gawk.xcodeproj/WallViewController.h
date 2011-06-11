@@ -14,7 +14,7 @@
 @end
 
 @class ASIFormDataRequest;
-@interface WallViewController : UITableViewController {
+@interface WallViewController : UITableViewController		{
 	ASIFormDataRequest *httpRequest;
 	NSArray *wallList;
 	WallCell *tmpCell;
@@ -24,5 +24,7 @@
 @property(nonatomic, retain) NSArray *wallList;
 @property (nonatomic,assign) id <WallViewDelegate> delegate;
 @property (nonatomic, assign) IBOutlet WallCell *tmpCell;
-
+- (IBAction) viewGawks:(id) sender;
+- (IBAction) shareGawkwall:(id) sender;
+- (IBAction) recordGawk:(id) sender;
 @end

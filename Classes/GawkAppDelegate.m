@@ -12,6 +12,7 @@
 #import "CameraViewController.h"
 #import "LoginViewController.h"
 #import "FBConnect.h"
+#import "SHKFacebook.h"
 @implementation GawkAppDelegate
 
 @synthesize window;
@@ -86,6 +87,7 @@
 	}
 	
 	if ([[url scheme] isEqualToString:GAWK_FACEBOOK_FB_URL]) {
+		[SHKFacebook handleOpenURL:url];
 		return [[[loginView loginModel] facebook] handleOpenURL:url];
 	} else {
 	
@@ -101,7 +103,7 @@
 	NSString *folderPath = [documentsDirectory stringByAppendingPathComponent:@"Gawks"];
 	
 	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
-	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
+	[self resetData:data];
 }
 
 

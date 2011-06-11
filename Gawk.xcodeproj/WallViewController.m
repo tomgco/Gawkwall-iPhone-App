@@ -10,6 +10,7 @@
 #import "ASIFormDataRequest.h"
 #import "GawkAppDelegate.h"
 #import "JSON.h"
+#import "SHK.h"
 
 #define DARK_BACKGROUND  [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0]
 #define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0]
@@ -237,6 +238,38 @@
 	if ([delegate respondsToSelector:@selector(onCellSelect:)]) {
 		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]];
 	}
+}
+
+- (IBAction) viewGawks:(id) sender {
+	UIView *senderButton = (UIView*) sender;
+	NSIndexPath *indexPath = [self.tableView indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
+}
+
+- (IBAction) recordGawk:(id) sender {
+	UIView *senderButton = (UIView*) sender;
+	NSIndexPath *indexPath = [self.tableView indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
+	NSDictionary *dictionary = [wallList objectAtIndex:indexPath.row];
+	id delegate = [self delegate];
+	if ([delegate respondsToSelector:@selector(onCellSelect:)]) {
+		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]];
+	}
+}
+
+-(IBAction)shareGawkwall:(id)sender {
+	UIView *senderButton = (UIView*) sender;
+	NSIndexPath *indexPath = [self.tableView indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
+	NSDictionary *dictionary = [wallList objectAtIndex:indexPath.row];
+	NSString *urlString = [[NSString alloc] initWithFormat:@"%@%@", GAWK_URL, [dictionary objectForKey:@"url"]];
+	NSURL *url = [NSURL URLWithString:urlString];
+	[urlString release];
+	
+	SHKItem *item = [SHKItem URL:url title:@"Check out my Gawkwall!"];
+	
+	// Get the ShareKit action sheet
+	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+	
+	// Display the action sheet
+	[actionSheet showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 @end
