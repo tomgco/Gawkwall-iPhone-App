@@ -392,3 +392,10 @@
 }
 
 @end
+
+@implementation UINavigationBar (UINavigationBarCategory)
+- (void)drawRect:(CGRect)rect {
+	UIImage *img  = [UIImage imageNamed: @"menu-bar"];
+  [img drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+}
+@end

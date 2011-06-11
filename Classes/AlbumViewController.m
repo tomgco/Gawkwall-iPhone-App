@@ -65,7 +65,7 @@
 	gestures = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
 	[gestures setDirection:UISwipeGestureRecognizerDirectionLeft];
 	[videoPlayer addGestureRecognizer:gestures];
-	[gestures release]; 
+	[gestures release];
 }
 
 -(void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
@@ -128,6 +128,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+	CGPoint contentOffset = CGPointMake(0,[[NSUserDefaults standardUserDefaults] floatForKey:@"gawkwall_album_contentOffset_y"]);
+	[self.tableView setContentOffset:contentOffset];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -249,6 +251,11 @@
 	[self.tableView.superview addSubview:self.tableView];
 	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchBackToView0"];
 	[videoPlayer removeFromSuperview];
+}
+
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:([[[self.tableView indexPathsForVisibleRows] objectAtIndex:0] row] * self.tableView.rowHeight)] forKey:@"gawkwall_album_contentOffset_y"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

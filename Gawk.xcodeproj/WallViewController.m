@@ -106,7 +106,7 @@
 	self.tableView.rowHeight = 133.0; //Switch to 133.0
 	self.tableView.backgroundColor = DARK_BACKGROUND;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	
+	self.tableView.scrollsToTop = YES;
 }
 
 - (void)viewDidUnload

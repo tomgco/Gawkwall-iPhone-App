@@ -10,7 +10,7 @@
 #import "ApplicationCell.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface AlbumViewController : UITableViewController {
+@interface AlbumViewController : UITableViewController <UITableViewDelegate> {
     NSArray *tableDataSource;
 	IBOutlet UIView *videoPlayer;
 	IBOutlet UIView *videoView;

@@ -52,6 +52,7 @@
 		[[NSUserDefaults standardUserDefaults] setObject: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"version"];
 		 
 	 [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:0.0f] forKey:@"gawkwall_wall_contentOffset_y"];
+		 [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:0.0f] forKey:@"gawkwall_album_contentOffset_y"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 	 }
 	
