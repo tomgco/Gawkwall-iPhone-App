@@ -76,8 +76,8 @@
 #define SHKTwitterUsername			@"gawkwall" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
 // Bit.ly (for shortening URLs on Twitter) - http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key
-#define SHKBitLyLogin				@"gxblast"
-#define SHKBitLyKey					@"R_e796f85c0f42d8439afbd8c3e7817fbe"
+#define SHKBitLyLogin				@"gawkwall"
+#define SHKBitLyKey					@"R_5acd55ee83fb6022e0f3a7e2acd2232f"
 
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 0 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
