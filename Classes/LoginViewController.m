@@ -48,9 +48,6 @@
 -(void)viewWillAppear:(BOOL)animated {
 	[emailAddress becomeFirstResponder];
 	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk_username"];
-	if ([loginModel validFBSession]) {
-		[loginModel login];
-	}
 }
 
 -(IBAction)registerButtonPressed:(id)sender {
