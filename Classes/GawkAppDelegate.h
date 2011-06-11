@@ -19,6 +19,7 @@
 	LoginViewController *loginView;
 	GawkViewController *gawkViewController;
 	NSMutableDictionary *data;
+	NSMutableArray *walls;
 	BOOL isOffline;
 }
 
@@ -27,12 +28,14 @@
 @property (nonatomic, retain) IBOutlet GawkViewController *gawkViewController;
 @property (readonly) LoginViewController *loginView;
 @property (nonatomic, retain) NSMutableDictionary *data;
+@property (nonatomic, retain) NSMutableArray *walls;
 @property (nonatomic) BOOL isOffline;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 - (void)showLoginView:(BOOL)animated;
 - (IBAction)logout;
 -(void) resetData:(NSMutableDictionary*)replaceData;
+-(void) updateWalls:(NSArray*)replaceArray;
 - (void) saveUserGawks;
 -(void)setOnline;
 @end

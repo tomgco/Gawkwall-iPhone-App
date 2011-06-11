@@ -18,7 +18,7 @@
 @synthesize window;
 @synthesize cameraViewController;
 @synthesize gawkViewController;
-@synthesize loginView, data, isOffline, tabBarController;
+@synthesize loginView, data, walls, isOffline, tabBarController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -40,6 +40,9 @@
 	NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] initWithContentsOfFile:DataPath];
 	self.data = tempDict;
 	[tempDict release];
+	NSMutableArray *temp = [[NSMutableArray alloc] init];
+	self.walls = temp;
+	[temp release];
 	
 	NSString *version = @"version";
 	NSString *currentVersion = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:version];
@@ -47,6 +50,8 @@
 	 {
 		[[NSUserDefaults standardUserDefaults] setObject:@"main" forKey:@"defaultWallId"];
 		[[NSUserDefaults standardUserDefaults] setObject: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"version"];
+		 
+	 [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:0.0f] forKey:@"gawkwall_wall_contentOffset_y"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 	 }
 	
@@ -72,6 +77,10 @@
 
 -(void) resetData:(NSMutableDictionary*)replaceData {
 	self.data = [[NSMutableDictionary alloc] initWithDictionary:replaceData];
+}
+
+-(void) updateWalls:(NSArray*)replaceArray {
+	self.walls = [[NSMutableArray alloc] initWithArray:replaceArray];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -172,6 +181,7 @@
 
 - (void)dealloc {
 	[data release];
+	[walls release];
   [gawkViewController release];
 	[cameraViewController release];
 	[tabBarController release];

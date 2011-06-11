@@ -43,15 +43,17 @@
   id object = [parser objectWithString:responseData];
   if (object) {
 		if (![[object objectForKey:@"success"] boolValue]) {
-			NSLog(@"%@", responseData);
 			[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) logout];
 		} else {
 			self.wallList = [NSArray arrayWithArray:[[object objectForKey:@"recentActivity"] objectForKey:@"wallsCreatedByMember"]];
+			[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] updateWalls:[NSMutableArray arrayWithArray:self.wallList]];
 		}
+		[self.tableView reloadData];
 	} else {
 	}
-	[self.tableView reloadData];
 	[parser release];
+	CGPoint contentOffset = CGPointMake(0,[[NSUserDefaults standardUserDefaults] floatForKey:@"gawkwall_wall_contentOffset_y"]);
+	[self.tableView setContentOffset:contentOffset];
 }
 
 - (void)dealloc
@@ -72,8 +74,16 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void) getWall {
-	
+- (IBAction) getWalls {
+	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
+	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
+	[httpRequest setPostValue:@"MemberWallBookmark.GetRecentWallActivity" forKey:@"Action"];
+	[httpRequest setPostValue:[[[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member] objectForKey:@"token"] forKey:@"Token"];
+	[httpRequest setTimeOutSeconds:5];
+	[httpRequest setDelegate:self];
+	[httpRequest setDidFailSelector:@selector(getWallFailed:)];
+	[httpRequest setDidFinishSelector:@selector(getWallFinished:)];
+	[httpRequest startAsynchronous];
 }
 
 #pragma mark - View lifecycle
@@ -81,17 +91,13 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
-		httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
-		[httpRequest setPostValue:@"MemberWallBookmark.GetRecentWallActivity" forKey:@"Action"];
-		[httpRequest setPostValue:[[[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member] objectForKey:@"token"] forKey:@"Token"];
-		[httpRequest setTimeOutSeconds:5];
-		[httpRequest setDelegate:self];
-		[httpRequest setDidFailSelector:@selector(getWallFailed:)];
-		[httpRequest setDidFinishSelector:@selector(getWallFinished:)];
-		[httpRequest startAsynchronous];
-
+	self.wallList = [NSArray arrayWithArray:[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) walls]];
+	if ([self.wallList count] == 0) {
+		[self getWalls];
+	} else {
+		CGPoint contentOffset = CGPointMake(0,[[NSUserDefaults standardUserDefaults] floatForKey:@"gawkwall_wall_contentOffset_y"]);
+		[self.tableView setContentOffset:contentOffset];
+	}
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -100,6 +106,7 @@
 	self.tableView.rowHeight = 133.0; //Switch to 133.0
 	self.tableView.backgroundColor = DARK_BACKGROUND;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	
 }
 
 - (void)viewDidUnload
@@ -123,6 +130,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:self.tableView.contentOffset.y] forKey:@"gawkwall_wall_contentOffset_y"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -241,8 +249,8 @@
 }
 
 - (IBAction) viewGawks:(id) sender {
-	UIView *senderButton = (UIView*) sender;
-	NSIndexPath *indexPath = [self.tableView indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
+	//UIView *senderButton = (UIView*) sender;
+	//NSIndexPath *indexPath = [self.tableView indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
 }
 
 - (IBAction) recordGawk:(id) sender {
@@ -270,6 +278,11 @@
 	
 	// Display the action sheet
 	[actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:([[[self.tableView indexPathsForVisibleRows] objectAtIndex:0] row] * self.tableView.rowHeight)] forKey:@"gawkwall_wall_contentOffset_y"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

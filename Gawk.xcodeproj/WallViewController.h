@@ -14,7 +14,7 @@
 @end
 
 @class ASIFormDataRequest;
-@interface WallViewController : UITableViewController		{
+@interface WallViewController : UITableViewController <UITableViewDelegate>	{
 	ASIFormDataRequest *httpRequest;
 	NSArray *wallList;
 	WallCell *tmpCell;
@@ -27,4 +27,5 @@
 - (IBAction) viewGawks:(id) sender;
 - (IBAction) shareGawkwall:(id) sender;
 - (IBAction) recordGawk:(id) sender;
+- (IBAction) getWalls;
 @end
