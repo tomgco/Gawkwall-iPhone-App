@@ -113,6 +113,7 @@
 	player.repeatMode = MPMovieRepeatModeOne;
 	player.movieSourceType = MPMovieSourceTypeFile;
 	player.controlStyle = MPMovieControlStyleNone;
+	player.scalingMode = MPMovieScalingModeAspectFill;
 	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
 	[videoView addSubview: player.view];
 }
