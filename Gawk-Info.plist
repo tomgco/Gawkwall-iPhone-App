@@ -48,11 +48,16 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>0.4.2</string>
+	<string>0.4.5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BreeRegular.otf</string>
+		<string>BreeThin.otf</string>
+	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIStatusBarStyle</key>
@@ -65,10 +70,5 @@
 	<array/>
 	<key>UTImportedTypeDeclarations</key>
 	<array/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>BreeRegular.otf</string>
-		<string>BreeThin.otf</string>
-	</array>
 </dict>
 </plist>
