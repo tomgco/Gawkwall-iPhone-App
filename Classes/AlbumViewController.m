@@ -85,8 +85,12 @@
 	[animation setSubtype:kCATransitionFromLeft];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
 	[videoPlayer addSubview:videoView];
-	[self.tableView.superview addSubview:videoPlayer];
-	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwipeToViewRight"];
+	CGRect frame = videoPlayer.frame;
+	frame.origin.y = 20.0;
+	videoPlayer.frame = frame;
+	[self.tabBarController.view addSubview:videoPlayer];
+	[self.tabBarController.tabBar setHidden:YES];
+	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwipeViewToRight"];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 	
 	player.repeatMode = MPMovieRepeatModeOne;
@@ -109,8 +113,12 @@
 	[animation setSubtype:kCATransitionFromRight];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
 	[videoPlayer addSubview:videoView];
-	[self.tableView.superview addSubview:videoPlayer];
-	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwipeToViewLeft"];
+	CGRect frame = videoPlayer.frame;
+	frame.origin.y = 20.0;
+	videoPlayer.frame = frame;
+	[self.tabBarController.view addSubview:videoPlayer];
+	[self.tabBarController.tabBar setHidden:YES];
+	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwipeViewToLeft"];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 
 	player.repeatMode = MPMovieRepeatModeOne;
