@@ -214,8 +214,12 @@
 	[animation setType:kCATransitionPush];
 	[animation setSubtype:kCATransitionFromRight];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-	[self.tableView.superview addSubview:videoPlayer];
-	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchToView1"];
+	CGRect frame = videoPlayer.frame;
+	frame.origin.y = 20.0;
+	videoPlayer.frame = frame;
+	[self.tabBarController.view addSubview:videoPlayer];
+	[self.tabBarController.tabBar setHidden:YES];
+	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwitchToView1"];
 	[videoPlayer addSubview:videoView];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 	//player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
@@ -253,9 +257,10 @@
 	[animation setType:kCATransitionPush];
 	[animation setSubtype:kCATransitionFromLeft];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+	[self.tabBarController.tabBar setHidden:NO];
 	[self.tableView.superview addSubview:self.tableView];
-	[[self.tableView.superview layer] addAnimation:animation forKey:@"SwitchBackToView0"];
-	[videoPlayer removeFromSuperview];
+	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwitchBackToView0"];
+		[videoPlayer removeFromSuperview];
 }
 
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

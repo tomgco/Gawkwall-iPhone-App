@@ -74,7 +74,7 @@
 					<object class="IBUIView" id="401501160">
 						<reference key="NSNextResponder" ref="745497247"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 96}, {320, 220}}</string>
+						<string key="NSFrame">{{0, 96}, {320, 269}}</string>
 						<reference key="NSSuperview" ref="745497247"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1005179909"/>
@@ -134,7 +134,7 @@
 					<object class="IBUIButton" id="1005179909">
 						<reference key="NSNextResponder" ref="745497247"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 342}, {93, 37}}</string>
+						<string key="NSFrame">{{20, 393}, {93, 37}}</string>
 						<reference key="NSSuperview" ref="745497247"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="484897251"/>
@@ -162,7 +162,7 @@
 					<object class="IBUIButton" id="484897251">
 						<reference key="NSNextResponder" ref="745497247"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{196, 342}, {93, 37}}</string>
+						<string key="NSFrame">{{196, 393}, {93, 37}}</string>
 						<reference key="NSSuperview" ref="745497247"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -181,7 +181,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="173370116"/>
 					</object>
 				</object>
-				<string key="NSFrame">{{0, 20}, {320, 411}}</string>
+				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="304965956"/>
@@ -195,7 +195,6 @@
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
 					<int key="IBUIStatusBarStyle">2</int>
 				</object>
-				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -279,8 +278,8 @@
 							<reference ref="700039192"/>
 							<reference ref="304965956"/>
 							<reference ref="401501160"/>
-							<reference ref="484897251"/>
 							<reference ref="1005179909"/>
+							<reference ref="484897251"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -402,14 +401,12 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>table</string>
 							<string>tmpCell</string>
 							<string>videoPlayer</string>
 							<string>videoView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UITableView</string>
 							<string>ApplicationCell</string>
 							<string>UIView</string>
 							<string>UIView</string>
@@ -419,17 +416,12 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>table</string>
 							<string>tmpCell</string>
 							<string>videoPlayer</string>
 							<string>videoView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">table</string>
-								<string key="candidateClassName">UITableView</string>
-							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">tmpCell</string>
 								<string key="candidateClassName">ApplicationCell</string>
