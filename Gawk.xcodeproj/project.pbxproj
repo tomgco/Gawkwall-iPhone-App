@@ -43,6 +43,14 @@
 		E25B700F13A40C720004AC85 /* menu-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B700B13A40C720004AC85 /* menu-bar@2x.png */; };
 		E25B701213A40FD80004AC85 /* cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701013A40FD80004AC85 /* cell-background.png */; };
 		E25B701313A40FD80004AC85 /* cell-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701113A40FD80004AC85 /* cell-background@2x.png */; };
+		E25B701613A4229D0004AC85 /* divider.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701413A4229D0004AC85 /* divider.png */; };
+		E25B701713A4229D0004AC85 /* divider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701513A4229D0004AC85 /* divider@2x.png */; };
+		E25B701C13A428650004AC85 /* fav-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701813A428650004AC85 /* fav-icon.png */; };
+		E25B701D13A428650004AC85 /* fav-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701913A428650004AC85 /* fav-icon@2x.png */; };
+		E25B701E13A428650004AC85 /* fav-icon-picked.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701A13A428650004AC85 /* fav-icon-picked.png */; };
+		E25B701F13A428650004AC85 /* fav-icon-picked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701B13A428650004AC85 /* fav-icon-picked@2x.png */; };
+		E25B702213A431700004AC85 /* view-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B702013A431700004AC85 /* view-arrow.png */; };
+		E25B702313A431700004AC85 /* view-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B702113A431700004AC85 /* view-arrow@2x.png */; };
 		E2603FC113A1786A00177ECD /* WallCellSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FBF13A1786900177ECD /* WallCellSubview.m */; };
 		E2603FC813A178BA00177ECD /* WallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FC713A178BA00177ECD /* WallCell.m */; };
 		E2603FCA13A17D4100177ECD /* WallCellSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2603FC913A17D4000177ECD /* WallCellSubView.xib */; };
@@ -207,6 +215,14 @@
 		E25B700B13A40C720004AC85 /* menu-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-bar@2x.png"; sourceTree = "<group>"; };
 		E25B701013A40FD80004AC85 /* cell-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-background.png"; sourceTree = "<group>"; };
 		E25B701113A40FD80004AC85 /* cell-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-background@2x.png"; sourceTree = "<group>"; };
+		E25B701413A4229D0004AC85 /* divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider.png; sourceTree = "<group>"; };
+		E25B701513A4229D0004AC85 /* divider@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "divider@2x.png"; sourceTree = "<group>"; };
+		E25B701813A428650004AC85 /* fav-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav-icon.png"; sourceTree = "<group>"; };
+		E25B701913A428650004AC85 /* fav-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav-icon@2x.png"; sourceTree = "<group>"; };
+		E25B701A13A428650004AC85 /* fav-icon-picked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav-icon-picked.png"; sourceTree = "<group>"; };
+		E25B701B13A428650004AC85 /* fav-icon-picked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav-icon-picked@2x.png"; sourceTree = "<group>"; };
+		E25B702013A431700004AC85 /* view-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-arrow.png"; sourceTree = "<group>"; };
+		E25B702113A431700004AC85 /* view-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-arrow@2x.png"; sourceTree = "<group>"; };
 		E2603FBE13A1786900177ECD /* WallCellSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCellSubview.h; path = ../Gawk.xcodeproj/WallCellSubview.h; sourceTree = "<group>"; };
 		E2603FBF13A1786900177ECD /* WallCellSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallCellSubview.m; path = ../Gawk.xcodeproj/WallCellSubview.m; sourceTree = "<group>"; };
 		E2603FC613A178BA00177ECD /* WallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCell.h; path = ../Gawk.xcodeproj/WallCell.h; sourceTree = "<group>"; };
@@ -537,7 +553,15 @@
 		E200728F12F9F1FA006CAFBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E25B702013A431700004AC85 /* view-arrow.png */,
+				E25B702113A431700004AC85 /* view-arrow@2x.png */,
+				E25B701813A428650004AC85 /* fav-icon.png */,
+				E25B701913A428650004AC85 /* fav-icon@2x.png */,
+				E25B701A13A428650004AC85 /* fav-icon-picked.png */,
+				E25B701B13A428650004AC85 /* fav-icon-picked@2x.png */,
 				E25B701013A40FD80004AC85 /* cell-background.png */,
+				E25B701413A4229D0004AC85 /* divider.png */,
+				E25B701513A4229D0004AC85 /* divider@2x.png */,
 				E25B701113A40FD80004AC85 /* cell-background@2x.png */,
 				E25B700813A40C720004AC85 /* latest-gawks.png */,
 				E25B700913A40C720004AC85 /* latest-gawks@2x.png */,
@@ -1178,6 +1202,14 @@
 				E25B700F13A40C720004AC85 /* menu-bar@2x.png in Resources */,
 				E25B701213A40FD80004AC85 /* cell-background.png in Resources */,
 				E25B701313A40FD80004AC85 /* cell-background@2x.png in Resources */,
+				E25B701613A4229D0004AC85 /* divider.png in Resources */,
+				E25B701713A4229D0004AC85 /* divider@2x.png in Resources */,
+				E25B701C13A428650004AC85 /* fav-icon.png in Resources */,
+				E25B701D13A428650004AC85 /* fav-icon@2x.png in Resources */,
+				E25B701E13A428650004AC85 /* fav-icon-picked.png in Resources */,
+				E25B701F13A428650004AC85 /* fav-icon-picked@2x.png in Resources */,
+				E25B702213A431700004AC85 /* view-arrow.png in Resources */,
+				E25B702313A431700004AC85 /* view-arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

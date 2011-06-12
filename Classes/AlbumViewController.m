@@ -55,7 +55,9 @@
 
 	self.tableView.rowHeight = 73.0;
 	self.tableView.backgroundColor = DARK_BACKGROUND;
+	
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 	UISwipeGestureRecognizer *gestures;
 	gestures = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
 	[gestures setDirection:UISwipeGestureRecognizerDirectionRight];
@@ -180,13 +182,16 @@
     }
 	
 	// Display dark and light background in alternate rows -- see tableView:willDisplayCell:forRowAtIndexPath:.
-	cell.useDarkBackground = (indexPath.row % 2 == 0);
-    
+	//cell.useDarkBackground = (indexPath.row % 2 == 0);
+	UIImageView* vwimg = [ [ UIImageView alloc] initWithFrame: cell.frame];
+	UIImage* img = [ UIImage imageNamed: @"cell-background"];
+	vwimg.image = img;
+	cell.backgroundView = vwimg;
 	NSDictionary *dictionary = [self.tableDataSource objectAtIndex:indexPath.row];
 	cell.wall = [dictionary objectForKey:@"GawkUrl"];
 	cell.date = [dictionary objectForKey:@"DateCreated"];
 	cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	cell.accessoryType = UITableViewCellAccessoryNone;
     return cell;
 }
 

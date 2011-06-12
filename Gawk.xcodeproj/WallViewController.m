@@ -104,7 +104,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	self.tableView.rowHeight = 133.0; //Switch to 133.0
-	self.tableView.backgroundColor = DARK_BACKGROUND;
+	self.tableView.backgroundColor = LIGHT_BACKGROUND;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	self.tableView.scrollsToTop = YES;
 }
@@ -174,20 +174,23 @@
 	}
 	
 	// Display dark and light background in alternate rows -- see tableView:willDisplayCell:forRowAtIndexPath:.
-	cell.useDarkBackground = (indexPath.row % 2 == 0);
-	
+	//cell.useDarkBackground = (indexPath.row % 2 == 0);
+	UIImageView* vwimg = [ [ UIImageView alloc] initWithFrame: cell.frame];
+	UIImage* img = [ UIImage imageNamed: @"cell-background"];
+	vwimg.image = img;
+	cell.backgroundView = vwimg;
 	NSDictionary *dictionary = [self.wallList objectAtIndex:indexPath.row];
-	NSLog(@"%@", dictionary);
 	cell.name = [dictionary objectForKey:@"name"];
 	cell.creator = [dictionary objectForKey:@"memberSecureId"];
 	cell.description = [dictionary objectForKey:@"description"];
 	//cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
 	cell.accessoryType = UITableViewCellAccessoryNone;
+	cell.backgroundColor = [UIColor clearColor];
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	cell.backgroundColor = ((WallCell *)cell).useDarkBackground ? DARK_BACKGROUND : LIGHT_BACKGROUND;
+	//cell.backgroundColor = ((WallCell *)cell).useDarkBackground ? DARK_BACKGROUND : LIGHT_BACKGROUND;
 }
 
 /*

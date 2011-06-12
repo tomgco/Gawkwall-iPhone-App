@@ -14,8 +14,8 @@
 - (void)setBackgroundColor:(UIColor *)backgroundColor
 {
 	[super setBackgroundColor:backgroundColor];
-	creatorLabel.backgroundColor = backgroundColor;
-	nameLabel.backgroundColor = backgroundColor;
+	creatorLabel.backgroundColor = [UIColor clearColor];
+	nameLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setName:(NSString *)newName

@@ -54,9 +54,9 @@
 {
     [super setBackgroundColor:backgroundColor];
 
-    iconView.backgroundColor = backgroundColor;
-    dateLabel.backgroundColor = backgroundColor;
-    wallLabel.backgroundColor = backgroundColor;
+    iconView.backgroundColor = [UIColor clearColor];
+    dateLabel.backgroundColor = [UIColor clearColor];
+    wallLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setIcon:(UIImage *)newIcon

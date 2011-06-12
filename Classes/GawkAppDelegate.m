@@ -23,6 +23,7 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -56,7 +57,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 	 }
 	
-	
+	self.tabBarController.tabBar.backgroundColor = [UIColor colorWithRed:47/255 green:131/255 blue:125/255 alpha:1];
 		// Add the view controller's view to the window and display.
 	//self.window.rootViewController = self.gawkViewController;
 	self.window.rootViewController = self.tabBarController;
