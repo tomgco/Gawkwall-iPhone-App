@@ -67,7 +67,8 @@
 	<array/>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>BreeRegular.otf</string>
+		<string>BreeThin.otf</string>
 	</array>
 </dict>
 </plist>

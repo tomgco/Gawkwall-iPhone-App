@@ -51,6 +51,11 @@
 		E25B701F13A428650004AC85 /* fav-icon-picked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B701B13A428650004AC85 /* fav-icon-picked@2x.png */; };
 		E25B702213A431700004AC85 /* view-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B702013A431700004AC85 /* view-arrow.png */; };
 		E25B702313A431700004AC85 /* view-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B702113A431700004AC85 /* view-arrow@2x.png */; };
+		E25B702A13A43A370004AC85 /* BreeBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E25B702513A43A370004AC85 /* BreeBold.otf */; };
+		E25B702B13A43A370004AC85 /* BreeExtrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E25B702613A43A370004AC85 /* BreeExtrabold.otf */; };
+		E25B702C13A43A370004AC85 /* BreeLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E25B702713A43A370004AC85 /* BreeLight.otf */; };
+		E25B702D13A43A370004AC85 /* BreeRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E25B702813A43A370004AC85 /* BreeRegular.otf */; };
+		E25B702E13A43A370004AC85 /* BreeThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = E25B702913A43A370004AC85 /* BreeThin.otf */; };
 		E2603FC113A1786A00177ECD /* WallCellSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FBF13A1786900177ECD /* WallCellSubview.m */; };
 		E2603FC813A178BA00177ECD /* WallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2603FC713A178BA00177ECD /* WallCell.m */; };
 		E2603FCA13A17D4100177ECD /* WallCellSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2603FC913A17D4000177ECD /* WallCellSubView.xib */; };
@@ -223,6 +228,11 @@
 		E25B701B13A428650004AC85 /* fav-icon-picked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav-icon-picked@2x.png"; sourceTree = "<group>"; };
 		E25B702013A431700004AC85 /* view-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-arrow.png"; sourceTree = "<group>"; };
 		E25B702113A431700004AC85 /* view-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-arrow@2x.png"; sourceTree = "<group>"; };
+		E25B702513A43A370004AC85 /* BreeBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BreeBold.otf; sourceTree = "<group>"; };
+		E25B702613A43A370004AC85 /* BreeExtrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BreeExtrabold.otf; sourceTree = "<group>"; };
+		E25B702713A43A370004AC85 /* BreeLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BreeLight.otf; sourceTree = "<group>"; };
+		E25B702813A43A370004AC85 /* BreeRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BreeRegular.otf; sourceTree = "<group>"; };
+		E25B702913A43A370004AC85 /* BreeThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BreeThin.otf; sourceTree = "<group>"; };
 		E2603FBE13A1786900177ECD /* WallCellSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCellSubview.h; path = ../Gawk.xcodeproj/WallCellSubview.h; sourceTree = "<group>"; };
 		E2603FBF13A1786900177ECD /* WallCellSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallCellSubview.m; path = ../Gawk.xcodeproj/WallCellSubview.m; sourceTree = "<group>"; };
 		E2603FC613A178BA00177ECD /* WallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallCell.h; path = ../Gawk.xcodeproj/WallCell.h; sourceTree = "<group>"; };
@@ -526,6 +536,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E25B702413A43A260004AC85 /* Fonts */,
 				E205718B1395945100016B8B /* stitch.mp4 */,
 				E21B30BC1379D65B00602CF1 /* Data.plist */,
 				E200728F12F9F1FA006CAFBA /* Images */,
@@ -609,6 +620,18 @@
 				E261AD2F1385DC98002031AA /* WallCreateModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E25B702413A43A260004AC85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E25B702513A43A370004AC85 /* BreeBold.otf */,
+				E25B702613A43A370004AC85 /* BreeExtrabold.otf */,
+				E25B702713A43A370004AC85 /* BreeLight.otf */,
+				E25B702813A43A370004AC85 /* BreeRegular.otf */,
+				E25B702913A43A370004AC85 /* BreeThin.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		E26BE87612F8AA1B002B50C2 /* VideoControl */ = {
@@ -1210,6 +1233,11 @@
 				E25B701F13A428650004AC85 /* fav-icon-picked@2x.png in Resources */,
 				E25B702213A431700004AC85 /* view-arrow.png in Resources */,
 				E25B702313A431700004AC85 /* view-arrow@2x.png in Resources */,
+				E25B702A13A43A370004AC85 /* BreeBold.otf in Resources */,
+				E25B702B13A43A370004AC85 /* BreeExtrabold.otf in Resources */,
+				E25B702C13A43A370004AC85 /* BreeLight.otf in Resources */,
+				E25B702D13A43A370004AC85 /* BreeRegular.otf in Resources */,
+				E25B702E13A43A370004AC85 /* BreeThin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
