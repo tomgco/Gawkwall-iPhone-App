@@ -29,7 +29,7 @@
 @synthesize videoQuality;
 @synthesize responseArea;
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
-@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate, wallView, lastGawkWall;
+@synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate, wallView, lastGawkWall, lastGawkWallName;
 
 
 - (BOOL)validateEmail: (NSString *) candidate {
@@ -228,18 +228,31 @@
 	[UIImageJPEGRepresentation(tempImage, 90) writeToFile:imageDest atomically:YES];
 	[fileManager release];
 	
-	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", @"DateCreated", nil];
+	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", @"DateCreated", @"RelatedWall", nil];
 	
 	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
 	
 	NSDate *today = [NSDate date];
-	NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-	[dateFormat setDateFormat:@"dd/MM/yyyy"];
+	NSDateFormatter *monthDateFormat = [[NSDateFormatter alloc] init];
+	[monthDateFormat setDateFormat:@"MMM"];
+	NSString *month = [NSString stringWithString:[monthDateFormat stringFromDate:today]];
+	[monthDateFormat release];
 	
-	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], [NSString stringWithString:imageDest], [dateFormat stringFromDate:today],nil] forKeys:keys]];
+	NSDateFormatter *dayFormat = [[NSDateFormatter alloc] init];
+	[dayFormat setDateFormat:@"d"];
+	NSString *day = [NSString stringWithString:[dayFormat stringFromDate:today]];
+	[dayFormat release];
+	day = [self getOrdinalSuffix:[day intValue]];
+	
+	NSDateFormatter *yearFormat = [[NSDateFormatter alloc] init];
+	[yearFormat setDateFormat:@"YYYY"];
+	NSString *year = [NSString stringWithString:[yearFormat stringFromDate:today]];
+	[yearFormat release];
+
+	
+	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], [NSString stringWithString:imageDest], [NSString stringWithFormat:@"%@ %@ %@", month, day, year], lastGawkWallName, nil] forKeys:keys]];
 	NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 	[data setObject:dataItems forKey:@"Rows"];
-	[dateFormat release];
 	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
 	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
 	[dataItems release];
@@ -373,6 +386,7 @@
 	[responseArea release];
 	[lastGawk release];
 	[lastGawkWall release];
+	[lastGawkWallName release];
 	[super dealloc];
 }
 
@@ -386,9 +400,21 @@
 	[alertView release];  
 }
 
-- (void) onCellSelect:(NSString *)wallSecureId{
+- (void) onCellSelect:(NSString *)wallSecureId :(NSString *)wallName{
 	lastGawkWall = [[NSString alloc] initWithString:wallSecureId];
+	lastGawkWallName = [[NSString alloc] initWithString:wallName];
 	[self getVideo];
+}
+
+- (NSString*)getOrdinalSuffix: (int)number {
+	
+	NSArray *suffixLookup = [NSArray arrayWithObjects:@"th",@"st",@"nd",@"rd",@"th",@"th",@"th",@"th",@"th",@"th", nil];
+	
+	if (number % 100 >= 11 && number % 100 <= 13) {
+		return [NSString stringWithFormat:@"%d%@", number, @"th"];
+	}
+	
+	return [NSString stringWithFormat:@"%d%@", number, [suffixLookup objectAtIndex:(number % 10)]];
 }
 
 @end

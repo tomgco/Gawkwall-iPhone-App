@@ -44,6 +44,7 @@
 	WallViewController *wallView;
 	NSString *lastGawk;
 	NSString *lastGawkWall;
+	NSString *lastGawkWallName;
 }
 
 - (IBAction)getVideo;
@@ -66,6 +67,7 @@
 - (BOOL)validateEmail: (NSString *)canidate;
 - (void)showValidationError: (NSString *)msg;
 - (void)startGawkRequest:(NSString*)fileLocation :(NSString*)wallSecureId;
+- (NSString*)getOrdinalSuffix: (int)dayOfMonth;
 
 @property (nonatomic, retain) UIImagePickerController *gawkNow;
 @property (nonatomic, retain) NSDictionary *member;
@@ -78,6 +80,7 @@
 @property(nonatomic, retain) NSURL *gawkOutput;
 @property(nonatomic, retain) NSString *lastGawk;
 @property(nonatomic, retain) NSString *lastGawkWall;
+@property(nonatomic, retain) NSString *lastGawkWallName;
 @property (retain, nonatomic) ASIFormDataRequest *httpRequest;
 @property (retain, nonatomic) AlbumViewController *album;
 @property (retain, nonatomic) WallCreateViewController *wallCreate;

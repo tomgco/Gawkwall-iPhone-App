@@ -10,7 +10,7 @@
 #import "WallCell.h"
 @protocol WallViewDelegate <NSObject>
 @required
--(void)onCellSelect:(NSString*)wallSecureId;
+-(void)onCellSelect:(NSString*)wallSecureId :(NSString *)wallName;
 @end
 
 @class ASIFormDataRequest;

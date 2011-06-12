@@ -246,8 +246,8 @@
      */
 	NSDictionary *dictionary = [wallList objectAtIndex:indexPath.row];
 	id delegate = [self delegate];
-	if ([delegate respondsToSelector:@selector(onCellSelect:)]) {
-		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]];
+	if ([delegate respondsToSelector:@selector(onCellSelect::)]) {
+		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]:[dictionary objectForKey:@"name"]];
 	}
 }
 
@@ -261,8 +261,8 @@
 	NSIndexPath *indexPath = [self.tableView indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
 	NSDictionary *dictionary = [wallList objectAtIndex:indexPath.row];
 	id delegate = [self delegate];
-	if ([delegate respondsToSelector:@selector(onCellSelect:)]) {
-		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]];
+	if ([delegate respondsToSelector:@selector(onCellSelect::)]) {
+		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]:[dictionary objectForKey:@"name"]];
 	}
 }
 

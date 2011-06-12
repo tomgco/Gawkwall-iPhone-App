@@ -188,7 +188,7 @@
 	vwimg.image = img;
 	cell.backgroundView = vwimg;
 	NSDictionary *dictionary = [self.tableDataSource objectAtIndex:indexPath.row];
-	cell.wall = [dictionary objectForKey:@"GawkUrl"];
+	cell.wall = [dictionary objectForKey:@"RelatedWall"];
 	cell.date = [dictionary objectForKey:@"DateCreated"];
 	cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
 	cell.accessoryType = UITableViewCellAccessoryNone;
