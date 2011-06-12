@@ -232,8 +232,7 @@
 	processingIndicator.hidden = YES;
 	
 	//TODO: Dealloc player.
-	//_outputFileURL = [[NSURL alloc] initWithString:[outputFileURL path]];
-	_outputFileURL = [[NSURL alloc] initWithString:[outputUrl path]];
+	_outputFileURL = [[NSURL alloc] initWithString:[outputFileURL path]];
 	_tmpImageRef = tempImageRef;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.75];

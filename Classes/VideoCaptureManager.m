@@ -286,40 +286,10 @@
 	
 	AVURLAsset* gawkVideoAsset = [AVURLAsset URLAssetWithURL:outputFileURL options:nil];
 	
-	AVMutableComposition *videoComposition = [AVMutableComposition composition];
+	__block AVAssetExportSession* exportedVideoSession = [[AVAssetExportSession alloc] initWithAsset:gawkVideoAsset presetName:AVAssetExportPresetLowQuality];
+	NSURL *convertedURLCompressed = [self tempFileURL:YES];
+	exportedVideoSession.outputURL = convertedURLCompressed;
 	
-	AVMutableCompositionTrack *compositionVideoTrack = [videoComposition  addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
-	
-	AVAssetTrack *clipVideoTrack = [[gawkVideoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
-	
-	[compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [gawkVideoAsset duration])  ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
-	
-	AVMutableVideoComposition* gawkVideoComposition = [[AVMutableVideoComposition videoComposition]retain];
-	gawkVideoComposition.renderSize = CGSizeMake(320, 220);
-	gawkVideoComposition.frameDuration = CMTimeMake(1, 30);
-	
-	AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
-	instruction.timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(60, 30));
-	
-	AVMutableVideoCompositionLayerInstruction* rotator = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:clipVideoTrack];
-	CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-	CGAffineTransform translateToCenter = CGAffineTransformMakeTranslation(0,-screenSize.width);   
-	CGAffineTransform moveDown = CGAffineTransformMakeTranslation(0, -screenSize.height * 0.2);
-	CGAffineTransform rotateBy90Degrees = CGAffineTransformMakeRotation(M_PI_2);
-	CGAffineTransform shrinkWidth = CGAffineTransformMakeScale(0.68, 0.68);
-	CGAffineTransform finalTransform = CGAffineTransformConcat(shrinkWidth, CGAffineTransformConcat(translateToCenter, CGAffineTransformConcat(rotateBy90Degrees, moveDown)));
-	[rotator setTransform:finalTransform atTime:kCMTimeZero];
-	
-	
-	instruction.layerInstructions = [NSArray arrayWithObject: rotator];
-	gawkVideoComposition.instructions = [NSArray arrayWithObject: instruction];
-	
-	
-	__block AVAssetExportSession* exportedVideoSession = [[AVAssetExportSession alloc] initWithAsset:videoComposition presetName:AVAssetExportPresetLowQuality];
-	NSURL *convertedURL = [self tempFileURL:YES];
-	exportedVideoSession.outputURL = convertedURL;
-	exportedVideoSession.videoComposition = gawkVideoComposition;
-
 	exportedVideoSession.outputFileType = AVFileTypeQuickTimeMovie;
 	[exportedVideoSession exportAsynchronouslyWithCompletionHandler:^(void) {
 		
@@ -328,15 +298,63 @@
 				NSLog(@"Export failed: %@", [[exportedVideoSession error] localizedDescription]);
 				break;
 			case AVAssetExportSessionStatusCompleted:
-				if ([delegate respondsToSelector:@selector(recordingFinished: fullQuality: thumbnail:)]) {
-					AVURLAsset* temp = [AVURLAsset URLAssetWithURL:convertedURL options:nil];
-					AVAssetImageGenerator *imagePreview = [AVAssetImageGenerator assetImageGeneratorWithAsset:temp];
+				NSLog(@"Export completed");
+				AVMutableComposition *videoComposition = [AVMutableComposition composition];
+				
+				AVMutableCompositionTrack *compositionVideoTrack = [videoComposition  addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+				
+				AVAssetTrack *clipVideoTrack = [[gawkVideoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+				
+				[compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [gawkVideoAsset duration])  ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
+				
+				AVMutableVideoComposition* gawkVideoComposition = [[AVMutableVideoComposition videoComposition]retain];
+				gawkVideoComposition.renderSize = CGSizeMake(320, 220);
+				gawkVideoComposition.frameDuration = CMTimeMake(1, 30);
+				
+				AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+				instruction.timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(60, 30));
+				
+				AVMutableVideoCompositionLayerInstruction* rotator = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:clipVideoTrack];
+				CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+				CGAffineTransform translateToCenter = CGAffineTransformMakeTranslation(0,-screenSize.width);   
+				CGAffineTransform moveDown = CGAffineTransformMakeTranslation(0, -screenSize.height * 0.2);
+				CGAffineTransform rotateBy90Degrees = CGAffineTransformMakeRotation(M_PI_2);
+				CGAffineTransform shrinkWidth = CGAffineTransformMakeScale(0.68, 0.68);
+				CGAffineTransform finalTransform = CGAffineTransformConcat(shrinkWidth, CGAffineTransformConcat(translateToCenter, CGAffineTransformConcat(rotateBy90Degrees, moveDown)));
+				[rotator setTransform:finalTransform atTime:kCMTimeZero];
+				
+				
+				instruction.layerInstructions = [NSArray arrayWithObject: rotator];
+				gawkVideoComposition.instructions = [NSArray arrayWithObject: instruction];
+				
+				
+				__block AVAssetExportSession* exportedVideoSession2 = [[AVAssetExportSession alloc] initWithAsset:videoComposition presetName:AVAssetExportPresetLowQuality];
+				NSURL *convertedURL = [self tempFileURL:YES];
+				exportedVideoSession2.outputURL = convertedURL;
+				exportedVideoSession2.videoComposition = gawkVideoComposition;
+				
+				exportedVideoSession2.outputFileType = AVFileTypeQuickTimeMovie;
+				[exportedVideoSession2 exportAsynchronouslyWithCompletionHandler:^(void) {
 					
-					CGImageRef tempImageRef = [imagePreview copyCGImageAtTime:CMTimeMakeWithSeconds(2, 60) actualTime:nil error:nil];
-					[delegate recordingFinished: convertedURL fullQuality:outputFileURL thumbnail:tempImageRef];
-				}
-				break;
-			default:
+					switch ([exportedVideoSession2 status]) {
+						case AVAssetExportSessionStatusFailed:
+							NSLog(@"Export failed: %@", [[exportedVideoSession2 error] localizedDescription]);
+							break;
+						case AVAssetExportSessionStatusCompleted:
+							if ([delegate respondsToSelector:@selector(recordingFinished: fullQuality: thumbnail:)]) {
+								AVURLAsset* temp = [AVURLAsset URLAssetWithURL:convertedURL options:nil];
+								AVAssetImageGenerator *imagePreview = [AVAssetImageGenerator assetImageGeneratorWithAsset:temp];
+								
+								CGImageRef tempImageRef = [imagePreview copyCGImageAtTime:CMTimeMakeWithSeconds(2, 60) actualTime:nil error:nil];
+								[delegate recordingFinished: convertedURLCompressed fullQuality:outputFileURL thumbnail:tempImageRef];
+							}
+							break;
+						default:
+							break;
+					}
+					[exportedVideoSession2 release];
+				}];
+
 				break;
 		}
 		[exportedVideoSession release];
