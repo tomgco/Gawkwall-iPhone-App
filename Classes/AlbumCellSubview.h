@@ -51,6 +51,7 @@
 @interface AlbumCellSubview : ApplicationCell
 {
     IBOutlet UIImageView *iconView;
+		IBOutlet UIImageView *favView;
     IBOutlet UILabel *dateLabel;
     IBOutlet UILabel *wallLabel;
 }

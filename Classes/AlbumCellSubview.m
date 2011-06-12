@@ -65,6 +65,12 @@
     iconView.image = newIcon;
 }
 
+- (void)setFav:(UIImage *)newFav
+{
+	[super setFav:newFav];
+	favView.image = newFav;
+}
+
 - (void)setWall:(NSString *)newWall
 {
     [super setWall:newWall];

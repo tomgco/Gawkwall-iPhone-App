@@ -49,7 +49,7 @@
 
 @implementation ApplicationCell
 
-@synthesize useDarkBackground, icon, wall, date;
+@synthesize useDarkBackground, icon, wall, date, fav;
 
 - (void)setUseDarkBackground:(BOOL)flag {
     if (flag != useDarkBackground || !self.backgroundView)

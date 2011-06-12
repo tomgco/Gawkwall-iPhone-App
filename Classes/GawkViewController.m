@@ -228,7 +228,7 @@
 	[UIImageJPEGRepresentation(tempImage, 90) writeToFile:imageDest atomically:YES];
 	[fileManager release];
 	
-	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", @"DateCreated", @"RelatedWall", nil];
+	NSArray *keys = [NSArray arrayWithObjects:@"GawkUrl", @"Thumbnail", @"DateCreated", @"RelatedWall", @"Fav", nil];
 	
 	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
 	
@@ -250,7 +250,7 @@
 	[yearFormat release];
 
 	
-	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], [NSString stringWithString:imageDest], [NSString stringWithFormat:@"%@ %@ %@", month, day, year], lastGawkWallName, nil] forKeys:keys]];
+	[dataItems addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithString:destPath], [NSString stringWithString:imageDest], [NSString stringWithFormat:@"%@ %@ %@", month, day, year], lastGawkWallName, @"0", nil] forKeys:keys]];
 	NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 	[data setObject:dataItems forKey:@"Rows"];
 	[data writeToFile:[folderPath stringByAppendingPathComponent:@"Data.plist"] atomically:YES];

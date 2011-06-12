@@ -171,6 +171,8 @@
 		E2EFCA971397051E009D92E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EFCA961397051E009D92E5 /* QuartzCore.framework */; };
 		E2EFCA9B13970844009D92E5 /* AlbumVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EFCA9913970844009D92E5 /* AlbumVideoViewController.m */; };
 		E2EFCA9C13970844009D92E5 /* AlbumVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EFCA9A13970844009D92E5 /* AlbumVideoViewController.xib */; };
+		E2F8D0F513A5073100F41082 /* view-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F8D0F313A5073100F41082 /* view-arrow-left.png */; };
+		E2F8D0F613A5073100F41082 /* view-arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F8D0F413A5073100F41082 /* view-arrow-left@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -447,6 +449,8 @@
 		E2EFCA9813970844009D92E5 /* AlbumVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumVideoViewController.h; path = ../AlbumVideoViewController.h; sourceTree = "<group>"; };
 		E2EFCA9913970844009D92E5 /* AlbumVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumVideoViewController.m; path = ../AlbumVideoViewController.m; sourceTree = "<group>"; };
 		E2EFCA9A13970844009D92E5 /* AlbumVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumVideoViewController.xib; sourceTree = "<group>"; };
+		E2F8D0F313A5073100F41082 /* view-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-arrow-left.png"; sourceTree = "<group>"; };
+		E2F8D0F413A5073100F41082 /* view-arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-arrow-left@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -570,6 +574,8 @@
 				E25B701913A428650004AC85 /* fav-icon@2x.png */,
 				E25B701A13A428650004AC85 /* fav-icon-picked.png */,
 				E25B701B13A428650004AC85 /* fav-icon-picked@2x.png */,
+				E2F8D0F313A5073100F41082 /* view-arrow-left.png */,
+				E2F8D0F413A5073100F41082 /* view-arrow-left@2x.png */,
 				E25B701013A40FD80004AC85 /* cell-background.png */,
 				E25B701413A4229D0004AC85 /* divider.png */,
 				E25B701513A4229D0004AC85 /* divider@2x.png */,
@@ -1238,6 +1244,8 @@
 				E25B702C13A43A370004AC85 /* BreeLight.otf in Resources */,
 				E25B702D13A43A370004AC85 /* BreeRegular.otf in Resources */,
 				E25B702E13A43A370004AC85 /* BreeThin.otf in Resources */,
+				E2F8D0F513A5073100F41082 /* view-arrow-left.png in Resources */,
+				E2F8D0F613A5073100F41082 /* view-arrow-left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

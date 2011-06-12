@@ -53,6 +53,7 @@
     BOOL useDarkBackground;
 
     UIImage *icon;
+		UIImage *fav;
     NSString *wall;
     NSString *date;
 }
@@ -60,6 +61,7 @@
 @property BOOL useDarkBackground;
 
 @property(retain) UIImage *icon;
+@property(retain) UIImage *fav;
 @property(retain) NSString *wall;
 @property(retain) NSString *date;
 

@@ -24,6 +24,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+			self.tableDataSource = [[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"];
     }
     return self;
 }
@@ -191,6 +192,7 @@
 	cell.wall = [dictionary objectForKey:@"RelatedWall"];
 	cell.date = [dictionary objectForKey:@"DateCreated"];
 	cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
+	cell.fav = ![[dictionary objectForKey:@"Fav"] boolValue] ? [UIImage imageNamed: @"fav-icon"] : [UIImage imageNamed:@"fav-icon-picked"];
 	cell.accessoryType = UITableViewCellAccessoryNone;
     return cell;
 }
@@ -266,6 +268,20 @@
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:([[[self.tableView indexPathsForVisibleRows] objectAtIndex:0] row] * self.tableView.rowHeight)] forKey:@"gawkwall_album_contentOffset_y"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (IBAction) favGawkItem {
+	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
+	
+	NSMutableDictionary *update = [[NSMutableDictionary alloc] initWithDictionary:[dataItems objectAtIndex:videoId]];
+	[update valueForKey:@"Fav"];
+	[update setValue:[NSNumber numberWithBool:![[update objectForKey:@"Fav"] boolValue]] forKey:@"Fav"];
+	[dataItems replaceObjectAtIndex:videoId withObject:update];
+	NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+	[data setObject:dataItems forKey:@"Rows"];
+	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
+	self.tableDataSource = [[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"];
+	[self.tableView reloadData];
 }
 
 @end
