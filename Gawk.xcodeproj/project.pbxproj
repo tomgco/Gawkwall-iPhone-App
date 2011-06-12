@@ -501,11 +501,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E27E9CDC13A38DCE00A67EB6 /* MessageUI.framework */,
-				E27E9CDA13A38DC200A67EB6 /* Security.framework */,
-				E2EFCA961397051E009D92E5 /* QuartzCore.framework */,
-				E229B5F31373763100060046 /* CoreMedia.framework */,
-				E229B5E913731FBC00060046 /* MediaPlayer.framework */,
 				E2CE928F131F095500D92F70 /* Constant.h */,
 				E26BE87912F8AA5B002B50C2 /* Views */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -513,13 +508,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				E2B2FAEC12A7201300588D09 /* MobileCoreServices.framework */,
-				E2B2FCA512A851EE00588D09 /* CFNetwork.framework */,
-				E2B2FCA712A851F400588D09 /* SystemConfiguration.framework */,
-				E2B2FCA912A8521900588D09 /* libz.1.2.3.dylib */,
-				E2A9FACE12AEE4DD002C9D47 /* AVFoundation.framework */,
-				E2A9FAD412AEE4F0002C9D47 /* AssetsLibrary.framework */,
-				E2A9FCB212AF1AD8002C9D47 /* QuartzCore.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -554,6 +542,18 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E27E9CDC13A38DCE00A67EB6 /* MessageUI.framework */,
+				E27E9CDA13A38DC200A67EB6 /* Security.framework */,
+				E2EFCA961397051E009D92E5 /* QuartzCore.framework */,
+				E229B5F31373763100060046 /* CoreMedia.framework */,
+				E229B5E913731FBC00060046 /* MediaPlayer.framework */,
+				E2B2FAEC12A7201300588D09 /* MobileCoreServices.framework */,
+				E2B2FCA512A851EE00588D09 /* CFNetwork.framework */,
+				E2B2FCA712A851F400588D09 /* SystemConfiguration.framework */,
+				E2B2FCA912A8521900588D09 /* libz.1.2.3.dylib */,
+				E2A9FACE12AEE4DD002C9D47 /* AVFoundation.framework */,
+				E2A9FAD412AEE4F0002C9D47 /* AssetsLibrary.framework */,
+				E2A9FCB212AF1AD8002C9D47 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
