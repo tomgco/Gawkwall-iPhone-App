@@ -65,6 +65,7 @@
 		E268261E13A690D40069A730 /* album-view-header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E268261A13A690D40069A730 /* album-view-header@2x.png */; };
 		E268261F13A690D40069A730 /* album-view-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E268261B13A690D40069A730 /* album-view-background.png */; };
 		E268262013A690D40069A730 /* album-view-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E268261C13A690D40069A730 /* album-view-background@2x.png */; };
+		E268262213A69A910069A730 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E268262113A69A910069A730 /* logo@2x.png */; };
 		E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88612F8ACEB002B50C2 /* CHANGELOG */; };
 		E26BE88912F8AE2E002B50C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E26BE88812F8AE2E002B50C2 /* README.md */; };
 		E27157321316F1E1002BD0A2 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E271571A1316F1E1002BD0A2 /* FBDialog.bundle */; };
@@ -251,6 +252,7 @@
 		E268261A13A690D40069A730 /* album-view-header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album-view-header@2x.png"; sourceTree = "<group>"; };
 		E268261B13A690D40069A730 /* album-view-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album-view-background.png"; sourceTree = "<group>"; };
 		E268261C13A690D40069A730 /* album-view-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album-view-background@2x.png"; sourceTree = "<group>"; };
+		E268262113A69A910069A730 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		E26BE88612F8ACEB002B50C2 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		E26BE88812F8AE2E002B50C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E271571A1316F1E1002BD0A2 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 				E2314D6B1384837B00730EDD /* camerar.png */,
 				E2314D6C1384837B00730EDD /* camerar@2x.png */,
 				E2AD492B137B66C5008416F0 /* Default@2x.png */,
+				E268262113A69A910069A730 /* logo@2x.png */,
 				E274738B1372120C0049253E /* logo.png */,
 				E27157D31317068B002BD0A2 /* rounded_table_cell_bottom.png */,
 				E27157D41317068B002BD0A2 /* rounded_table_cell_bottom@2x.png */,
@@ -1262,6 +1265,7 @@
 				E268261E13A690D40069A730 /* album-view-header@2x.png in Resources */,
 				E268261F13A690D40069A730 /* album-view-background.png in Resources */,
 				E268262013A690D40069A730 /* album-view-background@2x.png in Resources */,
+				E268262213A69A910069A730 /* logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
