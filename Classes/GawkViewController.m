@@ -307,6 +307,15 @@
 				
 			}
 		} else {
+			NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
+			
+			NSMutableDictionary *update = [[NSMutableDictionary alloc] initWithDictionary:[dataItems objectAtIndex:[dataItems count]-1]];
+			[update setValue:[[object objectForKey:@"video"] objectForKey:@"secureId"] forKey:@"secureId"];
+			[update setValue:[[object objectForKey:@"video"] objectForKey:@"wallSecureId"] forKey:@"wallSecureId"];
+			[dataItems replaceObjectAtIndex:[dataItems count]-1 withObject:update];
+			NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+			[data setObject:dataItems forKey:@"Rows"];
+			[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
 			[self hideActivityView];
 		}
 	} else {
