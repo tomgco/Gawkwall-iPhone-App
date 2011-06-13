@@ -116,6 +116,8 @@
 	[member setValue:[memberData objectForKey:@"firstName"] forKey:@"firstName"];
 	[member setValue:[memberData objectForKey:@"lastName"] forKey:@"lastName"];
 	[member setValue:[memberData objectForKey:@"alias"] forKey:@"alias"];
+	[member setValue:[memberData objectForKey:@"website"] forKey:@"website"];
+	[member setValue:[memberData objectForKey:@"description"] forKey:@"description"];
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"emailAddress"] forKey:@"gawk_username"];
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"facebookId"] forKey:GAWK_FACEBOOK_USER_ID];
 	[[NSUserDefaults standardUserDefaults] setObject:[memberData objectForKey:@"token"] forKey:@"gawk_token"];
