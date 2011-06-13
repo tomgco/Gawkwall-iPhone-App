@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SettingsViewController
 
@@ -33,12 +33,18 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+-(void)gotoLink:(id)sender {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString: url.titleLabel.text]];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	[profileImage.layer setBorderColor: [[UIColor lightGrayColor] CGColor]];
+	[profileImage.layer setBorderWidth:1.0];
 }
 
 - (void)viewDidUnload

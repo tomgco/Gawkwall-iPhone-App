@@ -10,7 +10,13 @@
 
 
 @interface SettingsViewController : UIViewController {
-    
+	IBOutlet UILabel *userName;
+	IBOutlet UIImageView *profileImage;
+	IBOutlet UILabel *fullName;
+	IBOutlet UIButton *url;
+	IBOutlet UITextView *description;
 }
+
+- (IBAction) gotoLink:(id)sender;
 
 @end
