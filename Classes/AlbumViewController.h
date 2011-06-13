@@ -13,6 +13,7 @@
 @interface AlbumViewController : UITableViewController <UITableViewDelegate> {
     NSArray *tableDataSource;
 	IBOutlet UIView *videoPlayer;
+	IBOutlet UIView *videoViewContainer;
 	IBOutlet UIView *videoView;
 	ApplicationCell *tmpCell;
 	MPMoviePlayerController *player;

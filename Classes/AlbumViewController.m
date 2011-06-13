@@ -62,12 +62,12 @@
 	UISwipeGestureRecognizer *gestures;
 	gestures = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
 	[gestures setDirection:UISwipeGestureRecognizerDirectionRight];
-	[videoPlayer addGestureRecognizer:gestures];
+	[videoViewContainer addGestureRecognizer:gestures];
 	[gestures release];
 	
 	gestures = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
 	[gestures setDirection:UISwipeGestureRecognizerDirectionLeft];
-	[videoPlayer addGestureRecognizer:gestures];
+	[videoViewContainer addGestureRecognizer:gestures];
 	[gestures release];
 }
 
@@ -84,18 +84,19 @@
 	[animation setType:kCATransitionPush];
 	[animation setSubtype:kCATransitionFromLeft];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-	[videoPlayer addSubview:videoView];
+	[videoViewContainer addSubview:videoView];
 	CGRect frame = videoPlayer.frame;
 	frame.origin.y = 20.0;
 	videoPlayer.frame = frame;
-	[self.tabBarController.view addSubview:videoPlayer];
-	[self.tabBarController.tabBar setHidden:YES];
-	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwipeViewToRight"];
+	[videoPlayer addSubview:videoViewContainer];
+	//[self.tabBarController.tabBar setHidden:YES];
+	[[videoViewContainer layer] addAnimation:animation forKey:@"SwipeViewToRight"];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 	
 	player.repeatMode = MPMovieRepeatModeOne;
 	player.movieSourceType = MPMovieSourceTypeFile;
 	player.controlStyle = MPMovieControlStyleNone;
+	player.scalingMode = MPMovieScalingModeAspectFill;
 	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
 	[videoView addSubview: player.view];
 }
@@ -112,13 +113,13 @@
 	[animation setType:kCATransitionPush];
 	[animation setSubtype:kCATransitionFromRight];
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-	[videoPlayer addSubview:videoView];
+	[videoViewContainer addSubview:videoView];
 	CGRect frame = videoPlayer.frame;
 	frame.origin.y = 20.0;
 	videoPlayer.frame = frame;
-	[self.tabBarController.view addSubview:videoPlayer];
-	[self.tabBarController.tabBar setHidden:YES];
-	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwipeViewToLeft"];
+	[videoPlayer addSubview:videoViewContainer];
+	//[self.tabBarController.tabBar setHidden:YES];
+	[[videoViewContainer layer] addAnimation:animation forKey:@"SwipeViewToLeft"];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 
 	player.repeatMode = MPMovieRepeatModeOne;
@@ -230,13 +231,14 @@
 	[self.tabBarController.view addSubview:videoPlayer];
 	[self.tabBarController.tabBar setHidden:YES];
 	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwitchToView1"];
-	[videoPlayer addSubview:videoView];
+	[videoViewContainer addSubview:videoView];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 	//player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
 	//[self presentMoviePlayerViewControllerAnimated:player];
 	player.repeatMode = MPMovieRepeatModeOne;
 	player.movieSourceType = MPMovieSourceTypeFile;
 	player.controlStyle = MPMovieControlStyleNone;
+	player.scalingMode = MPMovieScalingModeAspectFill;
 	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
 	[videoView addSubview: player.view];
 }
