@@ -46,6 +46,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+	[loginModel tryLogin];
 	[emailAddress becomeFirstResponder];
 	emailAddress.text = [[NSUserDefaults standardUserDefaults] objectForKey: @"gawk_username"];
 }

@@ -32,11 +32,6 @@
 		facebook = [[Facebook alloc] initWithAppId:GAWK_FACEBOOK_APP_ID];
 		facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:FB_ACCESS_TOKEN_KEY];
 		facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:FB_EXPIRATION_DATE_KEY];
-		if ([facebook isSessionValid]) {
-			[self gawkFBLogin];
-		} else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_username"] length] > 0 && [[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_password"] length] > 0) {
-			[self loginRegisteredUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_username"] :[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_password"]];
-		}
 	}
 	return self;
 }
@@ -290,6 +285,22 @@
 	[member release];
 	[facebook release];
 	[super dealloc];
+}
+
+- (void) tryLogin {
+	if ([facebook isSessionValid]) {
+		id delegate = [self delegate];
+		if ([delegate respondsToSelector:@selector(onGawkLogin)]) {
+			[delegate onGawkLogin];
+		}
+		[self gawkFBLogin];
+	} else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_username"] length] > 0 && [[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_password"] length] > 0) {
+		id delegate = [self delegate];
+		if ([delegate respondsToSelector:@selector(onGawkLogin)]) {
+			[delegate onGawkLogin];
+		}
+		[self loginRegisteredUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_username"] :[[NSUserDefaults standardUserDefaults] objectForKey:@"gawk_password"]];
+	}
 }
 
 
