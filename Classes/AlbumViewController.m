@@ -14,6 +14,10 @@
 #define DARK_BACKGROUND  [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0]
 #define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0]
 
+@interface AlbumViewController ()
+- (void)favGawkFailed:(ASIHTTPRequest *)request;
+- (void)favGawkFinished:(ASIHTTPRequest *)request;
+@end
 
 @implementation AlbumViewController
 
@@ -140,6 +144,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+	[self.tableView reloadData];
 	CGPoint contentOffset = CGPointMake(0,[[NSUserDefaults standardUserDefaults] floatForKey:@"gawkwall_album_contentOffset_y"]);
 	[self.tableView setContentOffset:contentOffset];
 }
@@ -283,6 +288,33 @@
 - (IBAction) favGawkItem {
 	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
 	
+	NSMutableDictionary *update = [[NSMutableDictionary alloc] initWithDictionary:[dataItems objectAtIndex:videoId]];	
+	NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) loginView] loginModel] member]];
+	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
+	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
+	[httpRequest setPostValue:@"MemberRating.AddRating" forKey:@"Action"];
+	[httpRequest setPostValue:[member objectForKey:@"token"] forKey:@"Token"];
+	[httpRequest setPostValue:[update objectForKey:@"secureId"] forKey:@"VideoSecureId"];
+	[httpRequest setPostValue:([[update valueForKey:@"Fav"] intValue] == 1) ? @"false" : @"true" forKey:@"PositiveRating"];
+	[httpRequest setTimeOutSeconds:5];
+	[httpRequest setDelegate:self];
+	[httpRequest setDidFailSelector:@selector(favGawkFailed:)];
+	[httpRequest setDidFinishSelector:@selector(favGawkFinished:)];
+	[httpRequest startAsynchronous];
+	[member release];
+	NSLog(@"%d", [[update valueForKey:@"Fav"] intValue]);
+	[update release];
+	[self toggleFavStatus];
+}
+
+- (void) favGawkFailed:(ASIHTTPRequest *)request {
+	[self onFavGawkError];
+}
+
+- (void) toggleFavStatus {
+	
+	NSMutableArray *dataItems = [[[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"] mutableCopy];
+	
 	NSMutableDictionary *update = [[NSMutableDictionary alloc] initWithDictionary:[dataItems objectAtIndex:videoId]];
 	[update valueForKey:@"Fav"];
 	[update setValue:[NSNumber numberWithBool:![[update objectForKey:@"Fav"] boolValue]] forKey:@"Fav"];
@@ -292,6 +324,30 @@
 	[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
 	self.tableDataSource = [[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"];
 	[self.tableView reloadData];
+	[update release];
+}
+
+- (void) onFavGawkError {
+	[self toggleFavStatus];
+}
+
+- (void) favGawkFinished:(ASIHTTPRequest *)request {
+	NSString *responseData = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
+	SBJsonParser *parser = [SBJsonParser new];
+  id object = [parser objectWithString:responseData];
+  if (object) {
+		if (![[object objectForKey:@"success"] boolValue]) {
+			[self onFavGawkError];
+			NSLog(@"%@", object);
+		} else {
+			
+		}
+		[self.tableView reloadData];
+	} else {
+		[self onFavGawkError];
+		NSLog(@"%@", responseData);
+	}
+	[parser release];
 }
 
 @end

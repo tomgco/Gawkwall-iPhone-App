@@ -73,4 +73,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction) logout:(id)sender {
+	[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) logout];
+}
+
 @end

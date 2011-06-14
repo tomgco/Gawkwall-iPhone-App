@@ -10,14 +10,17 @@
 #import "ApplicationCell.h"
 #import <MediaPlayer/MediaPlayer.h>
 
+@class ASIFormDataRequest;
 @interface AlbumViewController : UITableViewController <UITableViewDelegate> {
     NSArray *tableDataSource;
 	IBOutlet UIView *videoPlayer;
 	IBOutlet UIView *videoViewContainer;
 	IBOutlet UIView *videoView;
+	IBOutlet UIButton *favButton;
 	ApplicationCell *tmpCell;
 	MPMoviePlayerController *player;
 	NSUInteger videoId;
+	ASIFormDataRequest *httpRequest;
 }
 
 @property (nonatomic, retain) NSArray *tableDataSource;
@@ -25,5 +28,6 @@
 @property (nonatomic, retain) MPMoviePlayerController *player;
 
 - (IBAction)backToList;
-
+- (void) onFavGawkError;
+- (void) toggleFavStatus;
 @end

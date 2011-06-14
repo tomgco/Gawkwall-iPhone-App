@@ -20,6 +20,7 @@
 }
 
 - (IBAction) gotoLink:(id)sender;
+- (IBAction) logout:(id)sender;
 
 @property(nonatomic, retain) NSDictionary *member;
 
