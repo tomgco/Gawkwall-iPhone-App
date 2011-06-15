@@ -94,6 +94,7 @@
 
 - (void) onComplete {
 	[self dismissView];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadWallView" object:nil];
 }
 
 - (void) onFail:(NSString *)errorMessage {

@@ -33,6 +33,12 @@
     return self;
 }
 
+- (void) receiveReloadWallNotification: (NSNotification *) notification {	
+	if ([[notification name] isEqualToString:@"ReloadWallView"]) {
+		[self getWalls];
+	}
+}
+
 - (void)getWallFailed:(ASIHTTPRequest *)request {
 	
 }
@@ -60,6 +66,7 @@
 {
 	[wallList dealloc];
     [super dealloc];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (NSDictionary *)getMember {
@@ -107,6 +114,7 @@
 	self.tableView.backgroundColor = LIGHT_BACKGROUND;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	self.tableView.scrollsToTop = YES;
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveReloadWallNotification:) name:@"ReloadWallView" object:nil];
 }
 
 - (void)viewDidUnload
