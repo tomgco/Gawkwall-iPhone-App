@@ -31,55 +31,9 @@
 @synthesize wallId, linkedUrl, httpRequest, gawkOutput, email, member;
 @synthesize submittingIndicator, activityTitle, activityView, activityMessage, resubmitButton, album, lastGawk, wallCreate, wallView, lastGawkWall, lastGawkWallName;
 
-
-- (BOOL)validateEmail: (NSString *) candidate {
-	NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-	NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-	
-	return [emailTest evaluateWithObject:candidate];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
-		NSString *emailXml= [NSString stringWithFormat:@"<save><game>FutureOfWebDesign2011GawkBooth</game><data>%@</data></save>", email.text]; 
-		
-		[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
-		httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:CLOCK_GAMING_API_LOCATION]];
-		[httpRequest setPostBody:[NSMutableData dataWithData:[emailXml dataUsingEncoding:NSUTF8StringEncoding]]];
-		[httpRequest setTimeOutSeconds:20];
-		[httpRequest setUploadProgressDelegate:progressIndicator];	
-		[httpRequest setDelegate:self];
-		[httpRequest setDidFailSelector:@selector(subscribeFailed:)];
-		[httpRequest startAsynchronous];
-		email.text = @"";
-	}
-}
-
-- (void)subscribeEmail:(NSString *)emailAddress {
-	if (![emailAddress isEqualToString:@""]) {
-		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Competition Entry"
-																												message:@"By continuing you are entering and accepting the Gawkwall competition terms and conditions."
-																											 delegate:self
-																							cancelButtonTitle:@"Agree"
-																							otherButtonTitles:@"Cancel", nil];
-		[alertView show];
-		[alertView release];
-	}
-}
-
 - (IBAction)showCreateWall {
 	wallCreate = [[WallCreateViewController alloc] initWithNibName:@"WallCreateViewController" bundle:nil];
-	//[createWallData addSubview:wallCreate.view];
-	//Move to present modal view to manage view from within createWalldata
 	[self presentModalViewController: wallCreate animated:YES];
-	
-	//[UIView transitionFromView:self.view toView:createWallView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
-}
-
--(IBAction)hideCreateWall {
-//	[UIView transitionFromView:createWallView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
-//		[wallCreate release];
-//	}];	
 }
 
 - (IBAction)showAlbums {
@@ -89,24 +43,9 @@
 	MPMoviePlayerViewController *player =	[[MPMoviePlayerViewController alloc] initWithContentURL: gawkPath];
 	player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
 	[self presentMoviePlayerViewControllerAnimated:player];
-	//	player.repeatMode = MPMovieRepeatModeOne;
-	//	player.movieSourceType = MPMovieSourceTypeFile;
-	//	player.controlStyle = MPMovieControlStyleNone;
-	//	[player.view setFrame: videoPlayer.bounds];  // player's frame must match parent's
-	//	[videoPlayer addSubview: player.view];
-	//	[UIView transitionFromView:self.view toView:videoPlayer duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
-	//	[player play];
 	[gawkPath release];
-//	album = [[AlbumViewController alloc] initWithNibName:@"AlbumViewController" bundle:nil];
-//	[albumdata addSubview:album.view];
-//	[UIView transitionFromView:self.view toView:albumView duration:0.75 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
 }
 
--(IBAction)hideAlbums {
-//	[UIView transitionFromView:albumView toView:self.view duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL success) {
-//		[album release];
-//	}];	
-}
 
 
 - (void)subscribeFailed:(ASIHTTPRequest *)request {

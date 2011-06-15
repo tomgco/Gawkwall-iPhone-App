@@ -169,8 +169,6 @@
 		E2B2FD5112A8647500588D09 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2FD5012A8647500588D09 /* ASIAuthenticationDialog.m */; };
 		E2B2FDD212A87A0C00588D09 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E2B2FDD112A87A0C00588D09 /* LICENSE */; };
 		E2D9E96F12AD936600D317C7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E2D9E96E12AD936600D317C7 /* Settings.bundle */; };
-		E2D9EB9D12ADD17800D317C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */; };
-		E2D9EB9E12ADD17800D317C7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */; };
 		E2E3604D138AFCC400B2BCC5 /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3604B138AFCC400B2BCC5 /* WallViewController.m */; };
 		E2E3604E138AFCC400B2BCC5 /* WallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */; };
 		E2EFCA971397051E009D92E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EFCA961397051E009D92E5 /* QuartzCore.framework */; };
@@ -449,9 +447,6 @@
 		E2B2FDD112A87A0C00588D09 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E2CE928F131F095500D92F70 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constant.h; path = Gawk.xcodeproj/Constant.h; sourceTree = "<group>"; };
 		E2D9E96E12AD936600D317C7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Classes/SearchViewController.xib; sourceTree = "<group>"; };
 		E2E3604A138AFCC400B2BCC5 /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WallViewController.h; path = ../Gawk.xcodeproj/WallViewController.h; sourceTree = "<group>"; };
 		E2E3604B138AFCC400B2BCC5 /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallViewController.m; path = ../Gawk.xcodeproj/WallViewController.m; sourceTree = "<group>"; };
 		E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WallViewController.xib; path = Gawk.xcodeproj/WallViewController.xib; sourceTree = "<group>"; };
@@ -681,7 +676,6 @@
 				E2E3604B138AFCC400B2BCC5 /* WallViewController.m */,
 				28D7ACF70DDB3853001CB0EB /* GawkViewController.m */,
 				E21B30CF1379DB0300602CF1 /* AlbumViewController.m */,
-				E2D9EB9B12ADD17800D317C7 /* SearchViewController.m */,
 				E271576D1316FE39002BD0A2 /* LoginViewController.m */,
 			);
 			name = Controllers;
@@ -695,7 +689,6 @@
 				E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */,
 				E271576E1316FE39002BD0A2 /* LoginViewController.xib */,
 				E2A9F98B12AEC5D4002C9D47 /* CameraViewController.xib */,
-				E2D9EB9C12ADD17800D317C7 /* SearchViewController.xib */,
 				2899E5210DE3E06400AC0155 /* GawkViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				E21B30D01379DB0300602CF1 /* AlbumViewController.xib */,
@@ -714,7 +707,6 @@
 				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
 				E205718613956A2D00016B8B /* SettingsViewController.h */,
 				E2E3604A138AFCC400B2BCC5 /* WallViewController.h */,
-				E2D9EB9A12ADD17800D317C7 /* SearchViewController.h */,
 				E271576C1316FE39002BD0A2 /* LoginViewController.h */,
 				1D3623240D0F684500981E51 /* GawkAppDelegate.h */,
 				E2A9F98912AEC5D4002C9D47 /* CameraViewController.h */,
@@ -1200,7 +1192,6 @@
 				2899E5220DE3E06400AC0155 /* GawkViewController.xib in Resources */,
 				E2B2FDD212A87A0C00588D09 /* LICENSE in Resources */,
 				E2D9E96F12AD936600D317C7 /* Settings.bundle in Resources */,
-				E2D9EB9E12ADD17800D317C7 /* SearchViewController.xib in Resources */,
 				E2A9F98D12AEC5D4002C9D47 /* CameraViewController.xib in Resources */,
 				E26BE88712F8ACEB002B50C2 /* CHANGELOG in Resources */,
 				E26BE88912F8AE2E002B50C2 /* README.md in Resources */,
@@ -1288,7 +1279,6 @@
 				E2B2FCA212A851D700588D09 /* ASINetworkQueue.m in Sources */,
 				E2B2FCEA12A854C200588D09 /* Reachability.m in Sources */,
 				E2B2FD5112A8647500588D09 /* ASIAuthenticationDialog.m in Sources */,
-				E2D9EB9D12ADD17800D317C7 /* SearchViewController.m in Sources */,
 				E2A9F98C12AEC5D4002C9D47 /* CameraViewController.m in Sources */,
 				E2A9FA4E12AECB7E002C9D47 /* VideoCaptureManager.m in Sources */,
 				E27157331316F1E1002BD0A2 /* NSObject+SBJSON.m in Sources */,
