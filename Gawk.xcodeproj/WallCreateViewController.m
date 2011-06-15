@@ -44,6 +44,8 @@
 {
     [super viewDidLoad];
 	[name becomeFirstResponder];
+	scrollView.contentSize = CGSizeMake(form.frame.size.width, form.frame.size.height);
+	[scrollView addSubview:form];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -64,9 +66,18 @@
 	if (textField == name) {
 		[url becomeFirstResponder];
 	} else if(textField == url) {
-		[self saveAndCreateWall];
+		[self jumpToDescription];
 	}
 	return NO;
+}
+
+- (IBAction) jumpToDescription {
+	[scrollView setContentOffset:CGPointMake(0, 87) animated:YES];
+	[description becomeFirstResponder];
+}
+
+- (void) textViewDidBeginEditing:(UITextView *)textView {
+	[self jumpToDescription];
 }
 
 - (IBAction) saveAndCreateWall {
