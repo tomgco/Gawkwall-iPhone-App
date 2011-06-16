@@ -70,7 +70,7 @@
 					</object>
 					<array key="IBUIToolbarItems" id="0"/>
 					<reference key="IBUIParentViewController" ref="624196613"/>
-					<string key="IBUINibName">AlbumViewController</string>
+					<string key="IBUINibName">AlbumViewContainer</string>
 					<object class="IBUISimulatedToolbarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 						<int key="IBUIInterfaceOrientation">1</int>
@@ -212,7 +212,7 @@
 							<reference ref="665381695"/>
 						</array>
 						<reference key="parent" ref="624196613"/>
-						<string key="objectName">Album View Controller</string>
+						<string key="objectName">Album View Container</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">39</int>
@@ -250,7 +250,7 @@
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="37.CustomClassName">GawkViewController</string>
 				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="38.CustomClassName">AlbumViewController</string>
+				<string key="38.CustomClassName">AlbumViewContainer</string>
 				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="44.CustomClassName">SettingsViewController</string>
 				<string key="44.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

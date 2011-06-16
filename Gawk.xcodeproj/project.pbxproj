@@ -39,6 +39,8 @@
 		E23B0A1B137CABCE00A6FC2C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23B0A1A137CABCE00A6FC2C /* Icon@2x.png */; };
 		E24D95C813A940A4000CC971 /* breeregular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E24D95C613A940A4000CC971 /* breeregular.ttf */; };
 		E24D95C913A940A4000CC971 /* breelight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E24D95C713A940A4000CC971 /* breelight.ttf */; };
+		E24D95CD13A97756000CC971 /* AlbumViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D95CB13A97755000CC971 /* AlbumViewContainer.m */; };
+		E24D95CE13A97756000CC971 /* AlbumViewContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24D95CC13A97755000CC971 /* AlbumViewContainer.xib */; };
 		E25B700C13A40C720004AC85 /* latest-gawks.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B700813A40C720004AC85 /* latest-gawks.png */; };
 		E25B700D13A40C720004AC85 /* latest-gawks@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B700913A40C720004AC85 /* latest-gawks@2x.png */; };
 		E25B700E13A40C720004AC85 /* menu-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B700A13A40C720004AC85 /* menu-bar.png */; };
@@ -223,6 +225,9 @@
 		E24C9F8212AC74CD00C71ECD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E24D95C613A940A4000CC971 /* breeregular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = breeregular.ttf; sourceTree = "<group>"; };
 		E24D95C713A940A4000CC971 /* breelight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = breelight.ttf; sourceTree = "<group>"; };
+		E24D95CA13A97754000CC971 /* AlbumViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; name = AlbumViewContainer.h; path = ../AlbumViewContainer.h; sourceTree = "<group>"; };
+		E24D95CB13A97755000CC971 /* AlbumViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumViewContainer.m; path = ../AlbumViewContainer.m; sourceTree = "<group>"; };
+		E24D95CC13A97755000CC971 /* AlbumViewContainer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumViewContainer.xib; sourceTree = "<group>"; };
 		E25B700813A40C720004AC85 /* latest-gawks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "latest-gawks.png"; sourceTree = "<group>"; };
 		E25B700913A40C720004AC85 /* latest-gawks@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "latest-gawks@2x.png"; sourceTree = "<group>"; };
 		E25B700A13A40C720004AC85 /* menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-bar.png"; sourceTree = "<group>"; };
@@ -677,6 +682,7 @@
 			isa = PBXGroup;
 			children = (
 				E2EFCA9913970844009D92E5 /* AlbumVideoViewController.m */,
+				E24D95CB13A97755000CC971 /* AlbumViewContainer.m */,
 				E23B0A12137C930600A6FC2C /* WallCreateViewController.m */,
 				E205718713956A2D00016B8B /* SettingsViewController.m */,
 				E2E3604B138AFCC400B2BCC5 /* WallViewController.m */,
@@ -691,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				E2603FC913A17D4000177ECD /* WallCellSubView.xib */,
+				E24D95CC13A97755000CC971 /* AlbumViewContainer.xib */,
 				E23B0A13137C930600A6FC2C /* WallCreateViewController.xib */,
 				E2E3604C138AFCC400B2BCC5 /* WallViewController.xib */,
 				E271576E1316FE39002BD0A2 /* LoginViewController.xib */,
@@ -709,6 +716,7 @@
 			isa = PBXGroup;
 			children = (
 				E2EFCA9813970844009D92E5 /* AlbumVideoViewController.h */,
+				E24D95CA13A97754000CC971 /* AlbumViewContainer.h */,
 				E23B0A11137C930600A6FC2C /* WallCreateViewController.h */,
 				28D7ACF60DDB3853001CB0EB /* GawkViewController.h */,
 				E205718613956A2D00016B8B /* SettingsViewController.h */,
@@ -1265,6 +1273,7 @@
 				E268262213A69A910069A730 /* logo@2x.png in Resources */,
 				E24D95C813A940A4000CC971 /* breeregular.ttf in Resources */,
 				E24D95C913A940A4000CC971 /* breelight.ttf in Resources */,
+				E24D95CE13A97756000CC971 /* AlbumViewContainer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,6 +1370,7 @@
 				E27EA00613A39F7900A67EB6 /* SHKOAuthView.m in Sources */,
 				E27EA00713A39F7900A67EB6 /* SHKShareMenu.m in Sources */,
 				E27EA00813A39F7900A67EB6 /* SHKViewControllerWrapper.m in Sources */,
+				E24D95CD13A97756000CC971 /* AlbumViewContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -147,6 +147,7 @@
 	[self.tableView reloadData];
 	CGPoint contentOffset = CGPointMake(0,[[NSUserDefaults standardUserDefaults] floatForKey:@"gawkwall_album_contentOffset_y"]);
 	[self.tableView setContentOffset:contentOffset];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -233,9 +234,9 @@
 	CGRect frame = videoPlayer.frame;
 	frame.origin.y = 20.0;
 	videoPlayer.frame = frame;
-	[self.tabBarController.view addSubview:videoPlayer];
+	[[[UIApplication sharedApplication] keyWindow] addSubview:videoPlayer];
 	[self.tabBarController.tabBar setHidden:YES];
-	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwitchToView1"];
+	[[[[UIApplication sharedApplication] keyWindow] layer] addAnimation:animation forKey:@"SwitchToView1"];
 	[videoViewContainer addSubview:videoView];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 	//player.moviePlayer.repeatMode = MPMovieRepeatModeOne;
@@ -276,7 +277,7 @@
 	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
 	[self.tabBarController.tabBar setHidden:NO];
 	[self.tableView.superview addSubview:self.tableView];
-	[[self.tabBarController.view layer] addAnimation:animation forKey:@"SwitchBackToView0"];
+	[[[[UIApplication sharedApplication] keyWindow] layer] addAnimation:animation forKey:@"SwitchBackToView0"];
 		[videoPlayer removeFromSuperview];
 }
 
