@@ -76,7 +76,43 @@
 }
 
 -(void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
+	[self goRight];
+}
+
+-(void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
+	[self goLeft];
+}
+
+- (IBAction) goLeft {
+	NSLog(@"Swipe left received.");
+	videoId = videoId == ([self.tableDataSource count] - 1) ? 0 : videoId + 1;
+	NSLog(@"%d", videoId);
+	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
+	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
 	
+	CATransition *animation = [CATransition animation];
+	[animation setDuration:0.4];
+	[animation setType:kCATransitionPush];
+	[animation setSubtype:kCATransitionFromRight];
+	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+	[videoViewContainer addSubview:videoView];
+	CGRect frame = videoPlayer.frame;
+	frame.origin.y = 20.0;
+	videoPlayer.frame = frame;
+	[videoPlayer addSubview:videoViewContainer];
+	//[self.tabBarController.tabBar setHidden:YES];
+	[[videoViewContainer layer] addAnimation:animation forKey:@"SwipeViewToLeft"];
+	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
+	
+	player.repeatMode = MPMovieRepeatModeOne;
+	player.movieSourceType = MPMovieSourceTypeFile;
+	player.controlStyle = MPMovieControlStyleNone;
+	player.scalingMode = MPMovieScalingModeAspectFill;
+	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
+	[videoView addSubview: player.view];
+}
+
+- (IBAction) goRight {
 	videoId = videoId == 0 ? [self.tableDataSource count] - 1 : videoId - 1;
 	NSLog(@"Swipe right received.");
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
@@ -97,35 +133,6 @@
 	[[videoViewContainer layer] addAnimation:animation forKey:@"SwipeViewToRight"];
 	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
 	
-	player.repeatMode = MPMovieRepeatModeOne;
-	player.movieSourceType = MPMovieSourceTypeFile;
-	player.controlStyle = MPMovieControlStyleNone;
-	player.scalingMode = MPMovieScalingModeAspectFill;
-	[player.view setFrame: videoView.bounds];  // player's frame must match parent's
-	[videoView addSubview: player.view];
-}
-
--(void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
-	NSLog(@"Swipe left received.");
-	videoId = videoId == ([self.tableDataSource count] - 1) ? 0 : videoId + 1;
-	NSLog(@"%d", videoId);
-	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
-	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
-
-	CATransition *animation = [CATransition animation];
-	[animation setDuration:0.4];
-	[animation setType:kCATransitionPush];
-	[animation setSubtype:kCATransitionFromRight];
-	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-	[videoViewContainer addSubview:videoView];
-	CGRect frame = videoPlayer.frame;
-	frame.origin.y = 20.0;
-	videoPlayer.frame = frame;
-	[videoPlayer addSubview:videoViewContainer];
-	//[self.tabBarController.tabBar setHidden:YES];
-	[[videoViewContainer layer] addAnimation:animation forKey:@"SwipeViewToLeft"];
-	player =	[[MPMoviePlayerController alloc] initWithContentURL: gawkPath];
-
 	player.repeatMode = MPMovieRepeatModeOne;
 	player.movieSourceType = MPMovieSourceTypeFile;
 	player.controlStyle = MPMovieControlStyleNone;

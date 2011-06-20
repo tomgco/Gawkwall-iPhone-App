@@ -17,6 +17,9 @@
 	IBOutlet UIView *videoViewContainer;
 	IBOutlet UIView *videoView;
 	IBOutlet UIButton *favButton;
+	IBOutlet UIButton *leftButton;
+	IBOutlet UIButton *rightButton;
+	IBOutlet UILabel *wallName;
 	ApplicationCell *tmpCell;
 	MPMoviePlayerController *player;
 	NSUInteger videoId;
@@ -28,6 +31,8 @@
 @property (nonatomic, retain) MPMoviePlayerController *player;
 
 - (IBAction)backToList;
+- (IBAction)goRight;
+- (IBAction)goLeft;
 - (void) onFavGawkError;
 - (void) toggleFavStatus;
 @end
