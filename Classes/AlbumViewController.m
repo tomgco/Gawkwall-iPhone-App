@@ -84,12 +84,10 @@
 }
 
 - (IBAction) goLeft {
-	NSLog(@"Swipe left received.");
 	videoId = videoId == ([self.tableDataSource count] - 1) ? 0 : videoId + 1;
-	NSLog(@"%d", videoId);
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
 	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
-	
+	wallName.text = [cellData objectForKey:@"RelatedWall"];
 	CATransition *animation = [CATransition animation];
 	[animation setDuration:0.4];
 	[animation setType:kCATransitionPush];
@@ -114,9 +112,8 @@
 
 - (IBAction) goRight {
 	videoId = videoId == 0 ? [self.tableDataSource count] - 1 : videoId - 1;
-	NSLog(@"Swipe right received.");
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
-	NSLog(@"%d", videoId);
+	wallName.text = [cellData objectForKey:@"RelatedWall"];
 	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
 	
 	CATransition *animation = [CATransition animation];
@@ -229,6 +226,7 @@
 	
 	NSLog(@"%d", videoId);
 	NSDictionary *cellData = [self.tableDataSource objectAtIndex:videoId];
+	wallName.text = [cellData objectForKey:@"RelatedWall"];
 	NSURL *gawkPath = [[[NSURL alloc] initWithString:[cellData objectForKey:@"GawkUrl"]] autorelease];
 //	[player play];
 	[videoView removeFromSuperview];
