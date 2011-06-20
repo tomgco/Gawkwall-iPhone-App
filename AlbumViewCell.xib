@@ -127,7 +127,7 @@
 								<reference key="NSNextKeyView" ref="558293302"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">2</int>
+								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -420,13 +420,17 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>favButton</string>
 							<string>tmpCell</string>
 							<string>videoPlayer</string>
 							<string>videoView</string>
+							<string>videoViewContainer</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIButton</string>
 							<string>ApplicationCell</string>
+							<string>UIView</string>
 							<string>UIView</string>
 							<string>UIView</string>
 						</object>
@@ -435,12 +439,18 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>favButton</string>
 							<string>tmpCell</string>
 							<string>videoPlayer</string>
 							<string>videoView</string>
+							<string>videoViewContainer</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">favButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">tmpCell</string>
 								<string key="candidateClassName">ApplicationCell</string>
@@ -451,6 +461,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">videoView</string>
+								<string key="candidateClassName">UIView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">videoViewContainer</string>
 								<string key="candidateClassName">UIView</string>
 							</object>
 						</object>
