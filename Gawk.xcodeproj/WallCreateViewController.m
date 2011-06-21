@@ -85,6 +85,7 @@
 	wallCreateModel.url = url.text;
 	wallCreateModel.publicView = [NSNumber numberWithBool:publicToView.on];
 	wallCreateModel.publicGawk = [NSNumber numberWithBool:friendsCanGawk.on];
+	wallCreateModel.description = description.text;
 	[wallCreateModel createWall];
 }
 

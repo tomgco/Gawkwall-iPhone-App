@@ -60,7 +60,7 @@
 -(void) createWall {
 	NSDictionary *member = [[NSDictionary alloc] initWithDictionary:[self getMember]];
 	
-	NSString *createWallJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\", \"name\" : \"%@\", \"url\" : \"%@\", \"description\" : \"iPhone Test\", \"publicView\" : \"%@\", \"publicGawk\": \"%@\" }", [member objectForKey:@"secureId"], name, url, publicView, publicGawk];
+	NSString *createWallJSON = [NSString stringWithFormat:@"{\"memberSecureId\": \"%@\", \"name\" : \"%@\", \"url\" : \"%@\", \"description\" : \"%@\", \"publicView\" : \"%@\", \"publicGawk\": \"%@\" }", [member objectForKey:@"secureId"], name, url, description, publicView, publicGawk];
 	
 	[ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:YES];
 	httpRequest  = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:GAWK_API_LOCAITON]];
