@@ -11,6 +11,8 @@
 #import "GawkAppDelegate.h"
 #import "JSON.h"
 #import "SHK.h"
+#import <MediaPlayer/MPMoviePlayerViewController.h>
+#import <MediaPlayer/MPMoviePlayerController.h>
 
 #define DARK_BACKGROUND  [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0]
 #define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0]
@@ -260,8 +262,10 @@
 }
 
 - (IBAction) viewGawks:(id) sender {
-	//UIView *senderButton = (UIView*) sender;
-	//NSIndexPath *indexPath = [self.tableView indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
+	NSString *url = [[NSBundle mainBundle] pathForResource:@"stitch" ofType:@"mp4"];	
+	MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:url]];
+	[[player moviePlayer] setRepeatMode:MPMovieRepeatModeOne];
+	[[((GawkAppDelegate *)([UIApplication sharedApplication].delegate)) tabBarController] presentMoviePlayerViewControllerAnimated:player];	
 }
 
 - (IBAction) recordGawk:(id) sender {
