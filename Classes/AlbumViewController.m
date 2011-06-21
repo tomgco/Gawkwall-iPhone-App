@@ -287,8 +287,10 @@
 }
 
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:([[[self.tableView indexPathsForVisibleRows] objectAtIndex:0] row] * self.tableView.rowHeight)] forKey:@"gawkwall_album_contentOffset_y"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+	if ([[self.tableView indexPathsForVisibleRows] count] > 0) {
+		[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:([[[self.tableView indexPathsForVisibleRows] objectAtIndex:0] row] * self.tableView.rowHeight)] forKey:@"gawkwall_album_contentOffset_y"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
 }
 
 - (IBAction) favGawkItem {
