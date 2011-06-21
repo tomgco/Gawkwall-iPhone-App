@@ -196,6 +196,7 @@
 	//cell.icon = [UIImage imageWithContentsOfFile:[dictionary objectForKey:@"Thumbnail"]];
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.backgroundColor = [UIColor clearColor];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	return cell;
 }
 
@@ -254,11 +255,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-	NSDictionary *dictionary = [wallList objectAtIndex:indexPath.row];
-	id delegate = [self delegate];
-	if ([delegate respondsToSelector:@selector(onCellSelect::)]) {
-		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]:[dictionary objectForKey:@"name"]];
-	}
+//	NSDictionary *dictionary = [wallList objectAtIndex:indexPath.row];
+//	id delegate = [self delegate];
+//	if ([delegate respondsToSelector:@selector(onCellSelect::)]) {
+//		[delegate onCellSelect:[dictionary objectForKey:@"secureId"]:[dictionary objectForKey:@"name"]];
+//	}
 }
 
 - (IBAction) viewGawks:(id) sender {
