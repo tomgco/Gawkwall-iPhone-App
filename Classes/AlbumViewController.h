@@ -35,4 +35,5 @@
 - (IBAction)goLeft;
 - (void) onFavGawkError;
 - (void) toggleFavStatus;
+- (void) refreshContent;
 @end

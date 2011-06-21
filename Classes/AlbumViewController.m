@@ -73,6 +73,8 @@
 	[gestures setDirection:UISwipeGestureRecognizerDirectionLeft];
 	[videoViewContainer addGestureRecognizer:gestures];
 	[gestures release];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshContent) name:@"ReloadAlbumView" object:nil];
 }
 
 -(void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
@@ -148,10 +150,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+	[self refreshContent];
+
+}
+
+-(void) refreshContent {
+	NSArray *tempArray = [[NSArray alloc] init];
+	self.tableDataSource = tempArray;
+	[tempArray release];
+	
+	self.tableDataSource = [[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] data] objectForKey:@"Rows"];
 	[self.tableView reloadData];
 	CGPoint contentOffset = CGPointMake(0,[[NSUserDefaults standardUserDefaults] floatForKey:@"gawkwall_album_contentOffset_y"]);
 	[self.tableView setContentOffset:contentOffset];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated

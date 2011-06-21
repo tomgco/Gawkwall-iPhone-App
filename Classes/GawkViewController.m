@@ -255,6 +255,7 @@
 			NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 			[data setObject:dataItems forKey:@"Rows"];
 			[(GawkAppDelegate *)[[UIApplication sharedApplication] delegate] resetData:data];
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadAlbumView" object:nil];
 			[self hideActivityView];
 		}
 	} else {
